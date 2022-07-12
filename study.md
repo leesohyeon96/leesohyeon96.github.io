@@ -22,4 +22,4 @@ subtitle: 중요하거나, 모르는 개념들
 
 ***
 
-- [코딩테스트 연습](codingtest.md)
+- [코딩테스트 연습](CodingTest/codingtest.md)
