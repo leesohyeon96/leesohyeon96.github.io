@@ -49,20 +49,5 @@ title: 일정 필여행?
 
   - FAQ 조회/상세조회
     
-    ---
-    
-    [Epic 및 사용자시나리오]
-    
-    <img src="../img/reactDB.png">
-    
-    [논리모델링]
-    
-    <img src="../img/reactDB.png">
-    
-    [restAPI]
-    
-    <img src="../img/reactDB.png">
-    
-    ---
   
 ***
