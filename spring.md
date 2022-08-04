@@ -288,7 +288,7 @@ title: Spring
 
 **- HttpServlet을 상속받고 doGet(), doPost()를 구현하는 수고를 들이지 않게 `편의성을 제공`하는 것이 '서비스 추상화의 목표'**
 
-**- *POJO원칙을 철저히 따른 Spring의 기능으로 POJO원칙을 잘 지키게끔 PSA형태의 추상화가 되어있음을 의미**
+**- `POJO원칙`을 철저히 따른 Spring의 기능으로 POJO원칙을 잘 지키게끔 PSA형태의 추상화가 되어있음을 의미**
 
   ​		***POJO(Plain Old Java Object)** 
 
