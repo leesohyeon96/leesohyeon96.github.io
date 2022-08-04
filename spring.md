@@ -62,6 +62,7 @@ title: Spring
 1) 제어의 역전(IOC, Inversion Of Control)  
 2) 관점 지향 프로그래밍(AOP, Aspect Oriented Programming)  
 3) 서비스 추상화(PSA, Portable Service Abstraction) 
+<br/>
 
 ## (1) 제어의 역전
 
@@ -143,6 +144,7 @@ title: Spring
   - 이 빈들을 관리한다는 의미로 컨테이너를 '빈 팩토리(BeanFactory)'라고 부름
   - 보통은 바로 BeanFactory 사용하지 않고, 이를 확장한 ApplicationContext(스프링의 각종 부가 기능을 추가로 제공함)를 사용함! 
 <br/>
+
 ## (2) 관점 지향 프로그래밍
 
 - **AOP 사용하는 이유? proxy(기존 코드에 변화 없이 접근 제어 or 부가 기능 추가를 위해 사용)의 중복 코드가 생기고, proxy클래스를 만드는 데 들어가는 시간과 비용이 들기 때문에! **
@@ -298,6 +300,7 @@ title: Spring
 - ex) Spring Web MVC(@Controller, @Service .. ), Spring Transaction(@Transactional) , Spring Cache(@Cacheable)
 
 <br/>
+
 # * 프레임워크의 종류
 
 - 자바 프레임워크  -> Struts / Spring / 전자정부 프레임워크
@@ -311,6 +314,7 @@ title: Spring
   
 
 <br/>
+
 # * 프레임워크의 장/단점
 
 - 장점 
