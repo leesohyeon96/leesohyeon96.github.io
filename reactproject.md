@@ -59,7 +59,7 @@ title: 일정 필여행?
 <br/>
 
 #### reactproject  
-[React/node Project 설계 및 코드설명 자세히 보기](reactprojectcode.md)  
+[일정 필여행? 설계 및 코드설명 자세히 보기](reactprojectcode.md)  
      
   
 ***
