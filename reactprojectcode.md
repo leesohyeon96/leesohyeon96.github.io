@@ -10,15 +10,15 @@ title: react/node Project
 ***  
 
 ## 1) **FAQ - FAQ조회/상세조회**
-(http://
-
-## 2) **00 -0000000**
 
 
-## 3) **뭐머-뭐뭐뭐뭐**
+## 2) **음**
 
 
-# [프로젝트 전반적인 코드리뷰 보기](https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b)
+## 3) **음**
+
+
+### [담당 기능 전체 코드리뷰 보기](https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b)
 
 ***  
 
