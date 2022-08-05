@@ -53,9 +53,11 @@ title: 일정 필여행?
  
 #### reactproject  
 [React/node Project 설계 및 코드설명 자세히 보기](reactprojectcode.md)  
-    
-    
-**react/node Project 코드설명 자세히 보기(https://sudden-milk-758.notion.site/97749bd4a58c4d75a3d8ae378b2f3148)**  
+     
+      
+- **파이널 프로젝트의 모든 산출물**  
+ [일정 필여행? 노션 페이지](https://sudden-milk-758.notion.site/97749bd4a58c4d75a3d8ae378b2f3148)
+
 
 
   
