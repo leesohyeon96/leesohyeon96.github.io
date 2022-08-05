@@ -11,20 +11,26 @@ layout: page
   **Boards.js**
   <script src="https://gist.github.com/leesohyeon96/c3a28d8bbcc382f92083ea210e732913.js"></script>
   
+  **App.js**
+  <script src="https://gist.github.com/leesohyeon96/e673b5b111f2e565caf090a4d6c9171b.js"></script>
+  
+  **BoardDetail.js**
+  <script src="https://gist.github.com/leesohyeon96/e00fe51cbd02c14be624fb13af6c461e.js"></script>
+  
   **BoardAPICalls.js**  
-  <script src="https://gist.github.com/leesohyeon96/b7415c619324030793abb76dd195e385.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/d50797ebc33aba3107027fa30f371614.js"></script>
   
   **board-controller.js**
-  <script src="https://gist.github.com/leesohyeon96/87057a8e19d10894657b9135d1bade18.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/0a163c179c56cfda34d81c0410182b88.js"></script>
   
   **board-service**
-  <script src="https://gist.github.com/leesohyeon96/06bea4e807ca36d0e9195bfb7336821b.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/0ea076161423795527921097e8230576.js"></script>
   
   **board-repo**
-  <script src="https://gist.github.com/leesohyeon96/5deb0eb0780f8ede4ae400be7a1a23c6.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/b4a6f02b7ed1e8fac6d4e47c3e1db13a.js"></script>
   
   **board-query**
-  <script src="https://gist.github.com/leesohyeon96/201f7ecfbc23522ba2126ed4e276e5c0.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/886c097c55962887efd68cc7bfa393a5.js"></script>
   
 ***  
 
