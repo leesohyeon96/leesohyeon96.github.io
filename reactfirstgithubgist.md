@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/reactproject)
+[되돌아가기](https://leesohyeon96.github.io/reactprojectcode)
 
 # FAQ관리 - FAQ 조회/ 상세조회
 ***
@@ -28,5 +28,5 @@ layout: page
   
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/reactproject)
+[되돌아가기](https://leesohyeon96.github.io/reactprojectcode)
 
