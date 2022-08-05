@@ -44,21 +44,22 @@ title: 일정 필여행?
     - `게시글 댓글 작성/삭제`
 
 ***
+      
+- **파이널 프로젝트의 모든 산출물**  
+ [일정 필여행? 노션 페이지](https://sudden-milk-758.notion.site/97749bd4a58c4d75a3d8ae378b2f3148)
+
+***
   
 - **구체적인 코드 설명[3가지]**  
 
 <img src="../img/reactFAQPhoto.png">  
 
-  => **FAQ 조회/상세조회 기능의 설계 방식입니다.**  
- 
+  => **FAQ 조회/상세조회 기능의 설계 방식입니다.**    
+
+<br/>
+
 #### reactproject  
 [React/node Project 설계 및 코드설명 자세히 보기](reactprojectcode.md)  
      
-      
-- **파이널 프로젝트의 모든 산출물**  
- [일정 필여행? 노션 페이지](https://sudden-milk-758.notion.site/97749bd4a58c4d75a3d8ae378b2f3148)
-
-
-
   
 ***
