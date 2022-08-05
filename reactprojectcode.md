@@ -16,7 +16,7 @@ title: react/node Project
 
 ***
 
-## 2) **게시판 관리 - 게시글 목록 조회**
+## 2) **게시판 관리 - 게시글 상세 조회**
 [설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/3483ae23401b45e086111a60b06b96ef)
 
 ***
