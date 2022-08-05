@@ -19,10 +19,14 @@ title: react/node Project
 ## 2) **게시판 관리 - 게시글 상세 조회**
 [설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/3483ae23401b45e086111a60b06b96ef)
 
+**[Github gist보기](reactsecondgithubgist.md)** 
+
 ***
 
 ## 3) **게시판 관리 - 게시글 등록**
 [설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/19e4fd3577b845fdbf4672d4cb6487c7)
+
+**[Github gist보기](reactthirdgithubgist.md)** 
 
 ***  
 
