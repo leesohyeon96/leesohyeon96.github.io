@@ -9,7 +9,7 @@ layout: page
 ***
   
   **Main.js**
-  <script src="https://gist.github.com/leesohyeon96/e2d088f5963687f92feb5de9d44ba294.js"></script>
+  <script src="https://gist.github.com/leesohyeon96/f96042eede14c20c76d365d7bcce7381.js"></script>
   
   **FAQAPICalls.js**  
   <script src="https://gist.github.com/leesohyeon96/3d6c1bfedf744179d1e050c0aa263f43.js"></script>
