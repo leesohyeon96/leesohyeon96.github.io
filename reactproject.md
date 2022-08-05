@@ -45,8 +45,11 @@ title: 일정 필여행?
 
 ***
   
-- **구체적인 코드 설명[3가지]**
+- **구체적인 코드 설명[3가지]**  
 
+<img src="../img/reactFAQPhoto.png">  
+
+  => **FAQ 조회/상세조회 기능의 설계 방식입니다.**  
  
   ##### reactproject  
   [React/node Project 코드설명 자세히 보기](reactprojectcode.md)  
