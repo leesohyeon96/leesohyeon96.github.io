@@ -10,10 +10,16 @@ title: react/node Project
 ***  
 
 ## 1) **FAQ관리 - FAQ조회/상세조회**
-[설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/FAQ-FAQ-062f6db23fe240719d91619f5b294296)
+[설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/FAQ-FAQ-062f6db23fe240719d91619f5b294296)  
+
+**[Github gist보기](reactfirstgithubgist.md)**  
+
+***
 
 ## 2) **게시판 관리 - 게시글 목록 조회**
 [설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/3483ae23401b45e086111a60b06b96ef)
+
+***
 
 ## 3) **게시판 관리 - 게시글 등록**
 [설계 및 코드 자세히 보기](https://sudden-milk-758.notion.site/19e4fd3577b845fdbf4672d4cb6487c7)
