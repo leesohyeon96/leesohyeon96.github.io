@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 일정 필여행? 프로젝트
+title: 일정 필여행?
 ---
 
 [되돌아가기](https://leesohyeon96.github.io/reactproject/#reactproject)
