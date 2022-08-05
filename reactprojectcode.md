@@ -1,11 +1,11 @@
 ---
 layout: page
-title: react/node Project
+title: 일정 필여행? 프로젝트
 ---
 
 [되돌아가기](https://leesohyeon96.github.io/reactproject/#reactproject)
 
-# react/node Project 코드 설명[3가지]  
+# 일정 필여행? 프로젝트 코드 설명[3가지]  
 
 ***  
 
