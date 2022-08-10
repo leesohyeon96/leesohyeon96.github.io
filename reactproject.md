@@ -44,6 +44,13 @@ title: 일정 필여행?
     - `게시글 댓글 작성/삭제`
 
 ***
+
+- **코드 설계 방식**
+<img src="reactProject.png">
+  
+  => **client와 server로 프론트/백엔드를 구분하여 코드 구현하였습니다.**
+  <br/>
+  
       
 - **파이널 프로젝트의 모든 산출물**  
  [일정 필여행? 노션 페이지](https://sudden-milk-758.notion.site/97749bd4a58c4d75a3d8ae378b2f3148)
