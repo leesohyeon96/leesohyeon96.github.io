@@ -49,7 +49,8 @@ title: 일정 필여행?
 <img src="reactProject.png">
   
   => **client와 server로 프론트/백엔드를 구분하여 코드 구현하였습니다.**
-  <br/>
+
+***
   
       
 - **파이널 프로젝트의 모든 산출물**  
