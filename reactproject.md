@@ -46,6 +46,7 @@ title: 일정 필여행?
 ***
 
 - **코드 설계 방식**
+</br>
 <img src="../img/reactProject.png">
   
   => **client와 server로 프론트/백엔드를 구분하여 코드 구현하였습니다.**
