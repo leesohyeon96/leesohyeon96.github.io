@@ -20,7 +20,7 @@ title: 일정 필여행?
 <img src="../img/reactTools.png">
 
 ***
-- **맡은 역할 : DBA (논리/물리모델링, DBeaver를 통해 데이터 관리, GroomIDE를 통해 MySQL DB서버 설정)**  
+- **맡은 역할 : DBA (논리/물리모델링, DBeaver를 통해 데이터 관리, GroomIDE를 통해 MySQL DB서버 관리)**  
  
  
 <img src="../img/reactDB.png">
