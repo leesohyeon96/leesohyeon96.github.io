@@ -5,6 +5,7 @@ title: Docker&AWS&Linux
 
 # AWS  
 </br>
+
 ## Servlet
 
 - 요청과 간단한 메소드(doGet, doPost)로  요청을 처리 후 다시 client에게 응답해주는 (자바 프로그래밍) 기술 -> 자바 코드로 웹 서버를 만들어준건가?
