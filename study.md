@@ -10,13 +10,10 @@ subtitle: 중요하거나, 모르는 개념들
 
 
 - [Spring](spring.md)
-
-
+  
 - [Mybatis](mybatis.md)
-
-
+  
 - [JPA](jpa.md)
-
 
 - [Docker&AWS&Linux](dockerwaslinux.md)
 
