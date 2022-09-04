@@ -75,4 +75,4 @@ title: Docker&AWS&Linux
 
   -> 이를 위해서는 WAS에게 Servlet에 대한 정보를 줘야하는 데 이때 쓰이는 파일이 **web.xml**임!
 
-  -> servlet3.0부터는 web.xml 뿐만 아니라 자바 소스 설정(java config)로도 가능함[byat에서는 servlet3.1.0버전 쓴듯!]
+  -> servlet3.0부터는 web.xml 뿐만 아니라 자바 소스 설정(java config)로도 가능함[byat에서는 servlet3.1.0버전 사용!]
