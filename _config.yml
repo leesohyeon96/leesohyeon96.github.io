@@ -26,6 +26,8 @@ round-avatar: true
 # then specify the following parameter
 #title-img: /path/to/image
 
+baseurl: ""
+
 
 # --- Footer social media links --- #
 

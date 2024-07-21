@@ -4,7 +4,7 @@ layout: page
 
 # 사용해본 기술
 
-<img src="../../../img/skills.png">
+<img src="{{ site.baseurl }}/img/skills.png" alt="">
 
 
 ***  
