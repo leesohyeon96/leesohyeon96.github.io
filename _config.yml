@@ -10,7 +10,7 @@ author: LeeSohyeon
 
 navbar-links:
   About Me: "aboutme"
-  For Study: "study"
+  History: "history" # "study"
   Projects: "projects"
 # --- Logo --- #
 
@@ -34,8 +34,9 @@ round-avatar: true
 social-network-links:
   email: "vkfkswjs26@gmail.com"
   github: leesohyeon96
-  youtube: /channel/UCfvC6YdtLAyTH4GXmNYrx1Q
-# 나중에 여기에 노션  : 링크 걸어도 될듯?
+  velog: https://velog.io/@vkfkswjs26/posts
+#  youtube: /channel/UCfvC6YdtLAyTH4GXmNYrx1Q
+
 #  medium: LeeSohyeon
 #  reddit: LeeSohyeon
 #  linkedin: daattali
@@ -232,7 +233,6 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
-  - screenshot.png
   - docs/
 
 plugins:
