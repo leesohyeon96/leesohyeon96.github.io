@@ -13,13 +13,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-  <img src="../../../img/semiProjectFindPassword1.png">
+  <img src="{{ site.baseurl }}/img/semiProjectFindPassword1.png">
 
   **[코드 흐름]**
 
-  <img src="../../../img/semiProjectFindPassword2.png">
+  <img src="{{ site.baseurl }}/img/semiProjectFindPassword2.png">
 
-  <img src="../../../img/semiProjectFindPassword3.png">
+  <img src="{{ site.baseurl }}/img/semiProjectFindPassword3.png">
 
 ### first
 
@@ -34,13 +34,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-  <img src="../../../img/semiProjectCalendarRegist1.png">
+  <img src="{{ site.baseurl }}/img/semiProjectCalendarRegist1.png">
 
   **[코드 흐름]**
 
-  <img src="../../../img/semiProjectCalendarRegist2.png">
-  <img src="../../../img/semiProjectCalendarRegist3.png">
-  <img src="../../../img/semiProjectCalendarRegist4.png">
+  <img src="{{ site.baseurl }}/img/semiProjectCalendarRegist2.png">
+  <img src="{{ site.baseurl }}/img/semiProjectCalendarRegist3.png">
+  <img src="{{ site.baseurl }}/img/semiProjectCalendarRegist4.png">
   
   
 ### second  
@@ -57,13 +57,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-<img src="../../../img/semiProjectManagementRegist1.png">
+<img src="{{ site.baseurl }}/img/semiProjectManagementRegist1.png">
 
   **[코드 흐름]**
 
-<img src="../../../img/semiProjectManagementRegist2.png">
+<img src="{{ site.baseurl }}/img/semiProjectManagementRegist2.png">
 
-<img src="../../../img/semiProjectManagementRegist4.png">
+<img src="{{ site.baseurl }}/img/semiProjectManagementRegist4.png">
 
 ### third
 

@@ -12,20 +12,20 @@ title: Final Project
 
   **[전체적인 흐름]**
 
-  <img src="../../../img/finalProjectMenuModify1.png">
-  <img src="../../../img/finalProjectMenuModify2.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify1.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify2.png">
 
   **[코드 흐름]**
 
-  <img src="../../../img/finalProjectMenuModify3.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify3.png">
 
-  <img src="../../../img/finalProjectMenuModify4.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify4.png">
 
-  <img src="../../../img/finalProjectMenuModify5.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify5.png">
 
-  <img src="../../../img/finalProjectMenuModify6.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify6.png">
 
-  <img src="../../../img/finalProjectMenuModify7.png">
+  <img src="{{ site.baseurl }}/img/finalProjectMenuModify7.png">
 
 
   
@@ -41,22 +41,22 @@ title: Final Project
 
   **[전체적인 흐름]**
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph.png">
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph2.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph2.png">
 
   **[코드 흐름]**
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph3.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph3.png">
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph4.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph4.png">
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph5.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph5.png">
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph6.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph6.png">
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph7.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph7.png">
 
-  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph8.png">
+  <img src="{{ site.baseurl }}/img/finalProjectOutWarehouseIssueBacklogBarGraph8.png">
 
   
 ### second  

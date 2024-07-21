@@ -21,12 +21,12 @@ title: 마왕 김진호를 JAVA
   - **Java**
   - **Oracle** 
   - **Eclipse** 
-  <img src="../../../img/miniTools.png">
+  <img src="{{ site.baseurl }}/img/miniTools.png">
   
   ***
   
 - **맡은 역할 : 팀장**
-  <img src="../../../img/semiWBS.png">
+  <img src="{{ site.baseurl }}/img/semiWBS.png">
   
  
   ***

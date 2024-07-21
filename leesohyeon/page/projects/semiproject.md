@@ -38,7 +38,7 @@ title: BYAT
   
   <br/>
   
-  <img src="../../../img/semiTools.png">
+  <img src="{{ site.baseurl }}/img/semiTools.png">
 
 ***
 
@@ -47,18 +47,18 @@ title: BYAT
   * **개발업무일지 : 일일업무일지로 본인이 구현한 부분, 내용을 구체적으로 작성하여 `'본인 진척율 파악'` 하고 내용에 대한 `'팀원 확인'` 등을 통해 프로젝트의 전체적인 진척율 관리에 도움이 될 수 있도록 하였습니다.**
   * **개발진행사항 : 팀 전체의 진척율을 작성하고 하루하루 업데이트를 진행하여 가시적으로 `전체적인 프로젝트 진행율을 파악하고 계획을 수정` 하는 데 도움이 되도록 하였습니다.**
 
-  <img src="../../../img/SemiMeetingLog.png">
+  <img src="{{ site.baseurl }}/img/SemiMeetingLog.png">
 
-  <img src="../../../img/SemiProgress.png">
+  <img src="{{ site.baseurl }}/img/SemiProgress.png">
 
-<!--   <img src="../../../img/semiIssueTracking.png"> -->
+<!--   <img src="{{ site.baseurl }}/img/semiIssueTracking.png"> -->
 
 
 <!-- ***
 
 - **팀원 한마디 : '적극적이며 의사소통이 활발한 팀원'**
 
-  <img src="../../../img/semiProjectTeamIntroduce.png">
+  <img src="{{ site.baseurl }}/img/semiProjectTeamIntroduce.png">
 
  -->
 
@@ -85,7 +85,7 @@ title: BYAT
 
 - **구체적인 코드 설명[3가지]**
 
-  <img src="../../../img/semiProjectManagementRegist4.png">
+  <img src="{{ site.baseurl }}/img/semiProjectManagementRegist4.png">
   => **멤버 계정 추가 기능의 코드 작성 방식입니다.**  
 
 

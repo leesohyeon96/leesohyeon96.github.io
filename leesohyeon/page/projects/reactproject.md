@@ -17,14 +17,14 @@ title: 일정 필여행?
 <br/>
 
 - **개발 환경**
-<img src="../../../img/reactTools.png">
+<img src="{{ site.baseurl }}/img/reactTools.png">
 
 ***
 - **맡은 역할 : DBA (논리/물리모델링, DBeaver를 통해 데이터 관리, GroomIDE를 통해 MySQL DB서버 관리)**  
  
  
-<img src="../../../img/reactDB.png">
-<img src="../../../img/reactGroom.png">
+<img src="{{ site.baseurl }}/img/reactDB.png">
+<img src="{{ site.baseurl }}/img/reactGroom.png">
 
 ***
 
@@ -47,7 +47,7 @@ title: 일정 필여행?
 
 - **코드 설계 방식**
 </br>
-<img src="../../../img/reactProject.png">
+<img src="{{ site.baseurl }}/img/reactProject.png">
   
   => **client와 server로 프론트/백엔드를 구분하여 코드 구현하였습니다.**
 
@@ -61,7 +61,7 @@ title: 일정 필여행?
   
 - **구체적인 코드 설명[3가지]**  
 
-<img src="../../../img/reactFAQPhoto.png">  
+<img src="{{ site.baseurl }}/img/reactFAQPhoto.png">  
 
   => **FAQ 조회/상세조회 기능의 설계 방식입니다.**    
 
