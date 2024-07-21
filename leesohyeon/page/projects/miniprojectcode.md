@@ -3,7 +3,7 @@ layout: page
 title: Mini Project
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/projects/#miniproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/projects/#miniproject)
 
 # Mini Project 코드 설명[Gist로 대체]  
 
@@ -20,4 +20,4 @@ title: Mini Project
 
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/projects/#miniproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/projects/#miniproject)

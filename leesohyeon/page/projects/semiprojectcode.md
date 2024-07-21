@@ -3,7 +3,7 @@ layout: page
 title: Semi Project
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/semiproject/#semiproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/semiproject/#semiproject)
 
 # Semi Project 코드 설명[3가지]  
 
@@ -13,13 +13,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-  <img src="../img/semiProjectFindPassword1.png">
+  <img src="../../../img/semiProjectFindPassword1.png">
 
   **[코드 흐름]**
 
-  <img src="../img/semiProjectFindPassword2.png">
+  <img src="../../../img/semiProjectFindPassword2.png">
 
-  <img src="../img/semiProjectFindPassword3.png">
+  <img src="../../../img/semiProjectFindPassword3.png">
 
 ### first
 
@@ -34,13 +34,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-  <img src="../img/semiProjectCalendarRegist1.png">
+  <img src="../../../img/semiProjectCalendarRegist1.png">
 
   **[코드 흐름]**
 
-  <img src="../img/semiProjectCalendarRegist2.png">
-  <img src="../img/semiProjectCalendarRegist3.png">
-  <img src="../img/semiProjectCalendarRegist4.png">
+  <img src="../../../img/semiProjectCalendarRegist2.png">
+  <img src="../../../img/semiProjectCalendarRegist3.png">
+  <img src="../../../img/semiProjectCalendarRegist4.png">
   
   
 ### second  
@@ -57,13 +57,13 @@ title: Semi Project
 
   **[전체적인 흐름]**
 
-<img src="../img/semiProjectManagementRegist1.png">
+<img src="../../../img/semiProjectManagementRegist1.png">
 
   **[코드 흐름]**
 
-<img src="../img/semiProjectManagementRegist2.png">
+<img src="../../../img/semiProjectManagementRegist2.png">
 
-<img src="../img/semiProjectManagementRegist4.png">
+<img src="../../../img/semiProjectManagementRegist4.png">
 
 ### third
 
@@ -74,4 +74,4 @@ title: Semi Project
 
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/semiproject/#semiproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/semiproject/#semiproject)

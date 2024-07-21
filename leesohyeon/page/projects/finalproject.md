@@ -33,37 +33,37 @@ title: JaeGoJaeGo
   - **GitLab** 
   - **Mabatis**
   - **JPA**
-  <img src="../img/finalTools.png">
-  <img src="../img/finalTools2.png">  
+  <img src="../../../img/finalTools.png">
+  <img src="../../../img/finalTools2.png">  
 
 ***
 
 - **맡은 역할 : 형상관리자 (깃랩, 소스트리 commit & push, merge, commitMessage 관리)**
-  <img src="../img/finalRole1.png">
-  <img src="../img/finalRole2.png">  
+  <img src="../../../img/finalRole1.png">
+  <img src="../../../img/finalRole2.png">  
 
 
 <!-- <br/>
 
 - **팀원 한마디 : '적극적이며 행동력 있는 팀원'**
 
-  <img src="../img/finalProjectTeamIntroduce.png">   -->
+  <img src="../../../img/finalProjectTeamIntroduce.png">   -->
 
 ***
 
 - **전반적인 설계 과정**
   <br/>
-  <img src="../img/finalModeling1.png">
+  <img src="../../../img/finalModeling1.png">
   => **논리모델링 1.0.0ver ~ 2.0.0ver까지 설계하였습니다.**  
  <br/>
-  <img src="../img/finalModeling2.png">  
+  <img src="../../../img/finalModeling2.png">  
   => **논리모델링 2.0.0ver 입니다.**
  <br/>
-  <img src="../img/finalairbnbphoto.jpg">
-  <img src="../img/finalairbnbphoto3.jpg">
+  <img src="../../../img/finalairbnbphoto.jpg">
+  <img src="../../../img/finalairbnbphoto3.jpg">
   => **밤을 새며 발표를 준비하는 모습입니다.**
  <br/>
-  <img src="../img/finalairbnbphoto2.jpg">
+  <img src="../../../img/finalairbnbphoto2.jpg">
   => **논리모델링 설계 회의 장면입니다.**
 
 <br/>
@@ -96,7 +96,7 @@ title: JaeGoJaeGo
   
 - **구체적인 코드 설명[2가지]**
 
-  <img src="../img/finalProjectMenuModifyForProjectMenu.png">
+  <img src="../../../img/finalProjectMenuModifyForProjectMenu.png">
   => **메뉴 수정 기능의 코드 작성 방식입니다**
 
 ##### finalproject  

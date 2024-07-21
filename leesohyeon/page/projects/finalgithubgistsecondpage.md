@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/finalprojectcode/#second)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalprojectcode/#second)
 
 # 백로그관리[물품당 이슈발생빈도 그래프 조회]
 ***  
@@ -17,4 +17,4 @@ layout: page
 
   
   
-[되돌아가기](https://leesohyeon96.github.io/finalprojectcode/#second)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalprojectcode/#second)

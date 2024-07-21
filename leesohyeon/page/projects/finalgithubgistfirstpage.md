@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/finalprojectcode/#first)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalprojectcode/#first)
 
 # 메뉴관리[메뉴수정]
 ***
@@ -17,5 +17,5 @@ layout: page
   **Service**  
   <script src="https://gist.github.com/leesohyeon96/c44e3a32a51079eeddb7f513ce8521e7.js"></script>
 
-[되돌아가기](https://leesohyeon96.github.io/finalprojectcode/#first)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalprojectcode/#first)
 

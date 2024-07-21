@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/reactprojectcode)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/reactprojectcode)
 
 # 게시판 관리 - 게시글 상세 조회
 ***
@@ -34,5 +34,5 @@ layout: page
   
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/reactprojectcode)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/reactprojectcode)
 

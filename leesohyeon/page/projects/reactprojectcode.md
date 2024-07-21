@@ -3,7 +3,7 @@ layout: page
 title: 일정 필여행?
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/reactproject/#reactproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/reactproject/#reactproject)
 
 # 일정 필여행? 프로젝트 코드 설명[3가지]  
 
@@ -34,4 +34,4 @@ title: 일정 필여행?
 
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/reactproject/#reactproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/reactproject/#reactproject)

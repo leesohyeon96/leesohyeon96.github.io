@@ -1,8 +1,10 @@
 ---
 layout: page
 title: History
+permalink: /history/
 subtitle: 연혁
 ---  
+
 # 2021
  - 더조은 아카데미에서 공부
 # 2022

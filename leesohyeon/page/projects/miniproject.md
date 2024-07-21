@@ -21,12 +21,12 @@ title: 마왕 김진호를 JAVA
   - **Java**
   - **Oracle** 
   - **Eclipse** 
-  <img src="../img/miniTools.png">
+  <img src="../../../img/miniTools.png">
   
   ***
   
 - **맡은 역할 : 팀장**
-  <img src="../img/semiWBS.png">
+  <img src="../../../img/semiWBS.png">
   
  
   ***
@@ -52,4 +52,4 @@ title: 마왕 김진호를 JAVA
 
 ***
 
-[프로젝트 목록으로 되돌아가기](https://leesohyeon96.github.io/projects/)
+[프로젝트 목록으로 되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/projects/)

@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/semiprojectcode/#third)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/semiprojectcode/#third)
 
 # 멤버 계정 관리[생성] 
 ***
@@ -20,4 +20,4 @@ layout: page
 **Mapper**
 <script src="https://gist.github.com/leesohyeon96/d0b1cede398b946a24dd3e6b0cf1b32e.js"></script>
 
-[되돌아가기](https://leesohyeon96.github.io/semiprojectcode/#third)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/semiprojectcode/#third)

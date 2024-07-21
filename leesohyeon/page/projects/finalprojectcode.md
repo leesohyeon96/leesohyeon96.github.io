@@ -3,7 +3,7 @@ layout: page
 title: Final Project
 ---
 
-[되돌아가기](https://leesohyeon96.github.io/finalproject/#finalproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalproject/#finalproject)
 
 # Final Project 코드 설명[2가지]  
 
@@ -12,20 +12,20 @@ title: Final Project
 
   **[전체적인 흐름]**
 
-  <img src="../img/finalProjectMenuModify1.png">
-  <img src="../img/finalProjectMenuModify2.png">
+  <img src="../../../img/finalProjectMenuModify1.png">
+  <img src="../../../img/finalProjectMenuModify2.png">
 
   **[코드 흐름]**
 
-  <img src="../img/finalProjectMenuModify3.png">
+  <img src="../../../img/finalProjectMenuModify3.png">
 
-  <img src="../img/finalProjectMenuModify4.png">
+  <img src="../../../img/finalProjectMenuModify4.png">
 
-  <img src="../img/finalProjectMenuModify5.png">
+  <img src="../../../img/finalProjectMenuModify5.png">
 
-  <img src="../img/finalProjectMenuModify6.png">
+  <img src="../../../img/finalProjectMenuModify6.png">
 
-  <img src="../img/finalProjectMenuModify7.png">
+  <img src="../../../img/finalProjectMenuModify7.png">
 
 
   
@@ -41,22 +41,22 @@ title: Final Project
 
   **[전체적인 흐름]**
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph.png">
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph2.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph2.png">
 
   **[코드 흐름]**
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph3.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph3.png">
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph4.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph4.png">
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph5.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph5.png">
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph6.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph6.png">
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph7.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph7.png">
 
-  <img src="../img/finalProjectOutWarehouseIssueBacklogBarGraph8.png">
+  <img src="../../../img/finalProjectOutWarehouseIssueBacklogBarGraph8.png">
 
   
 ### second  
@@ -70,4 +70,4 @@ title: Final Project
 
 ***  
 
-[되돌아가기](https://leesohyeon96.github.io/finalproject/#finalproject)
+[되돌아가기](https://leesohyeon96.github.io/leesohyeon/page/projects/finalproject/#finalproject)
