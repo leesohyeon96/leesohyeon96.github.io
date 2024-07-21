@@ -7,6 +7,8 @@ subtitle: 연혁
 
 # 2021
  - 더조은 아카데미에서 공부
+ - [당시 포트폴리오 확인](https://leesohyeon96.github.io/leesohyeon/page/history/thegoodacademyportfolio.md)
+ 
 # 2022
  - 더조은 아카데미에서 공부 및 첫 IT회사 취업
 # 2023
