@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-subtitle: 진행한 프로젝트들
+subtitle: 진행한 프로젝트들 
 ---
 ***  
 
