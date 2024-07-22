@@ -12,6 +12,19 @@
   </li>
 {%- endif -%}
 
+{%- if site.social-network-links.velog -%}
+<li class="list-inline-item">
+  <a href="https://velog.io/@{{ site.social-network-links.velog }}" title="Velog">
+    <span class="fa-stack fa-lg" aria-hidden="true">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fab fa-velog fa-stack-1x fa-inverse"></i> <!-- velog 아이콘이 없는 경우 대체 아이콘을 사용하세요 -->
+    </span>
+    <span class="sr-only">Velog</span>
+  </a>
+</li>
+{%- endif -%}
+
+
 {%- if site.social-network-links.email -%}
   <li class="list-inline-item">
     <a href="mailto:{{ site.social-network-links.email }}" title="Email me">
@@ -275,7 +288,7 @@
     </a>
   </li>
 {%- endif -%}
-  
+
 {%- if site.social-network-links.medium -%}
   <li class="list-inline-item">
     <a href="https://medium.com/@{{ site.social-network-links.medium }}" title="Medium">
@@ -299,7 +312,7 @@
    </a>
   </li>
 {%- endif -%}
-  
+
 {%- if site.social-network-links.discord -%}
   <li class="list-inline-item">
     <a href="https://discord.com/{{ site.social-network-links.discord }}" title="Discord">
