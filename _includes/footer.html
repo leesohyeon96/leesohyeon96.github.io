@@ -2,7 +2,18 @@
   <div class="container-md beautiful-jekyll-footer">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-      {% include social-networks-links.html %}
+        <ul class="social-icons">
+          {% if site.social-network-links.email %}
+          <li><a href="mailto:{{ site.social-network-links.email }}" class="fa fa-envelope"></a></li>
+          {% endif %}
+          {% if site.social-network-links.github %}
+          <li><a href="https://github.com/{{ site.social-network-links.github }}" class="fa fa-github"></a></li>
+          {% endif %}
+          {% if site.social-network-links.velog %}
+          <li><a href="{{ site.social-network-links.velog }}" class="fa fa-blog"></a></li>
+          {% endif %}
+          <!-- Add more social network links as needed -->
+        </ul>
       {% if page.footer-extra %}
         <div class="footer-custom-content">
           {% for file in page.footer-extra %}

@@ -28,4 +28,4 @@ subtitle: 연혁
 
 # 2024
  - 백엔드 개발자 2년차
- - [BowMeow Project - MSA 공부용 프로젝트 진행](https://leesohyeon96.github.io/projects/bowmeow_project.md)
+ - [BowMeow Project - MSA 공부용 프로젝트 진행](https://leesohyeon96.github.io/leesohyeon/page/projects/bowmeow_project/)
