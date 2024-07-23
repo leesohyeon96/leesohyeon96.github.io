@@ -2,14 +2,13 @@ name: Beautiful Jekyll CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
-    name: Build Jekyll
     runs-on: ubuntu-latest
 
     steps:
@@ -25,29 +24,22 @@ jobs:
 #          jekyll/builder:$JEKYLL_VERSION /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: 2.7
 
-      - name: Cache gems
-        uses: action/cache@v2
+      - name: Cache Ruby gems
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
+              ${{ runner.os }}-gems-
 
       - name: Install dependencies
         run: |
           gem install bundler
-          bundle install --path vendor/bundle
+          bundle install
 
-      - name: Build the site
-        run : |
-          bundle exec jekyll build --future
-
-      - name: Upload _site directory
-        uses: actions/upload-artifact@v2
-        with:
-          name: site
-          path: _site
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build
