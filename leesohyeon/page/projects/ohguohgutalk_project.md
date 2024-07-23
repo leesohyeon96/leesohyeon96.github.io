@@ -16,14 +16,26 @@ title: Ohguohgutalk Project
 
 # 구조
 : 작성예정
+
 <br/>
 
 # 인프라
 : 작성예정
+
 <br/>
 
 ***
 
 <br/>
 
-# [github에서 확인하기](https://github.com/seoyeome/bowmeow-gateway/tree/develop)
+# Github
+[github 확인하기](https://github.com/leesohyeon96/real-ohguohgutalk)
+
+
+<br/>
+
+
+***
+
+
+[프로젝트 목록으로 되돌아가기](https://leesohyeon96.github.io/projects/)

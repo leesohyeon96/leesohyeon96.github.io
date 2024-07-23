@@ -17,6 +17,7 @@ title: BowMeow Project
 # 구조
 <img src="{{ site.baseurl }}/img/bowMeowArchitecture.png" alt="">
 : MSA 구조
+
 <br/>
 
 # 인프라
@@ -42,3 +43,12 @@ title: BowMeow Project
 
 ## Member Project
 : 작성 예정
+
+
+<br/>
+
+
+***
+
+
+[프로젝트 목록으로 되돌아가기](https://leesohyeon96.github.io/projects/)
