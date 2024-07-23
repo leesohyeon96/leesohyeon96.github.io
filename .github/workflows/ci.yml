@@ -1,15 +1,53 @@
 name: Beautiful Jekyll CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 jobs:
   build:
     name: Build Jekyll
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Build the site in the jekyll/builder container
+      - name: Checkout repository
+        uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
+#      - name: Build the site in the jekyll/builder container
+#        run: |
+#          export JEKYLL_VERSION=3.8
+#          docker run \
+#          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+#          -e PAGES_REPO_NWO=${{ github.repository }} \
+#          jekyll/builder:$JEKYLL_VERSION /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+
+      - name: Cache gems
+        uses: action/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install dependencies
         run: |
-          export JEKYLL_VERSION=3.8
-          docker run \
-          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          -e PAGES_REPO_NWO=${{ github.repository }} \
-          jekyll/builder:$JEKYLL_VERSION /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+          gem install bundler
+          bundle install --path vendor/bundle
+
+      - name: Build the site
+        run : |
+          bundle exec jekyll build --future
+
+      - name: Upload _site directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: _site

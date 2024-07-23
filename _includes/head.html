@@ -2,6 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Simple Icons CSS 추가 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@latest/css/simple-icons.min.css">
+
   {% capture title %}
     {%- if page.share-title -%}
       {{ page.share-title | strip_html | xml_escape }}
@@ -77,9 +80,6 @@
       <link rel="stylesheet" href="{{ css | relative_url }}">
     {% endfor %}
   {% endif %}
-
-  <!-- simple-icons CSS 추가 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@latest/css/simple-icons.min.css">
 
   {% if site.fb_app_id %}
   <meta property="fb:app_id" content="{{ site.fb_app_id }}">
