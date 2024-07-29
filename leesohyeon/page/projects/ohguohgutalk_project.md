@@ -23,6 +23,8 @@ title: Ohguohgutalk Project
 - mongoDB + spring data mongoDB
 - redis + spring data Redis
 
+<br/>
+
 # 구조
 : <img src="{{ site.baseurl }}/img/ohguhogutalkarchitecture.png">
 : mysql, mongoDB, redis -> docker에서 pull 받아 컨테이너로 돌림
