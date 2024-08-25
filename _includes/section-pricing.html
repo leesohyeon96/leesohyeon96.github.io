@@ -1,0 +1,78 @@
+{% assign content = site.data.content['pricing'] %}
+
+<!-- Section - Pricing -->
+<section class="lui-section lui-gradient-center" id="pricing-section">
+
+  <!-- Heading -->
+  <div class="lui-heading">
+    <div class="container">
+
+      <div class="m-titles align-center">
+        <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.title }}</span>
+        </h2>
+        <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.subtitle }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="v-line v-line-left">
+    <div class="container">
+
+      <div class="pricing-items row">
+        {% for item in content.items %}
+        <div class="pricing-col{% if item.center == true %} center{% endif %} col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          {% if item.center == true %}
+          <div class="label">
+            <span>{{ item.label }}</span>
+          </div>
+          {% endif %}
+          <div class="pricing-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <div class="lui-subtitle">
+              <span>{{ item.name }}</span>
+            </div>
+            <div class="icon"></div>
+            <div class="price">
+              <span>{{ item.price }}</span>
+              <em>{{ item.price_after }}</em>
+            </div>
+            <div class="lui-text">
+              <div>
+                <p>{{ item.text }}</p>
+              </div>
+            </div>
+            <div class="list">
+              <div>
+                <ul>
+                  {% for list in item.list %}
+                  <li>
+                    {% if list.included == true %}<i class="fas fa-check"></i>{% endif %}
+                    {% if list.included == false %}<em>{% endif %}
+                    {{ list.value }}
+                    {% if list.included == false %}</em>{% endif %}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <a href="{{ item.button.link }}" class="btn btn-solid">
+              <span>{{ item.button.label }}</span>
+            </a>
+            <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="lui-bgtitle">
+        <span>{{ content.bg_title }}</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>

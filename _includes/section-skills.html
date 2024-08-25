@@ -1,0 +1,118 @@
+{% assign content = site.data.content['skills'] %}
+
+<!-- Section - Skills -->
+<section class="lui-section lui-gradient-center" id="skills-section">
+
+  <!-- Heading -->
+  <div class="lui-heading">
+    <div class="container">
+
+      <div class="m-titles align-center">
+        <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.title }}</span>
+        </h2>
+        <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.subtitle }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="v-line v-line-left">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+
+          <div class="skills-items">
+            {% for item in content.column1.items %}
+            <div class="skills-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name">
+                <span>{{ item.label }}</span>
+              </h6>
+              <div class="text">
+                <div>
+                  <p>{{ item.text }}</p>
+                </div>
+              </div>
+              <div class="dots">
+                <div class="dot" style="width: {{ item.value }}%;">
+                  <span></span>
+                </div>
+              </div>
+              <div class="value">
+                <span class="num">{{ item.value }} <span>%</span>
+                </span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+
+          <div class="skills-items">
+            {% for item in content.column2.items %}
+            <div class="skills-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name">
+                <span>{{ item.label }}</span>
+              </h6>
+              <div class="text">
+                <div>
+                  <p>{{ item.text }}</p>
+                </div>
+              </div>
+              <div class="dots">
+                <div class="dot" style="width: {{ item.value }}%;">
+                  <span></span>
+                </div>
+              </div>
+              <div class="value">
+                <span class="num">{{ item.value }} <span>%</span>
+                </span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+
+          <div class="skills-items">
+            {% for item in content.column3.items %}
+            <div class="skills-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name">
+                <span>{{ item.label }}</span>
+              </h6>
+              <div class="text">
+                <div>
+                  <p>{{ item.text }}</p>
+                </div>
+              </div>
+              <div class="dots">
+                <div class="dot" style="width: {{ item.value }}%;">
+                  <span></span>
+                </div>
+              </div>
+              <div class="value">
+                <span class="num">{{ item.value }} <span>%</span>
+                </span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="lui-bgtitle">
+        <span>{{ content.bg_title }}</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>

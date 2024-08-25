@@ -1,0 +1,74 @@
+{% assign content = site.data.content['hero'] %}
+{% assign social = site.data.settings['social'] %}
+
+<!-- Section - Hero Started -->
+<section class="lui-section lui-section-hero lui-gradient-top" id="started-section">
+  <div class="container">
+
+    <!-- Hero Started -->
+    <div class="lui-started v-line v-line-left">
+      <div class="section hero-started">
+        <div class="content scrolla-element-anim-1 scroll-animate" data-animate="active">
+          <div class="titles">
+            <div class="lui-subtitle">
+              <span>{{ content.before_title }}</span>
+            </div>
+            <h1 class="title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
+              <span>{{ content.title }}</span>
+            </h1>
+            <div class="label lui-subtitle">
+              {{ content.after_title }}
+            </div>
+          </div>
+          <div class="description">
+            <div>
+              <p>{{ content.description }}</p>
+            </div>
+            <div class="social-links">
+              {% for link in social %}
+        			{% assign link_url = link.url | absolute_url %}
+              <a target="_blank" rel="nofollow" href="{{ link.url | relative_url }}" title="{{ link.name }}">
+                <i aria-hidden="true" class="{{ link.icon }}"></i>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="bts">
+            <a target="_blank" href="{{ content.button1.link }}" class="btn">
+              <span>{{ content.button1.label }}</span>
+            </a>
+            <a href="{{ content.button2.link }}" class="btn-lnk">{{ content.button2.label }}</a>
+          </div>
+        </div>
+        <div class="slide scrolla-element-anim-1 scroll-animate" data-animate="active">
+          <img decoding="async" src="{{ content.image | relative_url }}" alt="{{ content.image_alt }}" />
+
+          <span class="circle circle-1"></span>
+
+          <span class="circle img-1" style="background-image: url(assets/images/pat-1.png);"></span>
+          <span class="circle img-2" style="background-image: url(assets/images/pat-2.png);"></span>
+          <span class="circle img-3" style="background-image: url(assets/images/pat-2.png);"></span>
+
+          <div class="info-list">
+            <ul>
+              {% for item in content.info %}
+              <li>
+                <span class="num">
+                  {{ item.num }}
+                </span>
+                <span class="value">
+                  {{ item.value }}
+                </span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="lui-bgtitle">
+        <span>{{ content.bg_title }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,94 @@
+{% assign content = site.data.content['resume'] %}
+
+<!-- Section - Resume -->
+<section class="lui-section lui-gradient-bottom" id="resume-section">
+
+  <!-- Heading -->
+  <div class="lui-heading">
+    <div class="container">
+
+      <div class="m-titles align-center">
+        <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.title }}</span>
+        </h2>
+        <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+          <span>{{ content.subtitle }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="v-line v-line-left">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+          <h5 class="history-title scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <span>{{ content.education.title }}</span>
+          </h5>
+          <div class="history-items">
+            {% for item in content.education.items %}
+            <div class="history-item lui-collapse-item{% if forloop.first == true %} opened{% endif %} scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name lui-collapse-btn{% if forloop.first == true %} active{% endif %}">
+                <span>{{ item.name }}</span>
+              </h6>
+              <div class="history-content">
+                <div class="subname">
+                  <span>{{ item.subname }}</span>
+                </div>
+                <div class="date lui-subtitle">
+                  <span>{{ item.period }}</span>
+                </div>
+                <div class="text">
+                  <div>
+                    <p>{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+          <h5 class="history-title scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <span>{{ content.experience.title }}</span>
+          </h5>
+          <div class="history-items">
+            {% for item in content.experience.items %}
+            <div class="history-item lui-collapse-item{% if forloop.first == true %} opened{% endif %} scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name lui-collapse-btn{% if forloop.first == true %} active{% endif %}">
+                <span>{{ item.name }}</span>
+              </h6>
+              <div class="history-content">
+                <div class="subname">
+                  <span>{{ item.subname }}</span>
+                </div>
+                <div class="date lui-subtitle">
+                  <span>{{ item.period }}</span>
+                </div>
+                <div class="text">
+                  <div>
+                    <p>{{ item.text }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="lui-bgtitle">
+        <span>{{ content.bg_title }}</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>

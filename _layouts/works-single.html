@@ -1,0 +1,209 @@
+---
+layout: default
+---
+
+{% assign ui_text = site.data.ui-text['ui_text'] %}
+
+{% if page.author == nil %}
+	{% assign author = site.author %}
+{% else %}
+	{% assign author = page.author %}
+{% endif %}
+
+{% assign blog_url = 'blog/' %}
+
+<!-- Section Started Heading -->
+<section class="section section-inner started-heading">
+
+	<!-- Heading -->
+	<div class="container">
+		<div class="m-titles align-left">
+			<h1 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+				<span>{{ page.title }}</span>
+			</h1>
+			<div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+				<span>{{ page.category }}</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Details -->
+	<div class="v-line v-line-right v-line-top">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+					<div class="m-details">
+						{% for info in page.info %}
+						<div class="details-label">
+							<span>{{ info.label }}</span>
+							<strong><span>{{ info.value }}</span></strong>
+						</div>
+						{% endfor %}
+						<div class="details-label">
+							<span>{{ ui_text.categories }}</span>
+							<strong><span>{{ page.category }}</span></strong>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 align-right">
+
+					<a target="_blank" href="{{ page.preview_url }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">
+						<span>{{ ui_text.live_preview }}</span>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+{% if page.full_image != nil %}
+<!-- Section - Image -->
+<div class="section section-inner">
+
+	<!-- Image -->
+	<div class="m-image-large">
+		<div class="image">
+			<div class="img js-parallax" style="background-image: url({{ page.full_image | relative_url }});"></div>
+		</div>
+	</div>
+
+</div>
+{% endif %}
+
+{% if page.description1.title != nil or page.description1.text1 != nil or page.description1.text2 != nil %}
+<!-- Section - Description -->
+<section class="section section-inner">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="post-content">
+					<h4>{{ page.description1.title }}</h4>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description1.text1 }}
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description1.text2 }}
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
+<!-- Section - Gallery -->
+<div class="section section-inner">
+	<div class="container">
+
+		<!-- Section Gallery -->
+		<div class="m-gallery">
+			<div class="row">
+				{% for image in page.gallery %}
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div class="works-item">
+						<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
+							<div class="img">
+								<a href="{{ image | relative_url }}" class="has-popup-image">
+									<img decoding="async" src="{{ image | relative_url }}" alt="image" loading="lazy">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% if page.description2.title != nil or page.description2.text1 != nil or page.description2.text2 != nil %}
+<!-- Section - Description -->
+<section class="section section-inner">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="post-content">
+					<h4>{{ page.description2.title }}</h4>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description2.text1 }}
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description2.text2 }}
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
+{% if page.video.id != nil %}
+<!-- Section - Video -->
+<div class="section section-inner m-video-large">
+	<div class="video">
+		<div class="img js-parallax" style="background-image: url({{ page.video.poster | relative_url }});"></div>
+		<iframe class="js-video-iframe" data-src="https://www.youtube.com/embed/{{ page.video.id }}?showinfo=0&amp;rel=0&amp;autoplay=1"></iframe>
+		<div class="play"></div>
+	</div>
+</div>
+{% endif %}
+
+{% if page.previous.url or page.next.url %}
+<!-- Section - Navigation -->
+<div class="section section-inner m-page-navigation">
+	<div class="container">
+		<div class="h-titles h-navs">
+			{% if page.next.url %}
+			<a href="{{ page.next.url | relative_url }}">
+				<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ ui_text.next_project }}
+				</span>
+				<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
+					{{ page.next.title }}
+				</span>
+			</a>
+			{% else %}
+			<a href="{{ page.previous.url | relative_url }}">
+				<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ ui_text.prev_project }}
+				</span>
+				<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
+					{{ page.previous.title }}
+				</span>
+			</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endif %}

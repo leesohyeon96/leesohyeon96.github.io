@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign categories = site.data.settings['portfolio'] %}
+
+<!-- Section Started Heading -->
+<section class="section section-inner started-heading">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="m-titles align-center">
+      <h1 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+        <span>{{ page.title }}</span>
+      </h1>
+      <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
+        <span>{{ ui_text.works_subtitle }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Section - Works -->
+<section class="lui-section">
+
+  <!-- Works -->
+  <div class="v-line v-line-right v-line-top">
+    <div class="container">
+
+      <div class="works-box{% if categories.layout == 'list' %} works-list{% endif %}">
+        <div class="filter-links scrolla-element-anim-1 scroll-animate" data-animate="active">
+          <a href="#" class="lui-subtitle active" data-href=".works-col">{{ ui_text.all }}</a>
+          {% for category in categories.filters %}
+          <a href="#" class="lui-subtitle" data-href=".sorting-{{ category.slug }}">{{ category.name }}</a>
+          {% endfor %}
+        </div>
+        <div class="works-items{% if categories.layout == 'grid' %} works-masonry-items{% endif %}{% if categories.layout == 'list' %} works-list-items{% endif %} row">
+          {% for work in site.works %}
+          <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
+            <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="image">
+                <div class="img">
+                  <a href="{{ work.url }}">
+                    <img decoding="async" src="{{ work.image | relative_url }}" alt="{{ work.title }}" >
+                    <span class="overlay"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="desc">
+                <span class="category">{{ work.category }}</span>
+                <h5 class="name">
+                  <a href="{{ work.url }}">{{ work.title }}</a>
+                </h5>
+                <div class="text">
+                  <p>{{ work.short_description }}</p>
+                </div>
+                <a href="{{ work.url }}" class="lnk">{{ ui_text.see_project }}</a>
+              </div>
+              <div class="bg-img" style="background-image: url(/assets/images/pat-2.png);"></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="lui-bgtitle">
+        <span>{{ ui_text.works_bg_title }}</span>
+      </div>
+
+    </div>
+  </div>
+
+</section>
