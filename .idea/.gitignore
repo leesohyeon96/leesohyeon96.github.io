@@ -1,0 +1,15 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# 개인 설정 파일
+misc.xml
+modules.xml
+vcs.xml
+git_toolbox_blame.xml
+leesohyeon96.github.io.iml
