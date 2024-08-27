@@ -17,7 +17,7 @@ hero:
   button2:
     label: "My Skills" # 어떻게 할까?
     link: "#skills-section"
-  bg_title: "반갑습니다"
+  bg_title: "SHL Dev"
   info:
     - num: "2 <strong>+</strong>"
       value: "Years of <strong>Experience</strong>"

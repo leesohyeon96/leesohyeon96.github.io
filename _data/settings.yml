@@ -4,7 +4,7 @@
 
 ### Main Settings
 settings:
-  skin: "light" # select initial skin option: "light" or "dark"
+  skin: "dark" # select initial skin option: "light" or "dark"
 
 ### Preloader
 preloader:
@@ -21,7 +21,7 @@ header:
 ### Social
 social:
   - title: "velog"
-    icon: "fab fa-blog"  # velog에 맞는 아이콘이 있으면 사용, 없으면 "fab fa-blog" 같은 일반 아이콘 사용
+    icon: "fas fa-blog"
     url: "https://velog.io/@vkfkswjs26/"  # velog 프로필 URL로 변경
 
   - title: "Github"

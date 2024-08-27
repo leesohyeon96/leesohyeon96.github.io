@@ -1,6 +1,7 @@
 # UI default string configuration file
 ##
 ### use ui-text.yml file to quick change all default strings
+# 일관적으로 텍스트를 변경하고 싶은 경우 여기서 설정 가능
 
 ui_text:
   home:                 "Home"
