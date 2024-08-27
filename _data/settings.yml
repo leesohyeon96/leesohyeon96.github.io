@@ -10,32 +10,32 @@ settings:
 preloader:
   logo:
     image: "assets/img/logo2.png"
-    alt: "Zoé Miller"
+    alt: "Sohyeon Lee"
 
 ### Header
 header:
   logo:
     image: "assets/img/logo2.png"
-    alt: "Zoé Miller"
+    alt: "Sohyeon Lee"
 
 ### Social
 social:
-  - title: "Twitter"
-    icon: "fab fa-twitter"
-    url: "http://twitter.com"
+  - title: "velog"
+    icon: "fab fa-blog"  # velog에 맞는 아이콘이 있으면 사용, 없으면 "fab fa-blog" 같은 일반 아이콘 사용
+    url: "https://velog.io/@vkfkswjs26/"  # velog 프로필 URL로 변경
 
-  - title: "Dribbble"
-    icon: "fab fa-dribbble"
-    url: "http://dribbble.com"
+  - title: "Github"
+    icon: "fab fa-github"  # Github에 맞는 아이콘으로 변경
+    url: "https://github.com/leesohyeon96"  # Github 프로필 URL로 변경
 
-  - title: "Behance"
-    icon: "fab fa-behance"
-    url: "http://behance.com"
+  - title: "Mail"
+    icon: "fas fa-envelope"  # 메일을 나타내는 아이콘으로 변경
+    url: "mailto:vkfkswjs26@gmail.com"  # 실제 메일 주소로 변
 
 ### Footer
 footer:
-  developer: "Developed by <strong>bslthemes</strong>"
-  copyright: "<strong>Luique</strong>. All rights reserved"
+  developer: "Developed by <strong>sohyeon</strong>"
+  copyright: "<strong>SHL</strong>. All rights reserved"
 
 ### Portfolio Filters Settings
 portfolio:
