@@ -26,6 +26,7 @@ hero:
       value: "Completed <strong>Projects</strong>"
 
 ### Services [ services ]
+# 나중에 하기
 services: # who am I
   title: "What I Do"
   subtitle: "my <b>Services</b>"
@@ -64,39 +65,61 @@ services: # who am I
 
 ### Skills [ skills ]
 skills:
-  title: "Professional Skills"
+  title: "Skills"
   subtitle: "my <b>Talent</b>"
   bg_title: "Skills"
 
+  # BackEnd
   column1:
     items:
-      - label: "PHP" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "85" #0-100 progress in %
+      - label: "Java" #0-10 progress in dots
+        text: "국비지원 학원부터 현재까지 꾸준히 사용중"
+        value: "55" #0-100 progress in %
 
-      - label: "Python" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "75" #0-100 progress in %
+      - label: "Spring" #0-10 progress in dots
+        text: "국비지원 학원부터 현재까지 꾸준히 사용중"
+        value: "30" #0-100 progress in %
 
+  # FrontEnd
   column2:
     items:
       - label: "JavaScript" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "75" #0-100 progress in %
+        text: "국비지원 학원부터 회원 초반까지만 사용중"
+        value: "45" #0-100 progress in %
 
       - label: "React" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "70" #0-100 progress in %
+        text: "국비지원 수료 후 React & Node.js 프로젝트에서 사용"
+        value: "15" #0-100 progress in %
 
+  # 클라우드
   column3:
     items:
-      - label: "WordPress" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "90" #0-100 progress in %
+      - label: "AWS" #0-10 progress in dots
+        text: "AWS EC2 기능 사용"
+        value: "5" #0-100 progress in %
 
-      - label: "Adobe XD" #0-10 progress in dots
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        value: "80" #0-100 progress in %
+      - label: "Azure" #0-10 progress in dots
+        text: "재직 중인 회사에서 사용중 From 2022"
+        value: "20" #0-100 progress in %
+
+      - label: "Docker" #0-10 progress in dots
+        text: "국비지원 학원부터 현재까지 사용중"
+        value: "45" #0-100 progress in %
+
+  # DB
+  column4:
+    items:
+      - label: "Oracle" #0-10 progress in dots
+        text: "국비지원 학원에서 사용"
+        value: "60" #0-100 progress in %
+
+      - label: "MySQL | MariaDB" #0-10 progress in dots
+        text: "국비지원 학원부터 현재까지 사용중"
+        value: "70" #0-100 progress in %
+
+      - label: "MongoDB" #0-10 progress in dots
+        text: "재직 중인 회사 및 개인 프로젝트에 사용"
+        value: "5" #0-100 progress in %
 
 ### Resume [ resume ]
 resume:
