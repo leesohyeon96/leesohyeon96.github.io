@@ -41,14 +41,16 @@ footer:
 portfolio:
   layout: "list" # select works layout options: "Grid" or "List"
   filters:
-    - name: "UI UX Design"
-      slug: "ui-ux-design"
+    - name: "진행중인 프로젝트"
+      slug: "on-going-projects"
+#      slug: "ui-ux-design" # on-going-projects
 
-    - name: "Photography"
-      slug: "photography"
+    - name: "완료된 프로젝트"
+      slug: "completed-projects"
+#      slug: "photography" # completed-projects
 
-    - name: "Development"
-      slug: "development"
+#    - name: "Development"
+#      slug: "development"
 
-    - name: "Branding"
-      slug: "branding"
+#    - name: "Branding"
+#      slug: "branding"

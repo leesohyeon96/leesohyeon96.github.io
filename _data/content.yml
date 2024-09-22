@@ -80,14 +80,9 @@ skills:
         text: "국비지원 학원부터 현재까지 꾸준히 사용중"
         value: "30" #0-100 progress in %
 
-      - label: "MySQL | MariaDB" #0-10 progress in dots
-        text: "국비지원 학원부터 현재까지 사용중"
-        value: "70" #0-100 progress in %
-
-      - label: "MongoDB" #0-10 progress in dots
-        text: "재직 중인 회사 및 개인 프로젝트에 사용"
-        value: "5" #0-100 progress in %
-
+      - label: "Node.js" #0-10 progress in dots
+        text: "국비지원 수료 후 React & Node.js 프로젝트에서 사용"
+        value: "20" #0-100 progress in %
 
   # FrontEnd
   column2:
@@ -100,7 +95,7 @@ skills:
         text: "국비지원 수료 후 React & Node.js 프로젝트에서 사용"
         value: "15" #0-100 progress in %
 
-  # 클라우드
+  # 클라우드 & DB
   column3:
     items:
       - label: "AWS" #0-10 progress in dots
@@ -115,20 +110,17 @@ skills:
         text: "국비지원 학원부터 현재까지 사용중"
         value: "45" #0-100 progress in %
 
-  # DB
-#  column4:
-#    items:
-#      - label: "Oracle" #0-10 progress in dots
-#        text: "국비지원 학원에서 사용"
-#        value: "60" #0-100 progress in %
-#
-#      - label: "MySQL | MariaDB" #0-10 progress in dots
-#        text: "국비지원 학원부터 현재까지 사용중"
-#        value: "70" #0-100 progress in %
-#
-#      - label: "MongoDB" #0-10 progress in dots
-#        text: "재직 중인 회사 및 개인 프로젝트에 사용"
-#        value: "5" #0-100 progress in %
+      - label: "MySQL | MariaDB" #0-10 progress in dots
+        text: "국비지원 학원부터 현재까지 사용중"
+        value: "70" #0-100 progress in %
+
+      - label: "MongoDB" #0-10 progress in dots
+        text: "재직 중인 회사 및 개인 프로젝트에 사용"
+        value: "5" #0-100 progress in %
+
+      - label: "Oracle" #0-10 progress in dots
+        text: "국비지원 학원에서 사용"
+        value: "60" #0-100 progress in %
 
 ### Resume [ resume ]
 resume:
@@ -306,9 +298,9 @@ contacts:
 ### Portfolio [ portfolio ]
 #items generates from dir /_works/*
 portfolio:
-  title: "Portfolio"
+  title: "Projects"
   subtitle: "my <b>Cases</b>"
-  bg_title: "Portfolio"
+  bg_title: "Projects"
   button:
     link: "works/"
-    label: "View More"
+    label: "자세히 보기"
