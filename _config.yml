@@ -34,7 +34,7 @@ email: "vkfkwjs26@gamil.com"
 description: "SHL PR | Project | Portfolio | History etc"
 author: "Admin"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://leesohyeon96.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 date_format: "%Y %B %d" # 2024 August 26
 
 # paginations & permalinks
