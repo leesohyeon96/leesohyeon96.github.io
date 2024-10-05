@@ -25,43 +25,6 @@ hero:
     - num: "3"
       value: "Completed <strong>Projects</strong>"
 
-### Services [ services ]
-#services:
-#  title: "What I Do" # 내가 뭘할 수 있는지? > 나중에 작성 예정
-#  subtitle: "my <b>Services</b>"
-#  bg_title: "Services"
-#
-#  items:
-#    - title: "Web Design &amp; Logo"
-#      subtitle: "Web Development"
-#      text: "Web designers craft the overall vision &amp; plan for a website layout. Professional logo development: Business, Company, or Personal."
-#      button_label: "See Pricing"
-#      button_link: "#pricing-section"
-#
-#    - title: "iOS &amp; Android"
-#      subtitle: "Apps Development"
-#      text: "Design Software applications to run on mobile devices. Modern and mobile-ready application that will help you reach all of your marketing."
-#      button_label: "See Pricing"
-#      button_link: "#pricing-section"
-#
-#    - title: "Unity &amp; Unreal Engine"
-#      subtitle: "Game Development"
-#      text: "Creating games &amp; describes the design, development and release of a game. Developing unique mobile android and ios games."
-#      button_label: "See Pricing"
-#      button_link: "#pricing-section"
-#
-#    - title: "Google Ads"
-#      subtitle: "Advertising"
-#      text: "Advertising services include: Google search result pages, gmails, YouTube and other websites participated in Google Ads program."
-#      button_label: "See Pricing"
-#      button_link: "#pricing-section"
-#
-#    - title: "Sound Track"
-#      subtitle: "Music Writing"
-#      text: "Music copying, writing, creating, transcription and composition services."
-#      button_label: "See Pricing"
-#      button_link: "#pricing-section"
-
 ### Skills [ skills ]
 skills:
   title: "스킬"
@@ -164,8 +127,93 @@ resume:
 #        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 
+### Blog [ blog ]
+
+
+#items generates from dir /_posts/*
+blog:
+  title: "블로그"
+  subtitle: "you can see blog"
+  bg_title: "Blog"
+  button:
+    label: "View Blog"
+    link: "blog/"
+### Contact [ contacts ]
+
+
+contacts:
+  title: "연락처"
+  subtitle: "Contact Me"
+  bg_title: "Contact"
+
+  list:
+    - label: "주소"
+      icon: "far fa-map"
+      text: "대한민국, 성남시"
+
+#    - label: "Freelance"
+#      icon: "far fa-user"
+#      text: "Available Right Now"
+
+    - label: "이메일"
+      icon: "far fa-envelope"
+      text: "vkfkswjs26@gamil.com"
+#    - label: "Phone"
+
+#      icon: "far fa-address-book"
+#      text: "+82 900 - 900 - 9000"
+### Portfolio [ portfolio ]
+
+#items generates from dir /_works/*
+portfolio:
+  title: "Projects"
+  subtitle: "my <b>Cases</b>"
+  bg_title: "Projects"
+  button:
+    link: "works/"
+    label: "자세히 보기"
+
+
+### Services [ services ]
+# services: # 이거 없애니까 이상하게 나와서 다시 살려야될듯?
+#  title: "What I Do" # 내가 뭘할 수 있는지? > 나중에 작성 예정
+#  subtitle: "my <b>Services</b>"
+#  bg_title: "Services"
+#
+#  items:
+#    - title: "Web Design &amp; Logo"
+#      subtitle: "Web Development"
+#      text: "Web designers craft the overall vision &amp; plan for a website layout. Professional logo development: Business, Company, or Personal."
+#      button_label: "See Pricing"
+#      button_link: "#pricing-section"
+#
+#    - title: "iOS &amp; Android"
+#      subtitle: "Apps Development"
+#      text: "Design Software applications to run on mobile devices. Modern and mobile-ready application that will help you reach all of your marketing."
+#      button_label: "See Pricing"
+#      button_link: "#pricing-section"
+#
+#    - title: "Unity &amp; Unreal Engine"
+#      subtitle: "Game Development"
+#      text: "Creating games &amp; describes the design, development and release of a game. Developing unique mobile android and ios games."
+#      button_label: "See Pricing"
+#      button_link: "#pricing-section"
+#
+#    - title: "Google Ads"
+#      subtitle: "Advertising"
+#      text: "Advertising services include: Google search result pages, gmails, YouTube and other websites participated in Google Ads program."
+#      button_label: "See Pricing"
+#      button_link: "#pricing-section"
+#
+#    - title: "Sound Track"
+#      subtitle: "Music Writing"
+#      text: "Music copying, writing, creating, transcription and composition services."
+#      button_label: "See Pricing"
+#      button_link: "#pricing-section"
+
+
 ### Testimonials [ testimonials ] # 안쓸거같아서 주석함
-#testimonials:
+# testimonials:
 #  title: "후기" # Testimonials
 #  subtitle: "what <b>Customers Say</b>"
 #  bg_title: "Reviews"
@@ -198,7 +246,7 @@ resume:
 
 
 ### Pricing [ pricing ] > 필요 없는 기능이라 삭제
-#pricing:
+# pricing:
 #  title: "Pricing"
 #  subtitle: "my <b>Price Board</b>"
 #  bg_title: "Pricing"
@@ -258,48 +306,3 @@ resume:
 #      button:
 #        label: "Start Project"
 #        link: "#contact-section"
-
-
-### Blog [ blog ]
-#items generates from dir /_posts/*
-blog:
-  title: "블로그"
-  subtitle: "you can see blog"
-  bg_title: "Blog"
-  button:
-    label: "View Blog"
-    link: "blog/"
-
-
-### Contact [ contacts ]
-contacts:
-  title: "연락처"
-  subtitle: "Contact Me"
-  bg_title: "연락처"
-
-  list:
-    - label: "주소"
-      icon: "far fa-map"
-      text: "대한민국, 성남시"
-
-#    - label: "Freelance"
-#      icon: "far fa-user"
-#      text: "Available Right Now"
-
-    - label: "Email"
-      icon: "far fa-envelope"
-      text: "vkfkswjs26@gamil.com"
-
-#    - label: "Phone"
-#      icon: "far fa-address-book"
-#      text: "+82 900 - 900 - 9000"
-
-### Portfolio [ portfolio ]
-#items generates from dir /_works/*
-portfolio:
-  title: "Projects"
-  subtitle: "my <b>Cases</b>"
-  bg_title: "Projects"
-  button:
-    link: "works/"
-    label: "자세히 보기"
