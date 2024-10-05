@@ -166,8 +166,8 @@ contacts:
 
 #items generates from dir /_works/*
 portfolio:
-  title: "Projects"
-  subtitle: "my <b>Cases</b>"
+  title: "프로젝트"
+  subtitle: "my <b>Personal Project</b>"
   bg_title: "Projects"
   button:
     link: "works/"
