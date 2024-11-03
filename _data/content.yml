@@ -95,8 +95,8 @@ resume:
     items:
       - name: "[예시] 국비지원 "
         subname: "Backend Programming"
-        period: "2014 - 2016"
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        period: "2021.10 - 2022.5"
+        text: "더조은아카데미 [자바 웹개발&앱개발자(시큐어코딩, Docker)양성과정] 수료"
 
 #      - name: "Lviv National Academy of Arts"
 #        subname: "Faculty of Design"
@@ -111,11 +111,11 @@ resume:
   experience:
     title: "Experience"
     items:
-      - name: "[예시] 백엔드 개발자"
+      - name: "[예시] ㅎㅅㅋㄴㅌ 재직중"
         subname: "Soft Tech Inc."
-        period: "2020 - <b>Present</b>"
+        period: "2022 - <b>Present</b>"
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
+# 블로그 링크 걸수있으면 걸기 !
 #      - name: "UI / UX Specialist"
 #        subname: "Kana Design Studio"
 #        period: "2018 - 2020"
