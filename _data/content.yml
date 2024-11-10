@@ -77,7 +77,7 @@ skills:
         value: "25" #0-100 progress in %
 
       - label: "Docker" #0-10 progress in dots
-        text: "기본적인 기능 & Docker Swarm 기능 사용"
+        text: "기본적인 기능 & Docker Compose 기능 사용"
         value: "45" #0-100 progress in %
 
       - label: "MySQL | MariaDB" #0-10 progress in dots
@@ -131,9 +131,19 @@ resume:
 #        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 
+### Portfolio [ portfolio ]
+#items generates from dir /_works/*
+portfolio:
+  title: "프로젝트"
+  subtitle: "my <b>Personal Project</b>"
+  bg_title: "Projects"
+  button:
+    link: "works/"
+    label: "자세히 보기"
+
+
+
 ### Blog [ blog ]
-
-
 #items generates from dir /_posts/*
 blog:
   title: "블로그"
@@ -166,16 +176,6 @@ contacts:
 
 #      icon: "far fa-address-book"
 #      text: "+82 900 - 900 - 9000"
-### Portfolio [ portfolio ]
-
-#items generates from dir /_works/*
-portfolio:
-  title: "프로젝트"
-  subtitle: "my <b>Personal Project</b>"
-  bg_title: "Projects"
-  button:
-    link: "works/"
-    label: "자세히 보기"
 
 
 ### Services [ services ]
