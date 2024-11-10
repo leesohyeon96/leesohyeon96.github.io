@@ -89,6 +89,16 @@ layout: default
 				</div>
 
 			</div>
+
+			{% if page.description1.description1_image %}
+			<div class="m-image-large">
+				<div class="description1_image">
+					<div class="img js-parallax" style="background-image: url({{ page.description1.description1_image | relative_url }});"></div>
+				</div>
+				</div>
+			</div>
+			{% endif %}
+
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 				<div class="post-content">
