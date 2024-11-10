@@ -24,7 +24,7 @@ info:
 description1:
   show: yes
   title: 주요 기능 
-  description1_image: assets/img/works/byat/mainMethod.png
+#  description1_image: assets/img/works/byat/mainMethod.png
   text1: 주요 기능 중 '로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더
   text2: 구체적인 구현 내용 URL = https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4
 
