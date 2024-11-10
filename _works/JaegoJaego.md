@@ -1,7 +1,7 @@
 ---
 # preview details --> 재고재고로 고치기!!!
 layout: works-single # or Page 로 하면 됨
-title: BYAT[Better than Your Agile Tool] Project
+title: JaegoJaego Project
 category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/byatLogin.jpg  

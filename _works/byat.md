@@ -35,10 +35,10 @@ description1:
 
 description2:
   title: Github Gist -> 아니면 md 하나 더 만들어서 거기서 다 보도록 ? 
-  text1: [JSP]<script src="https://gist.github.com/leesohyeon96/e146794f17d53f544a2738c1259824de.js"></script>[Controller]<script src="https://gist.github.com/leesohyeon96/fbbd8defccd8ff27710502454972ea74.js"></script>[Service]<script src="https://gist.github.com/leesohyeon96/d2043d067fd4e16eb4960edcc86cb3f3.js"></script>[Mapper]<script src="https://gist.github.com/leesohyeon96/7856326263d5235e19a57f5c3b17a26c.js"></script> 
+#  text1: [JSP]<script src="https://gist.github.com/leesohyeon96/e146794f17d53f544a2738c1259824de.js"></script>[Controller]<script src="https://gist.github.com/leesohyeon96/fbbd8defccd8ff27710502454972ea74.js"></script>[Service]<script src="https://gist.github.com/leesohyeon96/d2043d067fd4e16eb4960edcc86cb3f3.js"></script>[Mapper]<script src="https://gist.github.com/leesohyeon96/7856326263d5235e19a57f5c3b17a26c.js"></script> 
 
-video:
-  poster: assets/img/blog/blog9.jpg
-  id: Gu6z6kIukgg
+#video:
+#  poster: assets/img/blog/blog9.jpg
+#  id: Gu6z6kIukgg
 ---
 
