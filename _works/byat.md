@@ -21,9 +21,9 @@ info:
     value: STS3, GitLab, Sourcetree, Figma
 
 description1:
-  show: yes
+  show: true
   title: System Architecture 
-  text: 왜 안나오지? text? 
+  text1: 왜 안나오지? text? 
 
 gallery:
   - assets/img/works/ohguohgutalk/ohguhogutalkarchitecture.png
@@ -31,7 +31,7 @@ gallery:
 
 description2:
   title: Github | Github Gist
-  text: 깃헙 주소 https://github.com/leesohyeon96/real-ohguohgutalk <br/> 로그인 <br/> <script src="https://gist.github.com/leesohyeon96/359cf041e84d7a8b6a0e595b0cad4ee6.js"></script> <br/> 채팅 <script src="https://gist.github.com/leesohyeon96/dbd3052ad21d90de25c0ace5843b28f9.js"></script>
+  text1: 깃헙 주소 https://github.com/leesohyeon96/real-ohguohgutalk <br/> 로그인 <br/> <script src="https://gist.github.com/leesohyeon96/359cf041e84d7a8b6a0e595b0cad4ee6.js"></script> <br/> 채팅 <script src="https://gist.github.com/leesohyeon96/dbd3052ad21d90de25c0ace5843b28f9.js"></script>
 
 #video: -> 비디오 필요하면 넣기
 #  poster: assets/img/blog/blog9.jpg
