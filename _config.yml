@@ -28,6 +28,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# [로컬에서 변경사항 확인하기]
+# 1. sudo gem install jekyll bundler
+# 2. bundle exec jekyll serve -> 로컬서버실행 (프로젝트 루트 디렉터리에서)
+# 3. http://localhost:4000 로 접근
+
+
 # basic settings
 title: "SHL Dev"
 email: "vkfkwjs26@gamil.com"

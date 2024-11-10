@@ -90,11 +90,10 @@ layout: default
 
 			</div>
 
-			{% if page.description1.description1_image %}
+			{% if page.description1 and page.description1.description1_image %}
 			<div class="m-image-large">
 				<div class="description1_image">
 					<div class="img js-parallax" style="background-image: url({{ page.description1.description1_image | relative_url }});"></div>
-				</div>
 				</div>
 			</div>
 			{% endif %}
