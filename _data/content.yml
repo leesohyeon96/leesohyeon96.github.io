@@ -35,26 +35,34 @@ skills:
   column1:
     items:
       - label: "Java" #0-10 progress in dots
-        text: "국비지원 학원부터 현재까지 꾸준히 사용중"
+        text: "기본적인 기능 사용"
         value: "55" #0-100 progress in %
 
       - label: "Spring" #0-10 progress in dots
-        text: "국비지원 학원부터 현재까지 꾸준히 사용중"
+        text: "기본적인 기능 사용"
         value: "30" #0-100 progress in %
 
       - label: "Node.js" #0-10 progress in dots
-        text: "국비지원 수료 후 React & Node.js 프로젝트에서 사용"
+        text: "Axios & fetch 로 API 호출 기능 사용 & React & Node.js 프로젝트에서 잠깐 사용"
+        value: "15" #0-100 progress in %
+
+      - label: "Mybatis" #0-10 progress in dots
+        text: "기본적인 CRUD 기능 사용 & 재귀적인 쿼리 처리(with recursive) 기능 & 동적쿼리 등등 사용"
+        value: "55" #0-100 progress in %
+
+      - label: "JPA" #0-10 progress in dots
+        text: "기본적인 개념 & CRUD 기능 사용 & JPQL & Native 쿼리 & Spring Data JPA 기능 사용"
         value: "20" #0-100 progress in %
 
   # FrontEnd
   column2:
     items:
       - label: "JavaScript" #0-10 progress in dots
-        text: "국비지원 학원부터 회원 초반까지만 사용중"
-        value: "45" #0-100 progress in %
+        text: "기본적인 기능 & JSP 사용"
+        value: "35" #0-100 progress in %
 
       - label: "React" #0-10 progress in dots
-        text: "국비지원 수료 후 React & Node.js 프로젝트에서 사용"
+        text: "useEffect/useState 등 기본개념 공부 및 활용 & React & Node.js 프로젝트에서 잠깐 사용"
         value: "15" #0-100 progress in %
 
   # 클라우드 & DB
@@ -65,24 +73,20 @@ skills:
         value: "5" #0-100 progress in %
 
       - label: "Azure" #0-10 progress in dots
-        text: "재직 중인 회사에서 사용중 From 2022"
-        value: "20" #0-100 progress in %
+        text: "App Service & Azure Function & Gateway 기능 사용"
+        value: "25" #0-100 progress in %
 
       - label: "Docker" #0-10 progress in dots
-        text: "국비지원 학원부터 현재까지 사용중"
+        text: "기본적인 기능 & Docker Swarm 기능 사용"
         value: "45" #0-100 progress in %
 
       - label: "MySQL | MariaDB" #0-10 progress in dots
-        text: "국비지원 학원부터 현재까지 사용중"
-        value: "70" #0-100 progress in %
+        text: "기본적인 기능 & routines(저장 프로시저 & 저장 함수) 기능 사용"
+        value: "60" #0-100 progress in %
 
       - label: "MongoDB" #0-10 progress in dots
-        text: "재직 중인 회사 및 개인 프로젝트에 사용"
+        text: "기본적인 개념 & 기본적인 명령어(CRUD) 사용"
         value: "5" #0-100 progress in %
-
-      - label: "Oracle" #0-10 progress in dots
-        text: "국비지원 학원에서 사용"
-        value: "60" #0-100 progress in %
 
 ### Resume [ resume ]
 resume:
