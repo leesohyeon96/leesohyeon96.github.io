@@ -97,11 +97,10 @@ resume:
   education:
     title: "Education"
     items:
-      - name: "[예시] 국비지원 "
-        subname: "Backend Programming"
-        period: "2021.10 - 2022.5"
-        text: "더조은아카데미 [자바 웹개발&앱개발자(시큐어코딩, Docker)양성과정] 수료"
-
+      - name: "국비지원학원 IT 교육 수료"
+        subname: "더조은아카데미 [자바 웹개발&앱개발자(시큐어코딩, Docker)양성과정] 수료"
+        period: "2021.10 - 2022.05"
+        text: "약 7개월간의 교육기간 동안 Java의 전반적인 개념 & Spring과 JDBC의 점진적 발전 과정 공부 & 총 2개의 프로젝트를 진행"
 #      - name: "Lviv National Academy of Arts"
 #        subname: "Faculty of Design"
 #        period: "2012 - 2014"
@@ -115,10 +114,17 @@ resume:
   experience:
     title: "Experience"
     items:
-      - name: "[예시] ㅎㅅㅋㄴㅌ 재직중"
-        subname: "Soft Tech Inc."
-        period: "2022 - <b>Present</b>"
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      - name: "React & Node.js 스터디 및 프로젝트 진행"
+        subname: "동기들과 React 강의를 들으며 스터디 및 프로젝트 진행"
+        period: "2022.05 ~ 2022.08"
+        text: "국비지원 동기들과 React 강의를 들으며 스터디 진행함과 동시에 프론트 서버(React) & 백엔드 서버(Node.js)를 설정으로 하는 프로젝트 진행함"
+
+      - name: "첫 번째 회사"
+        subname: "의료 계열 B2B & B2C 서비스"
+        period: "2022.09 - <b>Present</b>"
+        text: "풀스택으로 입사하여 현재는 백엔드 개발자로 재직중"
+
+
 # 블로그 링크 걸수있으면 걸기 !
 #      - name: "UI / UX Specialist"
 #        subname: "Kana Design Studio"
