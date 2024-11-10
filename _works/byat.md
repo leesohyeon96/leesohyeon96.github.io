@@ -4,12 +4,12 @@ layout: works-single # or Page 로 하면 됨
 title: BYAT[Better than Your Agile Tool] Project
 category: 완료된 프로젝트
 category_slug: completed-projects
-image: assets/img/works/ohguohgutalkInfra.jpg # infra 가져와서 넣으면 ㄱㄱ 
+image: assets/img/works/byatLogin.jpg  
 short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
 
 # full details
 live_preview: https://www.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401 # 뭘까 -> 미리 프리뷰 보여주는 것 같은데 
-full_image: assets/img/works/byat/ohguohgutalkThumb.png # 썸네일 넣기
+full_image: assets/img/works/byat/byatLogin.png # 썸네일 넣기
 info:
   - label: 기간
     value: 2021.12 ~ 2022.03 (총 3개월)
