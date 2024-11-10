@@ -25,16 +25,17 @@ description1:
   show: yes
   title: 주요 기능 
   description1_image: assets/img/works/byat/mainMethod.png
-  text1: 
-  text2: 
+  text1: 주요 기능 중 '로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더
+  text2: 구체적인 구현 내용 URL = https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4
 
-gallery:
-  - assets/img/works/ohguohgutalk/ohguhogutalkarchitecture.png
-  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
+# 여따가 뭘 더 게시할까?
+#gallery:
+#  - assets/img/works/ohguohgutalk/ohguhogutalkarchitecture.png
+#  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
 
 description2:
-  title: Github | Github Gist
-  text1: 깃헙 주소 https://github.com/leesohyeon96/real-ohguohgutalk <br/> 로그인 <br/> <script src="https://gist.github.com/leesohyeon96/359cf041e84d7a8b6a0e595b0cad4ee6.js"></script> <br/> 채팅 <script src="https://gist.github.com/leesohyeon96/dbd3052ad21d90de25c0ace5843b28f9.js"></script>
+  title: Github Gist -> 아니면 md 하나 더 만들어서 거기서 다 보도록 ? 
+  text1: [JSP]<script src="https://gist.github.com/leesohyeon96/e146794f17d53f544a2738c1259824de.js"></script>[Controller]<script src="https://gist.github.com/leesohyeon96/fbbd8defccd8ff27710502454972ea74.js"></script>[Service]<script src="https://gist.github.com/leesohyeon96/d2043d067fd4e16eb4960edcc86cb3f3.js"></script>[Mapper]<script src="https://gist.github.com/leesohyeon96/7856326263d5235e19a57f5c3b17a26c.js"></script> 
 
 video:
   poster: assets/img/blog/blog9.jpg
