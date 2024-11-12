@@ -59,8 +59,9 @@ formspree_endpoint: "https://formspree.io/f/your_endpoint" # sign up on https://
 collections:
   works:
     output: true
-    permalink: /:collection/:name
-
+    permalink: "/:collection/:name"
+include:
+  - _works/_sub
 
 # archives
 jekyll-archives:
