@@ -2,7 +2,7 @@
 # preview details
 layout: works-single # or Page 로 하면 됨
 title: BYAT[Better than Your Agile Tool] Project
-category: 완료된 프로젝트
+#category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/byatLogin.jpg  
 short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
@@ -16,9 +16,9 @@ info:
     value: 2021.12 ~ 2022.03 (총 3개월)
   - label: About Technology
     value: Java11, SpringBoot Framework, JavaScript, HTML5, CSS3
-  - label: About DataBase Tech
+  - label: About DataBase Technology
     value: Oracle, Mybatis, DBeaver
-  - label: The Others
+  - label: Other Technologies
     value: STS3, GitLab, Sourcetree, Figma
 
 description1:
@@ -34,8 +34,7 @@ description1:
 
 description2:
   title: Github Gist 
-  text1: <a href="/works/byatgist" target="_blank">BYAT 구현기능 Github gist 확인하기</a> 
-  
+  text1: <a href="/works/sub/byatgist" target="_blank">BYAT 구현기능 - 로그인 Github gist 확인하기</a> 
 
 #video:
 #  poster: assets/img/blog/blog9.jpg
