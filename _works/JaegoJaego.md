@@ -4,37 +4,36 @@ layout: works-single # or Page 로 하면 됨
 title: JaegoJaego Project
 category: 완료된 프로젝트
 category_slug: completed-projects
-image: assets/img/works/byatLogin.jpg  
-short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
+image: assets/img/works/jaegojaego/jaegojaegoLogin.png  
+short_description: JaegoJaego는 재고관리 및 수발주 운영 관리 프로그램
 
 # full details
-live_preview: https://www.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401 # 뭘까 -> 미리 프리뷰 보여주는 것 같은데 
-full_image: assets/img/works/byat/byatLogin.png # 썸네일 넣기
+live_preview: https://www.figma.com/proto/6CP6gpOAIezJj67uHldKBO?embed_host=notion&kind=proto&node-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=471%3A66039 
+full_image: assets/img/works/jaegojaego/jaegojaegoLogin.png
 info:
   - label: 기간
-    value: 2021.12 ~ 2022.03 (총 3개월)
+    value: 2022.03 ~ 2022.05 (총 3개월)
   - label: About Technology
-    value: Java11, SpringBoot Framework, JavaScript, HTML5, CSS3
-  - label: About DataBase Tech
-    value: Oracle, Mybatis, DBeaver
-  - label: The Others
-    value: STS3, GitLab, Sourcetree, Figma
+    value: Java11, SpringBoot, JavaScript, HTML5, CSS3
+  - label: About DataBase Technology
+    value: Oracle, JPA, DBeaver
+  - label: Other Technologies
+    value: Intellij, GitLab, Sourcetree, Figma
 
 description1:
-  show: true
-  title: System Architecture 
-  text1: 왜 안나오지? text? 
-
-gallery:
-  - assets/img/works/ohguohgutalk/ohguhogutalkarchitecture.png
-  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
+  show: yes
+  title: 주요 기능 
+#  description1_image: assets/img/works/.. 
+  text1: 주요 기능 중 메뉴, 백로그 관리 기능 구현 <br/> <a href="https://sudden-milk-758.notion.site/77865870d7994e6cb3293db917ae161b?pvs=4" target="_blank">구체적인 구현 내용 확인하기</a>
 
 description2:
-  title: Github | Github Gist
-  text1: 깃헙 주소 https://github.com/leesohyeon96/real-ohguohgutalk <br/> 로그인 <br/> <script src="https://gist.github.com/leesohyeon96/359cf041e84d7a8b6a0e595b0cad4ee6.js"></script> <br/> 채팅 <script src="https://gist.github.com/leesohyeon96/dbd3052ad21d90de25c0ace5843b28f9.js"></script>
+  title: Github Gist 
+  text1: <a href="/works/sub/jaegogist" target="_blank">JaegoJaego 구현기능 - 00 Github gist 확인하기</a> 
 
-#video: -> 비디오 필요하면 넣기
-#  poster: assets/img/blog/blog9.jpg
-#  id: Gu6z6kIukgg
+# 어떻게 구상할지?
+# (ㅇㅇ) 사진넣기
+# 1. 노션 전체 페이지 보러가기 ->  https://sudden-milk-758.notion.site/9953dde2bd24403794f22c5c9ea0cdbd?pvs=4
+# 2. 구현 기능 대충 설명 -> 보러라기 
+# 3. Github Gist 보여주기
 ---
 

@@ -2,13 +2,14 @@
 # preview details
 layout: works-single # or Page 로 하면 됨
 title: BYAT[Better than Your Agile Tool] Project
-#category: 완료된 프로젝트
+category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/byatLogin.jpg  
 short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
 
 # full details
 # preview_url 로 key 값 고쳐도 그런지 보기
+# TODO: live-preview 피그마 동작하는 거 보여줄 수 있는지 try 해보기
 live_preview: https://www.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401 # 뭘까 -> 미리 프리뷰 보여주는 것 같은데 
 full_image: assets/img/works/byat/byatLogin.png
 info:
@@ -35,6 +36,7 @@ description1:
 description2:
   title: Github Gist 
   text1: <a href="/works/sub/byatgist" target="_blank">BYAT 구현기능 - 로그인 Github gist 확인하기</a> 
+  # TODO : 404 안뜨도록 해야함 ㅠㅠ
 
 #video:
 #  poster: assets/img/blog/blog9.jpg
