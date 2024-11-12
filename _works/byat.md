@@ -34,7 +34,7 @@ description1:
 
 description2:
   title: Github Gist 
-  text1: <a href="/byatGist" target="_blank">BYAT 구현기능 Github gist 확인하기</a> 
+  text1: <a href="/works/byatgist" target="_blank">BYAT 구현기능 Github gist 확인하기</a> 
   
 
 #video:
