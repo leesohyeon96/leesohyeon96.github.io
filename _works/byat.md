@@ -25,8 +25,7 @@ description1:
   show: yes
   title: 주요 기능 
 #  description1_image: assets/img/works/byat/mainMethod.png
-  text1: 주요 기능 중 '로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더
-  text2: <a href="https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4" target="_blank">구체적인 구현 내용 확인하기</a>
+  text1: 주요 기능 중 '로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더 구현 <br/> <a href="https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4" target="_blank">구체적인 구현 내용 확인하기</a>
 
 # 여따가 뭘 더 게시할까?
 #gallery:
@@ -34,8 +33,9 @@ description1:
 #  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
 
 description2:
-  title: Github Gist -> 아니면 md 하나 더 만들어서 거기서 다 보도록 ? 
-#  text1: [JSP]<script src="https://gist.github.com/leesohyeon96/e146794f17d53f544a2738c1259824de.js"></script>[Controller]<script src="https://gist.github.com/leesohyeon96/fbbd8defccd8ff27710502454972ea74.js"></script>[Service]<script src="https://gist.github.com/leesohyeon96/d2043d067fd4e16eb4960edcc86cb3f3.js"></script>[Mapper]<script src="https://gist.github.com/leesohyeon96/7856326263d5235e19a57f5c3b17a26c.js"></script> 
+  title: Github Gist 
+  text1: <a href="/_byat/githubGist.md" target="_blank">BYAT 구현기능 Github gist 확인하기</a> 
+  
 
 #video:
 #  poster: assets/img/blog/blog9.jpg
