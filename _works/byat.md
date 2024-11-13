@@ -4,7 +4,7 @@ layout: works-single # or Page 로 하면 됨
 title: BYAT[Better than Your Agile Tool] Project
 category: 완료된 프로젝트
 category_slug: completed-projects
-image: assets/img/works/byatLogin.jpg  
+image: assets/img/works/byat/byatLogin.jpg  
 short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
 
 # full details
