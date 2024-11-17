@@ -60,8 +60,9 @@ collections:
   works:
     output: true
     permalink: "/:collection/:name"
-include:
-  - _works/_sub
+  sub:
+    output: true
+    permalink: "/:collection/:name"
 
 # archives
 jekyll-archives:

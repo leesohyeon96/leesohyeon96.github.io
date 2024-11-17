@@ -172,14 +172,7 @@ layout: default
 			{% if page.description2.description2_image %}
 			<div class="col-12">
 				<div class="m-image-large" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd;">
-					<div class="image">
-						<div class="img js-parallax"
-							 style="background-image: url({{ page.description2.description2_image | relative_url }});
-								   height: 500px;
-								   background-size: contain;
-								   background-repeat: no-repeat;">
-						</div>
-					</div>
+					<img src="{{ page.description2.description2_image | relative_url }}" alt="main_method_image" style="width: 100%; height: auto;">
 				</div>
 			</div>
 			{% endif %}
@@ -221,7 +214,7 @@ layout: default
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 				<div class="post-content">
-					<a href="{{ page.description3.githubgist_url }}" target="_blank">{{ page.description3.text1 }}</a>
+					<a href="{{ page.description3.githubgist_url | relative_url }}" target="_blank">{{ page.description3.text1 }}</a>
 				</div>
 
 			</div>
