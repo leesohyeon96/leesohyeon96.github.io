@@ -50,9 +50,21 @@ layout: default
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 align-right">
 
-					<a target="_blank" href="{{ page.preview_url }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">
-						<span>{{ ui_text.live_preview }}</span>
-					</a>
+<!--					<a target="_blank" href="{{ page.preview_url }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">-->
+<!--						<span>{{ ui_text.live_preview }}</span>-->
+<!--					</a>-->
+
+					<!-- Figma 프로토타입을 바로 임베드 -->
+					<div id="figma-preview-container">
+						<iframe
+								id="figma-preview"
+								src="{{ page.figma_url }}"
+								width="800"
+								height="600"
+								frameborder="0"
+								allowfullscreen>
+						</iframe>
+					</div>
 
 				</div>
 			</div>
@@ -89,14 +101,6 @@ layout: default
 				</div>
 
 			</div>
-
-			{% if page.description1 and page.description1.description1_image %}
-			<div class="m-image-large">
-				<div class="description1_image">
-					<div class="img js-parallax" style="background-image: url({{ page.description1.description1_image | relative_url }});"></div>
-				</div>
-			</div>
-			{% endif %}
 
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
@@ -157,6 +161,15 @@ layout: default
 				</div>
 
 			</div>
+
+			{% if page.description2 and page.description2.description2_image %}
+			<div class="m-image-large">
+				<div class="description2_image">
+					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
+				</div>
+			</div>
+			{% endif %}
+
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 				<div class="post-content">
@@ -176,6 +189,41 @@ layout: default
 	</div>
 </section>
 {% endif %}
+
+
+{% if page.description3.title != nil or page.description3.text1 != nil or page.description3.text2 != nil %}
+<!-- Section - Description -->
+<section class="section section-inner">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="post-content">
+					<h4>{{ page.description3.title }}</h4>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description3.text1 }}
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<div class="post-content">
+					{{ page.description3.text2 }}
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+{% endif %}
+
 
 {% if page.video.id != nil %}
 <!-- Section - Video -->
