@@ -170,9 +170,16 @@ layout: default
 			</div>
 
 			{% if page.description2.description2_image %}
-			<div class="m-image-large">
-				<div class="image" style="overflow: auto; width: 100%; height: 500px;">
-					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
+			<div class="col-12">
+				<div class="m-image-large" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd;">
+					<div class="image">
+						<div class="img js-parallax"
+							 style="background-image: url({{ page.description2.description2_image | relative_url }});
+								   height: 500px;
+								   background-size: contain;
+								   background-repeat: no-repeat;">
+						</div>
+					</div>
 				</div>
 			</div>
 			{% endif %}
@@ -198,7 +205,7 @@ layout: default
 {% endif %}
 
 
-{% if page.description3.title != nil or page.description3.text1 != nil or page.description3.text2 != nil %}
+{% if page.description3.title != nil or page.description3.text1 != nil or page.description3.githubgist_url != nil or page.description3.text2 != nil %}
 <!-- Section - Description -->
 <section class="section section-inner">
 	<div class="container">
@@ -214,7 +221,7 @@ layout: default
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 				<div class="post-content">
-					<a href="{{ page.description3.text1.githubgist_url }}" target="_blank">{{ page.description3.text1 }}</a>
+					<a href="{{ page.description3.githubgist_url }}" target="_blank">{{ page.description3.text1 }}</a>
 				</div>
 
 			</div>
