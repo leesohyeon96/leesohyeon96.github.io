@@ -7,13 +7,8 @@ category_slug: completed-projects
 image: assets/img/works/byat/byatLogin.png  
 short_description: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
 
-# full details
-# preview_url 로 key 값 고쳐도 그런지 보기
-# TODO: live-preview 피그마 동작하는 거 보여줄 수 있는지 try 해보기
-# 임베디드 코드 : <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401&embed-host=share" allowfullscreen></iframe>
-figma_url: https://embed.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401&embed-host=share
-#live_preview: https://www.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401&t=2PKQrfLHtV4AnW2G-1 
-full_image: assets/img/works/byat/byatLogin.png
+figma_url: https://embed.figma.com/proto/ZtRWbjcLscxuPLzj7wgxFL/BYAT-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?embed_host=notion&kind=proto&node-id=659-65401&page-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=659%3A65401&embed-host=share 
+# full_image: assets/img/works/byat/byatLogin.png
 info:
   - label: 기간
     value: 2021.12 ~ 2022.03 (총 3개월)

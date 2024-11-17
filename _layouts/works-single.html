@@ -48,25 +48,15 @@ layout: default
 					</div>
 
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 align-right">
-
+<!--				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 align-right">-->
+<!---->
+					<!-- 기존 코드 -->
 <!--					<a target="_blank" href="{{ page.preview_url }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">-->
 <!--						<span>{{ ui_text.live_preview }}</span>-->
 <!--					</a>-->
-
-					<!-- Figma 프로토타입을 바로 임베드 -->
-					<div id="figma-preview-container">
-						<iframe
-								id="figma-preview"
-								src="{{ page.figma_url }}"
-								width="800"
-								height="600"
-								frameborder="0"
-								allowfullscreen>
-						</iframe>
-					</div>
-
-				</div>
+<!--					-->
+<!---->
+<!--				</div>-->
 			</div>
 
 		</div>
@@ -77,6 +67,18 @@ layout: default
 {% if page.full_image != nil %}
 <!-- Section - Image -->
 <div class="section section-inner">
+
+	<!-- Figma 프로토타입을 바로 임베드 -->
+	<div id="figma-preview-container">
+		<iframe
+				id="figma-preview"
+				src="{{ page.figma_url }}"
+				width="800"
+				height="600"
+				frameborder="0"
+				allowfullscreen>
+		</iframe>
+	</div>
 
 	<!-- Image -->
 	<div class="m-image-large">
@@ -162,9 +164,9 @@ layout: default
 
 			</div>
 
-			{% if page.description2 and page.description2.description2_image %}
+			{% if page.description2.description2_image %}
 			<div class="m-image-large">
-				<div class="description2_image">
+				<div class="image">
 					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
 				</div>
 			</div>
