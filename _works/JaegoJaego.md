@@ -28,8 +28,18 @@ description1:
 description2:
   show: yes
   title: 주요 기능 
-  description2_image: assets/img/works/byat/mainMethod1.png <br/> assets/img/works/byat/mainMethod2.png <br/> assets/img/works/byat/mainMethod3.png <br/> assets/img/works/byat/mainMethod4.png  
+  description2_image: 
+    - assets/img/works/byat/mainMethod1.png
+    - assets/img/works/byat/mainMethod2.png
+    - assets/img/works/byat/mainMethod3.png
+    - assets/img/works/byat/mainMethod4.png  
   text1: 주요 기능 중 메뉴, 백로그 관리 기능 구현 <br/> <a href="https://sudden-milk-758.notion.site/77865870d7994e6cb3293db917ae161b?pvs=4" target="_blank">구체적인 구현 코드 확인하기</a>
+
+#gallery:
+#  - assets/img/works/byat/mainMethod1.png
+#  - assets/img/works/byat/mainMethod2.png
+#  - assets/img/works/byat/mainMethod3.png
+#  - assets/img/works/byat/mainMethod4.png
 
 description3:
   title: Github Gist 
