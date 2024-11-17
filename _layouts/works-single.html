@@ -79,6 +79,7 @@ layout: default
 		</iframe>
 	</div>
 </div>
+{% endif %}
 
 
 {% if page.full_image != nil %}
@@ -171,7 +172,11 @@ layout: default
 			{% if page.description2.description2_image %}
 			<div class="m-image-large">
 				<div class="image">
-					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
+					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});
+														 background-size: cover;
+														 background-position: center;
+														 width: 100%;
+														 height: 400px;"></div>
 				</div>
 			</div>
 			{% endif %}
