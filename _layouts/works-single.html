@@ -171,9 +171,8 @@ layout: default
 
 			{% if page.description2.description2_image %}
 			<div class="m-image-large">
-				<div class="image" style="width: 100%; height: 400px; overflow: auto;">
-					<img src="{{ page.description2.description2_image | relative_url }}"
-						 style="max-width: 100%; max-height: 100%; object-fit: contain;">
+				<div class="image" style="overflow: auto; width: 100%; height: 500px;">
+					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
 				</div>
 			</div>
 			{% endif %}
@@ -215,7 +214,7 @@ layout: default
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 				<div class="post-content">
-					{{ page.description3.text1 }}
+					<a href="{{ page.description3.text1.githubgist_url }}" target="_blank">{{ page.description3.text1 }}</a>
 				</div>
 
 			</div>
