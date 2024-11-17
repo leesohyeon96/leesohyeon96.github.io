@@ -22,7 +22,7 @@ info:
 description1:
   show: yes
   title: 프로젝트 소개
-  text1: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션
+  text1: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 <br/> PMS 어플리케이션
 
 # 여따가 뭘 더 게시할까?
 #gallery:
@@ -32,7 +32,7 @@ description1:
 description2:
   title: 주요 기능
   description2_image: assets/img/works/byat/mainMethod.png
-  text1: 주요 기능 중 '로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더 구현 <br/> <a href="https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4" target="_blank">구체적인 구현 내용 확인하기</a>
+  text1: 주요 기능 중 **'로그인/로그아웃' 등의 전반적인 멤버 기능과 캘린더** 구현 <br/> <a href="https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4" target="_blank">구체적인 구현 코드 확인하기</a>
 
 description3:
   title: Github Gist
