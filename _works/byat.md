@@ -36,7 +36,7 @@ description2:
 
 description3:
   title: Github Gist
-  text1.githubgist_url: "../works/sub/byatgist"
+  text1.githubgist_url: "../sub/byatgist"
   text1: BYAT 구현기능 - 로그인 Github gist 확인하기
 
 #video:
