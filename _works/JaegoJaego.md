@@ -43,7 +43,7 @@ description2:
 
 description3:
   title: Github Gist 
-  text1: <a href="/works/sub/jaegogist" target="_blank">JaegoJaego 구현기능 - 00 Github gist 확인하기</a> 
+  text1: <a href="/sub/jaegogist" target="_blank">JaegoJaego 구현기능 - 00 Github gist 확인하기</a> 
 
 # 어떻게 구상할지?
 # (ㅇㅇ) 사진넣기
