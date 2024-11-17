@@ -64,10 +64,9 @@ layout: default
 
 </section>
 
-{% if page.full_image != nil %}
-<!-- Section - Image -->
+{% if page.figma_url != nil %}
+<!-- Section - Figma -->
 <div class="section section-inner">
-
 	<!-- Figma 프로토타입을 바로 임베드 -->
 	<div id="figma-preview-container">
 		<iframe
@@ -79,7 +78,12 @@ layout: default
 				allowfullscreen>
 		</iframe>
 	</div>
+</div>
 
+
+{% if page.full_image != nil %}
+<!-- Section - Image -->
+<div class="section section-inner">
 	<!-- Image -->
 	<div class="m-image-large">
 		<div class="image">
