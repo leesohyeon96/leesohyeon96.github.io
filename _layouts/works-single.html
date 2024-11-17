@@ -72,7 +72,7 @@ layout: default
 		<iframe
 				id="figma-preview"
 				src="{{ page.figma_url }}"
-				width="800"
+				width="100%"
 				height="600"
 				frameborder="0"
 				allowfullscreen>
@@ -171,12 +171,8 @@ layout: default
 
 			{% if page.description2.description2_image %}
 			<div class="m-image-large">
-				<div class="image">
-					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});
-														 background-size: cover;
-														 background-position: center;
-														 width: 100%;
-														 height: 400px;"></div>
+				<div class="image" style="overflow: auto; width: 100%; height: 400px;">
+					<div class="img js-parallax" style="background-image: url({{ page.description2.description2_image | relative_url }});"></div>
 				</div>
 			</div>
 			{% endif %}
