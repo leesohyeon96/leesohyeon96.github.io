@@ -7,7 +7,7 @@ image: assets/img/works/douneedschedule/douneedscheduleMain.png  # 변경예정
 short_description: 국내 여행에 초점을 맞춘 여행 일정 공유 플랫폼
 
 # full details
-figma_url: https://www.figma.com/proto/DS2MsCZKM99JfzAdfScoZX/%EC%9D%BC%EC%A0%95-%ED%95%84%EC%97%AC%ED%96%89%3F-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?node-id=93-5916&node-type=canvas&t=3yjRWuHVxnAWImrP-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=93%3A5916&show-proto-sidebar=1 
+figma_url: https://www.figma.com/proto/DS2MsCZKM99JfzAdfScoZX/%EC%9D%BC%EC%A0%95-%ED%95%84%EC%97%AC%ED%96%89%3F-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9D%B4%ED%95%91?node-id=93-5916&node-type=canvas&t=3yjRWuHVxnAWImrP-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=93%3A5916 
 #full_image: assets/img/works/jaegojaego/jaegojaegoLogin.png
 info:
   - label: 기간
