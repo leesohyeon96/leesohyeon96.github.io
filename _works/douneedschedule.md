@@ -1,5 +1,5 @@
 ---
-_layout: works-single # or Page 로 하면 됨
+layout: works-single # or Page 로 하면 됨
 title: DoUNeedSchedule Project(일정 필여행?)
 category: 완료된 프로젝트
 category_slug: completed-projects
