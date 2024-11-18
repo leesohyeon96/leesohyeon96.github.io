@@ -1,11 +1,10 @@
 ---
-# preview details --> 재고재고로 고치기!!!
-layout: works-single # or Page 로 하면 됨
+_layout: works-single # or Page 로 하면 됨
 title: JaegoJaego Project
 category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/jaegojaego/jaegojaegoLogin.png  
-short_description: JaegoJaego는 재고관리 및 수발주 운영 관리 프로그램
+short_description: 재고관리 및 수발주 운영 관리 프로그램
 
 # full details
 figma_url: https://www.figma.com/proto/6CP6gpOAIezJj67uHldKBO?embed_host=notion&kind=proto&node-id=0%3A1&scaling=min-zoom&show-proto-sidebar=1&starting-point-node-id=471%3A66039 
@@ -43,12 +42,6 @@ description2:
 
 description3:
   title: Github Gist 
-  text1: <a href="/sub/jaegogist" target="_blank">JaegoJaego 구현기능 - 00 Github gist 확인하기</a> 
-
-# 어떻게 구상할지?
-# (ㅇㅇ) 사진넣기
-# 1. 노션 전체 페이지 보러가기 ->  https://sudden-milk-758.notion.site/9953dde2bd24403794f22c5c9ea0cdbd?pvs=4
-# 2. 구현 기능 대충 설명 -> 보러라기 
-# 3. Github Gist 보여주기
+  text1: <a href="/sub/jaegogist" target="_blank">JaegoJaego 구현기능 일부분 Github gist 확인하기</a> 
 ---
 

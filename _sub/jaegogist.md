@@ -7,6 +7,12 @@ title: JaegoJaego Github Gist
 
 <h3> 코드가 일부분 보이지 않을 땐 dark 모드를 풀어주시기 바랍니다 </h3> 
 
+<br/><br/><br/>
+
+***
+
+<br/><br/><br/>
+
 <h1> 메뉴관리 - 메뉴수정 코드 </h1>
 
 <h3>[HTML]</h3>
@@ -22,9 +28,11 @@ title: JaegoJaego Github Gist
 <br/>
 
 
-<br/><br/>
+<br/><br/><br/>
 
 ***
+
+<br/><br/><br/>
 
 <h1> 백엔드관리  - 물품당 이슈발생빈도 그래프 조회</h1>
 
