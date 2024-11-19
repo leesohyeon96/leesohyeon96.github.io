@@ -25,7 +25,7 @@ description1:
   text1: IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 <br/> PMS 어플리케이션
 
 #gallery:
-#  - assets/img/works/ohguohgutalk/ohguhogutalkarchitecture.png
+#  - assets/img/works/ohguohgutalk/ohguohgutalkarchitecture.png
 #  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
 
 description2:

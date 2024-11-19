@@ -1,40 +1,38 @@
 ---
 # preview details
 layout: works-single # or Page 로 하면 됨 
-title: 
-category: Development
+title: BowMeow Project (멍냥프로젝트)
+category: 진행중인 프로젝트
 category_slug: development
-image: assets/img/works/work7.jpg
-short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+image: assets/img/works/bowmeow/bowmeowThumb.png
+short_description: MSA 기반 반려동물 용품 C2C & B2C 거래 플랫폼
+
 
 # full details
-live_preview: https://bslthemes.com
-full_image: assets/img/works/single1.jpg
+#live_preview: 
+full_image: assets/img/works/bowmeow/bowmeowThumb.png
 info:
-  - label: Year
-    value: 2022
-
-  - label: Technology
-    value: Development, JS
+  - label: 기간
+    value: 2024.08 ~ 진행중
+  - label: About Technology
+    value: Java21, SpringBoot 3.x
+  - label: About DataBase Tech
+    value: mySQL
 
 description1:
   show: yes
-  title: Project Goal
-  text: "<p>Aliquam a sapien diam. Phasellus pulvinar tellus aliquam eleifend consectetur. Sed bibendum leo quis rutrum aliquetmorbi.</p>
-  <p>Donec imperdiet risus at tortor consequat maximus et eget magna. Cras ornare sagittis augue, id sollicitudin justo tristique ut. Nullam ex enim, euismod vel bibendum ultrices, fringilla vel eros. Donec euismod leo lectus, et euismod metus euismod sed. Quisque quis suscipit ipsum, at pellentesque velit. Duis a congue sem.</p>"
+  title: (작성예정)
+  text1: (작성예정)
 
-gallery:
-  - assets/img/works/work5.jpeg
-  - assets/img/blog/blog8.jpg
-  - assets/img/blog/blog6.jpg
+#description2:
+#  title: 아키텍처와 인프라
+#  description2_image:
+#    - assets/img/works/ohguohgutalk/ohguohgutalkarchitecture.png
+#    - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
 
-description2:
-  title: Project Result
-  text: "<p>Aliquam a sapien diam. Phasellus pulvinar tellus aliquam eleifend consectetur. Sed bibendum leo quis rutrum aliquetmorbi.</p>
-  <p>Donec imperdiet risus at tortor consequat maximus et eget magna. Cras ornare sagittis augue, id sollicitudin justo tristique ut. Nullam ex enim, euismod vel bibendum ultrices, fringilla vel eros. Donec euismod leo lectus, et euismod metus euismod sed. Quisque quis suscipit ipsum, at pellentesque velit. Duis a congue sem.</p>"
+#description3:
+#  title: Github Gist
+#  text1: <a href="/sub/ohguohgutalkgist" target="_blank">Ohguohgutalk 구현기능 흐름 Github gist 확인하기</a>
 
-video:
-  poster: assets/img/blog/blog9.jpg
-  id: Gu6z6kIukgg
 
 ---
