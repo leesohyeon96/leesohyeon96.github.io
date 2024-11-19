@@ -3,7 +3,7 @@
 layout: works-single # or Page 로 하면 됨 
 title: BowMeow Project (멍냥프로젝트)
 category: 진행중인 프로젝트
-category_slug: development
+category_slug: on-going-projects
 image: assets/img/works/bowmeow/bowmeowThumb.png
 short_description: MSA 기반 반려동물 용품 C2C & B2C 거래 플랫폼
 
