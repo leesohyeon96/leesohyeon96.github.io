@@ -8,9 +8,9 @@ hero:
   image: "assets/img/profile.png"
   image_alt: "Sohyeon Lee"
   title: "<b>Sohyeon</b> Lee"
-  before_title: "Hello, <b>my name is</b>"
-  after_title: "I am a <strong>Backend Developer</strong>"
-  description: "2022년부터 백엔드 개발자로 일하고 있습니다 :) <br/><br/> I've been working from 2022 as a backend developer <br/> I love to learn Everything"
+#  before_title: "Hello, <b>my name is</b>"
+  after_title: "<strong>Backend Developer</strong>"
+  description: "3년차 백엔드 개발자입니다 :) <br/> I've been working from 2022 as a backend developer <br/> love to learn"
   button1:
     label: "Visit SHL velog"
     link: "https://velog.io/@vkfkswjs26/posts"
