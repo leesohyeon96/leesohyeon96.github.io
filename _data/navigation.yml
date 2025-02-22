@@ -27,7 +27,7 @@ main:
 #    parent: 0
 
   # Resume
-  - title: "Resume"
+  - title: "History"
     url: "#resume-section"
     parent: 0
 
@@ -42,9 +42,9 @@ main:
 #    parent: 0
 
   # Blog
-  - title: "Blog"
-    url: "#blog-section"
-    parent: 0
+#  - title: "Blog"
+#    url: "#blog-section"
+#    parent: 0
 
   # Contact (굳이 없어서 주석처리)
 #  - title: "Contact"
@@ -59,5 +59,5 @@ main:
         - title: "Works"
           url: "works/"
 
-        - title: "Blog"
-          url: "blog/"
+#        - title: "Blog"
+#          url: "blog/"

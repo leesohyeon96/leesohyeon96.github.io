@@ -162,15 +162,15 @@ portfolio:
 
 
 
-### Blog [ blog ]
+### Blog [ blog ] # 일단은 velog 로 사용
 #items generates from dir /_posts/*
-blog:
-  title: "블로그"
-  subtitle: "you can see blog"
-  bg_title: "Blog"
-  button:
-    label: "View Blog"
-    link: "blog/"
+#blog:
+#  title: "블로그"
+#  subtitle: "you can see blog"
+#  bg_title: "Blog"
+#  button:
+#    label: "View Blog"
+#    link: "blog/"
 
 ### Contact [ contacts ]
 #contacts:
