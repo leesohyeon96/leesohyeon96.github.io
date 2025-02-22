@@ -5,7 +5,7 @@
 
 ### Hero [ hero-image ]
 hero:
-  image: "assets/img/profile2.png"
+  image: "assets/img/profile.png"
   image_alt: "Sohyeon Lee"
   title: "<b>Sohyeon</b> Lee"
   before_title: "Hello, <b>my name is</b>"
