@@ -3,6 +3,10 @@
 ### use navigation.yml file to re-order, delete or add section of each card
 ### here you can find all content in all pre-build sections
 
+# local 로 확인 방법
+# 1. bundle exec jekyll serve
+# 2. http://localhost:4000 로 확인
+
 ### Hero [ hero-image ]
 hero:
   image: "assets/img/profile.png"
@@ -11,12 +15,12 @@ hero:
 #  before_title: "Hello, <b>my name is</b>"
   after_title: "<strong>Backend Developer</strong>"
   description: "3년차 백엔드 개발자입니다 :) <br/> I've been working from 2022 as a backend developer <br/> love to learn"
-  button1:
-    label: "Visit SHL velog"
-    link: "https://velog.io/@vkfkswjs26/posts"
-  button2:
-    label: "My Skills" # 어떻게 할까?
-    link: "#skills-section"
+#  button1:
+#    label: "Visit SHL velog"
+#    link: "https://velog.io/@vkfkswjs26/posts"
+#  button2:
+#    label: "My Skills" # 어떻게 할까?
+#    link: "#skills-section"
   bg_title: "SHL Dev"
   info:
     - num: "2 <strong>+</strong>"
