@@ -46,10 +46,10 @@ main:
     url: "#blog-section"
     parent: 0
 
-  # Contact
-  - title: "Contact"
-    url: "#contact-section"
-    parent: 0
+  # Contact (굳이 없어서 주석처리)
+#  - title: "Contact"
+#    url: "#contact-section"
+#    parent: 0
 
   # Additional Pages
   - title: "Pages"

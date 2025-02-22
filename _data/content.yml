@@ -14,7 +14,7 @@ hero:
   title: "<b>Sohyeon</b> Lee"
 #  before_title: "Hello, <b>my name is</b>"
   after_title: "<strong>Backend Developer</strong>"
-  description: "3년차 백엔드 개발자입니다 :) <br/> I've been working from 2022 as a backend developer <br/> love to learn"
+  description: "3년차 백엔드 개발자입니다 :) <br/> I've been working from 2022 as a backend developer"
 #  button1:
 #    label: "Visit SHL velog"
 #    link: "https://velog.io/@vkfkswjs26/posts"
@@ -32,101 +32,110 @@ hero:
 ### Skills [ skills ]
 skills:
   title: "스킬"
-  subtitle: "my <b>Skills</b>"
+  subtitle: "Skills"
   bg_title: "Skills"
 
   # BackEnd
   column1:
     items:
       - label: "Java" #0-10 progress in dots
-        text: "기본적인 기능 사용"
-        value: "55" #0-100 progress in %
+        text: "주언어"
+        value: "60" #0-100 progress in %
 
       - label: "Spring" #0-10 progress in dots
-        text: "기본적인 기능 사용"
-        value: "30" #0-100 progress in %
+        text: "주 사용 프레임워크"
+        value: "35" #0-100 progress in %
 
       - label: "Node.js" #0-10 progress in dots
-        text: "Axios & fetch 로 API 호출 기능 사용 & React & Node.js 프로젝트에서 잠깐 사용"
-        value: "15" #0-100 progress in %
+        text: "[DoUNeedSchedule Project]에서 백엔드 런타임으로 사용"
+        value: "10" #0-100 progress in %
 
       - label: "Mybatis" #0-10 progress in dots
-        text: "기본적인 CRUD 기능 사용 & 재귀적인 쿼리 처리(with recursive) 기능 & 동적쿼리 등등 사용"
-        value: "55" #0-100 progress in %
+        text: "기본적인 CRUD <br/> 재귀(recursive)/동적쿼리"
+        value: "60" #0-100 progress in %
 
       - label: "JPA" #0-10 progress in dots
-        text: "기본적인 개념 & CRUD 기능 사용 & JPQL & Native 쿼리 & Spring Data JPA 기능 사용"
+        text: "기본적인 CRUD <br/> JPQL & Native 쿼리 <br/> Spring Data JPA"
         value: "20" #0-100 progress in %
 
   # FrontEnd
   column2:
     items:
       - label: "JavaScript" #0-10 progress in dots
-        text: "기본적인 기능 & JSP 사용"
+        text: "기본적인 기능"
         value: "35" #0-100 progress in %
 
       - label: "React" #0-10 progress in dots
-        text: "useEffect/useState 등 기본개념 공부 및 활용 & React & Node.js 프로젝트에서 잠깐 사용"
-        value: "15" #0-100 progress in %
+        text: "기본기능(useEffect/useState 등) <br/> [DoUNeedSchedule Project]에서 사용"
+        value: "10" #0-100 progress in %
 
   # 클라우드 & DB
   column3:
     items:
       - label: "AWS" #0-10 progress in dots
-        text: "AWS EC2 기능 사용"
+        text: "EC2"
         value: "5" #0-100 progress in %
 
       - label: "Azure" #0-10 progress in dots
-        text: "App Service & Azure Function & Gateway 기능 사용"
-        value: "25" #0-100 progress in %
+        text: "App Service <br/> Azure Function <br/> Gateway"
+        value: "30" #0-100 progress in %
 
       - label: "Docker" #0-10 progress in dots
-        text: "기본적인 기능 & Docker Compose 기능 사용"
-        value: "45" #0-100 progress in %
+        text: "DockerFile <br/> Docker Compose"
+        value: "40" #0-100 progress in %
 
       - label: "MySQL | MariaDB" #0-10 progress in dots
-        text: "기본적인 기능 & routines(저장 프로시저 & 저장 함수) 기능 사용"
+        text: "기본적인 기능 <br/> routines(저장 프로시저 & 저장 함수)"
         value: "60" #0-100 progress in %
 
       - label: "MongoDB" #0-10 progress in dots
-        text: "기본적인 개념 & 기본적인 명령어(CRUD) 사용"
+        text: "기본적인 명령어(CRUD)"
         value: "5" #0-100 progress in %
+
+      - label: "Redis"
+        text: "캐싱 <br/> Pub/Sub <br/> Spring Data Redis"
+        value: "10" # 10 %
+      - label: "Github | GitLab"
+        text: "Github 주 사용 <br/> GitLab 교육 당시 사용"
+        value: "60" #0-100 progress in %
+
 
 ### Resume [ resume ]
 resume:
-  title: "연혁"
-  subtitle: "my <b>Resume</b>"
+  title: "히스토리"
+  subtitle: "History"
   bg_title: "History"
 
   education:
-    title: "Education"
+    title: "교육 & 경험 Ednucation & Experience"
     items:
-      - name: "국비지원학원 IT 교육 수료"
-        subname: "더조은아카데미 [자바 웹개발&앱개발자(시큐어코딩, Docker)양성과정] 수료"
-        period: "2021.10 - 2022.05"
-        text: "약 7개월간의 교육기간 동안 Java의 전반적인 개념 & Spring과 JDBC의 점진적 발전 과정 공부 & 총 2개의 프로젝트를 진행"
-#      - name: "Lviv National Academy of Arts"
-#        subname: "Faculty of Design"
-#        period: "2012 - 2014"
-#        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-#
-#      - name: "IT Future"
-#        subname: "High School"
-#        period: "2010 - 2012"
-#        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-  experience:
-    title: "Experience"
-    items:
-      - name: "React & Node.js 스터디 및 프로젝트 진행"
-        subname: "동기들과 React 강의를 들으며 스터디 및 프로젝트 진행"
+      - name: "MSA 기반 반려동물 C2C 거래 플랫폼 프로젝트"
+        subname: "BowMeow Project 진행"
+        period: "2024.08 ~ <b>Present</b>"
+        text: "MSA 구조 학습용 프로젝트 <br/> 현재 진행중 & [프로젝트] 에서 확인가능"
+      - name: "방송통신대학교 컴퓨터과학과"
+        subname: "방송통신대학교 컴퓨터과학과 <br/> 2학년 편입 후 재학중"
+        period: "2023.03 ~ <b>Present</b>"
+        text: "2025.06 졸업예정 <br/> 2023.03 2학년 편입"
+      - name: "WebSocket으로 구현한 웹 메시징 플랫폼 프로젝트"
+        subname: "OhguOhgutalk Project 진행"
+        period: "2023.02 ~ 2023.08"
+        text: "WebSocket 사용 및 JPA, mongoDB 학습용 프로젝트 <br/> local 에서만 동작"
+      - name: "React & Node.js 스터디 및 프로젝트"
+        subname: "DoUNeedSchedule Project 진행"
         period: "2022.05 ~ 2022.08"
-        text: "국비지원 동기들과 React 강의를 들으며 스터디 진행함과 동시에 프론트 서버(React) & 백엔드 서버(Node.js)를 설정으로 하는 프로젝트 진행함"
-
-      - name: "첫 번째 회사"
-        subname: "의료 계열 B2B & B2C 서비스"
-        period: "2022.09 - <b>Present</b>"
-        text: "풀스택으로 입사하여 현재는 백엔드 개발자로 재직중"
+        text: "React 강의 들으며 2명의 팀원과 스터디 및 프로젝트 진행 <br/> 프론트 서버(React) & 백엔드 서버(Node.js)"
+      - name: "국비지원학원 IT 교육 수료"
+        subname: "더조은아카데미 <br/> 자바 웹 개발&앱 개발자 <br/> (시큐어코딩, Docker) 양성과정 수료"
+        period: "2021.10 ~ 2022.05"
+        text: "약 7개월간의 교육기간 동안 Java 개념 <br/> Spring과 JDBC의 점진적 발전 과정 공부 <br/> 총 2개의 프로젝트를 진행"
+  experience:
+    title: "경력 Work Experience"
+    items:
+      - name: "헬스커넥트(주) 근무"
+        subname: "헬스케어 B2B & B2C 서비스"
+        period: "2022.09 ~ <b>Present</b>"
+        text: "풀스택으로 입사 <br/> 현재 백엔드 개발자로 재직중"
 
 
 # 블로그 링크 걸수있으면 걸기 !
@@ -145,7 +154,7 @@ resume:
 #items generates from dir /_works/*
 portfolio:
   title: "프로젝트"
-  subtitle: "my <b>Personal Project</b>"
+  subtitle: "Personal Project"
   bg_title: "Projects"
   button:
     link: "works/"
@@ -162,28 +171,27 @@ blog:
   button:
     label: "View Blog"
     link: "blog/"
+
 ### Contact [ contacts ]
-
-
-contacts:
-  title: "연락처"
-  subtitle: "Contact Me"
-  bg_title: "Contact"
-
-  list:
-    - label: "주소"
-      icon: "far fa-map"
-      text: "대한민국, 성남시"
+#contacts:
+#  title: "연락처"
+#  subtitle: "Contact Me"
+#  bg_title: "Contact"
+#
+#  list:
+#    - label: "주소"
+#      icon: "far fa-map"
+#      text: "대한민국, 성남시"
 
 #    - label: "Freelance"
 #      icon: "far fa-user"
 #      text: "Available Right Now"
 
-    - label: "이메일"
-      icon: "far fa-envelope"
-      text: "vkfkswjs26@gamil.com"
-#    - label: "Phone"
+#    - label: "이메일"
+#      icon: "far fa-envelope"
+#      text: "vkfkswjs26@gamil.com"
 
+#    - label: "Phone"
 #      icon: "far fa-address-book"
 #      text: "+82 900 - 900 - 9000"
 
