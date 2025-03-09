@@ -39,65 +39,65 @@ skills:
   column1:
     items:
       - label: "Java" #0-10 progress in dots
-        text: "주언어"
-        value: "60" #0-100 progress in %
+        text: "주언어 <br/> 현 회사에서 사용"
+#        value: "100" #0-100 progress in %
 
       - label: "Spring" #0-10 progress in dots
-        text: "주 사용 프레임워크"
-        value: "35" #0-100 progress in %
+        text: "주 사용 프레임워크 <br/> 현 회사에서 사용"
+#        value: "35" #0-100 progress in %
 
       - label: "Node.js" #0-10 progress in dots
         text: "[DoUNeedSchedule Project]에서 백엔드 런타임으로 사용"
-        value: "10" #0-100 progress in %
+#        value: "10" #0-100 progress in %
 
       - label: "Mybatis" #0-10 progress in dots
         text: "기본적인 CRUD <br/> 재귀(recursive)/동적쿼리"
-        value: "60" #0-100 progress in %
+#        value: "60" #0-100 progress in %
 
       - label: "JPA" #0-10 progress in dots
         text: "기본적인 CRUD <br/> JPQL & Native 쿼리 <br/> Spring Data JPA"
-        value: "20" #0-100 progress in %
+#        value: "20" #0-100 progress in %
 
   # FrontEnd
   column2:
     items:
       - label: "JavaScript" #0-10 progress in dots
         text: "기본적인 기능"
-        value: "35" #0-100 progress in %
+#        value: "35" #0-100 progress in %
 
       - label: "React" #0-10 progress in dots
         text: "기본기능(useEffect/useState 등) <br/> [DoUNeedSchedule Project]에서 사용"
-        value: "10" #0-100 progress in %
+#        value: "10" #0-100 progress in %
 
   # 클라우드 & DB
   column3:
     items:
       - label: "AWS" #0-10 progress in dots
-        text: "EC2"
-        value: "5" #0-100 progress in %
+        text: "EC2 <br/> [DoUNeedSchedule Project] & [Bowmeow Project]에서 사용"
+#        value: "5" #0-100 progress in %
 
       - label: "Azure" #0-10 progress in dots
-        text: "App Service <br/> Azure Function <br/> Gateway"
-        value: "30" #0-100 progress in %
+        text: "App Service <br/> Azure Function <br/> Gateway <br/> 현 회사에서 사용"
+#        value: "30" #0-100 progress in %
 
       - label: "Docker" #0-10 progress in dots
-        text: "DockerFile <br/> Docker Compose"
-        value: "40" #0-100 progress in %
+        text: "DockerFile <br/> Docker Compose <br/> 다수 프로젝트 및 현 회사에서 사용"
+#        value: "40" #0-100 progress in %
 
       - label: "MySQL | MariaDB" #0-10 progress in dots
-        text: "기본적인 기능 <br/> routines(저장 프로시저 & 저장 함수)"
-        value: "60" #0-100 progress in %
+        text: "기본적인 기능 <br/> routines(저장 프로시저 & 저장 함수) <br/> 현 회사에서 사용"
+#        value: "60" #0-100 progress in %
 
       - label: "MongoDB" #0-10 progress in dots
         text: "기본적인 명령어(CRUD)"
-        value: "5" #0-100 progress in %
+#        value: "5" #0-100 progress in %
 
       - label: "Redis"
-        text: "캐싱 <br/> Pub/Sub <br/> Spring Data Redis"
-        value: "10" # 10 %
+        text: "캐싱 <br/> Pub/Sub <br/> Spring Data Redis <br/> [Ohguohgutalk Project]에서 사용"
+#        value: "10" # 10 %
       - label: "Github | GitLab"
-        text: "Github 주 사용 <br/> GitLab 교육 당시 사용"
-        value: "60" #0-100 progress in %
+        text: "Github 현 회사에서 사용 <br/> GitLab 국비교육에서 사용"
+#        value: "60" #0-100 progress in %
 
 
 ### Resume [ resume ]
