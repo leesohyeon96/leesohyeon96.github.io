@@ -51,12 +51,17 @@ main:
 #    url: "#contact-section"
 #    parent: 0
 
+  # Projects
+  - title: "Project"
+    url: "#works-section"
+    parent: 0
+
   # Additional Pages
   - title: "Pages"
     url: ""
     parent: 1
     childs:
-        - title: "Works"
+        - title: "Project Details"
           url: "works/"
 
 #        - title: "Blog"
