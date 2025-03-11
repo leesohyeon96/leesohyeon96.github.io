@@ -68,7 +68,7 @@ layout: default
 <!-- Section - Figma -->
 <div class="section section-inner">
 	<!-- Figma 프로토타입을 바로 임베드 -->
-	<div id="figma-preview-container">
+	<div id="figma-preview-container" style="margin-left: 7%; margin-right: 7%; width: 86%;">
 		<iframe
 				id="figma-preview"
 				src="{{ page.figma_url }}"
@@ -87,7 +87,7 @@ layout: default
 <div class="section section-inner">
 	<!-- Image -->
 	<div class="m-image-large">
-		<div class="image">
+		<div class="image" style="margin-left: 7%; margin-right: 7%; width: 86%;">
 			<div class="img js-parallax" style="background-image: url({{ page.full_image | relative_url }});"></div>
 		</div>
 	</div>
@@ -172,7 +172,7 @@ layout: default
 			{% if page.description2.description2_image %}
 			<div class="col-12">
 				{% for image in page.description2.description2_image %}
-				<div class="m-image-large" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; margin-bottom: 10px;">
+				<div class="m-image-large" style="max-height: 100%; overflow-y: auto; border: 1px solid #ddd; margin-bottom: 10px;">
 					<img src="{{ image | relative_url }}" alt="method_image_{{ forloop.index }}" style="width: 100%; height: auto;">
 				</div>
 				{% endfor %}
