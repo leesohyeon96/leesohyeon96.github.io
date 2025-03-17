@@ -15,24 +15,25 @@ info:
   - label: 기간
     value: 2024.08 ~ 진행중
   - label: About Technology
-    value: Java21, SpringBoot 3.x
+    value: Java21, SpringBoot 3.x, gRPC
   - label: About DataBase Tech
-    value: mySQL
+    value: mySQL, (작성예정) 
+  - label: Other Technologies
+    value: Docker(docker-compose), K3s, nginx  
 
 description1:
   show: yes
-  title: (작성예정)
-  text1: (작성예정)
+  title: 프로젝트 소개
+  text1: MSA 구조 공부용 반려동물 용품 C2C & B2C 거래 플랫폼
 
-#description2:
-#  title: 아키텍처와 인프라
-#  description2_image:
-#    - assets/img/works/ohguohgutalk/ohguohgutalkarchitecture.png
-#    - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
+description2:
+  title: 인프라
+  description2_image:
+    - assets/img/works/bowmeow/bowmeowInfra.png
 
-#description3:
-#  title: Github Gist
-#  text1: <a href="/sub/ohguohgutalkgist" target="_blank">Ohguohgutalk 구현기능 흐름 Github gist 확인하기</a>
+description3:
+  title: Github Gist
+  text1: <a href="/sub/bowmeowgist" target="_blank">Bowmeow gRPC 구현 Github gist 확인하기</a>
 
 
 ---
