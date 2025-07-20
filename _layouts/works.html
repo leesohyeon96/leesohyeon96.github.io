@@ -38,12 +38,21 @@ layout: default
           {% endfor %}
         </div>
         <div class="works-items{% if categories.layout == 'grid' %} works-masonry-items{% endif %}{% if categories.layout == 'list' %} works-list-items{% endif %} row">
+          {% assign path_parts = page.url | split: '/' %}
+          {% assign url_lang = path_parts[1] %}
+          {% if url_lang == 'ko' or url_lang == 'en' %}
+            {% assign current_lang = url_lang %}
+          {% else %}
+            {% assign current_lang = 'en' %}
+          {% endif %}
           {% for work in site.works %}
-          <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
+            <!-- {{ work.name }}: lang={{ work.lang }}, current_lang={{ current_lang }} -->
+            {% if work.lang == current_lang %}
+            <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="{{ work.url }}">
+                  <a href="{{ work.permalink | relative_url }}">
                     <img decoding="async" src="{{ work.image | relative_url }}" alt="{{ work.title }}" >
                     <span class="overlay"></span>
                   </a>
@@ -52,16 +61,17 @@ layout: default
               <div class="desc">
                 <span class="category">{{ work.category }}</span>
                 <h5 class="name">
-                  <a href="{{ work.url }}">{{ work.title }}</a>
+                  <a href="{{ work.permalink | relative_url }}">{{ work.title }}</a>
                 </h5>
                 <div class="text">
                   <p>{{ work.short_description }}</p>
                 </div>
-                <a href="{{ work.url }}" class="lnk">{{ ui_text.see_project }}</a>
+                <a href="{{ work.permalink | relative_url }}" class="lnk">{{ ui_text.see_project }}</a>
               </div>
               <div class="bg-img" style="background-image: url(/assets/images/pat-2.png);"></div>
             </div>
           </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>

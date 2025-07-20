@@ -1,4 +1,6 @@
-{% assign content = site.data.content['skills'] %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign lang_data = site.data[current_lang] %}
+{% assign content = lang_data.skills %}
 
 <!-- Section - Skills -->
 <section class="lui-section lui-gradient-center" id="skills-section">

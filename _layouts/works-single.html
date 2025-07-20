@@ -245,31 +245,4 @@ layout: default
 </div>
 {% endif %}
 
-{% if page.previous.url or page.next.url %}
-<!-- Section - Navigation -->
-<div class="section section-inner m-page-navigation">
-	<div class="container">
-		<div class="h-titles h-navs">
-			{% if page.next.url %}
-			<a href="{{ page.next.url | relative_url }}">
-				<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">
-					{{ ui_text.next_project }}
-				</span>
-				<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
-					{{ page.next.title }}
-				</span>
-			</a>
-			{% else %}
-			<a href="{{ page.previous.url | relative_url }}">
-				<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">
-					{{ ui_text.prev_project }}
-				</span>
-				<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
-					{{ page.previous.title }}
-				</span>
-			</a>
-			{% endif %}
-		</div>
-	</div>
-</div>
-{% endif %}
+

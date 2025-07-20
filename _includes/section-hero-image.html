@@ -1,4 +1,6 @@
-{% assign content = site.data.content['hero'] %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign lang_data = site.data[current_lang] %}
+{% assign content = lang_data.hero %}
 {% assign social = site.data.settings['social'] %}
 
 <!-- Section - Hero Started -->

@@ -1,6 +1,8 @@
 ---
 layout: works-single # or Page 로 하면 됨
 title: JaegoJaego Project
+lang: ko
+permalink: /ko/works/jaegojaego
 category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/jaegojaego/jaegojaegoLogin.png  

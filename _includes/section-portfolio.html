@@ -1,4 +1,12 @@
-{% assign content = site.data.content['portfolio'] %}
+{% assign path_parts = page.url | split: '/' %}
+{% assign url_lang = path_parts[1] %}
+{% if url_lang == 'ko' or url_lang == 'en' %}
+  {% assign current_lang = url_lang %}
+{% else %}
+  {% assign current_lang = 'en' %}
+{% endif %}
+{% assign lang_data = site.data[current_lang] %}
+{% assign content = lang_data.portfolio %}
 {% assign ui_text = site.data.ui-text['ui_text'] %}
 {% assign categories = site.data.settings['portfolio'] %}
 
@@ -35,11 +43,12 @@
 
         <div class="works-items works-masonry-items row">
           {% for work in site.works %}
+            {% if work.lang == current_lang %}
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="{{ work.url }}">
+                  <a href="{{ work.permalink | relative_url }}">
                     <img decoding="async" src="{{ work.image | relative_url }}" alt="{{ work.title }}" />
                     <span class="overlay"></span>
                   </a>
@@ -48,16 +57,17 @@
               <div class="desc">
                 <span class="category">{{ work.category }}</span>
                 <h5 class="name">
-                  <a href="{{ work.url }}">{{ work.title }}</a>
+                  <a href="{{ work.permalink | relative_url }}">{{ work.title }}</a>
                 </h5>
                 <div class="text">
                   <p>{{ work.short_description }}</p>
                 </div>
-                <a href="{{ work.url }}" class="lnk">{{ ui_text.see_project }}</a>
+                <a href="{{ work.permalink | relative_url }}" class="lnk">{{ ui_text.see_project }}</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            {% endif %}
           {% endfor %}
         </div>
 

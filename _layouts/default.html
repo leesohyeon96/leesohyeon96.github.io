@@ -4,8 +4,10 @@
   {%- include head.html -%}
 
   {% assign settings = site.data.settings['settings'] %}
+  {% assign current_lang = page.lang | default: site.lang | default: "en" %}
+  {% assign lang_data = site.data[current_lang] %}
 
-  <body class="{% if page.layout == 'builder' %} home{% endif %}{% if page.layout == 'blog' or page.layout == 'archive' %} blog{% endif %}{% if page.layout == 'post' or page.layout == 'works-single' or page.layout == 'page' or page.layout == 'error' %} page{% endif %}{% if settings.skin == 'light' %} light-skin{% endif %}{% if settings.skin == 'dark' %} dark-skin{% endif %}">
+  <body class="{% if page.layout == 'builder' %} home{% endif %}{% if page.layout == 'blog' or page.layout == 'archive' %} blog{% endif %}{% if page.layout == 'post' or page.layout == 'works-single' or page.layout == 'page' or page.layout == 'error' %} page{% endif %}{% if settings.skin == 'light' %} light-skin{% endif %}{% if settings.skin == 'dark' %} dark-skin{% endif %} lang-{{ current_lang }}">
 
     <div class="container-page ">
 
@@ -26,6 +28,13 @@
     <div class="cursor"></div>
 
     {%- include scripts.html -%}
+
+    <!-- Language switcher script -->
+    <script src="{{ '/assets/js/language-switcher.js' | relative_url }}"></script>
+    <script>
+      // Initialize language content
+      LanguageSwitcher.loadLanguageContent('{{ current_lang }}');
+    </script>
 
   </body>
 

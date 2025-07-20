@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="ko"><head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -7,18 +7,18 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="DoUNeedSchedule Github Gist" />
 <meta name="author" content="Admin" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ko" />
 <meta name="description" content="코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다" />
 <meta property="og:description" content="코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다" />
 <link rel="canonical" href="http://localhost:4000/sub/douneedschedulegist" />
 <meta property="og:url" content="http://localhost:4000/sub/douneedschedulegist" />
 <meta property="og:site_name" content="SHL Dev" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-22T21:34:42+09:00" />
+<meta property="article:published_time" content="2025-07-20T18:13:31+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DoUNeedSchedule Github Gist" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Admin"},"dateModified":"2025-02-22T21:34:42+09:00","datePublished":"2025-02-22T21:34:42+09:00","description":"코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다","headline":"DoUNeedSchedule Github Gist","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/sub/douneedschedulegist"},"url":"http://localhost:4000/sub/douneedschedulegist"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Admin"},"dateModified":"2025-07-20T18:13:31+09:00","datePublished":"2025-07-20T18:13:31+09:00","description":"코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다","headline":"DoUNeedSchedule Github Gist","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/sub/douneedschedulegist"},"url":"http://localhost:4000/sub/douneedschedulegist"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost%3A0%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700%3B1%2C800%3B1%2C900%7CCaveat%3A400%3B500%3B600%3B700&#038;display=swap" type="text/css" media="all" >
@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="/assets/css/syntax.css" />
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/dark.css">
+  <link rel="stylesheet" href="/assets/css/language-switcher.css">
 
   <!--[if lt IE 9]>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -43,8 +44,10 @@
   <!-- Favicons -->
   <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SHL Dev" /></head>
 
+  
+  
 
-  <body class=" page dark-skin">
+  <body class=" page dark-skin lang-ko">
 
     <div class="container-page ">
 
@@ -61,6 +64,13 @@
   </div>
 </div>
 
+
+
+
+
+
+
+<!-- Get current language from URL path -->
 
 
 
@@ -101,6 +111,12 @@
 					<span></span>
 				</a>
 
+				<!-- Language Switcher -->
+				<div class="language-switcher">
+					<a href="#" data-lang="ko" class="lang-link ">한국어</a> |
+					<a href="#" data-lang="en" class="lang-link active">English</a>
+				</div>
+
 				<!-- Menu Full Overlay -->
 				<div class="menu-full-overlay">
 					<div class="menu-full-container">
@@ -114,31 +130,51 @@
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/">Home</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="/">홈</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#skills-section">Skills</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#skills-section">스킬</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#resume-section">History</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#resume-section">히스토리</a>
+												
+												
+											</li>
+											
+											
+											<li class="menu-item">
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#works-section">프로젝트</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item menu-item-has-children has-children">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="">Pages</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="">페이지</a>
+												
 												
 												<ul class="sub-menu">
 													
 													
 													<li class="menu-item">
-														<a class="splitting-text-anim-1" data-splitting="chars" href="/works/">Works</a>
+														
+															
+																<a class="splitting-text-anim-1" data-splitting="chars" href="/en/works/">프로젝트 상세</a>
+															
+														
 													</li>
 													
 												</ul>
@@ -199,151 +235,156 @@
   </div>
 </section>
 
-			<!-- Section - Blog -->
-			<section class="section section-inner m-archive">
-				<div class="container">
 
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
+<!-- Section - Blog -->
+<section class="section section-inner m-archive">
+	<div class="container">
 
-							<!-- content -->
-							<div class="description">
-								<div class="post-content scrolla-element-anim-1 scroll-animate" data-animate="active">
-									<h3> 코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다 </h3>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
 
-									<p><br /><br /><br /></p>
+				<!-- content -->
+				<div class="description">
+					<div class="post-content scrolla-element-anim-1 scroll-animate" data-animate="active">
+						<h3> 코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다 </h3>
 
-									<hr />
+<p><br /><br /><br /></p>
 
-									<p><br /><br /><br /></p>
+<hr />
 
-									<h1> FAQ관리 - FAQ 조회/ 상세조회 </h1>
+<p><br /><br /><br /></p>
 
-									<h3>[Main.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/f96042eede14c20c76d365d7bcce7381.js"></script>
+<h1> FAQ관리 - FAQ 조회/ 상세조회 </h1>
 
-									<p><br /></p>
+<h3>[Main.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/f96042eede14c20c76d365d7bcce7381.js"></script>
 
-									<h3>[FAQAPICalls.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/3d6c1bfedf744179d1e050c0aa263f43.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[FAQAPICalls.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/3d6c1bfedf744179d1e050c0aa263f43.js"></script>
 
-									<h3>[faq-controller.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/b640b7f5e28d406e4c461d4ab63d69b8.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[faq-controller.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/b640b7f5e28d406e4c461d4ab63d69b8.js"></script>
 
-									<h3>[faq-service]</h3>
-									<script src="https://gist.github.com/leesohyeon96/06bea4e807ca36d0e9195bfb7336821b.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[faq-service]</h3>
+<script src="https://gist.github.com/leesohyeon96/06bea4e807ca36d0e9195bfb7336821b.js"></script>
 
-									<h3>[faq-repo]</h3>
-									<script src="https://gist.github.com/leesohyeon96/5deb0eb0780f8ede4ae400be7a1a23c6.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[faq-repo]</h3>
+<script src="https://gist.github.com/leesohyeon96/5deb0eb0780f8ede4ae400be7a1a23c6.js"></script>
 
-									<h3>[faq-query]</h3>
-									<script src="https://gist.github.com/leesohyeon96/201f7ecfbc23522ba2126ed4e276e5c0.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[faq-query]</h3>
+<script src="https://gist.github.com/leesohyeon96/201f7ecfbc23522ba2126ed4e276e5c0.js"></script>
 
-									<p><br /><br /><br /></p>
+<p><br /></p>
 
-									<hr />
+<p><br /><br /><br /></p>
 
-									<p><br /><br /><br /></p>
+<hr />
 
-									<h1> 게시판 관리 - 게시글 상세 조회 </h1>
+<p><br /><br /><br /></p>
 
-									<h3>[Boards.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/c3a28d8bbcc382f92083ea210e732913.js"></script>
+<h1> 게시판 관리 - 게시글 상세 조회 </h1>
 
-									<p><br /></p>
+<h3>[Boards.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/c3a28d8bbcc382f92083ea210e732913.js"></script>
 
-									<h3>[App.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/e673b5b111f2e565caf090a4d6c9171b.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[App.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/e673b5b111f2e565caf090a4d6c9171b.js"></script>
 
-									<h3>[BoardDetail.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/e00fe51cbd02c14be624fb13af6c461e.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[BoardDetail.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/e00fe51cbd02c14be624fb13af6c461e.js"></script>
 
-									<h3>[BoardAPICalls.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/d50797ebc33aba3107027fa30f371614.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[BoardAPICalls.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/d50797ebc33aba3107027fa30f371614.js"></script>
 
-									<h3>[board-controller.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/0a163c179c56cfda34d81c0410182b88.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-controller.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/0a163c179c56cfda34d81c0410182b88.js"></script>
 
-									<h3>[board-service]</h3>
-									<script src="https://gist.github.com/leesohyeon96/0ea076161423795527921097e8230576.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-service]</h3>
+<script src="https://gist.github.com/leesohyeon96/0ea076161423795527921097e8230576.js"></script>
 
-									<h3>[board-repo]</h3>
-									<script src="https://gist.github.com/leesohyeon96/b4a6f02b7ed1e8fac6d4e47c3e1db13a.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-repo]</h3>
+<script src="https://gist.github.com/leesohyeon96/b4a6f02b7ed1e8fac6d4e47c3e1db13a.js"></script>
 
-									<h3>[board-query]</h3>
-									<script src="https://gist.github.com/leesohyeon96/886c097c55962887efd68cc7bfa393a5.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-query]</h3>
+<script src="https://gist.github.com/leesohyeon96/886c097c55962887efd68cc7bfa393a5.js"></script>
 
-									<h3>[faq-query]</h3>
-									<script src="https://gist.github.com/leesohyeon96/201f7ecfbc23522ba2126ed4e276e5c0.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[faq-query]</h3>
+<script src="https://gist.github.com/leesohyeon96/201f7ecfbc23522ba2126ed4e276e5c0.js"></script>
 
-									<p><br /><br /><br /></p>
+<p><br /></p>
 
-									<hr />
+<p><br /><br /><br /></p>
 
-									<p><br /><br /><br /></p>
+<hr />
 
-									<h1> 게시판 관리 - 게시글 등록 </h1>
+<p><br /><br /><br /></p>
 
-									<h3>[BoardRegist.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/51e04f47706f963bcd44883d50ec9a8f.js"></script>
+<h1> 게시판 관리 - 게시글 등록 </h1>
 
-									<p><br /></p>
+<h3>[BoardRegist.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/51e04f47706f963bcd44883d50ec9a8f.js"></script>
 
-									<h3>[board-controller.js]</h3>
-									<script src="https://gist.github.com/leesohyeon96/d4862b1ae52bcc345b7041ba356dd7e6.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-controller.js]</h3>
+<script src="https://gist.github.com/leesohyeon96/d4862b1ae52bcc345b7041ba356dd7e6.js"></script>
 
-									<h3>[board-service]</h3>
-									<script src="https://gist.github.com/leesohyeon96/2387a7218b8512a31008785c1ff224d7.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-service]</h3>
+<script src="https://gist.github.com/leesohyeon96/2387a7218b8512a31008785c1ff224d7.js"></script>
 
-									<h3>[board-repo]</h3>
-									<script src="https://gist.github.com/leesohyeon96/a98d5c0c8f3bbf4b05faaf62172bd7d0.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
+<h3>[board-repo]</h3>
+<script src="https://gist.github.com/leesohyeon96/a98d5c0c8f3bbf4b05faaf62172bd7d0.js"></script>
 
-									<h3>[board-query]</h3>
-									<script src="https://gist.github.com/leesohyeon96/d16f43df0af75152a25e62de72f244a2.js"></script>
+<p><br /></p>
 
-									<p><br /></p>
-								</div>
-							</div>
+<h3>[board-query]</h3>
+<script src="https://gist.github.com/leesohyeon96/d16f43df0af75152a25e62de72f244a2.js"></script>
 
-						</div>
+<p><br /></p>
+
 					</div>
-
-					<div class="v-line-left v-line-top"><div class="v-line-block"><span></span></div></div>
-
 				</div>
-			</section>
+
+			</div>
+		</div>
+
+		<div class="v-line-left v-line-top"><div class="v-line-block"><span></span></div></div>
+
+	</div>
+</section>
+
+
+
       </div>
 
 
@@ -413,6 +454,13 @@
 
 <!-- Main -->
 <script src="/assets/js/common.js"></script>
-</body>
+<!-- Language switcher script -->
+    <script src="/assets/js/language-switcher.js"></script>
+    <script>
+      // Initialize language content
+      LanguageSwitcher.loadLanguageContent('ko');
+    </script>
+
+  </body>
 
 </html>

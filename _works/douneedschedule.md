@@ -1,6 +1,8 @@
 ---
 layout: works-single # or Page 로 하면 됨
 title: DoUNeedSchedule Project(일정 필여행?)
+lang: ko
+permalink: /ko/works/douneedschedule
 category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/douneedschedule/douneedscheduleMain.png  # 변경예정

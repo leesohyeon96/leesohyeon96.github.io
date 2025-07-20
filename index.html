@@ -6,3 +6,29 @@ layout: builder
 sections: hero-image,skills,resume,portfolio,blog,contacts
 <!--sections: hero-image,services,skills,portfolio,resume,testimonials,pricing,blog,contacts-->
 ---
+
+<script>
+// Auto-redirect based on browser language
+(function() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    const savedLang = localStorage.getItem('preferred-language');
+    
+    let targetLang = 'en'; // Default to English
+    
+    if (savedLang) {
+        targetLang = savedLang;
+    } else if (browserLang.startsWith('ko')) {
+        targetLang = 'ko';
+    }
+    
+    // Save preference
+    localStorage.setItem('preferred-language', targetLang);
+    
+    // Redirect to language-specific path
+    if (targetLang === 'ko') {
+        window.location.href = '/ko/';
+    } else {
+        window.location.href = '/en/';
+    }
+})();
+</script>

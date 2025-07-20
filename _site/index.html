@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="ko"><head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -7,7 +7,7 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="SHL Dev" />
 <meta name="author" content="Admin" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ko" />
 <meta name="description" content="SHL PR Project Portfolio History etc" />
 <meta property="og:description" content="SHL PR Project Portfolio History etc" />
 <link rel="canonical" href="http://localhost:4000/" />
@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/assets/css/syntax.css" />
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/dark.css">
+  <link rel="stylesheet" href="/assets/css/language-switcher.css">
 
   <!--[if lt IE 9]>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -42,8 +43,10 @@
   <!-- Favicons -->
   <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SHL Dev" /></head>
 
+  
+  
 
-  <body class=" home dark-skin">
+  <body class=" home dark-skin lang-ko">
 
     <div class="container-page ">
 
@@ -60,6 +63,13 @@
   </div>
 </div>
 
+
+
+
+
+
+
+<!-- Get current language from URL path -->
 
 
 
@@ -100,6 +110,12 @@
 					<span></span>
 				</a>
 
+				<!-- Language Switcher -->
+				<div class="language-switcher">
+					<a href="#" data-lang="ko" class="lang-link ">한국어</a> |
+					<a href="#" data-lang="en" class="lang-link active">English</a>
+				</div>
+
 				<!-- Menu Full Overlay -->
 				<div class="menu-full-overlay">
 					<div class="menu-full-container">
@@ -113,31 +129,51 @@
 											
 											
 											<li class="menu-item current-menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/">Home</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="/">홈</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#skills-section">Skills</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#skills-section">스킬</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#resume-section">History</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#resume-section">히스토리</a>
+												
+												
+											</li>
+											
+											
+											<li class="menu-item">
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#works-section">프로젝트</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item current-menu-item menu-item-has-children has-children">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="">Pages</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="">페이지</a>
+												
 												
 												<ul class="sub-menu">
 													
 													
 													<li class="menu-item">
-														<a class="splitting-text-anim-1" data-splitting="chars" href="/works/">Works</a>
+														
+															
+																<a class="splitting-text-anim-1" data-splitting="chars" href="/en/works/">프로젝트 상세</a>
+															
+														
 													</li>
 													
 												</ul>
@@ -188,6 +224,8 @@
 	
 
 
+
+
 <!-- Section - Hero Started -->
 <section class="lui-section lui-section-hero lui-gradient-top" id="started-section">
   <div class="container">
@@ -201,15 +239,15 @@
               <span></span>
             </div>
             <h1 class="title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
-              <span><b>Sohyeon</b> Lee</span>
+              <span><b>이소현</b></span>
             </h1>
             <div class="label lui-subtitle">
-              <strong>Backend Developer</strong>
+              <strong>백엔드 개발자</strong>
             </div>
           </div>
           <div class="description">
             <div>
-              <p>3년차 백엔드 개발자입니다 :) <br/> I've been working from 2022 as a backend developer</p>
+              <p>책임감 있는 3년차 백엔드 개발자입니다</p>
             </div>
             <div class="social-links">
               
@@ -238,7 +276,7 @@
 <!--          </div>-->
         </div>
         <div class="slide scrolla-element-anim-1 scroll-animate" data-animate="active">
-          <img decoding="async" src="/assets/img/profile.png" alt="Sohyeon Lee" />
+          <img decoding="async" src="/assets/img/profile.png" alt="이소현" />
 
           <span class="circle circle-1"></span>
 
@@ -251,10 +289,10 @@
               
               <li>
                 <span class="num">
-                  2 <strong>+</strong>
+                  3 <strong>+</strong>
                 </span>
                 <span class="value">
-                  Years of <strong>Experience</strong>
+                  년간 <strong>경력</strong>
                 </span>
               </li>
               
@@ -263,7 +301,7 @@
                   3
                 </span>
                 <span class="value">
-                  Completed <strong>Projects</strong>
+                  완료된 <strong>프로젝트</strong>
                 </span>
               </li>
               
@@ -281,6 +319,8 @@
 
 
 	
+
+
 
 <!-- Section - Skills -->
 <section class="lui-section lui-gradient-center" id="skills-section">
@@ -464,6 +504,27 @@
 <!--              </div>-->
             </div>
             
+            <div class="skills-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <h6 class="name">
+                <span>Next.js</span>
+              </h6>
+              <div class="text">
+                <div>
+                  <p>주 사용 프레임워크<br/> 현 회사에서 사용</p>
+                </div>
+              </div>
+              <div class="dots">
+                <div class="dot" style="width: %;">
+                  <span></span>
+                </div>
+              </div>
+              <!-- 나중에 스킬에 % 넣을거면 주석풀기 ! -->
+<!--              <div class="value">-->
+<!--                <span class="num"> <span>%</span>-->
+<!--                </span>-->
+<!--              </div>-->
+            </div>
+            
           </div>
 
         </div>
@@ -603,7 +664,7 @@
               </h6>
               <div class="text">
                 <div>
-                  <p>Github 현 회사에서 사용 <br/> GitLab 국비교육에서 사용</p>
+                  <p>Github 현 회사에서 사용 <br/> GitLab 교육에서 사용</p>
                 </div>
               </div>
               <div class="dots">
@@ -636,6 +697,8 @@
 
 	
 
+
+
 <!-- Section - Resume -->
 <section class="lui-section lui-gradient-bottom" id="resume-section">
 
@@ -663,7 +726,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
           <h5 class="history-title scrolla-element-anim-1 scroll-animate" data-animate="active">
-            <span>교육 & 경험 Ednucation & Experience</span>
+            <span>교육 & 경험 Education & Experience</span>
           </h5>
           <div class="history-items">
             
@@ -810,6 +873,10 @@
 
 
 
+
+
+
+
 <!-- Section - Works -->
 <section class="lui-section lui-gradient-top" id="works-section">
 
@@ -819,7 +886,7 @@
 
       <div class="m-titles align-center">
         <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
-          <span>프로젝트</span>
+          <span>Projects</span>
         </h2>
         <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
           <span>Personal Project</span>
@@ -845,131 +912,151 @@
 
         <div class="works-items works-masonry-items row">
           
+            
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-completed-projects">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="/works/jaegojaego">
+                  <a href="/en/works/jaegojaego">
                     <img decoding="async" src="/assets/img/works/jaegojaego/jaegojaegoLogin.png" alt="JaegoJaego Project" />
                     <span class="overlay"></span>
                   </a>
                 </div>
               </div>
               <div class="desc">
-                <span class="category">완료된 프로젝트</span>
+                <span class="category">Completed Projects</span>
                 <h5 class="name">
-                  <a href="/works/jaegojaego">JaegoJaego Project</a>
+                  <a href="/en/works/jaegojaego">JaegoJaego Project</a>
                 </h5>
                 <div class="text">
-                  <p>재고관리 및 수발주 운영 관리 프로그램</p>
+                  <p>Inventory management and order/supply operation management program</p>
                 </div>
-                <a href="/works/jaegojaego" class="lnk">View Project</a>
+                <a href="/en/works/jaegojaego" class="lnk">View Project</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            
           
+            
+          
+            
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-on-going-projects">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="/works/bowmeow">
-                    <img decoding="async" src="/assets/img/works/bowmeow/bowmeowThumb.png" alt="BowMeow Project (멍냥프로젝트)" />
+                  <a href="/en/works/bowmeow">
+                    <img decoding="async" src="/assets/img/works/bowmeow/bowmeowThumb.png" alt="BowMeow Project" />
                     <span class="overlay"></span>
                   </a>
                 </div>
               </div>
               <div class="desc">
-                <span class="category">진행중인 프로젝트</span>
+                <span class="category">Ongoing Projects</span>
                 <h5 class="name">
-                  <a href="/works/bowmeow">BowMeow Project (멍냥프로젝트)</a>
+                  <a href="/en/works/bowmeow">BowMeow Project</a>
                 </h5>
                 <div class="text">
-                  <p>MSA 기반 반려동물 용품 C2C & B2C 거래 플랫폼</p>
+                  <p>MSA-based Pet Supplies C2C & B2C Trading Platform</p>
                 </div>
-                <a href="/works/bowmeow" class="lnk">View Project</a>
+                <a href="/en/works/bowmeow" class="lnk">View Project</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            
           
+            
+          
+            
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-completed-projects">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="/works/byat">
+                  <a href="/en/works/byat">
                     <img decoding="async" src="/assets/img/works/byat/byatLogin.png" alt="BYAT[Better than Your Agile Tool] Project" />
                     <span class="overlay"></span>
                   </a>
                 </div>
               </div>
               <div class="desc">
-                <span class="category">완료된 프로젝트</span>
+                <span class="category">Completed Projects</span>
                 <h5 class="name">
-                  <a href="/works/byat">BYAT[Better than Your Agile Tool] Project</a>
+                  <a href="/en/works/byat">BYAT[Better than Your Agile Tool] Project</a>
                 </h5>
                 <div class="text">
-                  <p>IT중소기업(ex.스타트업)을 대상으로 하고 ‘애자일 기법’을 바탕으로 프로세스를 관리해주는 PMS 어플리케이션</p>
+                  <p>PMS application for IT SMEs (e.g., startups) that manages processes based on 'Agile methodology'</p>
                 </div>
-                <a href="/works/byat" class="lnk">View Project</a>
+                <a href="/en/works/byat" class="lnk">View Project</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            
           
+            
+          
+            
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-completed-projects">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="/works/douneedschedule">
-                    <img decoding="async" src="/assets/img/works/douneedschedule/douneedscheduleMain.png" alt="DoUNeedSchedule Project(일정 필여행?)" />
+                  <a href="/en/works/douneedschedule">
+                    <img decoding="async" src="/assets/img/works/douneedschedule/douneedscheduleMain.png" alt="DoUNeedSchedule Project (Do You Need Schedule?)" />
                     <span class="overlay"></span>
                   </a>
                 </div>
               </div>
               <div class="desc">
-                <span class="category">완료된 프로젝트</span>
+                <span class="category">Completed Projects</span>
                 <h5 class="name">
-                  <a href="/works/douneedschedule">DoUNeedSchedule Project(일정 필여행?)</a>
+                  <a href="/en/works/douneedschedule">DoUNeedSchedule Project (Do You Need Schedule?)</a>
                 </h5>
                 <div class="text">
-                  <p>국내 여행에 초점을 맞춘 여행 일정 공유 플랫폼</p>
+                  <p>Travel schedule sharing platform focused on domestic travel</p>
                 </div>
-                <a href="/works/douneedschedule" class="lnk">View Project</a>
+                <a href="/en/works/douneedschedule" class="lnk">View Project</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            
           
+            
+          
+            
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-completed-projects">
             <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
-                  <a href="/works/ohguohgutalk">
+                  <a href="/en/works/ohguohgutalk">
                     <img decoding="async" src="/assets/img/works/ohguohgutalk/ohguohgutalkThumb.png" alt="OhguOhguTalk Project" />
                     <span class="overlay"></span>
                   </a>
                 </div>
               </div>
               <div class="desc">
-                <span class="category">완료된 프로젝트</span>
+                <span class="category">Completed Projects</span>
                 <h5 class="name">
-                  <a href="/works/ohguohgutalk">OhguOhguTalk Project</a>
+                  <a href="/en/works/ohguohgutalk">OhguOhguTalk Project</a>
                 </h5>
                 <div class="text">
-                  <p>Websocket으로 구현한 간단한 웹 메시징 플랫폼</p>
+                  <p>Simple web messaging platform implemented with WebSocket</p>
                 </div>
-                <a href="/works/ohguohgutalk" class="lnk">View Project</a>
+                <a href="/en/works/ohguohgutalk" class="lnk">View Project</a>
               </div>
               <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
             </div>
           </div>
+            
+          
+            
           
         </div>
 
         <div class="load-more-link">
           <a href="works/" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">
-            <span>자세히 보기</span>
+            <span>View Details</span>
           </a>
         </div>
       </div>
@@ -1273,6 +1360,13 @@
 
 <!-- Main -->
 <script src="/assets/js/common.js"></script>
-</body>
+<!-- Language switcher script -->
+    <script src="/assets/js/language-switcher.js"></script>
+    <script>
+      // Initialize language content
+      LanguageSwitcher.loadLanguageContent('ko');
+    </script>
+
+  </body>
 
 </html>

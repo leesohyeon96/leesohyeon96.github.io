@@ -1,7 +1,18 @@
-{% assign navigation = site.data.navigation['main'] %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign lang_data = site.data[current_lang] %}
+{% assign navigation = lang_data.navigation['main'] | default: site.data.navigation['main'] %}
 {% assign header = site.data.settings['header'] %}
 {% assign social = site.data.settings['social'] %}
 {% assign page_url = page.url | absolute_url %}
+
+<!-- Get current language from URL path -->
+{% assign path_parts = page.url | split: '/' %}
+{% assign url_lang = path_parts[1] %}
+{% if url_lang == 'ko' or url_lang == 'en' %}
+  {% assign current_url_lang = url_lang %}
+{% else %}
+  {% assign current_url_lang = 'en' %}
+{% endif %}
 
 <!-- Header -->
 <header class="header">
@@ -39,6 +50,12 @@
 					<span></span>
 				</a>
 
+				<!-- Language Switcher -->
+				<div class="language-switcher">
+					<a href="#" data-lang="ko" class="lang-link {% if current_url_lang == 'ko' %}active{% endif %}">한국어</a> |
+					<a href="#" data-lang="en" class="lang-link {% if current_url_lang == 'en' %}active{% endif %}">English</a>
+				</div>
+
 				<!-- Menu Full Overlay -->
 				<div class="menu-full-overlay">
 					<div class="menu-full-container">
@@ -52,13 +69,25 @@
 											{% for nav in navigation %}
 											{% assign nav_url = nav.url | absolute_url %}
 											<li class="menu-item{% if page_url == nav_url %} current-menu-item{% endif %}{% if nav.parent == 1 %} menu-item-has-children has-children{% endif %}">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="{{ nav.url | relative_url }}">{{ nav.title }}</a>
+												{% if nav.url contains '#' %}
+													<a class="splitting-text-anim-2" data-splitting="chars" href="{{ nav.url }}">{{ nav.title }}</a>
+												{% else %}
+													<a class="splitting-text-anim-2" data-splitting="chars" href="{{ nav.url | relative_url }}">{{ nav.title }}</a>
+												{% endif %}
 												{% if nav.parent == 1 %}
 												<ul class="sub-menu">
 													{% for subnav in nav.childs %}
 													{% assign subnav_url = subnav.url | absolute_url %}
 													<li class="menu-item{% if page_url == subnav_url %} current-menu-item{% endif %}">
-														<a class="splitting-text-anim-1" data-splitting="chars" href="{{ subnav.url | relative_url }}">{{ subnav.title }}</a>
+														{% if subnav.url contains '#' %}
+															<a class="splitting-text-anim-1" data-splitting="chars" href="{{ subnav.url }}">{{ subnav.title }}</a>
+														{% else %}
+															{% if subnav.url == 'works/' %}
+																<a class="splitting-text-anim-1" data-splitting="chars" href="/{{ current_url_lang }}/works/">{{ subnav.title }}</a>
+															{% else %}
+																<a class="splitting-text-anim-1" data-splitting="chars" href="{{ subnav.url | relative_url }}">{{ subnav.title }}</a>
+															{% endif %}
+														{% endif %}
 													</li>
 													{% endfor %}
 												</ul>

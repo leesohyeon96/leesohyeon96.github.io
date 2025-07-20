@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="ko"><head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -7,7 +7,7 @@
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Design" />
 <meta name="author" content="Admin" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ko" />
 <meta name="description" content="SHL PR Project Portfolio History etc" />
 <meta property="og:description" content="SHL PR Project Portfolio History etc" />
 <link rel="canonical" href="http://localhost:4000/categories/design/" />
@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/assets/css/syntax.css" />
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/dark.css">
+  <link rel="stylesheet" href="/assets/css/language-switcher.css">
 
   <!--[if lt IE 9]>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -42,8 +43,10 @@
   <!-- Favicons -->
   <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SHL Dev" /></head>
 
+  
+  
 
-  <body class=" blog dark-skin">
+  <body class=" blog dark-skin lang-ko">
 
     <div class="container-page ">
 
@@ -60,6 +63,13 @@
   </div>
 </div>
 
+
+
+
+
+
+
+<!-- Get current language from URL path -->
 
 
 
@@ -100,6 +110,12 @@
 					<span></span>
 				</a>
 
+				<!-- Language Switcher -->
+				<div class="language-switcher">
+					<a href="#" data-lang="ko" class="lang-link ">한국어</a> |
+					<a href="#" data-lang="en" class="lang-link active">English</a>
+				</div>
+
 				<!-- Menu Full Overlay -->
 				<div class="menu-full-overlay">
 					<div class="menu-full-container">
@@ -113,31 +129,51 @@
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/">Home</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="/">홈</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#skills-section">Skills</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#skills-section">스킬</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="/#resume-section">History</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#resume-section">히스토리</a>
+												
+												
+											</li>
+											
+											
+											<li class="menu-item">
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="#works-section">프로젝트</a>
+												
 												
 											</li>
 											
 											
 											<li class="menu-item menu-item-has-children has-children">
-												<a class="splitting-text-anim-2" data-splitting="chars" href="">Pages</a>
+												
+													<a class="splitting-text-anim-2" data-splitting="chars" href="">페이지</a>
+												
 												
 												<ul class="sub-menu">
 													
 													
 													<li class="menu-item">
-														<a class="splitting-text-anim-1" data-splitting="chars" href="/works/">Works</a>
+														
+															
+																<a class="splitting-text-anim-1" data-splitting="chars" href="/en/works/">프로젝트 상세</a>
+															
+														
 													</li>
 													
 												</ul>
@@ -444,6 +480,13 @@
 
 <!-- Main -->
 <script src="/assets/js/common.js"></script>
-</body>
+<!-- Language switcher script -->
+    <script src="/assets/js/language-switcher.js"></script>
+    <script>
+      // Initialize language content
+      LanguageSwitcher.loadLanguageContent('ko');
+    </script>
+
+  </body>
 
 </html>

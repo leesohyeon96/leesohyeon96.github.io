@@ -2,6 +2,8 @@
 # preview details
 layout: works-single # or Page 로 하면 됨 
 title: BowMeow Project (멍냥프로젝트)
+lang: ko
+permalink: /ko/works/bowmeow
 category: 진행중인 프로젝트
 category_slug: on-going-projects
 image: assets/img/works/bowmeow/bowmeowThumb.png

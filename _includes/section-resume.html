@@ -1,4 +1,6 @@
-{% assign content = site.data.content['resume'] %}
+{% assign current_lang = page.lang | default: site.lang | default: "en" %}
+{% assign lang_data = site.data[current_lang] %}
+{% assign content = lang_data.resume %}
 
 <!-- Section - Resume -->
 <section class="lui-section lui-gradient-bottom" id="resume-section">

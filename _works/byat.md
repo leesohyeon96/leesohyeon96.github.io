@@ -2,6 +2,8 @@
 # preview details
 layout: works-single # or Page 로 하면 됨
 title: BYAT[Better than Your Agile Tool] Project
+lang: ko
+permalink: /ko/works/byat
 category: 완료된 프로젝트
 category_slug: completed-projects
 image: assets/img/works/byat/byatLogin.png  
