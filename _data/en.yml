@@ -1,4 +1,7 @@
 # English data file
+description: "Portfolio of Sohyeon Lee, a responsible 3-year backend developer. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
+keywords: "backend developer, Java developer, Spring developer, Node.js developer, React developer, portfolio, web development, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
+
 hero:
   image: "assets/img/profile.png"
   image_alt: "Sohyeon Lee"

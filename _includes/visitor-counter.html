@@ -1,0 +1,119 @@
+{% comment %}
+방문자 수 표시 컴포넌트
+사용법: {% include visitor-counter.html %}
+{% endcomment %}
+
+{% assign current_lang = page.lang | default: site.lang %}
+{% assign lang_data = site.data[current_lang] %}
+
+<div class="visitor-counter">
+  <div class="counter-item">
+    <span class="counter-number" id="today-visitors">-</span>
+    <span class="counter-label">{% if current_lang == 'ko' %}오늘 방문자{% else %}Today{% endif %}</span>
+  </div>
+  <div class="counter-item">
+    <span class="counter-number" id="total-visitors">-</span>
+    <span class="counter-label">{% if current_lang == 'ko' %}누적 방문자{% else %}Total{% endif %}</span>
+  </div>
+</div>
+
+<style>
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.visitor-counter {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+  justify-content: flex-start;
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.counter-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: #29a587;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 10px;
+  margin-top: 1px;
+  line-height: 1;
+}
+
+/* 다크모드 */
+.dark .visitor-counter {
+  color: #ccc;
+}
+
+.dark .counter-number {
+  color: #29a587;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .visitor-counter {
+    font-size: 10px;
+    gap: 10px;
+  }
+  
+  .counter-number {
+    font-size: 14px;
+  }
+  
+  .counter-label {
+    font-size: 9px;
+  }
+}
+</style>
+
+<script>
+// 방문자 수 표시 함수
+function updateVisitorCount() {
+  // Google Analytics API 사용 (GA4)
+  if (typeof gtag !== 'undefined') {
+    // 오늘 방문자 수 (localStorage 기반 - 실제로는 GA API 사용)
+    const today = new Date().toDateString();
+    const todayVisitors = localStorage.getItem('today_visitors_' + today) || 0;
+    const totalVisitors = localStorage.getItem('total_visitors') || 0;
+    
+    // 현재 방문자가 오늘 처음 방문하는지 확인
+    const hasVisitedToday = localStorage.getItem('visited_today_' + today);
+    if (!hasVisitedToday) {
+      localStorage.setItem('visited_today_' + today, 'true');
+      localStorage.setItem('today_visitors_' + today, parseInt(todayVisitors) + 1);
+      localStorage.setItem('total_visitors', parseInt(totalVisitors) + 1);
+    }
+    
+    // 화면 업데이트
+    document.getElementById('today-visitors').textContent = localStorage.getItem('today_visitors_' + today);
+    document.getElementById('total-visitors').textContent = localStorage.getItem('total_visitors');
+    
+    // Google Analytics 이벤트 전송
+    gtag('event', 'visitor_counter_view', {
+      'today_visitors': localStorage.getItem('today_visitors_' + today),
+      'total_visitors': localStorage.getItem('total_visitors')
+    });
+  }
+}
+
+// 페이지 로드 시 실행
+document.addEventListener('DOMContentLoaded', function() {
+  updateVisitorCount();
+});
+
+// 30초마다 업데이트 (실시간 느낌)
+setInterval(updateVisitorCount, 30000);
+</script> 

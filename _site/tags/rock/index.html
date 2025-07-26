@@ -19,7 +19,67 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Admin"},"description":"SHL PR Project Portfolio History etc","headline":"rock","url":"http://localhost:4000/tags/rock/"}</script>
 <!-- End Jekyll SEO tag -->
-<!-- Fonts -->
+
+
+
+
+
+<!-- 기본 메타 태그 -->
+<meta name="description" content="책임감 있는 3년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다.">
+<meta name="keywords" content="백엔드 개발자, Java 개발자, Spring 개발자, Node.js 개발자, React 개발자, 포트폴리오, 웹개발, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis">
+<meta name="author" content="Admin">
+<meta name="robots" content="index, follow">
+
+<!-- 언어별 설정 -->
+
+  <meta name="language" content="ko">
+  <meta name="geo.region" content="KR">
+  <meta name="geo.placename" content="South Korea">
+
+
+<!-- Open Graph (페이스북, 카카오톡 공유용) -->
+<meta property="og:title" content="rock">
+<meta property="og:description" content="책임감 있는 3년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다.">
+<meta property="og:url" content="http://localhost:4000/tags/rock/">
+<meta property="og:site_name" content="SHL Dev">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="http://localhost:4000/assets/img/profile.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="rock">
+<meta name="twitter:description" content="책임감 있는 3년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다.">
+<meta name="twitter:image" content="http://localhost:4000/assets/img/profile.png">
+
+<!-- 언어별 대안 페이지 (hreflang) -->
+
+  <link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/tags/rock/">
+  <link rel="alternate" hreflang="en" href="http://localhost:4000/en/tags/rock/">
+  <link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/tags/rock/">
+
+
+<!-- 구조화된 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Admin",
+  "url": "http://localhost:4000",
+  "image": "http://localhost:4000/assets/img/profile.png",
+  "sameAs": [
+    "https://github.com/leesohyeon96"
+  ],
+  "jobTitle": "웹 개발자",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "개발자"
+  },
+  "description": "책임감 있는 3년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다."
+}
+</script>
+
+ <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost%3A0%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700%3B1%2C800%3B1%2C900%7CCaveat%3A400%3B500%3B600%3B700&#038;display=swap" type="text/css" media="all" >
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto" type="text/css" media="all" >
 
@@ -80,11 +140,132 @@
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
-				<!-- logo -->
-				<div class="logo">
-					<a href="http://localhost:4000">
-						<img width="" height="" src="/assets/img/logo2.png" alt="Sohyeon Lee" />
-					</a>
+				<!-- logo and visitor counter in same line -->
+				<div class="logo-container">
+					<!-- logo -->
+					<div class="logo">
+						<a href="http://localhost:4000">
+							<img width="" height="" src="/assets/img/logo2.png" alt="Sohyeon Lee" />
+						</a>
+					</div>
+					
+					<!-- Visitor Counter (same line) -->
+					
+
+
+
+
+<div class="visitor-counter">
+  <div class="counter-item">
+    <span class="counter-number" id="today-visitors">-</span>
+    <span class="counter-label">오늘 방문자</span>
+  </div>
+  <div class="counter-item">
+    <span class="counter-number" id="total-visitors">-</span>
+    <span class="counter-label">누적 방문자</span>
+  </div>
+</div>
+
+<style>
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.visitor-counter {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+  justify-content: flex-start;
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.counter-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: #29a587;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 10px;
+  margin-top: 1px;
+  line-height: 1;
+}
+
+/* 다크모드 */
+.dark .visitor-counter {
+  color: #ccc;
+}
+
+.dark .counter-number {
+  color: #29a587;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .visitor-counter {
+    font-size: 10px;
+    gap: 10px;
+  }
+  
+  .counter-number {
+    font-size: 14px;
+  }
+  
+  .counter-label {
+    font-size: 9px;
+  }
+}
+</style>
+
+<script>
+// 방문자 수 표시 함수
+function updateVisitorCount() {
+  // Google Analytics API 사용 (GA4)
+  if (typeof gtag !== 'undefined') {
+    // 오늘 방문자 수 (localStorage 기반 - 실제로는 GA API 사용)
+    const today = new Date().toDateString();
+    const todayVisitors = localStorage.getItem('today_visitors_' + today) || 0;
+    const totalVisitors = localStorage.getItem('total_visitors') || 0;
+    
+    // 현재 방문자가 오늘 처음 방문하는지 확인
+    const hasVisitedToday = localStorage.getItem('visited_today_' + today);
+    if (!hasVisitedToday) {
+      localStorage.setItem('visited_today_' + today, 'true');
+      localStorage.setItem('today_visitors_' + today, parseInt(todayVisitors) + 1);
+      localStorage.setItem('total_visitors', parseInt(totalVisitors) + 1);
+    }
+    
+    // 화면 업데이트
+    document.getElementById('today-visitors').textContent = localStorage.getItem('today_visitors_' + today);
+    document.getElementById('total-visitors').textContent = localStorage.getItem('total_visitors');
+    
+    // Google Analytics 이벤트 전송
+    gtag('event', 'visitor_counter_view', {
+      'today_visitors': localStorage.getItem('today_visitors_' + today),
+      'total_visitors': localStorage.getItem('total_visitors')
+    });
+  }
+}
+
+// 페이지 로드 시 실행
+document.addEventListener('DOMContentLoaded', function() {
+  updateVisitorCount();
+});
+
+// 30초마다 업데이트 (실시간 느낌)
+setInterval(updateVisitorCount, 30000);
+</script> 
 				</div>
 
 			</div>

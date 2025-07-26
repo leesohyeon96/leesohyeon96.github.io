@@ -48,6 +48,9 @@ languages: ["ko", "en"]
 default_lang: "ko"
 lang: "ko"
 
+# Google Analytics
+google_analytics: "G-SZB9ZNHMK1"
+
 # paginations & permalinks
 paginate: 6
 paginate_path: "/blog/page:num/"

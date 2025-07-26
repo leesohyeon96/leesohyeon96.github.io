@@ -1,0 +1,85 @@
+{% comment %}
+언어별 SEO 메타 태그
+사용법: {% include seo-meta.html %}
+{% endcomment %}
+
+{% assign current_lang = page.lang | default: site.lang %}
+{% assign lang_data = site.data[current_lang] %}
+
+<!-- 기본 메타 태그 -->
+<meta name="description" content="{{ page.description | default: lang_data.description | default: site.description }}">
+<meta name="keywords" content="{{ page.keywords | default: lang_data.keywords | default: '개발자, 포트폴리오, 웹개발, 프론트엔드' }}">
+<meta name="author" content="{{ site.author }}">
+<meta name="robots" content="index, follow">
+
+<!-- 언어별 설정 -->
+{% if current_lang == 'ko' %}
+  <meta name="language" content="ko">
+  <meta name="geo.region" content="KR">
+  <meta name="geo.placename" content="South Korea">
+{% else %}
+  <meta name="language" content="en">
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="United States">
+{% endif %}
+
+<!-- Open Graph (페이스북, 카카오톡 공유용) -->
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: lang_data.description | default: site.description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="{% if current_lang == 'ko' %}ko_KR{% else %}en_US{% endif %}">
+<meta property="og:image" content="{{ site.url }}/assets/img/profile.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ page.description | default: lang_data.description | default: site.description }}">
+<meta name="twitter:image" content="{{ site.url }}/assets/img/profile.png">
+
+<!-- 언어별 대안 페이지 (hreflang) -->
+{% if page.layout != 'post' %}
+  <link rel="alternate" hreflang="ko" href="{{ site.url }}/ko{{ page.url | remove: '/ko' | remove: '/en' }}">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url | remove: '/ko' | remove: '/en' }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko{{ page.url | remove: '/ko' | remove: '/en' }}">
+{% endif %}
+
+<!-- 구조화된 데이터 (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.url }}/assets/img/profile.png",
+  "sameAs": [
+    "https://github.com/leesohyeon96"
+  ],
+  "jobTitle": "{% if current_lang == 'ko' %}웹 개발자{% else %}Web Developer{% endif %}",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "{% if current_lang == 'ko' %}개발자{% else %}Developer{% endif %}"
+  },
+  "description": "{{ lang_data.description | default: site.description }}"
+}
+</script>
+
+{% if page.layout == 'works-single' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | default: page.short_description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  },
+  "url": "{{ site.url }}{{ page.url }}",
+  "image": "{{ site.url }}{{ page.image }}",
+  "dateCreated": "{{ page.date | date: '%Y-%m-%d' }}",
+  "inLanguage": "{{ current_lang }}"
+}
+</script>
+{% endif %} 

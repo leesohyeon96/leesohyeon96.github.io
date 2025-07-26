@@ -1,0 +1,79 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- 홈페이지 -->
+  <url>
+    <loc>{{ site.url }}/ko/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko/"/>
+  </url>
+  
+  <url>
+    <loc>{{ site.url }}/en/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko/"/>
+  </url>
+  
+  <!-- 프로젝트 목록 페이지 -->
+  <url>
+    <loc>{{ site.url }}/ko/works/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/works/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko/works/"/>
+  </url>
+  
+  <url>
+    <loc>{{ site.url }}/en/works/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/works/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko/works/"/>
+  </url>
+  
+  <!-- 개별 프로젝트 페이지 -->
+  {% for work in site.works %}
+  <url>
+    <loc>{{ site.url }}{{ work.permalink }}</loc>
+    <lastmod>{{ work.date | date_to_xmlschema | default: site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    {% if work.lang == 'ko' %}
+      <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}{{ work.permalink }}"/>
+      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/works/{{ work.name | remove: '.md' | remove: '-en' }}"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ work.permalink }}"/>
+    {% else %}
+      <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/works/{{ work.name | remove: '.md' | remove: '-en' }}"/>
+      <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ work.permalink }}"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/ko/works/{{ work.name | remove: '.md' | remove: '-en' }}"/>
+    {% endif %}
+  </url>
+  {% endfor %}
+  
+  <!-- 블로그 포스트 -->
+  {% for post in site.posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+  
+</urlset> 

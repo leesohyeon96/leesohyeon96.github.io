@@ -20,11 +20,17 @@
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
-				<!-- logo -->
-				<div class="logo">
-					<a href="{{ site.url }}">
-						<img width="{{ header.logo.width }}" height="{{ header.logo.height }}" src="{{ header.logo.image | relative_url }}" alt="{{ header.logo.alt }}" />
-					</a>
+				<!-- logo and visitor counter in same line -->
+				<div class="logo-container">
+					<!-- logo -->
+					<div class="logo">
+						<a href="{{ site.url }}">
+							<img width="{{ header.logo.width }}" height="{{ header.logo.height }}" src="{{ header.logo.image | relative_url }}" alt="{{ header.logo.alt }}" />
+						</a>
+					</div>
+					
+					<!-- Visitor Counter (same line) -->
+					{% include visitor-counter.html %}
 				</div>
 
 			</div>
