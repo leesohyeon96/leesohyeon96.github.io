@@ -1,0 +1,116 @@
+# English data file
+hero:
+  image: "assets/img/profile.png"
+  image_alt: "Sohyeon Lee"
+  title: "<b>Sohyeon</b> Lee"
+  after_title: "<strong>Backend Developer</strong>"
+  description: "3-year backend developer :) <br/> I've been working from 2022 as a backend developer"
+  bg_title: "SHL Dev"
+  info:
+    - num: "2 <strong>+</strong>"
+      value: "Years of <strong>Experience</strong>"
+    - num: "3"
+      value: "Completed <strong>Projects</strong>"
+
+skills:
+  title: "Skills"
+  subtitle: "Skills"
+  bg_title: "Skills"
+  column1:
+    items:
+      - label: "Java"
+        text: "Main language <br/> Currently used at work"
+      - label: "Spring"
+        text: "Main framework <br/> Currently used at work"
+      - label: "Node.js"
+        text: "Backend runtime for [DoUNeedSchedule Project]"
+      - label: "Mybatis"
+        text: "Basic CRUD <br/> Recursive/Dynamic queries"
+      - label: "JPA"
+        text: "Basic CRUD <br/> JPQL & Native queries <br/> Spring Data JPA"
+  column2:
+    items:
+      - label: "JavaScript"
+        text: "Basic functionality"
+      - label: "React"
+        text: "Basic features (useEffect/useState etc.) <br/> Used in [DoUNeedSchedule Project]"
+  column3:
+    items:
+      - label: "AWS"
+        text: "EC2 <br/> Used in [DoUNeedSchedule Project] & [Bowmeow Project]"
+      - label: "Azure"
+        text: "App Service <br/> Azure Function <br/> Gateway <br/> Currently used at work"
+      - label: "Docker"
+        text: "DockerFile <br/> Docker Compose <br/> Used in multiple projects and current work"
+      - label: "MySQL | MariaDB"
+        text: "Basic functionality <br/> Routines (stored procedures & functions) <br/> Currently used at work"
+      - label: "MongoDB"
+        text: "Basic commands (CRUD)"
+      - label: "Redis"
+        text: "Caching <br/> Pub/Sub <br/> Spring Data Redis <br/> Used in [Ohguohgutalk Project]"
+      - label: "Github | GitLab"
+        text: "Github currently used at work <br/> GitLab used in government-funded training"
+
+resume:
+  title: "History"
+  subtitle: "History"
+  bg_title: "History"
+  education:
+    title: "Education & Experience"
+    items:
+      - name: "MSA-based Pet C2C Trading Platform Project"
+        subname: "BowMeow Project"
+        period: "2024.08 ~ <b>Present</b>"
+        text: "MSA architecture learning project <br/> Currently in progress & check [Projects] section"
+      - name: "Korea National Open University Computer Science"
+        subname: "Korea National Open University Computer Science <br/> Transferred to 2nd year, currently enrolled"
+        period: "2023.03 ~ <b>Present</b>"
+        text: "Expected graduation 2025.06 <br/> Transferred to 2nd year in 2023.03"
+      - name: "WebSocket-based Web Messaging Platform Project"
+        subname: "OhguOhgutalk Project"
+        period: "2023.02 ~ 2023.08"
+        text: "WebSocket usage and JPA, mongoDB learning project <br/> Only works locally"
+      - name: "React & Node.js Study and Project"
+        subname: "DoUNeedSchedule Project"
+        period: "2022.05 ~ 2022.08"
+        text: "React course study and project with 2 team members <br/> Frontend server (React) & Backend server (Node.js)"
+      - name: "Government-funded IT Academy Completion"
+        subname: "The Joeun Academy <br/> Java Web Development & App Development <br/> (Secure Coding, Docker) Training Course Completion"
+        period: "2021.10 ~ 2022.05"
+        text: "Java concepts during 7-month training period <br/> Progressive development process of Spring and JDBC <br/> Total 2 projects completed"
+  experience:
+    title: "Work Experience"
+    items:
+      - name: "HealthConnect Inc."
+        subname: "Healthcare B2B & B2C Service"
+        period: "2022.09 ~ <b>Present</b>"
+        text: "Started as full-stack developer <br/> Currently working as backend developer"
+
+portfolio:
+  title: "Projects"
+  subtitle: "Personal Project"
+  bg_title: "Projects"
+  button:
+    link: "works/"
+    label: "View Details"
+
+navigation:
+  main:
+    - title: "Home"
+      url: "/"
+      parent: 0
+    - title: "Skills"
+      url: "#skills-section"
+      parent: 0
+    - title: "History"
+      url: "#resume-section"
+      parent: 0
+    - title: "Projects"
+      url: "#works-section"
+      parent: 0
+    - title: "Pages"
+      url: ""
+      parent: 1
+      childs:
+        - title: "Project Details"
+          url: "works/" 

@@ -1,0 +1,46 @@
+/* Language Switcher Styles */
+.language-switcher {
+    display: block;
+    margin-top: 20px;
+    margin-left: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.language-switcher a {
+    /*color: #333;*/
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.language-switcher a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.language-switcher a.active {
+    background-color: #29a587;
+    color: white;
+}
+
+/* Language-specific styles */
+.lang-ko .language-switcher a[data-lang="ko"],
+.lang-en .language-switcher a[data-lang="en"] {
+    background-color: #29a587;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .language-switcher {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+    
+    .language-switcher a {
+        padding: 3px 6px;
+    }
+} 
