@@ -8,7 +8,7 @@ layout: null
   <!-- 홈페이지 -->
   <url>
     <loc>{{ site.url }}/ko/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/"/>
@@ -18,7 +18,7 @@ layout: null
   
   <url>
     <loc>{{ site.url }}/en/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/"/>
@@ -29,7 +29,7 @@ layout: null
   <!-- 프로젝트 목록 페이지 -->
   <url>
     <loc>{{ site.url }}/ko/works/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/works/"/>
@@ -39,7 +39,7 @@ layout: null
   
   <url>
     <loc>{{ site.url }}/en/works/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="{{ site.url }}/ko/works/"/>
@@ -51,7 +51,7 @@ layout: null
   {% for work in site.works %}
   <url>
     <loc>{{ site.url }}{{ work.permalink }}</loc>
-    <lastmod>{{ work.date | date_to_xmlschema | default: site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ work.date | date_to_xmlschema | default: '2024-12-19T00:00:00+09:00' }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     {% if work.lang == 'ko' %}
