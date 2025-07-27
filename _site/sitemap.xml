@@ -5,7 +5,7 @@
   <!-- 홈페이지 -->
   <url>
     <loc>http://localhost:4000/ko/</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/"/>
@@ -15,7 +15,7 @@
   
   <url>
     <loc>http://localhost:4000/en/</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/"/>
@@ -26,7 +26,7 @@
   <!-- 프로젝트 목록 페이지 -->
   <url>
     <loc>http://localhost:4000/ko/works/</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/"/>
@@ -36,7 +36,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/"/>
@@ -48,7 +48,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/jaegojaego</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -60,7 +60,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/jaegojaego</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -72,7 +72,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/bowmeow</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/bowmeow</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -96,7 +96,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/byat</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -108,7 +108,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/byat</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -120,7 +120,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/douneedschedule</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -132,7 +132,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/douneedschedule</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -144,7 +144,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/ohguohgutalk</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -156,7 +156,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/ohguohgutalk</loc>
-    <lastmod>2025-07-26T20:06:36+09:00</lastmod>
+    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

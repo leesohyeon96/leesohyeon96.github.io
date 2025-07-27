@@ -99,6 +99,14 @@ portfolio:
     link: "works/"
     label: "자세히 보기"
 
+blog:
+  title: "블로그"
+  subtitle: "최신 개발 이야기와 기술 공유"
+  bg_title: "Blog"
+  button:
+    link: "/ko/blog/"
+    label: "더 보기"
+
 navigation:
   main:
     - title: "홈"
@@ -118,4 +126,6 @@ navigation:
       parent: 1
       childs:
         - title: "프로젝트 상세"
-          url: "works/" 
+          url: "works/"
+        - title: "블로그"
+          url: "/ko/blog/" 

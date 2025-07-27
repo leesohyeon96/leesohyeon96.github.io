@@ -64,6 +64,9 @@
             // We're on a project detail page, keep the same project
             const projectName = projectMatch[2];
             newPath = '/' + lang + '/works/' + projectName;
+        } else if (currentPath.includes('/blog/')) {
+            // We're on a blog page, switch to the same blog in different language
+            newPath = '/' + lang + '/blog/';
         } else {
             // Regular page, just change language prefix
             const pathWithoutLang = currentPath.replace(/^\/(ko|en)/, '');
@@ -100,6 +103,17 @@
             // Add click handler for smooth scrolling to anchors
             link.addEventListener('click', handleAnchorClick);
         });
+        
+        // Handle navigation links that should go to home page with anchors
+        const navLinks = document.querySelectorAll('a[href*="#"]');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.includes('#') && !href.startsWith('#')) {
+                // This is a link like "/ko/#section" or "/en/#section"
+                link.removeEventListener('click', handleNavAnchorClick);
+                link.addEventListener('click', handleNavAnchorClick);
+            }
+        });
     }
     
     // Handle anchor link clicks
@@ -113,6 +127,30 @@
                 behavior: 'smooth',
                 block: 'start'
             });
+        }
+    }
+    
+    function handleNavAnchorClick(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        
+        // Check if we're already on the home page
+        const currentPath = window.location.pathname;
+        const isHomePage = currentPath === '/ko/' || currentPath === '/en/' || currentPath === '/';
+        
+        if (isHomePage) {
+            // We're on home page, just scroll to the section
+            const anchor = href.split('#')[1];
+            const targetElement = document.getElementById(anchor);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // We're not on home page, navigate to home page with anchor
+            window.location.href = href;
         }
     }
 

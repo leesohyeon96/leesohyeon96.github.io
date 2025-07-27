@@ -97,6 +97,14 @@ portfolio:
     link: "works/"
     label: "View Details"
 
+blog:
+  title: "Blog"
+  subtitle: "Latest development stories and technology sharing"
+  bg_title: "Blog"
+  button:
+    link: "/en/blog/"
+    label: "Read More"
+
 navigation:
   main:
     - title: "Home"
@@ -116,4 +124,6 @@ navigation:
       parent: 1
       childs:
         - title: "Project Details"
-          url: "works/" 
+          url: "works/"
+        - title: "Blog"
+          url: "/en/blog/" 

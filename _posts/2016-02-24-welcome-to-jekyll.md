@@ -10,6 +10,8 @@ image: assets/img/blog/blog-4-scaled-1.jpg
 #full_image: assets/img/works/work4.jpg
 author: Sarah Rose
 tags: Jekyll
+published: true
+lang: en
 ---
 # 여기가 블로그 글 작성하는 곳 (Project 존으로 만들면 될듯함)
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in [many different ways](https://jekyllrb.com/docs/usage/), but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

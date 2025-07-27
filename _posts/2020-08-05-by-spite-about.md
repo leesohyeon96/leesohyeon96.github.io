@@ -6,6 +6,8 @@ category: Music
 image: assets/img/blog/blog9.jpg
 author: Ryan Adlard
 tags: rock
+published: true
+lang: en
 ---
 
 So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.

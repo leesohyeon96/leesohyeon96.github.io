@@ -63,6 +63,5 @@ main:
     childs:
         - title: "Project Details"
           url: "works/"
-
-#        - title: "Blog"
-#          url: "blog/"
+        - title: "Blog"
+          url: "blog/"

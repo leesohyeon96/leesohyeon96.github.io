@@ -76,7 +76,11 @@
 											{% assign nav_url = nav.url | absolute_url %}
 											<li class="menu-item{% if page_url == nav_url %} current-menu-item{% endif %}{% if nav.parent == 1 %} menu-item-has-children has-children{% endif %}">
 												{% if nav.url contains '#' %}
-													<a class="splitting-text-anim-2" data-splitting="chars" href="{{ nav.url }}">{{ nav.title }}</a>
+													{% if current_url_lang == 'ko' %}
+														<a class="splitting-text-anim-2" data-splitting="chars" href="/ko/{{ nav.url }}">{{ nav.title }}</a>
+													{% else %}
+														<a class="splitting-text-anim-2" data-splitting="chars" href="/en/{{ nav.url }}">{{ nav.title }}</a>
+													{% endif %}
 												{% else %}
 													<a class="splitting-text-anim-2" data-splitting="chars" href="{{ nav.url | relative_url }}">{{ nav.title }}</a>
 												{% endif %}
@@ -90,6 +94,8 @@
 														{% else %}
 															{% if subnav.url == 'works/' %}
 																<a class="splitting-text-anim-1" data-splitting="chars" href="/{{ current_url_lang }}/works/">{{ subnav.title }}</a>
+															{% elsif subnav.url contains '/ko/blog/' or subnav.url contains '/en/blog/' %}
+																<a class="splitting-text-anim-1" data-splitting="chars" href="/{{ current_url_lang }}/blog/">{{ subnav.title }}</a>
 															{% else %}
 																<a class="splitting-text-anim-1" data-splitting="chars" href="{{ subnav.url | relative_url }}">{{ subnav.title }}</a>
 															{% endif %}
