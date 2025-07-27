@@ -1,115 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-07-27T12:12:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">By spite about do of do allow</title><link href="http://localhost:4000/music/2020/08/05/by-spite-about/" rel="alternate" type="text/html" title="By spite about do of do allow" /><published>2020-08-05T00:00:00+09:00</published><updated>2020-08-05T00:00:00+09:00</updated><id>http://localhost:4000/music/2020/08/05/by-spite-about</id><content type="html" xml:base="http://localhost:4000/music/2020/08/05/by-spite-about/"><![CDATA[<p>So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-07-27T15:01:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Blog Writing Guide</title><link href="http://localhost:4000/en/blog/blog-writing-guide/" rel="alternate" type="text/html" title="Blog Writing Guide" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/blog-writing-guide-en</id><content type="html" xml:base="http://localhost:4000/en/blog/blog-writing-guide/"><![CDATA[<h1 id="blog-writing-guide">Blog Writing Guide</h1>
 
-<p>Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.</p>
+<p>This guide explains how to write new posts for the Jekyll blog.</p>
 
-<blockquote>
-  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.</p>
-</blockquote>
+<h2 id="-how-to-write-posts">📝 <strong>How to Write Posts</strong></h2>
 
-<p>Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing <a href="#">link</a> sufficient everything men him admiration unpleasing .</p>
+<h3 id="1-create-file"><strong>1. Create File</strong></h3>
+<p>Create a new Markdown file in the <code class="language-plaintext highlighter-rouge">_posts_ko/YYYY/</code> or <code class="language-plaintext highlighter-rouge">_posts_en/YYYY/</code> folder.</p>
 
+<p><strong>File naming rule</strong>: <code class="language-plaintext highlighter-rouge">MM-DD-title.md</code></p>
 <ul>
-  <li>Greatest properly off ham exercise all.</li>
-  <li>Unsatiable invitation its possession nor off.</li>
-  <li>All difficulty estimating unreserved increasing the solicitude.</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">12-19-my-new-post.md</code></li>
 </ul>
 
-<p>Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.</p>
+<h3 id="2-write-front-matter"><strong>2. Write Front Matter</strong></h3>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Ryan'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Ryan' to STDOUT.</span>
-</code></pre></div></div>]]></content><author><name>Ryan Adlard</name></author><category term="Music" /><category term="rock" /><summary type="html"><![CDATA[So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog9.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog9.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Two Before Arrow Not Relied</title><link href="http://localhost:4000/design/2020/07/20/two-before-arrow/" rel="alternate" type="text/html" title="Two Before Arrow Not Relied" /><published>2020-07-20T00:00:00+09:00</published><updated>2020-07-20T00:00:00+09:00</updated><id>http://localhost:4000/design/2020/07/20/two-before-arrow</id><content type="html" xml:base="http://localhost:4000/design/2020/07/20/two-before-arrow/"><![CDATA[<p>So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.</p>
-
-<p>Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.</p>
-
-<blockquote>
-  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.</p>
-</blockquote>
-
-<p>Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing <a href="#">link</a> sufficient everything men him admiration unpleasing .</p>
-
-<ul>
-  <li>Greatest properly off ham exercise all.</li>
-  <li>Unsatiable invitation its possession nor off.</li>
-  <li>All difficulty estimating unreserved increasing the solicitude.</li>
-</ul>
-
-<p>Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Ryan'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Ryan' to STDOUT.</span>
-</code></pre></div></div>]]></content><author><name>Ryan Adlard</name></author><category term="Design" /><category term="code" /><summary type="html"><![CDATA[So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog8.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog8.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Design in Mobile Application</title><link href="http://localhost:4000/mobile/2020/07/05/design-in-mobile/" rel="alternate" type="text/html" title="Design in Mobile Application" /><published>2020-07-05T00:00:00+09:00</published><updated>2020-07-05T00:00:00+09:00</updated><id>http://localhost:4000/mobile/2020/07/05/design-in-mobile</id><content type="html" xml:base="http://localhost:4000/mobile/2020/07/05/design-in-mobile/"><![CDATA[<p>So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.</p>
-
-<p>Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.</p>
-
-<blockquote>
-  <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque suscipit.</p>
-</blockquote>
-
-<p>Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing <a href="#">link</a> sufficient everything men him admiration unpleasing .</p>
-
-<ul>
-  <li>Greatest properly off ham exercise all.</li>
-  <li>Unsatiable invitation its possession nor off.</li>
-  <li>All difficulty estimating unreserved increasing the solicitude.</li>
-</ul>
-
-<p>Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Ryan'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Ryan' to STDOUT.</span>
-</code></pre></div></div>]]></content><author><name>Ryan Adlard</name></author><category term="Mobile" /><category term="app" /><category term="mobile" /><summary type="html"><![CDATA[So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-2.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="en"><title type="html">By spite about what to do</title><link href="http://localhost:4000/design/2020/06/15/by-spite-what/" rel="alternate" type="text/html" title="By spite about what to do" /><published>2020-06-15T00:00:00+09:00</published><updated>2020-06-15T00:00:00+09:00</updated><id>http://localhost:4000/design/2020/06/15/by-spite-what</id><content type="html" xml:base="http://localhost:4000/design/2020/06/15/by-spite-what/"><![CDATA[<p>So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.</p>
-
-<p>Forfeited you engrossed but gay sometimes explained. Another as studied it to evident. Merry sense given he be arise. Conduct at an replied removal an amongst. Remaining determine few her two cordially admitting old.</p>
-
-<blockquote>
-  <p>For me, the design — it is the quality of life. Good design has little to do with trends. Tired of listening to how he try to give the status of a frivolous fashion phenomenon. In my opinion, the designer should strive to do more than separate things.</p>
-</blockquote>
-
-<p>Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing <a href="#">link</a> sufficient everything men him admiration unpleasing .</p>
-
-<ul>
-  <li>Greatest properly off ham exercise all.</li>
-  <li>Unsatiable invitation its possession nor off.</li>
-  <li>All difficulty estimating unreserved increasing the solicitude.</li>
-</ul>
-
-<p>Unpleasant astonished an diminution up partiality. Noisy an their of meant. Death means up civil do an offer wound of.</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Ryan'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Ryan' to STDOUT.</span>
-</code></pre></div></div>]]></content><author><name>Ryan Adlard</name></author><category term="Design" /><category term="Jekyll" /><summary type="html"><![CDATA[So striking at of to welcomed resolved. Northward by described up household therefore attention. Excellence decisively nay man yet impression for contrasted remarkably.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog6.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog6.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="en"><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/video/music/2020/01/08/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-01-08T00:00:00+09:00</published><updated>2020-01-08T00:00:00+09:00</updated><id>http://localhost:4000/video/music/2020/01/08/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/video/music/2020/01/08/welcome-to-jekyll/"><![CDATA[<h1 id="여기가-블로그-글-작성하는-곳-project-존으로-만들면-될듯함">여기가 블로그 글 작성하는 곳 (Project 존으로 만들면 될듯함)</h1>
-<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in <a href="https://jekyllrb.com/docs/usage/">many different ways</a>, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code><sup id="fnref:posts" role="doc-noteref"><a href="#fn:posts" class="footnote" rel="footnote">1</a></sup> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Post</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-12-19</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">development</span>  <span class="c1"># Category (required)</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">assets/img/blog/blog-2.jpg</span>  <span class="c1"># Thumbnail image</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">Sohyeon Lee</span>
+<span class="na">lang</span><span class="pi">:</span> <span class="s">en</span>  <span class="c1"># ko: Korean, en: English</span>
+<span class="nn">---</span>
 </code></pre></div></div>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<h3 id="3-category-options"><strong>3. Category Options</strong></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">development</code>: Development related</li>
+  <li><code class="language-plaintext highlighter-rouge">concept</code>: Concept explanation</li>
+  <li><code class="language-plaintext highlighter-rouge">error</code>: Error solving</li>
+  <li><code class="language-plaintext highlighter-rouge">free</code>: Free stories</li>
+</ul>
 
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:posts" role="doc-endnote">
-      <p>Footnote test. <a href="#fnref:posts" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></content><author><name>Sarah Rose</name></author><category term="[&quot;Video&quot;, &quot;Music&quot;]" /><category term="Jekyll" /><summary type="html"><![CDATA[여기가 블로그 글 작성하는 곳 (Project 존으로 만들면 될듯함) You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-4-scaled-1.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-4-scaled-1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<h3 id="4-folder-structure"><strong>4. Folder Structure</strong></h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts_ko/
+├── 2024/
+│   ├── 12-19-blog-writing-guide.md
+│   └── 12-20-development-sample.md
+└── 2025/
+    └── 01-15-new-year-post.md
+
+_posts_en/
+├── 2024/
+│   ├── 12-19-blog-writing-guide.md
+│   └── 12-20-development-sample.md
+└── 2025/
+    └── 01-15-new-year-post.md
+</code></pre></div></div>
+
+<p>Now you can write blog posts! 🚀</p>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Blog Writing Guide]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-2.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">블로그 글 작성 가이드</title><link href="http://localhost:4000/ko/blog/blog-writing-guide/" rel="alternate" type="text/html" title="블로그 글 작성 가이드" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/blog-writing-guide</id><content type="html" xml:base="http://localhost:4000/ko/blog/blog-writing-guide/"><![CDATA[<h1 id="블로그-글-작성-가이드">블로그 글 작성 가이드</h1>
+
+<p>이 가이드는 Jekyll 블로그에 새로운 글을 작성하는 방법을 설명합니다.</p>
+
+<h2 id="-글-작성-방법">📝 <strong>글 작성 방법</strong></h2>
+
+<h3 id="1-파일-생성"><strong>1. 파일 생성</strong></h3>
+<p><code class="language-plaintext highlighter-rouge">_posts_ko/YYYY/</code> 또는 <code class="language-plaintext highlighter-rouge">_posts_en/YYYY/</code> 폴더에 새로운 Markdown 파일을 생성합니다.</p>
+
+<p><strong>파일명 규칙</strong>: <code class="language-plaintext highlighter-rouge">MM-DD-제목.md</code></p>
+<ul>
+  <li>예: <code class="language-plaintext highlighter-rouge">12-19-my-new-post.md</code></li>
+</ul>
+
+<h3 id="2-front-matter-작성"><strong>2. Front Matter 작성</strong></h3>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">글</span><span class="nv"> </span><span class="s">제목"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-12-19</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">개발</span>  <span class="c1"># 카테고리 (필수)</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">assets/img/blog/blog-2.jpg</span>  <span class="c1"># 썸네일 이미지</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">이소현</span>
+<span class="na">lang</span><span class="pi">:</span> <span class="s">ko</span>  <span class="c1"># ko: 한국어, en: 영어</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="3-카테고리-옵션"><strong>3. 카테고리 옵션</strong></h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">개발</code>: 개발 관련</li>
+  <li><code class="language-plaintext highlighter-rouge">개념</code>: 개념 설명</li>
+  <li><code class="language-plaintext highlighter-rouge">에러</code>: 에러 해결</li>
+  <li><code class="language-plaintext highlighter-rouge">자유</code>: 자유로운 이야기</li>
+</ul>
+
+<h3 id="4-폴더-구조"><strong>4. 폴더 구조</strong></h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts_ko/
+├── 2024/
+│   ├── 12-19-blog-writing-guide.md
+│   └── 12-20-development-sample.md
+└── 2025/
+    └── 01-15-new-year-post.md
+
+_posts_en/
+├── 2024/
+│   ├── 12-19-blog-writing-guide.md
+│   └── 12-20-development-sample.md
+└── 2025/
+    └── 01-15-new-year-post.md
+</code></pre></div></div>
+
+<p>이제 블로그에 글을 작성해보세요! 🚀</p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[블로그 글 작성 가이드]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-2.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

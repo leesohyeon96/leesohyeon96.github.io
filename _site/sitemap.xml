@@ -48,7 +48,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/jaegojaego</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -60,7 +60,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/jaegojaego</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -72,7 +72,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/bowmeow</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/bowmeow</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -96,7 +96,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/byat</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -108,7 +108,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/byat</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -120,7 +120,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/douneedschedule</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -132,7 +132,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/douneedschedule</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -144,7 +144,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/ohguohgutalk</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -156,7 +156,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/ohguohgutalk</loc>
-    <lastmod>2025-07-27T12:12:39+09:00</lastmod>
+    <lastmod>2025-07-27T15:01:36+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -170,36 +170,15 @@
   <!-- 블로그 포스트 -->
   
   <url>
-    <loc>http://localhost:4000/music/2020/08/05/by-spite-about/</loc>
-    <lastmod>2020-08-05T00:00:00+09:00</lastmod>
+    <loc>http://localhost:4000/ko/blog/blog-writing-guide/</loc>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/design/2020/07/20/two-before-arrow/</loc>
-    <lastmod>2020-07-20T00:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/mobile/2020/07/05/design-in-mobile/</loc>
-    <lastmod>2020-07-05T00:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/design/2020/06/15/by-spite-what/</loc>
-    <lastmod>2020-06-15T00:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/video/music/2020/01/08/welcome-to-jekyll/</loc>
-    <lastmod>2020-01-08T00:00:00+09:00</lastmod>
+    <loc>http://localhost:4000/en/blog/blog-writing-guide/</loc>
+    <lastmod>2024-12-19T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

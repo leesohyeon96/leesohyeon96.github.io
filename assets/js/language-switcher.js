@@ -65,8 +65,71 @@
             const projectName = projectMatch[2];
             newPath = '/' + lang + '/works/' + projectName;
         } else if (currentPath.includes('/blog/')) {
-            // We're on a blog page, switch to the same blog in different language
-            newPath = '/' + lang + '/blog/';
+            // We're on a blog page, check if it's a specific post or blog list
+            const blogPostMatch = currentPath.match(/\/(ko|en)\/blog\/(.+)/);
+            if (blogPostMatch) {
+                // We're on a specific blog post, switch to the same post in different language
+                const postName = blogPostMatch[2];
+                newPath = '/' + lang + '/blog/' + postName;
+            } else {
+                // We're on the blog list page, switch to blog list in different language
+                newPath = '/' + lang + '/blog/';
+            }
+
+        } else if (currentPath.includes('/categories/')) {
+            // We're on a category page, switch to the same category in different language
+            const categoryMatch = currentPath.match(/\/(ko|en)\/categories\/(.+)/);
+            if (categoryMatch) {
+                let category = categoryMatch[2];
+                
+                // Remove trailing slash if present
+                category = category.replace(/\/$/, '');
+                
+                // Decode URL-encoded category name
+                category = decodeURIComponent(category);
+                
+                // Map categories between languages
+                const categoryMap = {
+                    '개발': 'development',
+                    '개념': 'concept',
+                    '에러': 'error',
+                    '자유': 'free',
+                    'development': '개발',
+                    'concept': '개념',
+                    'error': '에러',
+                    'free': '자유'
+                };
+                const newCategory = categoryMap[category] || category;
+                newPath = '/' + lang + '/categories/' + newCategory + '/';
+            } else {
+                newPath = '/' + lang + '/blog/';
+            }
+        } else if (currentPath.includes('/2024/') || currentPath.includes('/2020/') || currentPath.includes('/2016/')) {
+            // We're on a blog post page, switch to the same post in different language
+            const postMatch = currentPath.match(/\/(ko|en)\/(.+)\/(\d{4})\/(\d{2})\/(\d{2})\/(.+)/);
+            if (postMatch) {
+                const category = postMatch[2];
+                const year = postMatch[3];
+                const month = postMatch[4];
+                const day = postMatch[5];
+                const postName = postMatch[6];
+                
+                // Map categories between languages
+                const categoryMap = {
+                    '개발': 'development',
+                    '개념': 'concept',
+                    '에러': 'error',
+                    '자유': 'free',
+                    'development': '개발',
+                    'concept': '개념',
+                    'error': '에러',
+                    'free': '자유'
+                };
+                const newCategory = categoryMap[category] || category;
+                newPath = '/' + lang + '/' + newCategory + '/' + year + '/' + month + '/' + day + '/' + postName;
+            } else {
+                newPath = '/' + lang + '/blog/';
+            }
         } else {
             // Regular page, just change language prefix
             const pathWithoutLang = currentPath.replace(/^\/(ko|en)/, '');

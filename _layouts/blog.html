@@ -2,7 +2,12 @@
 layout: default
 ---
 
-{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign current_lang = page.lang | default: site.lang %}
+{% if current_lang == 'ko' %}
+  {% assign ui_text = site.data.ko.ui_text %}
+{% else %}
+  {% assign ui_text = site.data.en.ui_text %}
+{% endif %}
 
 <!-- Section Started Heading -->
 <section class="section section-inner started-heading">
@@ -31,7 +36,7 @@ layout: default
         <!-- Blog Items -->
         <div class="articles-container">
           {% assign current_lang = page.lang | default: site.lang %}
-          {% assign visible_posts = paginator.posts | where: "published", true | where: "lang", current_lang %}
+          {% assign visible_posts = paginator.posts | where: "lang", current_lang %}
           {% for post in visible_posts %}
           <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
             <div class="image">

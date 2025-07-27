@@ -7,7 +7,12 @@
 {% endif %}
 {% assign lang_data = site.data[current_lang] %}
 {% assign content = lang_data.portfolio %}
-{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign current_lang = page.lang | default: site.lang %}
+{% if current_lang == 'ko' %}
+  {% assign ui_text = site.data.ko.ui_text %}
+{% else %}
+  {% assign ui_text = site.data.en.ui_text %}
+{% endif %}
 {% assign categories = site.data.settings['portfolio'] %}
 
 <!-- Section - Works -->

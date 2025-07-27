@@ -1,8 +1,11 @@
-{% assign content = site.data.content['blog'] %}
-{% assign ui_text = site.data.ui-text['ui_text'] %}
-
-{% assign content = site.data.content['blog'] %}
-{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign current_lang = page.lang | default: site.lang %}
+{% if current_lang == 'ko' %}
+  {% assign content = site.data.ko.blog %}
+  {% assign ui_text = site.data.ko.ui_text %}
+{% else %}
+  {% assign content = site.data.en.blog %}
+  {% assign ui_text = site.data.en.ui_text %}
+{% endif %}
 
 <!-- Section - Blog -->
 <section class="lui-section lui-gradient-top" id="blog-section">
@@ -29,7 +32,7 @@
 
       <div class="blog-items row">
         {% assign current_lang = page.lang | default: site.lang %}
-        {% assign visible_posts = site.posts | where: "published", true | where: "lang", current_lang | limit: 3 %}
+        {% assign visible_posts = site.posts | where: "lang", current_lang | limit: 3 %}
         {% for post in visible_posts %}
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">

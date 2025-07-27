@@ -2,7 +2,12 @@
 layout: default
 ---
 
-{% assign ui_text = site.data.ui-text['ui_text'] %}
+{% assign current_lang = page.lang | default: site.lang %}
+{% if current_lang == 'ko' %}
+  {% assign ui_text = site.data.ko.ui_text %}
+{% else %}
+  {% assign ui_text = site.data.en.ui_text %}
+{% endif %}
 
 {% if page.author == nil %}
 	{% assign author = site.author %}
@@ -61,16 +66,6 @@ layout: default
 				<div class="description">
 					<div class="post-content scrolla-element-anim-1 scroll-animate" data-animate="active">
 						{{ page.content }}
-
-						{% assign tags_size = page.tags | size %}
-						{% if tags_size != 0 %}
-						<span class="tags-links">
-							<span>{{ ui_text.tags }}:</span>
-							{% for tag in page.tags %}
-							<a href="{{ '/tags' | relative_url }}/{{ tag | downcase | url_escape | strip | replace: ' ', '-' }}" rel="tag">{{- tag -}}</a>
-							{% endfor %}
-						</span>
-						{% endif %}
 					</div>
 				</div>
 
@@ -79,40 +74,39 @@ layout: default
 
 		<div class="v-line-left v-line-top"><div class="v-line-block"><span></span></div></div>
 
+		<!-- Blog Navigation -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
+				<div class="blog-navigation scrolla-element-anim-1 scroll-animate" data-animate="active">
+					<div class="nav-links">
+						{% assign current_lang = page.lang | default: site.lang %}
+						{% if current_lang == 'ko' %}
+							<a href="/ko/blog/" class="nav-link">
+								<i class="fa fa-arrow-left"></i> 블로그 목록으로
+							</a>
+							{% if page.category %}
+								{% assign category = page.category %}
+								<a href="/ko/categories/{{ category }}/" class="nav-link">
+									{{ category }} 카테고리로 <i class="fa fa-arrow-right"></i>
+								</a>
+							{% endif %}
+						{% else %}
+							<a href="/en/blog/" class="nav-link">
+								<i class="fa fa-arrow-left"></i> Back to Blog
+							</a>
+							{% if page.category %}
+								{% assign category = page.category %}
+								<a href="/en/categories/{{ category }}/" class="nav-link">
+									{{ category | capitalize }} Category <i class="fa fa-arrow-right"></i>
+								</a>
+							{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </section>
 
-{% if page.previous.url or page.next.url %}
-<!-- Section Navigation -->
-<div class="section section-inner m-page-navigation">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
 
-				<div class="h-titles h-navs">
-					{% if page.previous.url %}
-					<a href="{{ page.previous.url | relative_url }}">
-						<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
-							{{ ui_text.prev }}
-						</span>
-						<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
-							{{ page.previous.title }}
-						</span>
-					</a>
-					{% else %}
-					<a href="{{ page.next.url | relative_url }}">
-						<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
-							{{ ui_text.next }}
-						</span>
-						<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
-							{{ page.next.title }}
-						</span>
-					</a>
-					{% endif %}
-				</div>
-
-			</div>
-		</div>
-	</div>
-</div>
-{% endif %}

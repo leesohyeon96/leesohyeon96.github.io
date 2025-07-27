@@ -56,6 +56,9 @@ paginate: 6
 paginate_path: "/blog/page:num/"
 permalink: pretty
 
+# Posts directory structure
+posts_dir: _posts
+
 # disqus comments
 disqus_comments: "yes" # yes - show disqus comments, no - hide disqus comments
 disqus_shortname: "glitche-jekyll-theme" # read more here https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
