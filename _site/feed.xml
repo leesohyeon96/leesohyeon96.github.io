@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-07-27T15:01:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Blog Writing Guide</title><link href="http://localhost:4000/en/blog/blog-writing-guide/" rel="alternate" type="text/html" title="Blog Writing Guide" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/blog-writing-guide-en</id><content type="html" xml:base="http://localhost:4000/en/blog/blog-writing-guide/"><![CDATA[<h1 id="blog-writing-guide">Blog Writing Guide</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-08-03T17:32:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Blog Writing Guide</title><link href="http://localhost:4000/en/blog/blog-writing-guide/" rel="alternate" type="text/html" title="Blog Writing Guide" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/blog-writing-guide-en</id><content type="html" xml:base="http://localhost:4000/en/blog/blog-writing-guide/"><![CDATA[<h1 id="blog-writing-guide">Blog Writing Guide</h1>
 
 <p>This guide explains how to write new posts for the Jekyll blog.</p>
 
@@ -100,4 +100,235 @@ _posts_en/
     └── 01-15-new-year-post.md
 </code></pre></div></div>
 
-<p>이제 블로그에 글을 작성해보세요! 🚀</p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[블로그 글 작성 가이드]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-2.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>이제 블로그에 글을 작성해보세요! 🚀</p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[블로그 글 작성 가이드]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-프로젝트-배경">🏢 프로젝트 배경</h2>
+
+<ul>
+  <li><strong>환경</strong>: <strong>폐쇄망</strong>(인터넷이 연결되지 않은 내부망)</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-폐쇄망-환경의-문제점">🔒 폐쇄망 환경의 문제점</h2>
+
+<ul>
+  <li>인터넷이 차단되어 있어 외부로부터 <strong>라이브러리(dependency)</strong> 를 자동으로 다운로드 받을 수 없음</li>
+  <li>예: Gradle, Maven, npm, Docker 등에서 사용하는 <strong>의존성 패키지들</strong>을 가져올 수 없음</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-해결-방법--nexus-도입">📦 해결 방법 – Nexus 도입</h2>
+
+<h3 id="-nexus란">✅ Nexus란?</h3>
+
+<ul>
+  <li>Sonatype에서 제공하는 <strong>Repository Manager</strong></li>
+  <li>다양한 패키지 매니저(Maven, npm, Docker 등)의 <strong>프록시 역할</strong>을 해줌</li>
+  <li>내부망에 Nexus를 설치하면 외부에서 미리 받은 라이브러리를 저장해두고<br />
+폐쇄망 환경에서도 이를 <strong>로컬에서 가져다 쓸 수 있음</strong></li>
+</ul>
+
+<h3 id="-nexus의-주요-쓰임새">🎯 Nexus의 주요 쓰임새</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Dependency 저장소</strong></td>
+      <td>외부망에서 미리 다운로드 받은 라이브러리들을(ex. jar파일) 보관</td>
+    </tr>
+    <tr>
+      <td><strong>폐쇄망 대응</strong></td>
+      <td>내부망에서 의존성 해결 가능</td>
+    </tr>
+    <tr>
+      <td><strong>프록시 캐시</strong></td>
+      <td>한번 받은 라이브러리는 캐시되어 재사용 가능</td>
+    </tr>
+    <tr>
+      <td><strong>Docker Registry 기능</strong></td>
+      <td><strong>자체 Docker 이미지 저장소</strong>로 활용 가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>거의 Dependency 저장소로만 사용했고 사용할 라이브러리들을 remote로 배포시에 각각 올리기로 했음</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-nexus와-docker">🐳 Nexus와 Docker</h2>
+
+<ul>
+  <li>Nexus는 <strong>Docker Registry 기능도 지원</strong>함</li>
+  <li>따라서 사내에서 만든 Docker 이미지를 Nexus에 저장해두고<br />
+폐쇄망 환경에서 pull/push 가능</li>
+  <li>개발 및 배포 자동화에도 활용 가능</li>
+  <li>ex) docker hub 같은 역할 &gt; 다만 private</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>📝 정리</p>
+  <ul>
+    <li>대상 프로젝트는 <strong>폐쇄망 환경</strong>이라 외부 의존성 사용이 불가능</li>
+    <li>이를 해결하기 위해 <strong>Nexus</strong>를 사용해 의존성 사용할 수 있도록 함</li>
+    <li>Nexus는 Maven/Docker 등 다양한 패키지 관리 시스템과 연동되며<br />
+폐쇄망 개발 환경에서 <strong>중앙 저장소</strong> 역할을 수행</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[Nexus 사용 정리]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/ko/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nat_vs_bridge</id><content type="html" xml:base="http://localhost:4000/ko/blog/nat_vs_bridge/"><![CDATA[<h1 id="가상-서버-구성-및-nat-vs-bridge-정리">가상 서버 구성 및 NAT vs Bridge 정리</h1>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-배경">🧩 배경</h2>
+<p>회사에서 가상서버 구현하시는 거 구경하다가 알게된 사실 정리하는 글<br />
+제공된 운영체제는 <strong>Windows OS</strong>였다</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="️-과정">⚙️ 과정</h2>
+<p>Windows에서 가상화 소프트웨어(VMware)를 이용해 총 <strong>3개의 가상머신(VM)</strong> 을 생성함:</p>
+<ul>
+  <li>Application 서버</li>
+  <li>DB 서버</li>
+  <li>기타 서버 (무슨 목적이였는지 기억이 잘안남)</li>
+</ul>
+
+<p>VM을 만들 때 네트워크 설정을 해야 하는데, <strong>주로 두 가지 방식인 NAT와 Bridge</strong> 중에서 선택하게 됨<br />
+이 두 방식은 가상머신이 외부 또는 내부 네트워크와 통신하는 방식에 큰 차이가 있음</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-nat-vs-bridge--차이점-정리">🌐 NAT vs Bridge – 차이점 정리</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>NAT(Network Address Translation)</th>
+      <th>Bridge(브리지 네트워크)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP 부여 방식</td>
+      <td><strong>호스트 OS</strong> 가 DHCP 서버 역할을 하며 <strong>내부 IP</strong> 부여</td>
+      <td>실제 물리 네트워크(DHCP 서버 or 공유기)에서 <strong>직접 IP 할당</strong></td>
+    </tr>
+    <tr>
+      <td>외부 통신</td>
+      <td>VM이 외부와 통신할 수 있지만, 외부에서 <strong>직접 접근 불가</strong></td>
+      <td>외부에서도 VM에 <strong>직접 접근 가능</strong></td>
+    </tr>
+    <tr>
+      <td>구조</td>
+      <td>외부 → <strong>Host OS</strong> → VM (호스트를 경유)</td>
+      <td>외부 → <strong>VM 직접 접근</strong></td>
+    </tr>
+    <tr>
+      <td>보안</td>
+      <td>상대적으로 <strong>안전함</strong> (내부망 느낌)</td>
+      <td>외부에 노출될 수 있어 <strong>보안 설정 필요</strong></td>
+    </tr>
+    <tr>
+      <td>용도</td>
+      <td>개발/테스트 환경에 적합</td>
+      <td>실제 서비스 환경, 여러 장비 간 통신 필요한 경우</td>
+    </tr>
+    <tr>
+      <td>관련 개념</td>
+      <td><strong>Jump Host</strong> 구조와 유사 <br /> (ex. <code class="language-plaintext highlighter-rouge">ProxyCommand</code>를 사용한 SSH 연결)</td>
+      <td><strong>일반 서버처럼 독립 IP 사용</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="proxycommand란">ProxyCommand란?</h5>
+<ul>
+  <li>SSH가 최종 목적지 서버에 접속하기 전에 <code class="language-plaintext highlighter-rouge">중간 서버를 통해 터널을 연결하는 명령어를 정의</code>하는 옵션임</li>
+  <li>[내 컴퓨터] – SSH –&gt; [Jump Host] – SSH –&gt; [목적지 서버]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -o "ProxyCommand ssh user@jump.example.com nc private.server.local 22" user@private.server.local
+</code></pre></div>    </div>
+    <p>1) jump.example.com 서버에서 SSH로 접근함
+2) 중간의 nc 명령어를 통해 private.sever.local:22 에 연결
+3) 터널을 통해 최종 서버에 SSH 접속 완료</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-추가-설명-비유">💡 추가 설명 (비유)</h2>
+
+<p><strong>NAT</strong><br />
+  → 마치 집에서 <strong>공유기(Wi-Fi)</strong> 를 사용하는 것과 같음
+  VM은 <strong>사설 IP</strong>(예: 192.168.x.x)를 가지고 있고, 외부와 통신할 때는 <strong>호스트를 통해 나감</strong><br />
+  외부에서 직접 이 VM으로 들어올 수 없음</p>
+
+<p><strong>Bridge</strong><br />
+  → VM도 마치 <strong>직접 랜선 꽂은 일반 PC</strong>처럼 동작
+  공유기에서 직접 공인 IP 또는 사설 IP를 받아서, 같은 네트워크 내에 있는 다른 장치들과 <strong>동등하게 통신 가능</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-정리">✅ 정리</h2>
+
+<blockquote>
+  <p><strong>NAT</strong> 방식은 개발자 혼자 테스트할 때 적합하고,<br />
+<strong>Bridge</strong> 방식은 실제 서버처럼 구성할 때 유용함
+보안, 접근성, 네트워크 정책에 따라 적절한 방식을 선택하는 것이 중요함</p>
+</blockquote>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[가상 서버 구성 및 NAT vs Bridge 정리]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

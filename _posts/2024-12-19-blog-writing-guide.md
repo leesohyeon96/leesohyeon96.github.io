@@ -3,7 +3,7 @@ layout: post
 title: "블로그 글 작성 가이드"
 date: 2024-12-19
 category: 개념
-image: assets/img/blog/blog-2.jpg
+image: assets/img/blog/default.png
 author: 이소현
 lang: ko
 permalink: /ko/blog/blog-writing-guide/
