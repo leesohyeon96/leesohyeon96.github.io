@@ -1,19 +1,19 @@
 [
   
     {
-      "title"    : "블로그 글 작성 가이드",
-      "category" : "개념",
+      "title"    : "[Meowmory] 환경설정 및 구상단계",
+      "category" : "개발",
       "tags"     : "",
-      "url"      : "/ko/blog/blog-writing-guide/",
-      "date"     : "2024-12-19 00:00:00 +0900"
+      "url"      : "/ko/blog/meowmory-1/",
+      "date"     : "2025-08-24 00:00:00 +0900"
     } ,
   
     {
-      "title"    : "Blog Writing Guide",
-      "category" : "concept",
+      "title"    : "[Meowmory] Development environment settings",
+      "category" : "개발",
       "tags"     : "",
-      "url"      : "/en/blog/blog-writing-guide/",
-      "date"     : "2024-12-19 00:00:00 +0900"
+      "url"      : "/en/blog/meowmory-1/",
+      "date"     : "2025-08-24 00:00:00 +0900"
     } ,
   
     {

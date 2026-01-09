@@ -1,106 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-08-03T17:32:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Blog Writing Guide</title><link href="http://localhost:4000/en/blog/blog-writing-guide/" rel="alternate" type="text/html" title="Blog Writing Guide" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/blog-writing-guide-en</id><content type="html" xml:base="http://localhost:4000/en/blog/blog-writing-guide/"><![CDATA[<h1 id="blog-writing-guide">Blog Writing Guide</h1>
-
-<p>This guide explains how to write new posts for the Jekyll blog.</p>
-
-<h2 id="-how-to-write-posts">📝 <strong>How to Write Posts</strong></h2>
-
-<h3 id="1-create-file"><strong>1. Create File</strong></h3>
-<p>Create a new Markdown file in the <code class="language-plaintext highlighter-rouge">_posts_ko/YYYY/</code> or <code class="language-plaintext highlighter-rouge">_posts_en/YYYY/</code> folder.</p>
-
-<p><strong>File naming rule</strong>: <code class="language-plaintext highlighter-rouge">MM-DD-title.md</code></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-01-09T22:30:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">[Meowmory] Development environment settings</title><link href="http://localhost:4000/en/blog/meowmory-1/" rel="alternate" type="text/html" title="[Meowmory] Development environment settings" /><published>2025-08-24T00:00:00+09:00</published><updated>2025-08-24T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/meowmory-1-en</id><content type="html" xml:base="http://localhost:4000/en/blog/meowmory-1/"><![CDATA[<p>// todo: 영어쪽은 해석해서 하기 ㅇㅇ</p>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[// todo: 영어쪽은 해석해서 하기 ㅇㅇ]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">[Meowmory] 환경설정 및 구상단계</title><link href="http://localhost:4000/ko/blog/meowmory-1/" rel="alternate" type="text/html" title="[Meowmory] 환경설정 및 구상단계" /><published>2025-08-24T00:00:00+09:00</published><updated>2025-08-24T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/meowmory-1</id><content type="html" xml:base="http://localhost:4000/ko/blog/meowmory-1/"><![CDATA[<h1 id="개발-이유">개발 이유</h1>
 <ul>
-  <li>Example: <code class="language-plaintext highlighter-rouge">12-19-my-new-post.md</code></li>
+  <li>거창한 이유는 없고</li>
+  <li>
+    <ol>
+      <li>나만의 어플을 만들고 싶었다</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>여행을 좋아하는데 당시 찍은 사진을 보면 언제, 어디였는지 가물가물한 적이 많았고
+결국 폰 저장공간이 부족해서 지우게 되는게 맘에 안들었음
+그래서 이왕이면 구글지도에 특별하게 추억을 남기고 싶었음</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>잘되면 소소하게 돈도 벌고 싶음 (당당)</li>
+    </ol>
+  </li>
 </ul>
 
-<h3 id="2-write-front-matter"><strong>2. Write Front Matter</strong></h3>
+<p><br /></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Post</span><span class="nv"> </span><span class="s">Title"</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2024-12-19</span>
-<span class="na">category</span><span class="pi">:</span> <span class="s">development</span>  <span class="c1"># Category (required)</span>
-<span class="na">image</span><span class="pi">:</span> <span class="s">assets/img/blog/blog-2.jpg</span>  <span class="c1"># Thumbnail image</span>
-<span class="na">author</span><span class="pi">:</span> <span class="s">Sohyeon Lee</span>
-<span class="na">lang</span><span class="pi">:</span> <span class="s">en</span>  <span class="c1"># ko: Korean, en: English</span>
-<span class="nn">---</span>
-</code></pre></div></div>
+<hr />
 
-<h3 id="3-category-options"><strong>3. Category Options</strong></h3>
+<p><br /></p>
+
+<h2 id="개발-환경">개발 환경</h2>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">development</code>: Development related</li>
-  <li><code class="language-plaintext highlighter-rouge">concept</code>: Concept explanation</li>
-  <li><code class="language-plaintext highlighter-rouge">error</code>: Error solving</li>
-  <li><code class="language-plaintext highlighter-rouge">free</code>: Free stories</li>
+  <li>frontend : next.js(react)
+    <ul>
+      <li>일단 개발 환경은 딱히 SEO가 필요없어서 next.js로 할 필요는 없었지만 선택한 이유가 있다.</li>
+      <li>
+        <ol>
+          <li>시대 흐름에 탑승하고 싶었다. » 물론 이 또한 지나가는 흐름이겠지만 역행할 필요가 없다고 어느정도 개발 업계에서는 파악해두는 것이 좋다고 생각했다.</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>다시 사용해보고 싶었다. » 회사에서 next.js를 사용해서 앱 런칭 프로젝트를 했었는데 써봤다고 하기 민망한 정도라 혼자 사용해서 파악해볼 필요가 있다고 생각했다.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>backend : java &amp; spring
+    <ul>
+      <li>크나큰 이유는 없다</li>
+      <li>
+        <ol>
+          <li>주 언어여서 익숙하기도 하고</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>환경 세팅은 복잡하지만(그것도 옛말..) 탄탄한 기반을 다지기에 좋다고 생각했음</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>db : mysql
+    <ul>
+      <li>postgreSQL과 고민했지만 크나큰 차이점은 없고 익숙하기 때문에 선택</li>
+      <li>noSQL이 필요한 서비스는 아니라고 생각했다.
+물론 후에 기능을 추가하고 필요성이 있다면 도입할 생각이다.</li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="4-folder-structure"><strong>4. Folder Structure</strong></h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts_ko/
-├── 2024/
-│   ├── 12-19-blog-writing-guide.md
-│   └── 12-20-development-sample.md
-└── 2025/
-    └── 01-15-new-year-post.md
+<p><br /></p>
 
-_posts_en/
-├── 2024/
-│   ├── 12-19-blog-writing-guide.md
-│   └── 12-20-development-sample.md
-└── 2025/
-    └── 01-15-new-year-post.md
-</code></pre></div></div>
+<hr />
 
-<p>Now you can write blog posts! 🚀</p>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Blog Writing Guide]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/blog-2.jpg" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/blog-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">블로그 글 작성 가이드</title><link href="http://localhost:4000/ko/blog/blog-writing-guide/" rel="alternate" type="text/html" title="블로그 글 작성 가이드" /><published>2024-12-19T00:00:00+09:00</published><updated>2024-12-19T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/blog-writing-guide</id><content type="html" xml:base="http://localhost:4000/ko/blog/blog-writing-guide/"><![CDATA[<h1 id="블로그-글-작성-가이드">블로그 글 작성 가이드</h1>
+<p><br /></p>
 
-<p>이 가이드는 Jekyll 블로그에 새로운 글을 작성하는 방법을 설명합니다.</p>
+<p>##</p>
 
-<h2 id="-글-작성-방법">📝 <strong>글 작성 방법</strong></h2>
+<p><br /></p>
 
-<h3 id="1-파일-생성"><strong>1. 파일 생성</strong></h3>
-<p><code class="language-plaintext highlighter-rouge">_posts_ko/YYYY/</code> 또는 <code class="language-plaintext highlighter-rouge">_posts_en/YYYY/</code> 폴더에 새로운 Markdown 파일을 생성합니다.</p>
+<hr />
 
-<p><strong>파일명 규칙</strong>: <code class="language-plaintext highlighter-rouge">MM-DD-제목.md</code></p>
-<ul>
-  <li>예: <code class="language-plaintext highlighter-rouge">12-19-my-new-post.md</code></li>
-</ul>
+<p><br /></p>
 
-<h3 id="2-front-matter-작성"><strong>2. Front Matter 작성</strong></h3>
+<p>##</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">글</span><span class="nv"> </span><span class="s">제목"</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2024-12-19</span>
-<span class="na">category</span><span class="pi">:</span> <span class="s">개발</span>  <span class="c1"># 카테고리 (필수)</span>
-<span class="na">image</span><span class="pi">:</span> <span class="s">assets/img/blog/blog-2.jpg</span>  <span class="c1"># 썸네일 이미지</span>
-<span class="na">author</span><span class="pi">:</span> <span class="s">이소현</span>
-<span class="na">lang</span><span class="pi">:</span> <span class="s">ko</span>  <span class="c1"># ko: 한국어, en: 영어</span>
-<span class="nn">---</span>
-</code></pre></div></div>
+<p>###</p>
 
-<h3 id="3-카테고리-옵션"><strong>3. 카테고리 옵션</strong></h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">개발</code>: 개발 관련</li>
-  <li><code class="language-plaintext highlighter-rouge">개념</code>: 개념 설명</li>
-  <li><code class="language-plaintext highlighter-rouge">에러</code>: 에러 해결</li>
-  <li><code class="language-plaintext highlighter-rouge">자유</code>: 자유로운 이야기</li>
-</ul>
+<p>###</p>
 
-<h3 id="4-폴더-구조"><strong>4. 폴더 구조</strong></h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts_ko/
-├── 2024/
-│   ├── 12-19-blog-writing-guide.md
-│   └── 12-20-development-sample.md
-└── 2025/
-    └── 01-15-new-year-post.md
+<p><br /></p>
 
-_posts_en/
-├── 2024/
-│   ├── 12-19-blog-writing-guide.md
-│   └── 12-20-development-sample.md
-└── 2025/
-    └── 01-15-new-year-post.md
-</code></pre></div></div>
+<hr />
 
-<p>이제 블로그에 글을 작성해보세요! 🚀</p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[블로그 글 작성 가이드]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
+<p><br /></p>
+
+<p>##</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<blockquote>
+  <p>📝 정리</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[개발 이유 거창한 이유는 없고 나만의 어플을 만들고 싶었다 여행을 좋아하는데 당시 찍은 사진을 보면 언제, 어디였는지 가물가물한 적이 많았고 결국 폰 저장공간이 부족해서 지우게 되는게 맘에 안들었음 그래서 이왕이면 구글지도에 특별하게 추억을 남기고 싶었음 잘되면 소소하게 돈도 벌고 싶음 (당당)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
 
 <p><br /></p>
 

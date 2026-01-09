@@ -61,10 +61,10 @@ resume:
   education:
     title: "Education & Experience"
     items:
-      - name: "MSA-based Pet C2C Trading Platform Project"
-        subname: "BowMeow Project"
-        period: "2024.08 ~ <b>Present</b>"
-        text: "MSA architecture learning project <br/> Currently in progress & check [Projects] section"
+      - name: "Real-time Exchange Rate Currency Calculator Web Project"
+        subname: "Currency Calculator Web Project"
+        period: "YYYY.MM ~ YYYY.MM"
+        text: "Currency calculator web application using real-time exchange rate API <br/> Check [Projects] section"
       - name: "Korea National Open University Computer Science"
         subname: "Korea National Open University Computer Science <br/> Transferred to 2nd year, currently enrolled"
         period: "2023.03 ~ <b>Present</b>"
