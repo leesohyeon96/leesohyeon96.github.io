@@ -3,7 +3,7 @@ layout: post
 title: "NAT vs Bridge"
 date: 2024-11-13
 category: 개념
-image: assets/img/blog/default.png
+image: 
 author: 이소현
 lang: ko
 permalink: /ko/blog/nat_vs_bridge/

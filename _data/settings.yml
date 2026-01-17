@@ -20,9 +20,9 @@ header:
 
 ### Social
 social:
-  - title: "velog"
-    icon: "fas fa-blog"
-    url: "https://velog.io/@vkfkswjs26/"  # velog 프로필 URL로 변경
+  - title: "LinkedIn"
+    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/sohyeon-lee-982a90313/"
 
   - title: "Github"
     icon: "fab fa-github"  # Github에 맞는 아이콘으로 변경

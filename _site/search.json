@@ -1,22 +1,6 @@
 [
   
     {
-      "title"    : "[Meowmory] 환경설정 및 구상단계",
-      "category" : "개발",
-      "tags"     : "",
-      "url"      : "/ko/blog/meowmory-1/",
-      "date"     : "2025-08-24 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "[Meowmory] Development environment settings",
-      "category" : "개발",
-      "tags"     : "",
-      "url"      : "/en/blog/meowmory-1/",
-      "date"     : "2025-08-24 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "Nexus에 대해 알아보자",
       "category" : "개념",
       "tags"     : "",
@@ -25,10 +9,26 @@
     } ,
   
     {
+      "title"    : "Understanding Nexus",
+      "category" : "concept",
+      "tags"     : "",
+      "url"      : "/en/blog/nexus/",
+      "date"     : "2024-12-03 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "NAT vs Bridge",
       "category" : "개념",
       "tags"     : "",
       "url"      : "/ko/blog/nat_vs_bridge/",
+      "date"     : "2024-11-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "NAT vs Bridge",
+      "category" : "concept",
+      "tags"     : "",
+      "url"      : "/en/blog/nat_vs_bridge/",
       "date"     : "2024-11-13 00:00:00 +0900"
     } 
   

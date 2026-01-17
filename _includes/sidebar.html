@@ -62,17 +62,41 @@
             <h2>{{ ui_text.categories }}</h2>
             <ul class="wp-block-categories-list wp-block-categories">
               {% assign current_lang = page.lang | default: site.lang %}
+              {% assign all_posts_count = site.posts | where: "lang", current_lang | size %}
               {% if current_lang == 'ko' %}
+                {% assign blog_url = '/ko/blog/' %}
+                {% assign all_label = '전체' %}
                 {% assign categories = '개발,개념,에러,자유' | split: ',' %}
+              {% else %}
+                {% assign blog_url = '/en/blog/' %}
+                {% assign all_label = 'All' %}
+                {% assign categories = 'development,concept,error,free' | split: ',' %}
+              {% endif %}
+              {% assign is_blog_page = false %}
+              {% assign page_url_normalized = page.url | replace: 'index.html', '' %}
+              {% if page_url_normalized == blog_url or page_url_normalized == blog_url | remove: '/' or page.layout == 'blog' %}
+                {% assign is_blog_page = true %}
+              {% endif %}
+              <li class="cat-item{% if is_blog_page %} current-cat{% endif %}">
+                <a href="{{ blog_url }}">{{ all_label }}</a> <small>({{ all_posts_count }})</small>
+              </li>
+              {% if current_lang == 'ko' %}
                 {% for category in categories %}
                   {% assign category_posts = site.posts | where: "category", category | where: "lang", current_lang %}
-                  <li class="cat-item"><a href="/ko/categories/{{ category }}/">{{ category }}</a> <small>({{ category_posts.size }})</small></li>
+                  {% assign is_current_category = false %}
+                  {% if page.category == category %}
+                    {% assign is_current_category = true %}
+                  {% endif %}
+                  <li class="cat-item{% if is_current_category %} current-cat{% endif %}"><a href="/ko/categories/{{ category }}/">{{ category }}</a> <small>({{ category_posts.size }})</small></li>
                 {% endfor %}
               {% else %}
-                {% assign categories = 'development,concept,error,free' | split: ',' %}
                 {% for category in categories %}
                   {% assign category_posts = site.posts | where: "category", category | where: "lang", current_lang %}
-                  <li class="cat-item"><a href="/en/categories/{{ category }}/">{{ category | capitalize }}</a> <small>({{ category_posts.size }})</small></li>
+                  {% assign is_current_category = false %}
+                  {% if page.category == category %}
+                    {% assign is_current_category = true %}
+                  {% endif %}
+                  <li class="cat-item{% if is_current_category %} current-cat{% endif %}"><a href="/en/categories/{{ category }}/">{{ category | capitalize }}</a> <small>({{ category_posts.size }})</small></li>
                 {% endfor %}
               {% endif %}
             </ul>

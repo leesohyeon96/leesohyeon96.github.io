@@ -24,13 +24,13 @@ info:
 description1:
   show: yes
   title: Project Introduction
-  text1: Currency calculator web application using real-time exchange rate information
-  text2: <a href="https://currency-calculator-web.vercel.app/" target="_blank">View Project →</a>
+  text1: "<strong>🧑‍💻 Role: Full-stack Developer</strong><br/><br/>Currency calculator web application using real-time exchange rate information for accurate currency conversion."
+  text2: "<a href=\"https://currency-calculator-web.vercel.app/\" target=\"_blank\">View Project →</a>"
   
 description2:
-  title: Main Features
-  description2_image: assets/img/works/currency-calculator-web/main-feature.png
-  text1: (To be written)
+  title: Key Features & Impact
+#  description2_image: assets/img/works/currency-calculator-web/currency-calculator-thumb.png
+  text1: "<strong>🔧 Key Features:</strong><br/>• Real-time exchange rate API integration<br/>• Currency conversion calculations<br/>• Responsive web interface<br/>• Vercel deployment & hosting<br/><br/><strong>📈 Impact:</strong><br/>• Accurate real-time currency conversion<br/>• Improved user experience with instant calculations<br/>• Demonstrated API integration skills<br/>• Successfully deployed production-ready application"
 
 ---
 

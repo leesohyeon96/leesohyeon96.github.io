@@ -22,14 +22,15 @@ info:
 
 description1:
   show: yes
-  title: Main Flow
-  text1: Pull mysql, mongoDB, redis from docker hub <br/> Containerize 3 images together through docker-compose.yml <br/> No special structure since it only runs in local environment <br/> Implemented real-time chat through WebSocket on web interface
+  title: Project Introduction
+  text1: "<strong>🧑‍💻 Role: Backend Developer</strong><br/><br/>Real-time web messaging platform demonstrating multi-database architecture and WebSocket implementation for instant communication."
 
 description2:
-  title: Architecture and Infrastructure
+  title: Key Features & Impact
   description2_image:
     - assets/img/works/ohguohgutalk/ohguohgutalkarchitecture.png
     - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
+  text1: "<strong>🔧 Key Features:</strong><br/>• WebSocket-based real-time messaging system<br/>• Multi-database architecture (MySQL, MongoDB, Redis)<br/>• Docker Compose containerization (3 services)<br/>• Spring Data JPA for relational data<br/>• Spring Data MongoDB for document storage<br/>• Redis Pub/Sub for message broadcasting<br/><br/><strong>📈 Impact:</strong><br/>• Achieved real-time message delivery<br/>• Demonstrated proficiency in microservices architecture<br/>• Gained hands-on experience with NoSQL databases<br/>• Improved understanding of container orchestration<br/><br/><strong>🏗️ Architecture:</strong><br/>• Containerized services using Docker Compose<br/>• MySQL for user & session data<br/>• MongoDB for message history<br/>• Redis for real-time message distribution"
 
 description3:
   title: Github Gist

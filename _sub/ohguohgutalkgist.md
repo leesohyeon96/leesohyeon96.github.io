@@ -4,7 +4,11 @@ layout: page
 title: Ohguohgutalk Github Gist
 ---
 
-<h3> 코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다 </h3> 
+<div class="post-content project-note-box" style="margin-bottom: 30px; padding: 20px; border-left: 3px solid #29a587; border-radius: 4px;">
+	<p style="margin: 0; line-height: 1.6; font-size: 14px;">
+		코드가 일부분 보이지 않을 땐 다크 모드를 풀어주시기 바랍니다
+	</p>
+</div> 
 
 <br/><br/><br/>
 

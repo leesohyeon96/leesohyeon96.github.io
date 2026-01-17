@@ -1,23 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-01-09T22:30:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">[Meowmory] Development environment settings</title><link href="http://localhost:4000/en/blog/meowmory-1/" rel="alternate" type="text/html" title="[Meowmory] Development environment settings" /><published>2025-08-24T00:00:00+09:00</published><updated>2025-08-24T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/meowmory-1-en</id><content type="html" xml:base="http://localhost:4000/en/blog/meowmory-1/"><![CDATA[<p>// todo: 영어쪽은 해석해서 하기 ㅇㅇ</p>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[// todo: 영어쪽은 해석해서 하기 ㅇㅇ]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">[Meowmory] 환경설정 및 구상단계</title><link href="http://localhost:4000/ko/blog/meowmory-1/" rel="alternate" type="text/html" title="[Meowmory] 환경설정 및 구상단계" /><published>2025-08-24T00:00:00+09:00</published><updated>2025-08-24T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/meowmory-1</id><content type="html" xml:base="http://localhost:4000/ko/blog/meowmory-1/"><![CDATA[<h1 id="개발-이유">개발 이유</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-01-17T22:25:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Understanding Nexus</title><link href="http://localhost:4000/en/blog/nexus/" rel="alternate" type="text/html" title="Understanding Nexus" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/nexus-en</id><content type="html" xml:base="http://localhost:4000/en/blog/nexus/"><![CDATA[<h1 id="nexus-usage-summary">Nexus Usage Summary</h1>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-project-background">🏢 Project Background</h2>
+
 <ul>
-  <li>거창한 이유는 없고</li>
-  <li>
-    <ol>
-      <li>나만의 어플을 만들고 싶었다</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>여행을 좋아하는데 당시 찍은 사진을 보면 언제, 어디였는지 가물가물한 적이 많았고
-결국 폰 저장공간이 부족해서 지우게 되는게 맘에 안들었음
-그래서 이왕이면 구글지도에 특별하게 추억을 남기고 싶었음</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>잘되면 소소하게 돈도 벌고 싶음 (당당)</li>
-    </ol>
-  </li>
+  <li><strong>Environment</strong>: <strong>Closed network</strong> (internal network without internet connection)</li>
 </ul>
 
 <p><br /></p>
@@ -26,45 +18,11 @@
 
 <p><br /></p>
 
-<h2 id="개발-환경">개발 환경</h2>
+<h2 id="-issues-with-closed-network-environment">🔒 Issues with Closed Network Environment</h2>
+
 <ul>
-  <li>frontend : next.js(react)
-    <ul>
-      <li>일단 개발 환경은 딱히 SEO가 필요없어서 next.js로 할 필요는 없었지만 선택한 이유가 있다.</li>
-      <li>
-        <ol>
-          <li>시대 흐름에 탑승하고 싶었다. » 물론 이 또한 지나가는 흐름이겠지만 역행할 필요가 없다고 어느정도 개발 업계에서는 파악해두는 것이 좋다고 생각했다.</li>
-        </ol>
-      </li>
-      <li>
-        <ol>
-          <li>다시 사용해보고 싶었다. » 회사에서 next.js를 사용해서 앱 런칭 프로젝트를 했었는데 써봤다고 하기 민망한 정도라 혼자 사용해서 파악해볼 필요가 있다고 생각했다.</li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-  <li>backend : java &amp; spring
-    <ul>
-      <li>크나큰 이유는 없다</li>
-      <li>
-        <ol>
-          <li>주 언어여서 익숙하기도 하고</li>
-        </ol>
-      </li>
-      <li>
-        <ol>
-          <li>환경 세팅은 복잡하지만(그것도 옛말..) 탄탄한 기반을 다지기에 좋다고 생각했음</li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-  <li>db : mysql
-    <ul>
-      <li>postgreSQL과 고민했지만 크나큰 차이점은 없고 익숙하기 때문에 선택</li>
-      <li>noSQL이 필요한 서비스는 아니라고 생각했다.
-물론 후에 기능을 추가하고 필요성이 있다면 도입할 생각이다.</li>
-    </ul>
-  </li>
+  <li>Internet is blocked, so <strong>libraries (dependencies)</strong> cannot be automatically downloaded from external sources</li>
+  <li>Example: Cannot fetch <strong>dependency packages</strong> used by Gradle, Maven, npm, Docker, etc.</li>
 </ul>
 
 <p><br /></p>
@@ -73,7 +31,47 @@
 
 <p><br /></p>
 
-<p>##</p>
+<h2 id="-solution--nexus-introduction">📦 Solution – Nexus Introduction</h2>
+
+<h3 id="-what-is-nexus">✅ What is Nexus?</h3>
+
+<ul>
+  <li><strong>Repository Manager</strong> provided by Sonatype</li>
+  <li>Acts as a <strong>proxy</strong> for various package managers (Maven, npm, Docker, etc.)</li>
+  <li>By installing Nexus on internal network, libraries pre-downloaded from external network can be stored<br />
+and used <strong>locally</strong> even in closed network environments</li>
+</ul>
+
+<h3 id="-main-uses-of-nexus">🎯 Main Uses of Nexus</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Dependency Repository</strong></td>
+      <td>Stores libraries (e.g., jar files) pre-downloaded from external network</td>
+    </tr>
+    <tr>
+      <td><strong>Closed Network Support</strong></td>
+      <td>Enables dependency resolution in internal network</td>
+    </tr>
+    <tr>
+      <td><strong>Proxy Cache</strong></td>
+      <td>Once downloaded libraries are cached and reusable</td>
+    </tr>
+    <tr>
+      <td><strong>Docker Registry Feature</strong></td>
+      <td>Can be used as <strong>self-hosted Docker image repository</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We mainly used it as a Dependency repository and decided to upload required libraries individually via remote deployment</p>
 
 <p><br /></p>
 
@@ -81,19 +79,15 @@
 
 <p><br /></p>
 
-<p>##</p>
+<h2 id="-nexus-and-docker">🐳 Nexus and Docker</h2>
 
-<p>###</p>
-
-<p>###</p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<p>##</p>
+<ul>
+  <li>Nexus also <strong>supports Docker Registry functionality</strong></li>
+  <li>Therefore, Docker images created in-house can be stored in Nexus<br />
+and pull/push is possible in closed network environments</li>
+  <li>Can also be utilized for development and deployment automation</li>
+  <li>e.g.) Similar role to docker hub &gt; but private</li>
+</ul>
 
 <p><br /></p>
 
@@ -102,14 +96,20 @@
 <p><br /></p>
 
 <blockquote>
-  <p>📝 정리</p>
+  <p>📝 Summary</p>
+  <ul>
+    <li>The target project was in a <strong>closed network environment</strong>, making external dependency usage impossible</li>
+    <li><strong>Nexus</strong> was used to solve this and enable dependency usage</li>
+    <li>Nexus integrates with various package management systems like Maven/Docker<br />
+and serves as a <strong>central repository</strong> in closed network development environments</li>
+  </ul>
 </blockquote>
 
 <p><br /></p>
 
 <hr />
 
-<p><br /></p>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[개발 이유 거창한 이유는 없고 나만의 어플을 만들고 싶었다 여행을 좋아하는데 당시 찍은 사진을 보면 언제, 어디였는지 가물가물한 적이 많았고 결국 폰 저장공간이 부족해서 지우게 되는게 맘에 안들었음 그래서 이왕이면 구글지도에 특별하게 추억을 남기고 싶었음 잘되면 소소하게 돈도 벌고 싶음 (당당)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
+<p><br /></p>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Nexus Usage Summary]]></summary></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
 
 <p><br /></p>
 
@@ -220,7 +220,127 @@
 
 <hr />
 
-<p><br /></p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[Nexus 사용 정리]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry xml:lang="ko"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/ko/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nat_vs_bridge</id><content type="html" xml:base="http://localhost:4000/ko/blog/nat_vs_bridge/"><![CDATA[<h1 id="가상-서버-구성-및-nat-vs-bridge-정리">가상 서버 구성 및 NAT vs Bridge 정리</h1>
+<p><br /></p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[Nexus 사용 정리]]></summary></entry><entry xml:lang="en"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/en/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/nat_vs_bridge-en</id><content type="html" xml:base="http://localhost:4000/en/blog/nat_vs_bridge/"><![CDATA[<h1 id="virtual-server-configuration-and-nat-vs-bridge-summary">Virtual Server Configuration and NAT vs Bridge Summary</h1>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-background">🧩 Background</h2>
+<p>This post summarizes what I learned while observing virtual server implementation at work.<br />
+The provided operating system was <strong>Windows OS</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="️-process">⚙️ Process</h2>
+<p>Using virtualization software (VMware) on Windows, a total of <strong>3 virtual machines (VMs)</strong> were created:</p>
+<ul>
+  <li>Application server</li>
+  <li>DB server</li>
+  <li>Other server (I don’t remember the exact purpose)</li>
+</ul>
+
+<p>When creating VMs, network configuration is required, and you typically choose between <strong>two main methods: NAT and Bridge</strong><br />
+These two methods differ significantly in how virtual machines communicate with external or internal networks</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-nat-vs-bridge--differences-summary">🌐 NAT vs Bridge – Differences Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>NAT(Network Address Translation)</th>
+      <th>Bridge(Bridge Network)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP Assignment</td>
+      <td><strong>Host OS</strong> acts as DHCP server and assigns <strong>internal IP</strong></td>
+      <td><strong>Direct IP allocation</strong> from actual physical network (DHCP server or router)</td>
+    </tr>
+    <tr>
+      <td>External Communication</td>
+      <td>VM can communicate externally but <strong>direct access from outside is not possible</strong></td>
+      <td><strong>Direct access from outside is possible</strong></td>
+    </tr>
+    <tr>
+      <td>Structure</td>
+      <td>External → <strong>Host OS</strong> → VM (via host)</td>
+      <td>External → <strong>Direct VM access</strong></td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Relatively <strong>secure</strong> (feels like internal network)</td>
+      <td>Can be exposed externally, <strong>security configuration needed</strong></td>
+    </tr>
+    <tr>
+      <td>Use Case</td>
+      <td>Suitable for development/test environments</td>
+      <td>Production service environments, when communication between multiple devices is needed</td>
+    </tr>
+    <tr>
+      <td>Related Concept</td>
+      <td>Similar to <strong>Jump Host</strong> structure <br /> (e.g., SSH connection using <code class="language-plaintext highlighter-rouge">ProxyCommand</code>)</td>
+      <td><strong>Uses independent IP like regular server</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="what-is-proxycommand">What is ProxyCommand?</h5>
+<ul>
+  <li>An option that defines a command to <code class="language-plaintext highlighter-rouge">create a tunnel through an intermediate server</code> before SSH connects to the final destination server</li>
+  <li>[My Computer] – SSH –&gt; [Jump Host] – SSH –&gt; [Destination Server]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -o "ProxyCommand ssh user@jump.example.com nc private.server.local 22" user@private.server.local
+</code></pre></div>    </div>
+    <p>1) Access jump.example.com server via SSH
+2) Connect to private.server.local:22 through intermediate nc command
+3) Complete SSH connection to final server through tunnel</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-additional-explanation-analogy">💡 Additional Explanation (Analogy)</h2>
+
+<p><strong>NAT</strong><br />
+  → Similar to using a <strong>router (Wi-Fi)</strong> at home
+  VM has a <strong>private IP</strong> (e.g., 192.168.x.x) and communicates externally <strong>through the host</strong><br />
+  External parties cannot directly access this VM</p>
+
+<p><strong>Bridge</strong><br />
+  → VM operates like a <strong>regular PC directly connected via LAN cable</strong>
+  Receives public IP or private IP directly from router, enabling <strong>equal communication</strong> with other devices on the same network</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="-summary">✅ Summary</h2>
+
+<blockquote>
+  <p><strong>NAT</strong> method is suitable for individual developer testing,<br />
+<strong>Bridge</strong> method is useful when configuring like an actual server
+It’s important to choose the appropriate method based on security, accessibility, and network policies</p>
+</blockquote>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Virtual Server Configuration and NAT vs Bridge Summary]]></summary></entry><entry xml:lang="ko"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/ko/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nat_vs_bridge</id><content type="html" xml:base="http://localhost:4000/ko/blog/nat_vs_bridge/"><![CDATA[<h1 id="가상-서버-구성-및-nat-vs-bridge-정리">가상 서버 구성 및 NAT vs Bridge 정리</h1>
 
 <p><br /></p>
 
@@ -340,4 +460,4 @@
   <p><strong>NAT</strong> 방식은 개발자 혼자 테스트할 때 적합하고,<br />
 <strong>Bridge</strong> 방식은 실제 서버처럼 구성할 때 유용함
 보안, 접근성, 네트워크 정책에 따라 적절한 방식을 선택하는 것이 중요함</p>
-</blockquote>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[가상 서버 구성 및 NAT vs Bridge 정리]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/img/blog/default.png" /><media:content medium="image" url="http://localhost:4000/assets/img/blog/default.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</blockquote>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[가상 서버 구성 및 NAT vs Bridge 정리]]></summary></entry></feed>

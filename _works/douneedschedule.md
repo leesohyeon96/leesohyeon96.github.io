@@ -24,18 +24,18 @@ info:
 description1:
   show: yes
   title: 프로젝트 소개
-  text1: 국내 여행에 초점을 맞춘 여행 일정 공유 플랫폼
+  text1: "<strong>🧑‍💻 Role: Full-stack Developer (Backend Focus)</strong><br/><br/>국내 여행에 초점을 맞춘 여행 일정 공유 플랫폼으로, 사용자가 여행 일정을 공유하고 발견할 수 있도록 합니다."
 
 description2:
   show: yes
-  title: 주요 기능 
+  title: 주요 기능 & 영향
   description2_image: 
     - assets/img/works/douneedschedule/mainMethod1.png
     - assets/img/works/douneedschedule/mainMethod2.png
     - assets/img/works/douneedschedule/mainMethod3.png
     - assets/img/works/douneedschedule/mainMethod4.png  
     - assets/img/works/douneedschedule/mainMethod5.png  
-  text1: 주요 기능 중 메인, FAQ, 게시물 관리 기능 구현 <br/> <a href="https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b?pvs=4" target="_blank">구체적인 구현 코드 확인하기</a>
+  text1: "<strong>🔧 주요 기능:</strong><br/>• Node.js & Express를 사용한 RESTful API 설계<br/>• MySQL 데이터베이스 스키마 설계 및 최적화<br/>• 게시물 관리 시스템 (CRUD 작업)<br/>• FAQ 관리 기능<br/>• 사용자 인증 및 세션 관리<br/><br/><strong>📈 영향:</strong><br/>• 원활한 여행 일정 공유 기능 제공<br/>• 콘텐츠 관리를 통한 사용자 참여 향상<br/>• 풀스택 개발 경험 획득<br/><br/><a href=\"https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b?pvs=4\" target=\"_blank\">구체적인 구현 코드 확인하기</a>"
 
 #gallery:
 #  - assets/img/works/byat/mainMethod1.png

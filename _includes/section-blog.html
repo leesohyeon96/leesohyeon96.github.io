@@ -32,15 +32,62 @@
 
       <div class="blog-items row">
         {% assign current_lang = page.lang | default: site.lang %}
-        {% assign visible_posts = site.posts | where: "lang", current_lang | limit: 3 %}
+        {% assign all_posts = site.posts | where: "lang", current_lang %}
+        {% assign priority_posts = "" | split: "," %}
+        {% assign secondary_posts = "" | split: "," %}
+        {% assign tertiary_posts = "" | split: "," %}
+        {% for post in all_posts %}
+          {% if current_lang == 'ko' %}
+            {% if post.category == '에러' or post.category == '개발' %}
+              {% assign priority_posts = priority_posts | push: post %}
+            {% elsif post.category == '개념' %}
+              {% assign secondary_posts = secondary_posts | push: post %}
+            {% elsif post.category == '자유' %}
+              {% assign tertiary_posts = tertiary_posts | push: post %}
+            {% endif %}
+          {% else %}
+            {% if post.category == 'error' or post.category == 'development' %}
+              {% assign priority_posts = priority_posts | push: post %}
+            {% elsif post.category == 'concept' %}
+              {% assign secondary_posts = secondary_posts | push: post %}
+            {% elsif post.category == 'free' %}
+              {% assign tertiary_posts = tertiary_posts | push: post %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% assign featured_posts = "" | split: "," %}
+        {% for post in priority_posts %}
+          {% assign featured_posts = featured_posts | push: post %}
+        {% endfor %}
+        {% if featured_posts.size < 3 %}
+          {% for post in secondary_posts %}
+            {% if featured_posts.size < 3 %}
+              {% assign featured_posts = featured_posts | push: post %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if featured_posts.size < 3 %}
+          {% for post in tertiary_posts %}
+            {% if featured_posts.size < 3 %}
+              {% assign featured_posts = featured_posts | push: post %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% assign visible_posts = featured_posts | limit: 3 %}
         {% for post in visible_posts %}
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+          {% assign has_image = false %}
+          {% if post.image and post.image != '' and post.image != 'assets/img/blog/default.png' %}
+            {% assign has_image = true %}
+          {% endif %}
+          <div class="archive-item{% unless has_image %} no-image{% endunless %} scrolla-element-anim-1 scroll-animate" data-animate="active">
+            {% if has_image %}
             <div class="image">
               <a href="{{ post.url }}">
                 <img decoding="async" src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
               </a>
             </div>
+            {% endif %}
             <div class="desc">
               <div class="category lui-subtitle">
                 <span>{{ post.date | date: site.date_format }}</span>
@@ -49,7 +96,11 @@
                 <a href="{{ post.url }}">{{ post.title }}</a>
               </h5>
               <div class="lui-text">
-                <p>{{ post.content | markdownify | strip_html | truncate: 160 }}</p>
+                {% if post.excerpt %}
+                  <p>{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>
+                {% else %}
+                  <p>{{ post.content | markdownify | strip_html | truncate: 160 }}</p>
+                {% endif %}
                 <div class="readmore">
                   <a href="{{ post.url }}" class="lnk">{{ ui_text.read_more }}</a>
                 </div>

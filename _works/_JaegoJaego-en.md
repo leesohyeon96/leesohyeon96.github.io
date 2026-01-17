@@ -24,17 +24,17 @@ info:
 description1:
   show: yes
   title: Project Introduction
-  text1: Inventory management and order/supply operation management program
+  text1: "<strong>🧑‍💻 Role: Backend Developer</strong><br/><br/>Inventory management and order/supply operation management program for streamlining business operations."
 
 description2:
   show: yes
-  title: Main Features
+  title: Key Features & Impact
   description2_image: 
     - assets/img/works/jaegojaego/mainMethod1.png
     - assets/img/works/jaegojaego/mainMethod2.png
     - assets/img/works/jaegojaego/mainMethod3.png
     - assets/img/works/jaegojaego/mainMethod4.png  
-  text1: Implementation of menu and backlog management features among main features <br/> <a href="https://sudden-milk-758.notion.site/77865870d7994e6cb3293db917ae161b?pvs=4" target="_blank">Check detailed implementation code</a>
+  text1: "<strong>🔧 Key Features:</strong><br/>• REST API design for order & inventory management<br/>• Transaction handling & data validation<br/>• Menu and backlog management system<br/><br/><strong>📈 Impact:</strong><br/>• Improved inventory tracking accuracy<br/>• Streamlined order processing workflow<br/>• Enhanced data consistency through transaction management<br/><br/><a href=\"https://sudden-milk-758.notion.site/77865870d7994e6cb3293db917ae161b?pvs=4\" target=\"_blank\">Check detailed implementation code</a>"
 
 #gallery:
 #  - assets/img/works/byat/mainMethod1.png

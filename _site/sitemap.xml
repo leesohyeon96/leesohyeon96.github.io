@@ -47,56 +47,8 @@
   <!-- 개별 프로젝트 페이지 -->
   
   <url>
-    <loc>http://localhost:4000/en/works/jaegojaego</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/JaegoJaego"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/jaegojaego"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/JaegoJaego"/>
-    
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/ko/works/jaegojaego</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/jaegojaego"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/JaegoJaego"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/jaegojaego"/>
-    
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/en/works/byat</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/byat"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/byat"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/byat"/>
-    
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/ko/works/byat</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/byat"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/byat"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/byat"/>
-    
-  </url>
-  
-  <url>
     <loc>http://localhost:4000/en/works/currency-calculator-web</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
+    <lastmod>2026-01-17T22:25:18+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -108,7 +60,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/currency-calculator-web</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
+    <lastmod>2026-01-17T22:25:18+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -120,7 +72,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/douneedschedule</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
+    <lastmod>2026-01-17T22:25:18+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -132,7 +84,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/douneedschedule</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
+    <lastmod>2026-01-17T22:25:18+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -142,46 +94,8 @@
     
   </url>
   
-  <url>
-    <loc>http://localhost:4000/en/works/ohguohgutalk</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/ohguohgutalk"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/ohguohgutalk"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/ohguohgutalk"/>
-    
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/ko/works/ohguohgutalk</loc>
-    <lastmod>2026-01-09T22:30:54+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-      <xhtml:link rel="alternate" hreflang="ko" href="http://localhost:4000/ko/works/ohguohgutalk"/>
-      <xhtml:link rel="alternate" hreflang="en" href="http://localhost:4000/en/works/ohguohgutalk"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:4000/ko/works/ohguohgutalk"/>
-    
-  </url>
-  
   
   <!-- 블로그 포스트 -->
-  
-  <url>
-    <loc>http://localhost:4000/ko/blog/meowmory-1/</loc>
-    <lastmod>2025-08-24T00:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/en/blog/meowmory-1/</loc>
-    <lastmod>2025-08-24T00:00:00+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>http://localhost:4000/ko/blog/nexus/</loc>
@@ -191,7 +105,21 @@
   </url>
   
   <url>
+    <loc>http://localhost:4000/en/blog/nexus/</loc>
+    <lastmod>2024-12-03T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:4000/ko/blog/nat_vs_bridge/</loc>
+    <lastmod>2024-11-13T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/en/blog/nat_vs_bridge/</loc>
     <lastmod>2024-11-13T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -24,16 +24,16 @@ info:
 description1:
   show: yes
   title: Project Introduction
-  text1: PMS application for IT SMEs (e.g., startups) that manages processes based on <br/> 'Agile methodology'
+  text1: "<strong>🧑‍💻 Role: Backend Developer</strong><br/><br/>PMS application for IT SMEs (e.g., startups) that manages processes based on Agile methodology."
 
 #gallery:
 #  - assets/img/works/ohguohgutalk/ohguohgutalkarchitecture.png
 #  - assets/img/works/ohguohgutalk/ohguohgutalkInfra.png
 
 description2:
-  title: Main Features
+  title: Key Features & Impact
   description2_image: assets/img/works/byat/mainMethod.png
-  text1: Implementation of overall member functions such as 'login/logout' and calendar among main features <br/> <a href="https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4" target="_blank">Check detailed implementation code</a>
+  text1: "<strong>🔧 Key Features:</strong><br/>• Authentication & authorization system (login/logout)<br/>• User management APIs<br/>• Calendar functionality for project scheduling<br/>• MyBatis-based dynamic query implementation<br/><br/><strong>📈 Impact:</strong><br/>• Secure user authentication system<br/>• Efficient project timeline management<br/>• Improved team collaboration workflow<br/><br/><a href=\"https://sudden-milk-758.notion.site/569697dad03340809dcd1e90ad21547e?pvs=4\" target=\"_blank\">Check detailed implementation code</a>"
 
 description3:
   title: Github Gist
