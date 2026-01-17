@@ -1,0 +1,56 @@
+---
+layout: null
+permalink: /sub/douneedschedulegist/
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        // Immediate redirect - execute before page renders
+        (function() {
+            try {
+                const savedLang = localStorage.getItem('preferred-language');
+                let targetLang = 'en';
+                
+                if (savedLang === 'ko' || savedLang === 'en') {
+                    targetLang = savedLang;
+                } else {
+                    const browserLang = navigator.language || navigator.userLanguage || '';
+                    if (browserLang.startsWith('ko')) {
+                        targetLang = 'ko';
+                    }
+                }
+                
+                window.location.replace('/' + targetLang + '/sub/douneedschedulegist/');
+            } catch(e) {
+                // Fallback to Korean if error
+                window.location.replace('/ko/sub/douneedschedulegist/');
+            }
+        })();
+    </script>
+    <meta http-equiv="refresh" content="0;url=/ko/sub/douneedschedulegist/">
+</head>
+<body>
+    <script>
+        // Double check redirect
+        const savedLang = localStorage.getItem('preferred-language');
+        const browserLang = navigator.language || navigator.userLanguage || '';
+        let targetLang = 'en';
+        
+        if (savedLang === 'ko' || savedLang === 'en') {
+            targetLang = savedLang;
+        } else if (browserLang.startsWith('ko')) {
+            targetLang = 'ko';
+        }
+        
+        window.location.replace('/' + targetLang + '/sub/douneedschedulegist/');
+    </script>
+    <p>Redirecting...</p>
+    <noscript>
+        <p>Please enable JavaScript or choose a language:</p>
+        <a href="/ko/sub/douneedschedulegist/">한국어 버전</a> | <a href="/en/sub/douneedschedulegist/">English Version</a>
+    </noscript>
+</body>
+</html>
+
