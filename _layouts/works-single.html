@@ -39,33 +39,6 @@ layout: default
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
-					{% assign is_old_project = false %}
-					{% for info in page.info %}
-						{% if info.label == 'Period' or info.label == '기간' %}
-							{% assign period_value = info.value %}
-							{% assign period_parts = period_value | split: ' ~ ' %}
-							{% if period_parts.size >= 1 %}
-								{% assign start_date_str = period_parts[0] | strip %}
-								{% assign start_date_parts = start_date_str | split: '.' %}
-								{% if start_date_parts.size >= 2 %}
-									{% assign start_year = start_date_parts[0] | plus: 0 %}
-									{% assign start_month = start_date_parts[1] | plus: 0 %}
-									{% assign current_year = 'now' | date: '%Y' | plus: 0 %}
-									{% assign current_month = 'now' | date: '%m' | plus: 0 %}
-									{% assign years_diff = current_year | minus: start_year %}
-									{% assign months_diff = current_month | minus: start_month %}
-									{% if months_diff < 0 %}
-										{% assign years_diff = years_diff | minus: 1 %}
-										{% assign months_diff = months_diff | plus: 12 %}
-									{% endif %}
-									{% assign total_months = years_diff | times: 12 | plus: months_diff %}
-									{% if total_months >= 36 %}
-										{% assign is_old_project = true %}
-									{% endif %}
-								{% endif %}
-							{% endif %}
-						{% endif %}
-					{% endfor %}
 					<div class="m-details">
 						{% for info in page.info %}
 						<div class="details-label">
@@ -124,31 +97,6 @@ layout: default
 		</div>
 	</div>
 </div>
-{% endif %}
-
-{% if page.category_slug == 'completed-projects' and is_old_project == true %}
-<!-- Section - Project Note -->
-<section class="section section-inner">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div class="post-content project-note-box" style="margin-bottom: 30px; padding: 20px; border-left: 3px solid #29a587; border-radius: 4px;">
-					<p style="margin: 0; line-height: 1.6; font-size: 14px;">
-						{% if current_lang == 'ko' %}
-						해당 프로젝트는 과거에 진행한 학습 목적의 프로젝트입니다.<br/>
-						기술 스택과 결과물 위주로 기록되어 있으며,<br/>
-						상세한 설계/문제 해결 과정은 포함되어 있지 않습니다.
-						{% else %}
-						This project was completed as a learning exercise in the past.<br/>
-						The documentation focuses on technology stack and outcomes,<br/>
-						and does not include detailed design or problem-solving processes.
-						{% endif %}
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
 {% endif %}
 
 {% if page.description1.title != nil or page.description1.text1 != nil or page.description1.text2 != nil %}

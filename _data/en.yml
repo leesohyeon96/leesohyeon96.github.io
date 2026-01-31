@@ -1,19 +1,19 @@
 # English data file
-description: "Backend Engineer (Java / Spring) with real-world production experience. Portfolio showcasing backend problems and solutions, including transaction handling, performance optimization, and architecture decisions."
-keywords: "backend developer, Java developer, Spring developer, backend engineer, production experience, transaction handling, performance optimization, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
+description: "Portfolio of Sohyeon Lee, a responsible 3-year backend developer. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
+keywords: "backend developer, Java developer, Spring developer, Node.js developer, React developer, portfolio, web development, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
 
 hero:
   image: "assets/img/profile.png"
   image_alt: "Sohyeon Lee"
   title: "<b>Sohyeon</b> Lee"
   after_title: "<strong>Backend Developer</strong>"
-  description: "<strong>Backend Engineer with a focus on solving real-world backend challenges (Java / Spring).</strong><br/><br/>I have hands-on experience analyzing and resolving issues related to transactions, performance, and architecture while designing scalable APIs.<br/><br/>This blog shares these problem-solving experiences and practical insights from production systems."
+  description: "3-year backend developer :) <br/> I've been working from 2022 as a backend developer"
   bg_title: "SHL Dev"
   info:
-    - num: "3 <strong>+</strong>"
+    - num: "2 <strong>+</strong>"
       value: "Years of <strong>Experience</strong>"
-#    - num: "6"
-#      value: "Completed <strong>Projects</strong>"
+    - num: "3"
+      value: "Completed <strong>Projects</strong>"
 
 skills:
   title: "Skills"
@@ -61,10 +61,10 @@ resume:
   education:
     title: "Education & Experience"
     items:
-      - name: "Real-time Exchange Rate Currency Calculator Web Project"
-        subname: "Currency Calculator Web Project"
-        period: "YYYY.MM ~ YYYY.MM"
-        text: "Currency calculator web application using real-time exchange rate API <br/> Check [Projects] section"
+      - name: "MSA-based Pet C2C Trading Platform Project"
+        subname: "BowMeow Project"
+        period: "2024.08 ~ <b>Present</b>"
+        text: "MSA architecture learning project <br/> Currently in progress & check [Projects] section"
       - name: "Korea National Open University Computer Science"
         subname: "Korea National Open University Computer Science <br/> Transferred to 2nd year, currently enrolled"
         period: "2023.03 ~ <b>Present</b>"
@@ -87,7 +87,7 @@ resume:
       - name: "HealthConnect Inc."
         subname: "Healthcare B2B & B2C Service"
         period: "2022.09 ~ <b>Present</b>"
-        text: "Backend Developer working on production systems<br/>• Building scalable REST APIs with Java & Spring<br/>• Handling transaction management & data validation<br/>• Working with Azure cloud services (App Service, Functions, API Gateway)"
+        text: "Started as full-stack developer <br/> Currently working as backend developer"
 
 portfolio:
   title: "Projects"
@@ -96,11 +96,6 @@ portfolio:
   button:
     link: "works/"
     label: "View Details"
-  filters:
-    - name: "Ongoing Projects"
-      slug: "on-going-projects"
-    - name: "Completed Projects"
-      slug: "completed-projects"
 
 # UI 텍스트 설정
 ui_text:

@@ -13,7 +13,7 @@
 {% else %}
   {% assign ui_text = site.data.en.ui_text %}
 {% endif %}
-{% assign categories = lang_data.portfolio %}
+{% assign categories = site.data.settings['portfolio'] %}
 
 <!-- Section - Works -->
 <section class="lui-section lui-gradient-top" id="works-section">
@@ -50,12 +50,7 @@
           {% for work in site.works %}
             {% if work.lang == current_lang %}
           <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
-            {% assign has_image = false %}
-            {% if work.image and work.image != '' %}
-              {% assign has_image = true %}
-            {% endif %}
-            <div class="works-item{% unless has_image %} no-image{% endunless %} scrolla-element-anim-1 scroll-animate" data-animate="active">
-              {% if has_image %}
+            <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
                   <a href="{{ work.permalink | relative_url }}">
@@ -64,7 +59,6 @@
                   </a>
                 </div>
               </div>
-              {% endif %}
               <div class="desc">
                 <span class="category">{{ work.category }}</span>
                 <h5 class="name">

@@ -3176,14 +3176,10 @@ hr {
 	font-size: 0;
 	display: block;
 	border-radius: 18px;
-	text-align: center;
 }
 
 .works-items.works-masonry-items .works-item .image img {
-	height: 160px;
-	max-width: 60%;
-	margin: 0 auto;
-	display: block;
+	height: 240px;
 	border-radius: 18px;
 }
 
@@ -3199,11 +3195,6 @@ hr {
 .works-items.works-masonry-items .works-item .desc {
 	position: relative;
 	padding: 30px 0 0 0;
-}
-
-/* 이미지가 없을 때 desc의 상단 패딩 제거 */
-.works-items.works-masonry-items .works-item.no-image .desc {
-	padding-top: 0;
 }
 
 .works-items.works-masonry-items .works-item .desc .category {
@@ -3581,21 +3572,12 @@ hr {
 }
 
 .blog-items .archive-item .image {
-	margin: 30px auto 0 auto;
+	margin: 30px 0 0 0;
 	order: 2;
-	text-align: center;
-}
-
-/* 이미지가 없을 때 desc의 상단 여백 제거 */
-.blog-items .archive-item.no-image .desc {
-	margin-top: 0;
 }
 
 .blog-items .archive-item .image img {
-	height: 120px;
-	max-width: 60%;
-	margin: 0 auto;
-	display: block;
+	height: 180px;
 }
 
 .blog-items .archive-item .desc {

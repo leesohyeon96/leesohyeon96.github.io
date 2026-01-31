@@ -24,18 +24,18 @@ info:
 description1:
   show: yes
   title: Project Introduction
-  text1: "<strong>🧑‍💻 Role: Full-stack Developer (Backend Focus)</strong><br/><br/>Travel schedule sharing platform focused on domestic travel, enabling users to share and discover travel itineraries."
+  text1: Travel schedule sharing platform focused on domestic travel
 
 description2:
   show: yes
-  title: Key Features & Impact
+  title: Main Features
   description2_image: 
     - assets/img/works/douneedschedule/mainMethod1.png
     - assets/img/works/douneedschedule/mainMethod2.png
     - assets/img/works/douneedschedule/mainMethod3.png
     - assets/img/works/douneedschedule/mainMethod4.png  
     - assets/img/works/douneedschedule/mainMethod5.png  
-  text1: "<strong>🔧 Key Features:</strong><br/>• RESTful API design with Node.js & Express<br/>• MySQL database schema design & optimization<br/>• Post management system (CRUD operations)<br/>• FAQ management functionality<br/>• User authentication & session management<br/><br/><strong>📈 Impact:</strong><br/>• Enabled seamless travel itinerary sharing<br/>• Improved user engagement through content management<br/>• Gained experience in full-stack development<br/><br/><a href=\"https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b?pvs=4\" target=\"_blank\">Check detailed implementation code</a>"
+  text1: Implementation of main, FAQ, and post management features among main features <br/> <a href="https://sudden-milk-758.notion.site/react-node-project-a1b42839491b46069220f36678eed17b?pvs=4" target="_blank">Check detailed implementation code</a>
 
 #gallery:
 #  - assets/img/works/byat/mainMethod1.png

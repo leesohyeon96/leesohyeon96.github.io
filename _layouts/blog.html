@@ -36,21 +36,14 @@ layout: default
         <!-- Blog Items -->
         <div class="articles-container">
           {% assign current_lang = page.lang | default: site.lang %}
-          {% assign all_lang_posts = site.posts | where: "lang", current_lang | sort: "date" | reverse %}
-          {% assign visible_posts = all_lang_posts %}
+          {% assign visible_posts = paginator.posts | where: "lang", current_lang %}
           {% for post in visible_posts %}
-          {% assign has_image = false %}
-          {% if post.image and post.image != '' and post.image != 'assets/img/blog/default.png' %}
-            {% assign has_image = true %}
-          {% endif %}
-          <div class="archive-item{% unless has_image %} no-image{% endunless %} scrolla-element-anim-1 scroll-animate" data-animate="active">
-            {% if has_image %}
+          <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
             <div class="image">
               <a href="{{ post.url }}">
                 <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
               </a>
             </div>
-            {% endif %}
             <div class="desc">
               <div class="category lui-subtitle">
                 <span>{{ post.date | date: site.date_format }}</span>

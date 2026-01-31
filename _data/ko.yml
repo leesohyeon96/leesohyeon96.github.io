@@ -1,18 +1,18 @@
 # 한국어 데이터 파일
-description: "실제 프로덕션 경험이 있는 백엔드 엔지니어 (Java / Spring). 트랜잭션 처리, 성능 최적화, 아키텍처 결정을 포함한 백엔드 문제와 해결책을 다루는 포트폴리오입니다."
-keywords: "백엔드 개발자, Java 개발자, Spring 개발자, 백엔드 엔지니어, 프로덕션 경험, 트랜잭션 처리, 성능 최적화, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
+description: "책임감 있는 3년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다."
+keywords: "백엔드 개발자, Java 개발자, Spring 개발자, Node.js 개발자, React 개발자, 포트폴리오, 웹개발, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
 
 hero:
   image: "assets/img/profile.png"
   image_alt: "이소현"
   title: "<b>이소현</b>"
   after_title: "<strong>백엔드 개발자</strong>"
-  description: "<strong>백엔드 문제 해결에 강점을 가진 개발자 (Java / Spring).</strong><br/><br/>트랜잭션, 성능, 아키텍처 등 실무에서 마주친 문제를 분석하고 해결하며, 확장 가능한 API 설계를 경험했습니다.<br/><br/>블로그에서는 이러한 문제 해결 경험과 실무 인사이트를 공유합니다."
+  description: "책임감 있는 3년차 백엔드 개발자입니다"
   bg_title: "SHL Dev"
   info:
     - num: "3 <strong>+</strong>"
       value: "년간 <strong>경력</strong>"
-#    - num: "6"
+#    - num: "3"
 #      value: "완료된 <strong>프로젝트</strong>"
 
 skills:
@@ -52,7 +52,7 @@ skills:
       - label: "Azure"
         text: "App Service, Function, API Gateway 구성 경험 <br/> AKS(Azure kubernetes System) 사용 경험"
       - label: "PostgreSQL"
-        text: "CRUD 구현 <br/> 기본적인 스키마 설계"
+        test: "CRUD 구현 <br/> 기본적인 스키마 설계"
       - label: "MySQL | MariaDB"
         text: "CRUD 구현 <br/> routines(저장 프로시저 & 저장 함수) 작성 <br/> 기본적인 스키마 설계"
       - label: "MongoDB"
@@ -73,10 +73,6 @@ resume:
 #        subname: "BowMeow Project 진행"
 #        period: "2024.08 ~ <b>Present</b>"
 #        text: "MSA 구조 학습용 프로젝트 <br/> 현재 진행중 & [프로젝트] 에서 확인가능"
-      - name: "실시간 환율 기반 통화 계산기 웹 프로젝트"
-        subname: "Currency Calculator Web Project 완료 & 지속 리팩토링"
-        period: "2025.11 ~ 2025.12"
-        text: "실시간 환율 API를 활용한 통화 계산기 웹 애플리케이션 <br/> [프로젝트] 에서 확인가능"
       - name: "방송통신대학교 컴퓨터과학과"
         subname: "방송통신대학교 컴퓨터과학과 <br/> 2학년 편입 후 졸업"
         period: "2023.03 ~ 2025.06"
@@ -99,7 +95,7 @@ resume:
       - name: "헬스커넥트(주) 근무"
         subname: "헬스케어 B2B & B2C 서비스"
         period: "2022.09 ~ <b>Present</b>"
-        text: "프로덕션 시스템에서 백엔드 개발자로 근무<br/>• Java & Spring을 사용한 확장 가능한 REST API 구축<br/>• 트랜잭션 관리 및 데이터 검증 처리<br/>• Azure 클라우드 서비스 활용 (App Service, Functions, API Gateway)"
+        text: "풀스택으로 입사 <br/> 현재 백엔드 개발자로 재직중"
 
 portfolio:
   title: "프로젝트"
@@ -108,11 +104,6 @@ portfolio:
   button:
     link: "works/"
     label: "자세히 보기"
-  filters:
-    - name: "진행중인 프로젝트"
-      slug: "on-going-projects"
-    - name: "완료된 프로젝트"
-      slug: "completed-projects"
 
 # UI 텍스트 설정
 ui_text:

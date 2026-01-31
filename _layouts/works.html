@@ -53,12 +53,7 @@ layout: default
             <!-- {{ work.name }}: lang={{ work.lang }}, current_lang={{ current_lang }} -->
             {% if work.lang == current_lang %}
             <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-{{ work.category_slug }}">
-            {% assign has_image = false %}
-            {% if work.image and work.image != '' %}
-              {% assign has_image = true %}
-            {% endif %}
-            <div class="works-item{% unless has_image %} no-image{% endunless %} scrolla-element-anim-1 scroll-animate" data-animate="active">
-              {% if has_image %}
+            <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
               <div class="image">
                 <div class="img">
                   <a href="{{ work.permalink | relative_url }}">
@@ -67,7 +62,6 @@ layout: default
                   </a>
                 </div>
               </div>
-              {% endif %}
               <div class="desc">
                 <span class="category">{{ work.category }}</span>
                 <h5 class="name">

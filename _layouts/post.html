@@ -42,28 +42,18 @@ layout: default
 </section>
 
 <!-- Single Post Image -->
-{% assign has_full_image = false %}
-{% if page.full_image != nil and page.full_image != '' %}
-	{% assign has_full_image = true %}
-{% endif %}
-{% assign has_image = false %}
-{% if page.image != nil and page.image != '' %}
-	{% assign has_image = true %}
-{% endif %}
-{% if has_full_image or has_image %}
 <div class="section section-inner m-image-large">
 	<div class="container">
 		<div class="v-line-right v-line-top"><div class="v-line-block"><span></span></div></div>
 	</div>
 	<div class="image">
-		{% if has_full_image %}
+		{% if page.full_image != nil %}
 		<div class="img scrolla-element-anim-1 scroll-animate" data-animate="active" style="background-image: url({{ page.full_image | relative_url }});"></div>
-		{% elsif has_image %}
+		{% else %}
 		<div class="img scrolla-element-anim-1 scroll-animate" data-animate="active" style="background-image: url({{ page.image | relative_url }});"></div>
 		{% endif %}
 	</div>
 </div>
-{% endif %}
 
 <!-- Section - Blog -->
 <section class="section section-inner m-archive">
