@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "SRT/KTX 예매 시스템 설계",
+      "category" : "개발",
+      "tags"     : "",
+      "url"      : "/ko/blog/how-to-reserve-srt-or-ktx/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "SRT/KTX Reservation System Design",
+      "category" : "Development",
+      "tags"     : "",
+      "url"      : "/en/blog/how-to-reserve-srt-or-ktx/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Nexus에 대해 알아보자",
       "category" : "개념",
       "tags"     : "",
@@ -9,26 +25,10 @@
     } ,
   
     {
-      "title"    : "Understanding Nexus",
-      "category" : "concept",
-      "tags"     : "",
-      "url"      : "/en/blog/nexus/",
-      "date"     : "2024-12-03 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "NAT vs Bridge",
       "category" : "개념",
       "tags"     : "",
       "url"      : "/ko/blog/nat_vs_bridge/",
-      "date"     : "2024-11-13 00:00:00 +0900"
-    } ,
-  
-    {
-      "title"    : "NAT vs Bridge",
-      "category" : "concept",
-      "tags"     : "",
-      "url"      : "/en/blog/nat_vs_bridge/",
       "date"     : "2024-11-13 00:00:00 +0900"
     } 
   

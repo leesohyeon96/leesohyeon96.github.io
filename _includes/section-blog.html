@@ -36,11 +36,13 @@
         {% for post in visible_posts %}
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            {% if post.image != nil and post.image != '' %}
             <div class="image">
               <a href="{{ post.url }}">
                 <img decoding="async" src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
               </a>
             </div>
+            {% endif %}
             <div class="desc">
               <div class="category lui-subtitle">
                 <span>{{ post.date | date: site.date_format }}</span>

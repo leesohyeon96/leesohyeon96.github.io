@@ -39,11 +39,13 @@ layout: default
           {% assign visible_posts = paginator.posts | where: "lang", current_lang %}
           {% for post in visible_posts %}
           <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            {% if post.image != nil and post.image != '' %}
             <div class="image">
               <a href="{{ post.url }}">
                 <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
               </a>
             </div>
+            {% endif %}
             <div class="desc">
               <div class="category lui-subtitle">
                 <span>{{ post.date | date: site.date_format }}</span>

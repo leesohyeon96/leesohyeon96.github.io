@@ -54,7 +54,11 @@
               <div class="image">
                 <div class="img">
                   <a href="{{ work.permalink | relative_url }}">
-                    <img decoding="async" src="{{ work.image | relative_url }}" alt="{{ work.title }}" />
+                    {% if work.image %}
+                      <img decoding="async" src="{{ work.image | relative_url }}" alt="{{ work.title }}" />
+                    {% else %}
+                      <img decoding="async" src="{{ 'assets/img/blog/default.png' | relative_url }}" alt="{{ work.title }}" />
+                    {% endif %}
                     <span class="overlay"></span>
                   </a>
                 </div>

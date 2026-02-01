@@ -580,49 +580,6 @@ body.dark-skin {
 }
 
 /**
-* Code blocks - Ensure visibility in dark mode
-**/
-.dark-skin .highlight {
-	background-color: #272822 !important;
-	color: #ffffff !important;
-}
-
-.dark-skin .highlight code {
-	color: #ffffff !important;
-	background: transparent !important;
-}
-
-.dark-skin .highlight pre {
-	color: #ffffff !important;
-	background: transparent !important;
-}
-
-.dark-skin .highlight pre code {
-	color: #ffffff !important;
-	background: transparent !important;
-}
-
-/**
-* Project Note Box - Light/Dark mode styles
-**/
-.project-note-box {
-	background-color: #f8f9fa;
-}
-
-.project-note-box p {
-	color: #666;
-}
-
-.dark-skin .project-note-box {
-	background-color: #1d222a;
-	border-left-color: #29a587 !important;
-}
-
-.dark-skin .project-note-box p {
-	color: #a3a5a7;
-}
-
-/**
 * Section Project Details
 **/
 

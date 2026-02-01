@@ -173,25 +173,6 @@
 .highlight {
   color: #ffffff;
   background-color: #272822;
-  padding: 20px;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-.highlight pre {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-.highlight code {
-  color: #ffffff;
-  background: transparent;
-  font-family: inherit;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;

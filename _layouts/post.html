@@ -42,6 +42,7 @@ layout: default
 </section>
 
 <!-- Single Post Image -->
+{% if page.full_image != nil or (page.image != nil and page.image != '') %}
 <div class="section section-inner m-image-large">
 	<div class="container">
 		<div class="v-line-right v-line-top"><div class="v-line-block"><span></span></div></div>
@@ -54,6 +55,7 @@ layout: default
 		{% endif %}
 	</div>
 </div>
+{% endif %}
 
 <!-- Section - Blog -->
 <section class="section section-inner m-archive">

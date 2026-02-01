@@ -1,115 +1,393 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-01-17T22:38:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Understanding Nexus</title><link href="http://localhost:4000/en/blog/nexus/" rel="alternate" type="text/html" title="Understanding Nexus" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/nexus-en</id><content type="html" xml:base="http://localhost:4000/en/blog/nexus/"><![CDATA[<h1 id="nexus-usage-summary">Nexus Usage Summary</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-02-01T13:21:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">SRT/KTX Reservation System Design</title><link href="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/" rel="alternate" type="text/html" title="SRT/KTX Reservation System Design" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx-en</id><content type="html" xml:base="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/"><![CDATA[<p><br /></p>
+
+<h1 id="-im-curious">🤔 I’m Curious</h1>
+<p>As someone from the provinces who moved to Seoul,<br />
+I started wondering how the <strong>holiday reservation war</strong> that repeats every Lunar New Year and Chuseok<br />
+actually works internally,<br />
+so I organized this design.</p>
 
 <p><br /></p>
 
 <hr />
 
+<h1 id="ui-flow-explanation">UI Flow Explanation</h1>
+<ol>
+  <li>First, click [Holiday Train Reservation] right at 7 AM</li>
+  <li>Then you enter the queue and can see how many people are waiting ahead of you</li>
+  <li>When your queue number decreases and you get access, you enter a screen where you can search for trains and select seats</li>
+  <li>Then you can reserve a seat</li>
+  <li>At this time, payment is not made immediately but is available on a set date later!</li>
+</ol>
+
+<h2 id="so-let-me-imagine-and-explain-how-its-designed">So let me imagine and explain how it’s designed!!</h2>
+
 <p><br /></p>
 
-<h2 id="-project-background">🏢 Project Background</h2>
+<hr />
+
+<h2 id="1️⃣-reservation-start--entering-the-queue">1️⃣ Reservation Start – Entering the Queue</h2>
+<p>At 7 AM, the moment a user clicks the <code class="language-plaintext highlighter-rouge">[Holiday Reservation]</code> button</p>
 
 <ul>
-  <li><strong>Environment</strong>: <strong>Closed network</strong> (internal network without internet connection)</li>
+  <li>Client → <strong>Redis ZSET-based queue registration</strong>
+    <pre><code class="language-redis">ZADD waiting:queue 173820600012 user1
+</code></pre>
+  </li>
+  <li>key: waiting:queue</li>
+  <li>score: timestamp (entry time)</li>
+  <li>value: userId</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">enterQueue</span><span class="o">(</span><span class="nc">String</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">long</span> <span class="n">now</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+    <span class="n">jedis</span><span class="o">.</span><span class="na">zadd</span><span class="o">(</span><span class="s">"waiting:queue"</span><span class="o">,</span> <span class="n">now</span><span class="o">,</span> <span class="n">userId</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>📌 Kafka Event Recording
+At this time, simultaneously with Redis processing, produce an event to Kafka</p>
+
+<h2 id="purpose-of-use">Purpose of Use</h2>
+<ul>
+  <li>Logging / Auditing
+    <ul>
+      <li>Who entered the queue and when?</li>
+      <li>Who was issued a token?</li>
+    </ul>
+  </li>
+  <li>Asynchronous Processing
+    <ul>
+      <li>Final DB storage</li>
+      <li>Email / Push notifications</li>
+      <li>External system integration</li>
+    </ul>
+  </li>
+  <li>Failure Recovery
+    <ul>
+      <li>Queue reconstruction based on Kafka logs when Redis fails
+Example events: USER_ENTER_QUEUE, TOKEN_ISSUED, USER_ADMITTED</li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
 
 <hr />
 
-<p><br /></p>
-
-<h2 id="-issues-with-closed-network-environment">🔒 Issues with Closed Network Environment</h2>
-
+<h2 id="2️⃣-real-time-queue-position-display">2️⃣ Real-time Queue Position Display</h2>
 <ul>
-  <li>Internet is blocked, so <strong>libraries (dependencies)</strong> cannot be automatically downloaded from external sources</li>
-  <li>Example: Cannot fetch <strong>dependency packages</strong> used by Gradle, Maven, npm, Docker, etc.</li>
+  <li>Check current position by querying Redis ZSET
+    <pre><code class="language-redis">ZRANK waiting:queue user1
+</code></pre>
+  </li>
+  <li>Read-only → Fast and safe</li>
+  <li>Time complexity: O(log N)</li>
+  <li>Query interval: 1~3 seconds</li>
+  <li>Alternative: WebSocket / SSE + Redis Pub/Sub</li>
 </ul>
 
 <p><br /></p>
 
 <hr />
 
-<p><br /></p>
+<h2 id="3️⃣-admission-approval--token-issuance">3️⃣ Admission Approval &amp; Token Issuance</h2>
+<p>If the reservation server allows 100 people <br />
+Only the top 100 from the Redis queue are allowed entry</p>
 
-<h2 id="-solution--nexus-introduction">📦 Solution – Nexus Introduction</h2>
+<pre><code class="language-redis">ZRANGE waiting:queue 0 99
+</code></pre>
 
-<h3 id="-what-is-nexus">✅ What is Nexus?</h3>
+<p>⚠️ Atomic processing with Lua Script: Process queue removal + token issuance as a single transaction</p>
 
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> 
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"ZRANK"</span><span class="p">,</span> <span class="n">queueKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">limit</span> 
+<span class="k">then</span>
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"ZREM"</span><span class="p">,</span> <span class="n">queueKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"SET"</span><span class="p">,</span> <span class="n">tokenKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">,</span> <span class="s2">"EX"</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
 <ul>
-  <li><strong>Repository Manager</strong> provided by Sonatype</li>
-  <li>Acts as a <strong>proxy</strong> for various package managers (Maven, npm, Docker, etc.)</li>
-  <li>By installing Nexus on internal network, libraries pre-downloaded from external network can be stored<br />
-and used <strong>locally</strong> even in closed network environments</li>
+  <li>No mid-process failure ❌</li>
+  <li>No duplicate issuance ❌</li>
+  <li>No race conditions ❌</li>
 </ul>
 
-<h3 id="-main-uses-of-nexus">🎯 Main Uses of Nexus</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Dependency Repository</strong></td>
-      <td>Stores libraries (e.g., jar files) pre-downloaded from external network</td>
-    </tr>
-    <tr>
-      <td><strong>Closed Network Support</strong></td>
-      <td>Enables dependency resolution in internal network</td>
-    </tr>
-    <tr>
-      <td><strong>Proxy Cache</strong></td>
-      <td>Once downloaded libraries are cached and reusable</td>
-    </tr>
-    <tr>
-      <td><strong>Docker Registry Feature</strong></td>
-      <td>Can be used as <strong>self-hosted Docker image repository</strong></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>We mainly used it as a Dependency repository and decided to upload required libraries individually via remote deployment</p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="-nexus-and-docker">🐳 Nexus and Docker</h2>
-
+<h3 id="at-this-time-why-store-the-token-in-redis-after-issuance">At this time, why store the token in Redis after issuance?</h3>
 <ul>
-  <li>Nexus also <strong>supports Docker Registry functionality</strong></li>
-  <li>Therefore, Docker images created in-house can be stored in Nexus<br />
-and pull/push is possible in closed network environments</li>
-  <li>Can also be utilized for development and deployment automation</li>
-  <li>e.g.) Similar role to docker hub &gt; but private</li>
+  <li>Storing tokens in DB causes DB bottleneck with thousands to tens of thousands of requests per second</li>
+  <li>Client response example
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.def.ghi"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"expiresIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
 </ul>
 
 <p><br /></p>
 
 <hr />
 
-<p><br /></p>
-
-<blockquote>
-  <p>📝 Summary</p>
-  <ul>
-    <li>The target project was in a <strong>closed network environment</strong>, making external dependency usage impossible</li>
-    <li><strong>Nexus</strong> was used to solve this and enable dependency usage</li>
-    <li>Nexus integrates with various package management systems like Maven/Docker<br />
-and serves as a <strong>central repository</strong> in closed network development environments</li>
-  </ul>
-</blockquote>
+<h2 id="4️⃣-search-api--token-verification">4️⃣ Search API – Token Verification</h2>
+<pre><code class="language-pgsql">GET /trains/search?from=Seoul&amp;to=hometown
+Authorization: Bearer {queue-access-token}
+</code></pre>
+<ul>
+  <li>Redis query:
+    <pre><code class="language-redis">GET access:token:abc123
+</code></pre>
+  </li>
+  <li>If exists → OK</li>
+  <li>If not → 401 / 403</li>
+</ul>
 
 <p><br /></p>
 
 <hr />
 
-<p><br /></p>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Nexus Usage Summary]]></summary></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
+<h2 id="5️⃣-seat-search--seat-hold">5️⃣ Seat Search &amp; Seat Hold</h2>
+
+<h3 id="seat-search-cache">Seat Search (Cache)</h3>
+<pre><code class="language-redis">seat:availability:{trainId}:{date}
+</code></pre>
+<ul>
+  <li>Seat status: Available / Hold / Sold</li>
+</ul>
+
+<h3 id="seat-hold-lock">Seat Hold (Lock)</h3>
+<pre><code class="language-redis">SET seat:hold:{trainId}:{seatNo} userId NX EX 180
+</code></pre>
+<ul>
+  <li>NX: Fails if seat is already held</li>
+  <li>EX 180: Temporary hold for 3 minutes</li>
+  <li>Automatically released when TTL expires</li>
+</ul>
+
+<h3 id="why-redis">Why Redis?</h3>
+<ul>
+  <li>Using only DB causes deadlock risk due to row lock contention</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="6️⃣-payment-stage">6️⃣ Payment Stage</h2>
+
+<ul>
+  <li>Proceed with payment after seat hold</li>
+  <li>Payment involves external PG integration → The slowest section with highest failure probability</li>
+  <li>Process after seat hold to distribute traffic</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p>✅ Conclusion</p>
+<ul>
+  <li>At reservation start time, manage user order with Redis ZSET-based queue and <br /> record events through Kafka to secure asynchronous processing and failure recovery capability</li>
+  <li>At admission approval stage, use Lua Script to atomically process queue removal and token issuance</li>
+  <li>Issued Queue Access Token is stored in Redis with TTL-based expiration</li>
+  <li>Reservation APIs verify access rights through Redis query for every request</li>
+  <li>Seat search uses Redis cache to reduce DB load and <br /> solve concurrency issues with NX + TTL-based Redis lock when holding seats</li>
+  <li>Payment proceeds after seat hold → Traffic distribution</li>
+  <li>Configure a reservation system that operates stably even in super-high-traffic environments like holidays by separating Redis roles into queue, cache, and lock</li>
+</ul>]]></content><author><name>Lee Sohyun</name></author><category term="Development" /><summary type="html"><![CDATA[]]></summary></entry><entry xml:lang="ko"><title type="html">SRT/KTX 예매 시스템 설계</title><link href="http://localhost:4000/ko/blog/how-to-reserve-srt-or-ktx/" rel="alternate" type="text/html" title="SRT/KTX 예매 시스템 설계" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/how-to-reserve-srt-or-ktx</id><content type="html" xml:base="http://localhost:4000/ko/blog/how-to-reserve-srt-or-ktx/"><![CDATA[<p><br /></p>
+
+<h1 id="-궁금하다-궁금해">🤔 궁금하다 궁금해</h1>
+<p>서울로 상경한 지방인으로서,<br />
+설날·추석마다 반복되는 <strong>명절 예매 전쟁</strong>은 대체 내부적으로 어떻게 동작할까?<br />
+라는 궁금증에서 시작해 설계를 정리해봤다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="ui-동작방식-설명">UI 동작방식 설명</h1>
+<ol>
+  <li>일단 오전7시에 딱 [열차 명절예매]를 클릭함</li>
+  <li>그럼 대기열에 들어가고 내 앞에 대기중인 사람들이 조회된다</li>
+  <li>대기 순번이 줄어들어서 접속하게 되면 열차 검색 및 좌석 선택이 가능한 화면에 입장하게 된다</li>
+  <li>그럼 좌석을 예매하면 된다</li>
+  <li>이때, 결제는 바로 하지 않고 날짜를 정해 그때 가능함!</li>
+</ol>
+
+<h2 id="그럼-인제-어떻게-설계되있는지-상상을-해서-말해보자면">그럼 인제 어떻게 설계되있는지 상상을 해서 말해보자면!!</h2>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="1️⃣-예매-시작--대기열-진입">1️⃣ 예매 시작 – 대기열 진입</h2>
+<p>오전 7시, 사용자가 <code class="language-plaintext highlighter-rouge">[명절 예매]</code> 버튼을 누르는 순간</p>
+
+<ul>
+  <li>Client → <strong>Redis ZSET 기반 대기열 등록</strong>
+    <pre><code class="language-redis">ZADD waiting:queue 173820600012 user1
+</code></pre>
+  </li>
+  <li>key: waiting:queue</li>
+  <li>score: timestamp (입장 시각)</li>
+  <li>value: userId</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">enterQueue</span><span class="o">(</span><span class="nc">String</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">long</span> <span class="n">now</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+    <span class="n">jedis</span><span class="o">.</span><span class="na">zadd</span><span class="o">(</span><span class="s">"waiting:queue"</span><span class="o">,</span> <span class="n">now</span><span class="o">,</span> <span class="n">userId</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>📌 Kafka 이벤트 기록
+이때, Redis 처리와 동시에 Kafka로 이벤트를 Produce 한다</p>
+
+<h2 id="사용-목적">사용 목적</h2>
+<ul>
+  <li>로그 / 감사
+    <ul>
+      <li>누가 언제 대기열에 들어왔는가?</li>
+      <li>누가 토큰을 발급받았는가?</li>
+    </ul>
+  </li>
+  <li>비동기 처리
+    <ul>
+      <li>DB 최종 저장</li>
+      <li>이메일 / 푸시 알림</li>
+      <li>외부 시스템 연동</li>
+    </ul>
+  </li>
+  <li>장애 복구
+    <ul>
+      <li>Redis 장애 시 Kafka 로그 기반 대기열 재구성
+예시 이벤트: USER_ENTER_QUEUE, TOKEN_ISSUED, USER_ADMITTED</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="2️⃣-실시간-대기-순번-표시">2️⃣ 실시간 대기 순번 표시</h2>
+<ul>
+  <li>Redis ZSET 조회로 현재 순번 확인
+    <pre><code class="language-redis">ZRANK waiting:queue user1
+</code></pre>
+  </li>
+  <li>읽기 전용 → 빠르고 안전</li>
+  <li>시간 복잡도: O(log N)</li>
+  <li>조회 주기: 1~3초</li>
+  <li>대안: WebSocket / SSE + Redis Pub/Sub</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="3️⃣-입장-허용--토큰-발급">3️⃣ 입장 허용 &amp; 토큰 발급</h2>
+<p>예약 서버 허용 인원이 100명이라면 <br />
+Redis 대기열 상위 100명만 입장 허용</p>
+
+<pre><code class="language-redis">ZRANGE waiting:queue 0 99
+</code></pre>
+
+<p>⚠️ Lua Script로 원자 처리: 대기열 제거 + 토큰 발급을 단일 트랜잭션으로 처리</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> 
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"ZRANK"</span><span class="p">,</span> <span class="n">queueKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">limit</span> 
+<span class="k">then</span>
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"ZREM"</span><span class="p">,</span> <span class="n">queueKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
+  <span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s2">"SET"</span><span class="p">,</span> <span class="n">tokenKey</span><span class="p">,</span> <span class="n">userId</span><span class="p">,</span> <span class="s2">"EX"</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<ul>
+  <li>중간 실패 ❌</li>
+  <li>중복 발급 ❌</li>
+  <li>경쟁 상태 ❌</li>
+</ul>
+
+<h3 id="이때-토큰-발급-후-왜-redis에-저장">이때, 토큰 발급 후 왜 Redis에 저장?</h3>
+<ul>
+  <li>DB에 토큰을 저장하면 초당 수천~수만 요청으로 DB 병목 발생</li>
+  <li>Client 응답 예시
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.def.ghi"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"expiresIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="4️⃣-검색-api--토큰-검증">4️⃣ 검색 API – 토큰 검증</h2>
+<pre><code class="language-pgsql">GET /trains/search?from=Seoul&amp;to=hometown
+Authorization: Bearer {queue-access-token}
+</code></pre>
+<ul>
+  <li>Redis 조회:
+    <pre><code class="language-redis">GET access:token:abc123
+</code></pre>
+  </li>
+  <li>있으면 → OK</li>
+  <li>없으면 → 401 / 403</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="5️⃣-좌석-조회--좌석-선점">5️⃣ 좌석 조회 &amp; 좌석 선점</h2>
+
+<h3 id="좌석-조회-캐시">좌석 조회 (캐시)</h3>
+<pre><code class="language-redis">seat:availability:{trainId}:{date}
+</code></pre>
+<ul>
+  <li>좌석 상태: Available / Hold / Sold</li>
+</ul>
+
+<h3 id="좌석-선점-락">좌석 선점 (락)</h3>
+<pre><code class="language-redis">SET seat:hold:{trainId}:{seatNo} userId NX EX 180
+</code></pre>
+<ul>
+  <li>NX: 이미 선점된 좌석이면 실패</li>
+  <li>EX 180: 3분간 임시 선점</li>
+  <li>TTL 만료 시 자동 반환</li>
+</ul>
+
+<h3 id="왜-redis">왜 Redis?</h3>
+<ul>
+  <li>DB만 사용하면 row lock 경합으로 데드락 위험 발생</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="6️⃣-결제-단계">6️⃣ 결제 단계</h2>
+
+<ul>
+  <li>좌석 선점 이후 결제 진행</li>
+  <li>결제는 외부 PG 연동 → 가장 느리고 실패 확률이 높은 구간</li>
+  <li>좌석 선점 이후 처리하여 트래픽 분산</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p>✅ 결론</p>
+<ul>
+  <li>예매 시작 시점에는 Redis ZSET 기반 대기열로 사용자 순서를 관리하고 <br /> Kafka를 통해 이벤트를 기록해 비동기 처리와 장애 복구 가능성을 확보</li>
+  <li>입장 허용 단계에서는 Lua Script를 사용해 대기열 제거와 토큰 발급을 원자적으로 처리</li>
+  <li>발급된 Queue Access Token은 Redis에 TTL 기반으로 저장</li>
+  <li>예약 API들은 매 요청마다 Redis 조회를 통해 접근 권한 검증</li>
+  <li>좌석 조회는 Redis 캐시를 사용해 DB 부하를 줄이고 <br /> 좌석 선점 시 NX + TTL 기반 Redis 락으로 동시성 문제 해결</li>
+  <li>결제는 좌석 선점 이후 진행 → 트래픽 분산</li>
+  <li>Redis를 큐, 캐시, 락으로 역할 분리해 명절과 같은 초고트래픽 환경에서도 안정적으로 동작하는 예매 시스템 구성</li>
+</ul>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[]]></summary></entry><entry xml:lang="ko"><title type="html">Nexus에 대해 알아보자</title><link href="http://localhost:4000/ko/blog/nexus/" rel="alternate" type="text/html" title="Nexus에 대해 알아보자" /><published>2024-12-03T00:00:00+09:00</published><updated>2024-12-03T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nexus</id><content type="html" xml:base="http://localhost:4000/ko/blog/nexus/"><![CDATA[<h1 id="nexus-사용-정리">Nexus 사용 정리</h1>
 
 <p><br /></p>
 
@@ -220,127 +498,7 @@ and serves as a <strong>central repository</strong> in closed network developmen
 
 <hr />
 
-<p><br /></p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[Nexus 사용 정리]]></summary></entry><entry xml:lang="en"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/en/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/nat_vs_bridge-en</id><content type="html" xml:base="http://localhost:4000/en/blog/nat_vs_bridge/"><![CDATA[<h1 id="virtual-server-configuration-and-nat-vs-bridge-summary">Virtual Server Configuration and NAT vs Bridge Summary</h1>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="-background">🧩 Background</h2>
-<p>This post summarizes what I learned while observing virtual server implementation at work.<br />
-The provided operating system was <strong>Windows OS</strong></p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="️-process">⚙️ Process</h2>
-<p>Using virtualization software (VMware) on Windows, a total of <strong>3 virtual machines (VMs)</strong> were created:</p>
-<ul>
-  <li>Application server</li>
-  <li>DB server</li>
-  <li>Other server (I don’t remember the exact purpose)</li>
-</ul>
-
-<p>When creating VMs, network configuration is required, and you typically choose between <strong>two main methods: NAT and Bridge</strong><br />
-These two methods differ significantly in how virtual machines communicate with external or internal networks</p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="-nat-vs-bridge--differences-summary">🌐 NAT vs Bridge – Differences Summary</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>NAT(Network Address Translation)</th>
-      <th>Bridge(Bridge Network)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>IP Assignment</td>
-      <td><strong>Host OS</strong> acts as DHCP server and assigns <strong>internal IP</strong></td>
-      <td><strong>Direct IP allocation</strong> from actual physical network (DHCP server or router)</td>
-    </tr>
-    <tr>
-      <td>External Communication</td>
-      <td>VM can communicate externally but <strong>direct access from outside is not possible</strong></td>
-      <td><strong>Direct access from outside is possible</strong></td>
-    </tr>
-    <tr>
-      <td>Structure</td>
-      <td>External → <strong>Host OS</strong> → VM (via host)</td>
-      <td>External → <strong>Direct VM access</strong></td>
-    </tr>
-    <tr>
-      <td>Security</td>
-      <td>Relatively <strong>secure</strong> (feels like internal network)</td>
-      <td>Can be exposed externally, <strong>security configuration needed</strong></td>
-    </tr>
-    <tr>
-      <td>Use Case</td>
-      <td>Suitable for development/test environments</td>
-      <td>Production service environments, when communication between multiple devices is needed</td>
-    </tr>
-    <tr>
-      <td>Related Concept</td>
-      <td>Similar to <strong>Jump Host</strong> structure <br /> (e.g., SSH connection using <code class="language-plaintext highlighter-rouge">ProxyCommand</code>)</td>
-      <td><strong>Uses independent IP like regular server</strong></td>
-    </tr>
-  </tbody>
-</table>
-
-<h5 id="what-is-proxycommand">What is ProxyCommand?</h5>
-<ul>
-  <li>An option that defines a command to <code class="language-plaintext highlighter-rouge">create a tunnel through an intermediate server</code> before SSH connects to the final destination server</li>
-  <li>[My Computer] – SSH –&gt; [Jump Host] – SSH –&gt; [Destination Server]
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -o "ProxyCommand ssh user@jump.example.com nc private.server.local 22" user@private.server.local
-</code></pre></div>    </div>
-    <p>1) Access jump.example.com server via SSH
-2) Connect to private.server.local:22 through intermediate nc command
-3) Complete SSH connection to final server through tunnel</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="-additional-explanation-analogy">💡 Additional Explanation (Analogy)</h2>
-
-<p><strong>NAT</strong><br />
-  → Similar to using a <strong>router (Wi-Fi)</strong> at home
-  VM has a <strong>private IP</strong> (e.g., 192.168.x.x) and communicates externally <strong>through the host</strong><br />
-  External parties cannot directly access this VM</p>
-
-<p><strong>Bridge</strong><br />
-  → VM operates like a <strong>regular PC directly connected via LAN cable</strong>
-  Receives public IP or private IP directly from router, enabling <strong>equal communication</strong> with other devices on the same network</p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="-summary">✅ Summary</h2>
-
-<blockquote>
-  <p><strong>NAT</strong> method is suitable for individual developer testing,<br />
-<strong>Bridge</strong> method is useful when configuring like an actual server
-It’s important to choose the appropriate method based on security, accessibility, and network policies</p>
-</blockquote>]]></content><author><name>Sohyeon Lee</name></author><category term="concept" /><summary type="html"><![CDATA[Virtual Server Configuration and NAT vs Bridge Summary]]></summary></entry><entry xml:lang="ko"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/ko/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nat_vs_bridge</id><content type="html" xml:base="http://localhost:4000/ko/blog/nat_vs_bridge/"><![CDATA[<h1 id="가상-서버-구성-및-nat-vs-bridge-정리">가상 서버 구성 및 NAT vs Bridge 정리</h1>
+<p><br /></p>]]></content><author><name>이소현</name></author><category term="개념" /><summary type="html"><![CDATA[Nexus 사용 정리]]></summary></entry><entry xml:lang="ko"><title type="html">NAT vs Bridge</title><link href="http://localhost:4000/ko/blog/nat_vs_bridge/" rel="alternate" type="text/html" title="NAT vs Bridge" /><published>2024-11-13T00:00:00+09:00</published><updated>2024-11-13T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/nat_vs_bridge</id><content type="html" xml:base="http://localhost:4000/ko/blog/nat_vs_bridge/"><![CDATA[<h1 id="가상-서버-구성-및-nat-vs-bridge-정리">가상 서버 구성 및 NAT vs Bridge 정리</h1>
 
 <p><br /></p>
 
