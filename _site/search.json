@@ -17,6 +17,22 @@
     } ,
   
     {
+      "title"    : "성능 최적화 가이드: TPS와 응답 시간 개선하기",
+      "category" : "개발",
+      "tags"     : "",
+      "url"      : "/ko/blog/performance-optimization-guide/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Performance Optimization Guide: Improving TPS and Response Time",
+      "category" : "Development",
+      "tags"     : "",
+      "url"      : "/en/blog/performance-optimization-guide/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Nexus에 대해 알아보자",
       "category" : "개념",
       "tags"     : "",

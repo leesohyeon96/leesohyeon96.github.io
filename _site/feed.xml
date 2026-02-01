@@ -1,4 +1,701 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-02-01T13:21:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">SRT/KTX Reservation System Design</title><link href="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/" rel="alternate" type="text/html" title="SRT/KTX Reservation System Design" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx-en</id><content type="html" xml:base="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/"><![CDATA[<p><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-02-01T13:52:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHL Dev</title><subtitle>SHL PR | Project | Portfolio | History etc</subtitle><author><name>Admin</name></author><entry xml:lang="en"><title type="html">Performance Optimization Guide: Improving TPS and Response Time</title><link href="http://localhost:4000/en/blog/performance-optimization-guide/" rel="alternate" type="text/html" title="Performance Optimization Guide: Improving TPS and Response Time" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/how-to-optimize-server-en</id><content type="html" xml:base="http://localhost:4000/en/blog/performance-optimization-guide/"><![CDATA[<p><br /></p>
+
+<h1 id="-performance-metrics">📊 Performance Metrics</h1>
+
+<p>System performance is generally evaluated using two key metrics.</p>
+
+<h2 id="response-time">Response Time</h2>
+
+<p>The time from when a client sends a request until receiving the processing result</p>
+
+<h2 id="throughput">Throughput</h2>
+
+<p>TPS (Transactions Per Second): Number of transactions that can be processed per second</p>
+<ul>
+  <li>Higher values indicate better capacity to handle more requests</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-common-methods-to-increase-tps-and-their-limitations">🚀 Common Methods to Increase TPS and Their Limitations</h1>
+
+<h2 id="commonly-attempted-approaches">Commonly Attempted Approaches</h2>
+
+<ol>
+  <li>Adding more servers (Scale Out)</li>
+  <li>Increasing thread pool + DB connection pool sizes</li>
+</ol>
+
+<h2 id="limitations-of-these-methods">Limitations of These Methods</h2>
+
+<p>→ When DB CPU utilization exceeds 70~80%:</p>
+<ul>
+  <li>DB query processing time increases</li>
+  <li>Overall processing time lengthens</li>
+  <li><strong>TPS actually decreases (counterproductive effect)</strong></li>
+</ul>
+
+<p><strong>⇒ Fundamentally, we need to reduce ‘processing time’ itself</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-methods-to-reduce-processing-time">⚡ Methods to Reduce Processing Time</h1>
+
+<h2 id="1-database-optimization">1. Database Optimization</h2>
+
+<h3 id="1-1-query-tuning">1-1. Query Tuning</h3>
+
+<h4 id="index-optimization">Index Optimization</h4>
+<ul>
+  <li>Apply appropriate indexes to frequently queried columns
+    <ul>
+      <li>B-tree: For range searches and sorting</li>
+      <li>Hash: For equality comparisons (=) only</li>
+      <li>Composite Index: When querying multiple columns together</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="optimize-where-join-order-by-group-by-clauses">Optimize WHERE, JOIN, ORDER BY, GROUP BY Clauses</h4>
+<ul>
+  <li>Consider indexes for columns used in these clauses</li>
+  <li><strong>Caution</strong>: DB optimizer may ignore indexes and choose Full Scan when query ratio is high
+    <ul>
+      <li>Threshold varies by DB (typically 5~15% of total data)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="avoid-unnecessary-select-">Avoid Unnecessary SELECT *</h4>
+<ul>
+  <li>Explicitly select only needed columns</li>
+  <li>Reduces network transmission and improves DB memory efficiency</li>
+</ul>
+
+<h4 id="join-optimization">JOIN Optimization</h4>
+
+<p><strong>1. JOIN Order Optimization</strong></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ❌ Wrong: Query large table first</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">orders</span> <span class="n">o</span>  <span class="c1">-- 10 million records</span>
+  <span class="k">JOIN</span> <span class="n">countries</span> <span class="k">c</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">country_id</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>  <span class="c1">-- 200 records</span>
+
+<span class="c1">-- ✅ Correct: Query small table first</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">countries</span> <span class="k">c</span>  <span class="c1">-- 200 records</span>
+  <span class="k">JOIN</span> <span class="n">orders</span> <span class="n">o</span> <span class="k">ON</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">country_id</span>  <span class="c1">-- 10 million records</span>
+</code></pre></div></div>
+
+<p><strong>Caveats</strong>:</p>
+<ul>
+  <li>Modern DBs like PostgreSQL automatically optimize JOIN order, but not perfectly</li>
+  <li>Optimization may fail with outdated statistics, functions, subqueries, or CTEs</li>
+</ul>
+
+<p><strong>2. Existence Checks</strong></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ✅ Use EXISTS: Terminates immediately upon first match</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">users</span> 
+ <span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="mi">1</span> 
+    <span class="k">FROM</span> <span class="n">orders</span> 
+   <span class="k">WHERE</span> <span class="n">orders</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">users</span><span class="p">.</span><span class="n">id</span>
+<span class="p">);</span>
+
+<span class="c1">-- ❌ Using IN: Loads entire subquery result into memory</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">users</span> 
+ <span class="k">WHERE</span> <span class="n">id</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">user_id</span> 
+    <span class="k">FROM</span> <span class="n">orders</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>⇒ Conclusion: Minimize JOINs, use EXISTS for existence checks, avoid IN when possible</strong></p>
+
+<h4 id="analyze-execution-plans-with-explainprofile">Analyze Execution Plans with EXPLAIN/PROFILE</h4>
+<ul>
+  <li>Check how queries are executed</li>
+  <li>Verify Full Table Scan occurrences</li>
+  <li>Confirm index usage</li>
+</ul>
+
+<h4 id="batch-processing">Batch Processing</h4>
+<ol>
+  <li><strong>Always</strong> bulk process multiple INSERT, UPDATE, DELETE operations
+```sql
+– ❌ Individual processing
+INSERT INTO users VALUES (1, ‘A’);
+INSERT INTO users VALUES (2, ‘B’);</li>
+</ol>
+
+<p>– ✅ Bulk processing
+INSERT INTO users VALUES (1, ‘A’), (2, ‘B’), (3, ‘C’);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+2. Reduce I/O count by grouping transactions
+
+**⇒ Core of DB optimization: Minimize I/O + Reduce CPU burden**
+
+&lt;br&gt;
+
+### 📌 I/O Bound vs CPU Bound Operations
+
+#### What are I/O Bound Operations?
+1. Barely use CPU
+2. Most time spent waiting for external resources
+3. Examples:
+    - Network communication
+    - Disk read/write
+    - DB queries
+    - File I/O
+    - Waiting for external API responses
+
+**Problem**: Threads are blocked doing nothing while waiting for I/O → Thread resource waste
+
+&lt;br&gt;
+
+### 1-2. Caching
+
+Store data in memory to reduce DB query execution
+- Utilize in-memory caches like Redis, Memcached
+- Application-level caches (Caffeine, Guava Cache, etc.)
+
+### 1-3. Database Infrastructure Improvements
+
+**Read/Write Splitting**
+- Master: Write operations
+- Slave (Replica): Read operations
+- Distributes traffic to reduce load
+
+**Scale Up**
+- Improve hardware specs: CPU, memory, SSD
+- Consider cost-effectiveness
+
+### 1-4. Connection Pool Optimization
+
+Optimize connection pool settings for DB, HTTP Client, Redis, etc.
+- `maximumPoolSize`: Maximum number of connections
+- `minimumIdle`: Minimum idle connections
+- `connectionTimeout`: Connection wait time
+
+**Benefits**:
+- Prevent excessive connection creation/disposal
+- Save CPU and memory
+- Maintain stable performance
+
+&lt;br&gt;
+
+## 2. External API Call Optimization
+
+### 2-1. Caching
+
+Cache external API responses that don't change frequently
+
+### 2-2. Remove Synchronous Calls
+
+Asynchronous processing through message queues instead of direct calls
+- Utilize Kafka, RabbitMQ, AWS SQS, etc.
+- External system failures don't propagate
+
+### 2-3. Asynchronous Processing
+
+**Java Example**:
+```java
+CompletableFuture.supplyAsync(() -&gt; {
+    return externalApiService.call();
+});
+</code></pre></div></div>
+
+<p><strong>Important</strong>:</p>
+<ul>
+  <li><strong>Async processing is not for performance improvement, but for request thread protection and isolation</strong></li>
+  <li>Total processing time may actually increase</li>
+  <li>Main purpose is improving user experience and system stability</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="3-data-aggregation-and-calculation-optimization">3. Data Aggregation and Calculation Optimization</h2>
+
+<h3 id="problems-with-real-time-calculation">Problems with Real-time Calculation</h3>
+
+<p>Calculating likes, views, followers, etc. each time:</p>
+<ul>
+  <li>Executes complex JOIN or COUNT queries</li>
+  <li>Increases DB load</li>
+  <li><strong>Drastically decreases TPS</strong></li>
+</ul>
+
+<h3 id="solutions">Solutions</h3>
+
+<h4 id="pre-aggregation">Pre-Aggregation</h4>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ❌ Calculate every time</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> 
+  <span class="k">FROM</span> <span class="n">likes</span> 
+ <span class="k">WHERE</span> <span class="n">post_id</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+
+<span class="c1">-- ✅ Pre-calculate and store</span>
+<span class="k">UPDATE</span> <span class="n">posts</span> 
+   <span class="k">SET</span> <span class="n">like_count</span> <span class="o">=</span> <span class="n">like_count</span> <span class="o">+</span> <span class="mi">1</span> 
+ <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="periodic-aggregation-with-batch-jobs">Periodic Aggregation with Batch Jobs</h4>
+<ul>
+  <li>Process data that doesn’t require real-time accuracy in batches</li>
+  <li>Example: Recalculate statistics every hour</li>
+</ul>
+
+<h4 id="eventually-consistent-strategy">Eventually Consistent Strategy</h4>
+<ul>
+  <li>Allow slight data inconsistency</li>
+  <li>Guarantee consistency eventually</li>
+  <li>Example: When 1-2 second delay in like count is acceptable</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="️-methods-to-reduce-waiting-time">⏱️ Methods to Reduce Waiting Time</h1>
+
+<p><strong>Response Time = Waiting Time + Processing Time</strong></p>
+
+<p>Waiting time is primarily related to network transmission</p>
+
+<h2 id="bandwidth">Bandwidth</h2>
+
+<p>Maximum amount of data that can be transmitted</p>
+<ul>
+  <li>Small bandwidth causes drastically slower transmission speed when concurrent users increase</li>
+</ul>
+
+<h3 id="reduce-response-size">Reduce Response Size</h3>
+
+<p><strong>Compression</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Encoding: gzip
+</code></pre></div></div>
+<ul>
+  <li>Compress HTTP response body</li>
+  <li>Typically reduces size by 70~90%</li>
+</ul>
+
+<p><strong>Image Optimization</strong></p>
+<ul>
+  <li>Use WebP format</li>
+  <li>Set appropriate resolution and quality</li>
+  <li>Apply Lazy Loading</li>
+</ul>
+
+<p><strong>JSON Response Optimization</strong></p>
+<ul>
+  <li>Remove unnecessary fields</li>
+  <li>Simplify data structure</li>
+</ul>
+
+<h3 id="separate-traffic">Separate Traffic</h3>
+
+<p><strong>Utilize CDN (Content Delivery Network)</strong></p>
+<ul>
+  <li>Serve static files (images, CSS, JS) from CDN</li>
+  <li>Reduce origin server load</li>
+  <li>Serve from edge servers close to users → Reduce latency</li>
+</ul>
+
+<p><strong>Example</strong>:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- ❌ Serve directly from origin server --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/static/images/logo.png"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- ✅ Serve through CDN --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://cdn.example.com/images/logo.png"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="increase-bandwidth">Increase Bandwidth</h3>
+
+<p>Upgrade instance specifications</p>
+<ul>
+  <li>Network bandwidth varies by instance type in AWS EC2</li>
+  <li>Example: t3.medium (up to 5 Gbps) → c5n.large (up to 25 Gbps)</li>
+  <li><strong>Downside</strong>: Increased cost</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-conclusion">✅ Conclusion</h1>
+
+<p>Performance optimization requires a multi-layered approach, not simply adding more servers:</p>
+
+<h2 id="core-strategies">Core Strategies</h2>
+
+<ol>
+  <li><strong>DB Optimization</strong>: Query tuning, index optimization, I/O minimization</li>
+  <li><strong>Caching</strong>: Remove unnecessary operations and DB queries</li>
+  <li><strong>Asynchronous Processing</strong>: Secure thread efficiency and system isolation</li>
+  <li><strong>Pre-Aggregation</strong>: Use pre-calculated results instead of real-time calculation</li>
+  <li><strong>Network Optimization</strong>: Compression, CDN, bandwidth management</li>
+</ol>
+
+<h2 id="cautions">Cautions</h2>
+
+<ul>
+  <li><strong>Root cause resolution takes priority</strong> over unconditional scale-out</li>
+  <li>Async is not a silver bullet - <strong>use according to purpose</strong></li>
+  <li>Caching must consider <strong>data consistency issues</strong></li>
+  <li>Optimization should be <strong>measurement-based</strong> (no guessing)</li>
+</ul>
+
+<p>By systematically applying these methods, you can build a stable, scalable, high-performance system!</p>]]></content><author><name>Lee Sohyun</name></author><category term="Development" /><summary type="html"><![CDATA[]]></summary></entry><entry xml:lang="ko"><title type="html">성능 최적화 가이드: TPS와 응답 시간 개선하기</title><link href="http://localhost:4000/ko/blog/performance-optimization-guide/" rel="alternate" type="text/html" title="성능 최적화 가이드: TPS와 응답 시간 개선하기" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/ko/blog/how-to-optimize-server</id><content type="html" xml:base="http://localhost:4000/ko/blog/performance-optimization-guide/"><![CDATA[<p><br /></p>
+
+<h1 id="-성능-측정-지표">📊 성능 측정 지표</h1>
+
+<p>시스템 성능은 일반적으로 두 가지 지표로 평가됨!</p>
+
+<h2 id="응답-시간-response-time">응답 시간 (Response Time)</h2>
+<p>클라이언트가 요청을 보낸 시점부터 처리 결과를 받을 때까지 걸리는 시간</p>
+
+<h2 id="처리량-throughput">처리량 (Throughput)</h2>
+<p>TPS(Transactions Per Second): 초당 처리할 수 있는 트랜잭션 개수</p>
+<ul>
+  <li>수치가 높을수록 더 많은 요청을 처리할 수 있음
+<br /> ex) TPS 30 : 1초당 30개의 트랜잭션 처리 가능!</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-tps를-높이는-일반적인-방법과-한계">🚀 TPS를 높이는 일반적인 방법과 한계</h1>
+
+<h2 id="흔히-시도하는-방법">흔히 시도하는 방법</h2>
+<ol>
+  <li>서버 대수 늘리기 (스케일 아웃)</li>
+  <li>쓰레드 풀 + DB 커넥션 풀 크기 늘리기</li>
+</ol>
+
+<h2 id="이-방법들의-한계">이 방법들의 한계</h2>
+<p>→ DB CPU 점유율이 70~80%를 넘어가면</p>
+<ul>
+  <li>DB 쿼리 처리 시간이 증가</li>
+  <li>전체 처리 시간이 길어짐</li>
+  <li><strong>오히려 TPS가 떨어지는 역효과 발생</strong></li>
+</ul>
+
+<p><strong>⇒ 근본적으로 ‘처리 시간’ 자체를 줄여야 함</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-처리-시간을-줄이는-방법">⚡ 처리 시간을 줄이는 방법</h1>
+
+<h2 id="1-db-최적화">1. DB 최적화</h2>
+
+<h3 id="1-1-쿼리-튜닝">1-1. 쿼리 튜닝</h3>
+
+<h4 id="인덱스-최적화">인덱스 최적화</h4>
+<ul>
+  <li>자주 조회하는 컬럼에 적절한 인덱스 적용
+    <ul>
+      <li>B-tree: 범위 검색, 정렬이 필요한 경우</li>
+      <li>Hash: 동등 비교(=)만 하는 경우</li>
+      <li>Composite Index: 여러 컬럼을 함께 조회하는 경우</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="where-join-order-by-group-by-절-최적화">WHERE, JOIN, ORDER BY, GROUP BY 절 최적화</h4>
+<ul>
+  <li>이들 절에 사용되는 컬럼에 인덱스 고려</li>
+  <li><strong>주의</strong>: DB 옵티마이저는 조회 비율이 높으면 인덱스를 무시하고 Full Scan을 선택할 수 있음
+    <ul>
+      <li>DB마다 임계값이 다름 (일반적으로 전체 데이터의 5~15%)</li>
+    </ul>
+
+    <p>=&gt; [결론] 인덱스를 걸어서 조회할 때 전체 row 수의 1~5%만 조회할 수록 인덱스가 효과적인 것!</p>
+  </li>
+</ul>
+
+<h4 id="불필요한-select--자제">불필요한 SELECT * 자제</h4>
+<ul>
+  <li>필요한 컬럼만 명시적으로 선택</li>
+  <li>네트워크 전송량 감소 및 DB 메모리 효율성 향상</li>
+</ul>
+
+<h4 id="join-최적화">JOIN 최적화</h4>
+
+<p><strong>1. JOIN 순서 최적화</strong></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ❌ 잘못된 예: 큰 테이블을 먼저 조회</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">orders</span> <span class="n">o</span>  <span class="c1">-- 1,000만 건</span>
+  <span class="k">JOIN</span> <span class="n">countries</span> <span class="k">c</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">country_id</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span>  <span class="c1">-- 200건</span>
+
+<span class="c1">-- ✅ 올바른 예: 작은 테이블을 먼저 조회</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">countries</span> <span class="k">c</span>  <span class="c1">-- 200건</span>
+  <span class="k">JOIN</span> <span class="n">orders</span> <span class="n">o</span> <span class="k">ON</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">country_id</span>  <span class="c1">-- 1,000만 건</span>
+</code></pre></div></div>
+
+<p><strong>주의사항</strong>:</p>
+<ul>
+  <li>PostgreSQL 등 현대 DB는 자동으로 JOIN 순서를 최적화하지만 완벽하지 않음</li>
+  <li>통계 정보가 오래되었거나, 함수/서브쿼리/CTE 사용 시 최적화가 제대로 작동하지 않을 수 있음</li>
+</ul>
+
+<p><strong>2. 존재 여부 확인</strong></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ✅ EXISTS 사용: 첫 번째 매칭만 찾으면 즉시 종료</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">users</span> 
+ <span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="mi">1</span> 
+    <span class="k">FROM</span> <span class="n">orders</span> 
+   <span class="k">WHERE</span> <span class="n">orders</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">users</span><span class="p">.</span><span class="n">id</span>
+<span class="p">);</span>
+
+<span class="c1">-- ❌ IN 사용: 전체 서브쿼리 결과를 메모리에 로드</span>
+<span class="k">SELECT</span> <span class="o">*</span> 
+  <span class="k">FROM</span> <span class="n">users</span> 
+ <span class="k">WHERE</span> <span class="n">id</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">user_id</span> 
+    <span class="k">FROM</span> <span class="n">orders</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>⇒ 결론: JOIN은 최소화하고, 존재 확인은 EXISTS 사용, IN은 가능하면 피하기</strong></p>
+
+<h4 id="explainprofile로-실행-계획-분석">EXPLAIN/PROFILE로 실행 계획 분석</h4>
+<ul>
+  <li>쿼리가 어떻게 실행되는지 확인</li>
+  <li>Full Table Scan 여부 체크</li>
+  <li>인덱스 사용 여부 확인</li>
+</ul>
+
+<h4 id="batch-처리">Batch 처리</h4>
+<ol>
+  <li>INSERT, UPDATE, DELETE 다수 건은 <strong>반드시</strong> Bulk 처리
+```sql
+– ❌ 개별 처리
+INSERT INTO users VALUES (1, ‘A’);
+INSERT INTO users VALUES (2, ‘B’);</li>
+</ol>
+
+<p>– ✅ Bulk 처리
+INSERT INTO users VALUES (1, ‘A’), (2, ‘B’), (3, ‘C’);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+2. 트랜잭션 묶기로 I/O 횟수 감소
+
+**⇒ DB 최적화의 핵심: I/O 최소화 + CPU 부담 줄이기**
+
+&lt;br&gt;
+
+### 📌 I/O Bound vs CPU Bound 작업
+
+#### I/O Bound 작업이란?
+1. CPU는 거의 사용하지 않음
+2. 외부 자원을 기다리는 시간이 대부분
+3. 예시:
+   - 네트워크 통신
+   - 디스크 읽기/쓰기
+   - DB 쿼리
+   - 파일 I/O
+   - 외부 API 응답 대기
+
+**문제점**: I/O 대기 중 쓰레드는 아무 일도 못하고 블록됨 → 쓰레드 자원 낭비
+
+&lt;br&gt;
+
+### 1-2. 캐싱
+
+메모리에 데이터를 저장해 DB 쿼리 실행 횟수를 줄임
+- Redis, Memcached 등 인메모리 캐시 활용
+- Application Level 캐시 (Caffeine, Guava Cache 등)
+
+### 1-3. DB 인프라 개선
+
+**읽기/쓰기 분리 (Read/Write Splitting)**
+- Master: 쓰기 작업
+- Slave(Replica): 읽기 작업
+- 트래픽 분산으로 부하 감소
+
+**스케일 업**
+- CPU, 메모리, SSD 등 하드웨어 사양 향상
+- 비용 대비 효과 고려 필요
+
+### 1-4. Connection Pool 최적화
+
+DB, HTTP Client, Redis 등의 커넥션 풀 설정 최적화
+- `maximumPoolSize`: 최대 연결 수
+- `minimumIdle`: 최소 유휴 연결 수
+- `connectionTimeout`: 연결 대기 시간
+
+**효과**:
+- 과도한 커넥션 생성/폐기 방지
+- CPU 및 메모리 절약
+- 안정적인 성능 유지
+
+&lt;br&gt;
+
+## 2. 외부 API 호출 최적화
+
+### 2-1. 캐싱
+
+자주 변경되지 않는 외부 API 응답은 캐시에 저장
+
+### 2-2. 동기 호출 제거
+
+직접 호출 대신 메시지 큐를 통한 비동기 처리
+- Kafka, RabbitMQ, AWS SQS 등 활용
+- 외부 시스템 장애가 전파되지 않음
+
+### 2-3. 비동기 처리
+
+**Java 예시**:
+```java
+CompletableFuture.supplyAsync(() -&gt; {
+    return externalApiService.call();
+});
+</code></pre></div></div>
+
+<p><strong>중요</strong>:</p>
+<ul>
+  <li><strong>비동기 처리는 성능 향상이 아닌, 요청 쓰레드 보호와 격리가 목적</strong></li>
+  <li>전체 처리 시간은 오히려 증가할 수 있음</li>
+  <li>사용자 경험 개선 및 시스템 안정성 향상이 주 목적</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="3-데이터-집계-및-계산-최적화">3. 데이터 집계 및 계산 최적화</h2>
+
+<h3 id="실시간-계산의-문제점">실시간 계산의 문제점</h3>
+
+<p>좋아요 수, 조회 수, 팔로워 수 등을 매번 계산하면:</p>
+<ul>
+  <li>복잡한 JOIN 또는 COUNT 쿼리 실행</li>
+  <li>DB 부하 증가</li>
+  <li><strong>TPS 급격히 감소</strong></li>
+</ul>
+
+<h3 id="해결-방법">해결 방법</h3>
+
+<h4 id="pre-aggregation-사전-집계">Pre-Aggregation (사전 집계)</h4>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- ❌ 매번 계산</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> 
+  <span class="k">FROM</span> <span class="n">likes</span> 
+ <span class="k">WHERE</span> <span class="n">post_id</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+
+<span class="c1">-- ✅ 미리 계산해서 저장</span>
+<span class="k">UPDATE</span> <span class="n">posts</span> 
+   <span class="k">SET</span> <span class="n">like_count</span> <span class="o">=</span> <span class="n">like_count</span> <span class="o">+</span> <span class="mi">1</span> 
+ <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="batch-작업으로-주기적-집계">Batch 작업으로 주기적 집계</h4>
+<ul>
+  <li>실시간성이 중요하지 않은 데이터는 배치로 처리</li>
+  <li>예: 1시간마다 통계 재계산</li>
+</ul>
+
+<h4 id="eventually-consistent-전략">Eventually Consistent 전략</h4>
+<ul>
+  <li>약간의 데이터 불일치를 허용</li>
+  <li>궁극적으로는 일관성 보장</li>
+  <li>예: 좋아요 수가 1~2초 지연되어도 문제없는 경우</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="️-대기-시간을-줄이는-방법">⏱️ 대기 시간을 줄이는 방법</h1>
+
+<p><strong>응답 시간 = 대기 시간 + 처리 시간</strong></p>
+
+<p>대기 시간은 주로 네트워크 전송과 관련됨</p>
+
+<h2 id="대역폭-bandwidth">대역폭 (Bandwidth)</h2>
+<p>최대로 전송할 수 있는 데이터 양</p>
+<ul>
+  <li>대역폭이 작으면 동시 접속자 증가 시 전송 속도 급격히 저하</li>
+</ul>
+
+<h3 id="응답-크기-줄이기">응답 크기 줄이기</h3>
+
+<p><strong>압축 (Compression)</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Encoding: gzip
+</code></pre></div></div>
+<ul>
+  <li>HTTP 응답 본문 압축</li>
+  <li>일반적으로 70~90% 크기 감소</li>
+</ul>
+
+<p><strong>이미지 최적화</strong></p>
+<ul>
+  <li>WebP 포맷 사용</li>
+  <li>적절한 해상도 및 품질 설정</li>
+  <li>Lazy Loading 적용</li>
+</ul>
+
+<p><strong>JSON 응답 최적화</strong></p>
+<ul>
+  <li>불필요한 필드 제거</li>
+  <li>데이터 구조 간소화</li>
+</ul>
+
+<h3 id="트래픽-분리">트래픽 분리</h3>
+
+<p><strong>CDN (Content Delivery Network) 활용</strong></p>
+<ul>
+  <li>정적 파일(이미지, CSS, JS)은 CDN에서 제공</li>
+  <li>원본 서버 부하 감소</li>
+  <li>사용자와 가까운 엣지 서버에서 제공 → 지연 시간 감소</li>
+</ul>
+
+<p><strong>예시</strong>:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- ❌ 원본 서버에서 직접 제공 --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/static/images/logo.png"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- ✅ CDN을 통해 제공 --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://cdn.example.com/images/logo.png"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="대역폭-늘리기">대역폭 늘리기</h3>
+<p>인스턴스 스펙 업그레이드</p>
+<ul>
+  <li>AWS EC2의 경우 인스턴스 타입에 따라 네트워크 대역폭 다름</li>
+  <li>예: t3.medium (최대 5 Gbps) → c5n.large (최대 25 Gbps)</li>
+  <li><strong>단점</strong>: 비용 증가</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h1 id="-결론">✅ 결론</h1>
+
+<p>성능 최적화는 단순히 서버를 늘리는 것이 아니라, 다층적 접근이 필요함</p>
+
+<h2 id="핵심-전략">핵심 전략</h2>
+<ol>
+  <li><strong>DB 최적화</strong>: 쿼리 튜닝, 인덱스 최적화, I/O 최소화</li>
+  <li><strong>캐싱</strong>: 불필요한 연산 및 DB 조회 제거</li>
+  <li><strong>비동기 처리</strong>: 쓰레드 효율성 확보 및 시스템 격리</li>
+  <li><strong>사전 집계</strong>: 실시간 계산 대신 미리 계산된 결과 활용</li>
+  <li><strong>네트워크 최적화</strong>: 압축, CDN, 대역폭 관리</li>
+</ol>
+
+<h2 id="주의사항">주의사항</h2>
+<ul>
+  <li>무조건적인 스케일 아웃보다 <strong>근본 원인 해결이 우선</strong></li>
+  <li>비동기는 만능이 아님 - <strong>목적에 맞게 사용</strong></li>
+  <li>캐시는 <strong>정합성 문제</strong>를 고려해야 함</li>
+  <li>최적화는 <strong>측정 기반</strong>으로 진행 (추측 금지)</li>
+</ul>]]></content><author><name>이소현</name></author><category term="개발" /><summary type="html"><![CDATA[]]></summary></entry><entry xml:lang="en"><title type="html">SRT/KTX Reservation System Design</title><link href="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/" rel="alternate" type="text/html" title="SRT/KTX Reservation System Design" /><published>2026-02-01T00:00:00+09:00</published><updated>2026-02-01T00:00:00+09:00</updated><id>http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx-en</id><content type="html" xml:base="http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/"><![CDATA[<p><br /></p>
 
 <h1 id="-im-curious">🤔 I’m Curious</h1>
 <p>As someone from the provinces who moved to Seoul,<br />

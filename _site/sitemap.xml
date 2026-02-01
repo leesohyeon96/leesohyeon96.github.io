@@ -48,7 +48,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/douneedschedule</loc>
-    <lastmod>2026-02-01T13:21:42+09:00</lastmod>
+    <lastmod>2026-02-01T13:52:11+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -60,7 +60,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/douneedschedule</loc>
-    <lastmod>2026-02-01T13:21:42+09:00</lastmod>
+    <lastmod>2026-02-01T13:52:11+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -82,6 +82,20 @@
   
   <url>
     <loc>http://localhost:4000/en/blog/how-to-reserve-srt-or-ktx/</loc>
+    <lastmod>2026-02-01T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/ko/blog/performance-optimization-guide/</loc>
+    <lastmod>2026-02-01T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/en/blog/performance-optimization-guide/</loc>
     <lastmod>2026-02-01T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
