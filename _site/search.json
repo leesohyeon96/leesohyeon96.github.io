@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "SRT/KTX 예매 시스템 구현 및 JMeter 부하 테스트",
+      "category" : "자유",
+      "tags"     : "",
+      "url"      : "/ko/blog/train-reservations-jmeter-test/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "SRT/KTX Booking System Implementation &amp; JMeter Load Test",
+      "category" : "free",
+      "tags"     : "",
+      "url"      : "/en/blog/train-reservations-jmeter-test/",
+      "date"     : "2026-02-01 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "SRT/KTX 예매 시스템 설계",
       "category" : "개발",
       "tags"     : "",

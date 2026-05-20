@@ -182,3 +182,11 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 - Seat search uses Redis cache to reduce DB load and <br> solve concurrency issues with NX + TTL-based Redis lock when holding seats
 - Payment proceeds after seat hold → Traffic distribution
 - Configure a reservation system that operates stably even in super-high-traffic environments like holidays by separating Redis roles into queue, cache, and lock
+
+---
+
+## 🧪 Implementation & Testing
+
+I actually implemented the design described above and conducted load testing using JMeter.
+
+👉 Check out the implementation code and test results in [SRT/KTX Booking System Implementation & JMeter Load Test](/en/blog/train-reservations-jmeter-test/).

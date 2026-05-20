@@ -48,7 +48,7 @@
   
   <url>
     <loc>http://localhost:4000/en/works/douneedschedule</loc>
-    <lastmod>2026-02-01T13:52:11+09:00</lastmod>
+    <lastmod>2026-02-01T14:00:15+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -60,7 +60,7 @@
   
   <url>
     <loc>http://localhost:4000/ko/works/douneedschedule</loc>
-    <lastmod>2026-02-01T13:52:11+09:00</lastmod>
+    <lastmod>2026-02-01T14:00:15+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -72,6 +72,20 @@
   
   
   <!-- 블로그 포스트 -->
+  
+  <url>
+    <loc>http://localhost:4000/ko/blog/train-reservations-jmeter-test/</loc>
+    <lastmod>2026-02-01T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/en/blog/train-reservations-jmeter-test/</loc>
+    <lastmod>2026-02-01T00:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://localhost:4000/ko/blog/how-to-reserve-srt-or-ktx/</loc>

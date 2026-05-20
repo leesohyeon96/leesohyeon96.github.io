@@ -1,5 +1,5 @@
 # English data file
-description: "Portfolio of Sohyeon Lee, a responsible 3-year backend developer. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
+description: "Portfolio of Sohyeon Lee, a responsible 4-year backend developer. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
 keywords: "backend developer, Java developer, Spring developer, Node.js developer, React developer, portfolio, web development, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
 
 hero:
@@ -7,13 +7,11 @@ hero:
   image_alt: "Sohyeon Lee"
   title: "<b>Sohyeon</b> Lee"
   after_title: "<strong>Backend Developer</strong>"
-  description: "3-year backend developer :) <br/> I've been working from 2022 as a backend developer"
+  description: "4-year backend developer :) <br/> I've been working from 2022 as a backend developer"
   bg_title: "SHL Dev"
   info:
-    - num: "2 <strong>+</strong>"
+    - num: "4 <strong>+</strong>"
       value: "Years of <strong>Experience</strong>"
-    - num: "3"
-      value: "Completed <strong>Projects</strong>"
 
 skills:
   title: "Skills"
@@ -61,22 +59,15 @@ resume:
   education:
     title: "Education & Experience"
     items:
-      - name: "MSA-based Pet C2C Trading Platform Project"
-        subname: "BowMeow Project"
-        period: "2024.08 ~ <b>Present</b>"
-        text: "MSA architecture learning project <br/> Currently in progress & check [Projects] section"
+#      - name: "MSA-based Pet C2C Trading Platform Project"
+#        subname: "BowMeow Project"
+#        period: "2024.08 ~ <b>Present</b>"
+#        text: "MSA architecture learning project <br/> Currently in progress & check [Projects] section"
       - name: "Korea National Open University Computer Science"
-        subname: "Korea National Open University Computer Science <br/> Transferred to 2nd year, currently enrolled"
-        period: "2023.03 ~ <b>Present</b>"
-        text: "Expected graduation 2025.06 <br/> Transferred to 2nd year in 2023.03"
-      - name: "WebSocket-based Web Messaging Platform Project"
-        subname: "OhguOhgutalk Project"
-        period: "2023.02 ~ 2023.08"
-        text: "WebSocket usage and JPA, mongoDB learning project <br/> Only works locally"
-      - name: "React & Node.js Study and Project"
-        subname: "DoUNeedSchedule Project"
-        period: "2022.05 ~ 2022.08"
-        text: "React course study and project with 2 team members <br/> Frontend server (React) & Backend server (Node.js)"
+        subname: "Korea National Open University Computer Science <br/> Transferred to 2nd year, graduated"
+        period: "2023.03 ~ 2025.06"
+        text: "Graduated 2025.06"
+
       - name: "Government-funded IT Academy Completion"
         subname: "The Joeun Academy <br/> Java Web Development & App Development <br/> (Secure Coding, Docker) Training Course Completion"
         period: "2021.10 ~ 2022.05"

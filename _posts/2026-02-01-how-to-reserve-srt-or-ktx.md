@@ -181,3 +181,11 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 - 좌석 조회는 Redis 캐시를 사용해 DB 부하를 줄이고 <br> 좌석 선점 시 NX + TTL 기반 Redis 락으로 동시성 문제 해결
 - 결제는 좌석 선점 이후 진행 → 트래픽 분산
 - Redis를 큐, 캐시, 락으로 역할 분리해 명절과 같은 초고트래픽 환경에서도 안정적으로 동작하는 예매 시스템 구성
+
+---
+
+## 🧪 실제 구현 및 테스트
+
+위에서 설명한 설계를 실제로 구현하고 JMeter를 사용한 부하 테스트를 진행했습니다.
+
+👉 [SRT/KTX 예매 시스템 구현 및 JMeter 부하 테스트](/ko/blog/train-reservations-jmeter-test/)에서 구현 코드와 테스트 결과를 확인할 수 있습니다.
