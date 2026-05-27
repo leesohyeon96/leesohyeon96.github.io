@@ -36,7 +36,7 @@ layout: default
         <!-- Blog Items -->
         <div class="articles-container">
           {% assign current_lang = page.lang | default: site.lang %}
-          {% assign visible_posts = paginator.posts | where: "lang", current_lang %}
+          {% if paginator %}{% assign visible_posts = paginator.posts | where: "lang", current_lang %}{% else %}{% assign visible_posts = site.posts | where: "lang", current_lang %}{% endif %}
           {% for post in visible_posts %}
           <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
             {% if post.image != nil and post.image != '' %}
