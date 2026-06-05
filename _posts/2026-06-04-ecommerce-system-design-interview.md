@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DAU 100만 쇼핑몰, 어떻게 설계할까?"
-date: 2026-05-27
+date: 2026-06-04
 category: 개발
 author: 이소현
 lang: ko
