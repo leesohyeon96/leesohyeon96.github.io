@@ -16,7 +16,17 @@ The moment you go from one server to many, a new class of problems appears — s
 
 ---
 
-# 1. Multiple Servers — Sessions Break
+## Table of Contents
+
+- [1. Multiple Servers — Sessions Break](#section-1)
+- [2. Read Replica — Data Written a Moment Ago Is Invisible](#section-2)
+- [3. Concurrency — 5,000 People Rush for 1,000 Coupons](#section-3)
+- [4. Distributed Lock — Multiple Servers Modifying the Same Data](#section-4)
+- [Summary](#summary)
+
+---
+
+# 1. Multiple Servers — Sessions Break {#section-1}
 
 A load balancer distributes requests across servers. If user A logs in on server 1 but the next request goes to server 2, server 2 has no record of the login.
 
@@ -58,7 +68,7 @@ During normal operation, no Redis lookup is needed — just token validation. Th
 
 ---
 
-# 2. Read Replica — Data Written a Moment Ago Is Invisible
+# 2. Read Replica — Data Written a Moment Ago Is Invisible {#section-2}
 
 Attaching a Read Replica reduces load on the primary, but data written to the Primary takes time to replicate. This is **Replication Lag**.
 
@@ -80,7 +90,7 @@ Slight staleness is acceptable here. Since the majority of reads fall into this 
 
 ---
 
-# 3. Concurrency — 5,000 People Rush for 1,000 Coupons
+# 3. Concurrency — 5,000 People Rush for 1,000 Coupons {#section-3}
 
 When 5,000 users simultaneously request a limited-stock coupon, naive handling can issue more than the limit.
 
@@ -117,7 +127,7 @@ Back it with a `(user_id, coupon_id)` unique constraint at the DB level to preve
 
 ---
 
-# 4. Distributed Lock — Multiple Servers Modifying the Same Data
+# 4. Distributed Lock — Multiple Servers Modifying the Same Data {#section-4}
 
 When multiple servers modify the same user's data simultaneously (e.g., point balance), data corruption occurs.
 
@@ -170,7 +180,7 @@ Even if one Redis node dies, the remaining majority keeps the system working cor
 
 ---
 
-# Summary
+# Summary {#summary}
 
 | Problem | Solution |
 |---|---|
@@ -182,3 +192,28 @@ Even if one Redis node dies, the remaining majority keeps the system working cor
 | Server dies while holding lock | TTL auto-expiry |
 | Operation outlasts TTL | Watchdog lock renewal |
 | Redis server dies | Redlock (majority consensus) |
+
+<br>
+
+---
+
+# 📚 References
+
+**Session / JWT**
+- [RFC 7519: JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519)
+- [OWASP: Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
+
+**Redis Blacklist / Token Revocation**
+- [Redis SET NX Official Docs](https://redis.io/commands/set/)
+- [Redis EXPIRE Official Docs](https://redis.io/commands/expire/)
+
+**Read Replica / Replication Lag**
+- [MySQL 8.0 Replication Docs](https://dev.mysql.com/doc/refman/8.0/en/replication.html)
+- [AWS RDS Read Replica Docs](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
+
+**Distributed Lock / Redlock**
+- [Redis Distributed Locks (Redlock algorithm)](https://redis.io/docs/manual/patterns/distributed-locks/)
+- [Redisson Watchdog](https://github.com/redisson/redisson/wiki/8.-distributed-locks-and-synchronizers)
+
+**Concurrency / SELECT FOR UPDATE**
+- [MySQL 8.0 Locking Reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)

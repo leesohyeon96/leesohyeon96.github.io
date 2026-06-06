@@ -16,7 +16,18 @@ When designing a backend for a large-scale service, the process always starts th
 
 ---
 
-# 1. Start with Numbers
+## Table of Contents
+
+- [1. Start with Numbers](#section-1)
+- [2. Read TPS 2,340 — Can MySQL Handle It?](#section-2)
+- [3. Inventory Concurrency — 5,000 People Hit the Buy Button at Once](#section-3)
+- [4. Payments — Preventing Double Charges](#section-4)
+- [5. Full Architecture](#section-5)
+- [Summary](#summary)
+
+---
+
+# 1. Start with Numbers {#section-1}
 
 Design decisions without numbers are just guesses. "Just add caching" means nothing without knowing the actual load.
 
@@ -42,7 +53,7 @@ The peak multiplier (5×) reflects e-commerce traffic patterns — most shopping
 
 ---
 
-# 2. Read TPS 2,340 — Can MySQL Handle It?
+# 2. Read TPS 2,340 — Can MySQL Handle It? {#section-2}
 
 A single MySQL instance handles roughly 1,000–3,000 TPS depending on query complexity. It may survive normal traffic but risks breaking under peak load.
 
@@ -76,7 +87,7 @@ This is the Cache Stampede problem. Two approaches:
 
 ---
 
-# 3. Inventory Concurrency — 5,000 People Hit the Buy Button at Once
+# 3. Inventory Concurrency — 5,000 People Hit the Buy Button at Once {#section-3}
 
 If 5,000 users simultaneously try to buy one of 1,000 available items, naive handling can oversell inventory.
 
@@ -125,7 +136,7 @@ Don't reach for Kafka by default. At 1M DAU with 260 write TPS, direct INSERT is
 
 ---
 
-# 4. Payments — Preventing Double Charges
+# 4. Payments — Preventing Double Charges {#section-4}
 
 Network can drop after a payment goes through but before the response is received. The client retries — and potentially charges the user twice.
 
@@ -148,7 +159,7 @@ This is more efficient than DB unique constraints because it intercepts duplicat
 
 ---
 
-# 5. Full Architecture
+# 5. Full Architecture {#section-5}
 
 ```
 [Client]
@@ -174,7 +185,7 @@ This is more efficient than DB unique constraints because it intercepts duplicat
 
 ---
 
-# Summary
+# Summary {#summary}
 
 | Problem | Solution |
 |---|---|
@@ -183,3 +194,28 @@ This is more efficient than DB unique constraints because it intercepts duplicat
 | Concurrent inventory deduction | Redis Lua DECR |
 | DB write under flash sale | Direct INSERT (normal) / Kafka (peak) |
 | Duplicate payments | Idempotency Key + Redis SET NX |
+
+<br>
+
+---
+
+# 📚 References
+
+**System Design / DAU-TPS Estimation**
+- Alex Xu, *System Design Interview Vol. 1* (2020), Chapter 1 — Back-of-the-envelope estimation
+
+**Cache-Aside / Caching Strategy**
+- [AWS Caching Best Practices](https://aws.amazon.com/caching/best-practices/)
+- [Redis Docs: Caching](https://redis.io/docs/manual/patterns/)
+
+**Redis DECR / Inventory Concurrency**
+- [Redis DECR Official Docs](https://redis.io/commands/decr/)
+- [Redis Lua Scripting](https://redis.io/docs/manual/programmability/lua-api/)
+
+**Kafka Async Orders**
+- [Apache Kafka Official Docs](https://kafka.apache.org/documentation/)
+- [Confluent: Kafka Use Cases](https://www.confluent.io/use-case/kafka-as-message-queue/)
+
+**Idempotency Key**
+- [Stripe API Docs: Idempotent Requests](https://stripe.com/docs/api/idempotent_requests)
+- [RFC 7231 Section 4.2.2](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) — HTTP idempotency definition

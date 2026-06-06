@@ -16,7 +16,18 @@ This post assumes familiarity with Kafka basics (topics, partitions, consumer gr
 
 ---
 
-# 📐 Schema Registry
+## Table of Contents
+
+- [Schema Registry](#schema-registry)
+- [Avro vs Protobuf](#avro-protobuf)
+- [Kafka Streams](#kafka-streams)
+- [Exactly Once Semantics (EOS)](#eos)
+- [Kafka Connect](#kafka-connect)
+- [The Full Picture](#full-picture)
+
+---
+
+# 📐 Schema Registry {#schema-registry}
 
 ## Why It Exists
 
@@ -206,7 +217,7 @@ In practice, `BACKWARD` is the default. It pairs naturally with rolling deploys 
 
 ---
 
-# 🗜️ Avro vs Protobuf
+# 🗜️ Avro vs Protobuf {#avro-protobuf}
 
 Kafka transmits messages as binary. You need a way to convert **"object → bytes"** — schema-based serialization formats that are faster and smaller than JSON.
 
@@ -290,7 +301,7 @@ Field numbers are the key. Renaming `order_id` to `orderId` is fine — as long 
 
 ---
 
-# 🌊 Kafka Streams
+# 🌊 Kafka Streams {#kafka-streams}
 
 ## Overview
 
@@ -398,7 +409,7 @@ For time-based aggregations:
 
 ---
 
-# ✅ Exactly Once Semantics (EOS)
+# ✅ Exactly Once Semantics (EOS) {#eos}
 
 > **Default is At-Least-Once. Exactly Once is used only when needed.**
 
@@ -519,7 +530,7 @@ Implementation:
 
 ---
 
-# 🔌 Kafka Connect
+# 🔌 Kafka Connect {#kafka-connect}
 
 ## Overview
 
@@ -596,7 +607,7 @@ In practice, a common pattern is: Connect pulls data in → Streams processes it
 
 ---
 
-# 💡 The Full Picture
+# 💡 The Full Picture {#full-picture}
 
 ```
 [External DB]

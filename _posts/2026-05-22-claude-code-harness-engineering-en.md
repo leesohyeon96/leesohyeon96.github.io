@@ -16,7 +16,19 @@ The default Claude Code setup eventually falls short — you find yourself repea
 
 ---
 
-# 🔧 Configuration Layers
+## Table of Contents
+
+- [Configuration Layers](#config-layers)
+- [CLAUDE.md: Defining AI Behavior Rules](#claude-md)
+- [Hooks: Event-Based Automation](#hooks)
+- [Plugins: Feature Extensions](#plugins)
+- [Skills: Reusable Workflows](#skills)
+- [Additional Customization](#extras)
+- [Summary](#summary)
+
+---
+
+# 🔧 Configuration Layers {#config-layers}
 
 Claude Code customization is organized into four layers.
 
@@ -31,7 +43,7 @@ Claude Code customization is organized into four layers.
 
 ---
 
-# 📋 CLAUDE.md: Defining AI Behavior Rules
+# 📋 CLAUDE.md: Defining AI Behavior Rules {#claude-md}
 
 `~/.claude/CLAUDE.md` is a global rules file Claude Code reads at the start of every session. Define your collaboration preferences here once — no need to repeat them every conversation.
 
@@ -59,7 +71,7 @@ The key is **role separation**. Assigning Claude Code to implementation and Code
 
 ---
 
-# 🪝 Hooks: Event-Based Automation
+# 🪝 Hooks: Event-Based Automation {#hooks}
 
 Hooks are the core automation mechanism in Claude Code. They run shell commands when specific events occur.
 
@@ -122,7 +134,7 @@ Runs `./gradlew classes` before every `git commit`. If there's a compile error, 
 
 ---
 
-# 🔌 Plugins: Feature Extensions
+# 🔌 Plugins: Feature Extensions {#plugins}
 
 Plugins are packages that extend Claude Code's capabilities. Register them in `settings.json` under `enabledPlugins`.
 
@@ -144,7 +156,7 @@ Plugins are packages that extend Claude Code's capabilities. Register them in `s
 
 ---
 
-# 🎯 Skills: Reusable Workflows
+# 🎯 Skills: Reusable Workflows {#skills}
 
 Skills are markdown files that define the procedure Claude Code follows for specific tasks. Stored in `~/.claude/skills/` and invoked via `/skill-name`.
 
@@ -162,7 +174,7 @@ Skills that auto-trigger by context:
 
 ---
 
-# ✨ Additional Customization
+# ✨ Additional Customization {#extras}
 
 ## Spinner Messages
 
@@ -193,7 +205,7 @@ Runs a custom script that displays caveman mode status (and other info) in the t
 
 ---
 
-# 💡 Summary
+# 💡 Summary {#summary}
 
 The core idea of harness engineering is **automating the points where AI repeatedly makes mistakes**.
 
