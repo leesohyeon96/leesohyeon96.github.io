@@ -180,3 +180,28 @@ DB unique 제약으로도 막을 수 있지만, Redis NX가 더 빠르고 외부
 | 재고 동시 차감 | Redis Lua DECR |
 | 주문 DB 반영 | 평상시 직접 INSERT, 피크 시 Kafka |
 | 이중 결제 | 멱등성 키 + Redis SET NX |
+
+<br>
+
+---
+
+# 📚 참고 자료
+
+**시스템 설계 / DAU-TPS 추정**
+- Alex Xu, *System Design Interview Vol. 1* (2020), Chapter 1 — Back-of-the-envelope estimation
+
+**Cache-Aside / 캐시 전략**
+- [AWS Caching Best Practices](https://aws.amazon.com/caching/best-practices/) — Cache-Aside 패턴 공식 설명
+- [Redis Docs: Caching](https://redis.io/docs/manual/patterns/)
+
+**Redis DECR / 재고 동시성**
+- [Redis DECR 공식 문서](https://redis.io/commands/decr/) — 원자적 감소 연산
+- [Redis Lua Scripting](https://redis.io/docs/manual/programmability/lua-api/) — Lua 스크립트로 원자성 보장
+
+**Kafka 비동기 주문**
+- [Apache Kafka 공식 문서](https://kafka.apache.org/documentation/)
+- [Confluent: Kafka Use Cases](https://www.confluent.io/use-case/kafka-as-message-queue/)
+
+**멱등성 키 (Idempotency Key)**
+- [Stripe API Docs: Idempotent Requests](https://stripe.com/docs/api/idempotent_requests) — 실무 구현 사례
+- [RFC 7231 Section 4.2.2](https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2) — HTTP 멱등성 정의
