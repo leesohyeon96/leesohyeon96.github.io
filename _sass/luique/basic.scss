@@ -4061,8 +4061,11 @@ pre {
 }
 
 pre code {
-	color: #d63384;
-	font-style: italic;
+	color: inherit;
+	font-style: normal;
+	white-space: pre;
+	padding: 0;
+	display: block;
 }
 
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
