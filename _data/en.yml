@@ -1,5 +1,5 @@
 # English data file
-description: "Portfolio of Sohyeon Lee, a responsible 4-year backend developer. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
+description: "Portfolio of Sohyeon Lee, a backend developer focused on performance improvement. Explore projects utilizing various technology stacks including Java, Spring, Node.js, React, AWS, Azure, and more."
 keywords: "backend developer, Java developer, Spring developer, Node.js developer, React developer, portfolio, web development, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
 
 hero:
@@ -7,7 +7,7 @@ hero:
   image_alt: "Sohyeon Lee"
   title: "<b>Sohyeon</b> Lee"
   after_title: "<strong>Backend Developer</strong>"
-  description: "4-year backend developer :) <br/> I've been working from 2022 as a backend developer"
+  description: "Backend developer focused on performance improvement <br/> Working since 2022"
   bg_title: "SHL Dev"
   info:
     - num: "4 <strong>+</strong>"

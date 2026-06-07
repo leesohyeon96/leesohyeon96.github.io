@@ -1,5 +1,5 @@
 # 한국어 데이터 파일
-description: "책임감 있는 4년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다."
+description: "성능 개선에 힘쓰는 4년차 백엔드 개발자 이소현의 포트폴리오입니다. Java, Spring, Node.js, React, AWS, Azure 등 다양한 기술 스택을 활용한 프로젝트들을 확인하실 수 있습니다."
 keywords: "백엔드 개발자, Java 개발자, Spring 개발자, Node.js 개발자, React 개발자, 포트폴리오, 웹개발, MSA, AWS, Azure, Docker, MySQL, MongoDB, Redis"
 
 hero:
@@ -7,7 +7,7 @@ hero:
   image_alt: "이소현"
   title: "<b>이소현</b>"
   after_title: "<strong>백엔드 개발자</strong>"
-  description: "책임감 있는 4년차 백엔드 개발자입니다"
+  description: "성능 개선에 힘쓰는 4년차 백엔드 개발자입니다"
   bg_title: "SHL Dev"
   info:
     - num: "4 <strong>+</strong>"
