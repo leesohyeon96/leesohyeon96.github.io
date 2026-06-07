@@ -65,23 +65,25 @@ API는 200을 반환하고 있었다. 하지만 29초 소요 후 빈 배열. 앱
 
 ```
 user_health_info  (건강 데이터 기본 정보 — 상위 테이블)
-  ├── health_sn     PK
-  ├── user_id        사용자 식별자
-  └── log_type       로그 타입 ('TYPE_A', 'TYPE_B', ...)
-  // 이하 생략
+  ├── health_sn    PK
+  ├── user_id      사용자 식별자
+  └── log_type     로그 타입 ('TYPE_A', 'TYPE_B', ...)
 
 user_meal_log  (식사 데이터 — 하위 테이블)
-  ├── health_sn     FK → user_health_info
-  └── meal_data      JSONB
-                     {
-                       "mealInfo": {
-                         "mealDate": "2026-05-10T12:30:00",
-                         "mealType": "LUNCH",
-                         "calories": 650,
-                         ...
-                       }
-                     }
-   // 이하 생략 
+  ├── health_sn    FK → user_health_info
+  └── meal_data    JSONB
+```
+
+`meal_data` JSONB 구조 예시:
+
+```json
+{
+  "mealInfo": {
+    "mealDate": "2026-05-10T12:30:00",
+    "mealType": "LUNCH",
+    "calories": 650
+  }
+}
 ```
 
 식사 데이터를 조회할 때는 `user_meal_log`와 `user_health_info`를 JOIN해서 `user_id`로 필터링한다.

@@ -65,23 +65,25 @@ This service stores various health data measured by smartwatches. The table stru
 
 ```
 user_health_info  (health data master — parent table)
-  ├── health_sn     PK
-  ├── user_id        user identifier
-  └── log_type       data type ('TYPE_A', 'TYPE_B', ...)
-  // columns omitted
+  ├── health_sn    PK
+  ├── user_id      user identifier
+  └── log_type     data type ('TYPE_A', 'TYPE_B', ...)
 
 user_meal_log  (meal data — child table)
-  ├── health_sn     FK → user_health_info
-  └── meal_data      JSONB
-                     {
-                       "mealInfo": {
-                         "mealDate": "2026-05-10T12:30:00",
-                         "mealType": "LUNCH",
-                         "calories": 650,
-                         ...
-                       }
-                     }
-  // columns omitted
+  ├── health_sn    FK → user_health_info
+  └── meal_data    JSONB
+```
+
+`meal_data` JSONB example:
+
+```json
+{
+  "mealInfo": {
+    "mealDate": "2026-05-10T12:30:00",
+    "mealType": "LUNCH",
+    "calories": 650
+  }
+}
 ```
 
 Querying meal data requires a JOIN between `user_meal_log` and `user_health_info`, filtered by `user_id`.
