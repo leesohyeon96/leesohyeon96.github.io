@@ -34,9 +34,14 @@ This post assumes familiarity with Kafka basics (topics, partitions, consumer gr
 Kafka sends messages as raw byte arrays. If a producer changes its data structure, consumers fail to parse. Schema Registry solves this as a **shared contract repository between producers and consumers** — it centralizes schema management, maintains version history, and blocks schema changes that break the contract.
 
 ```
-Producer → [register/lookup schema] → Schema Registry
-Producer → [Schema ID + serialized data] → Kafka Topic → Consumer
-Consumer → [fetch schema by ID] → Schema Registry
+Producer ──[register / lookup schema]──► Schema Registry
+    │                                        ▲
+    │  Schema ID + serialized data           │
+    ▼                                        │
+[Kafka Topic]                            Consumer
+    │                                        │
+    └────────────────────────────────────────┘
+                   (fetch schema by ID)
 ```
 
 ## How It Works
@@ -537,7 +542,15 @@ Implementation:
 A **data pipeline framework** that connects external systems (DB, S3, Elasticsearch, etc.) to Kafka. Configure a connector plugin and data moves automatically — no code required.
 
 ```
-[MySQL] → Source Connector → [Kafka Topic] → Sink Connector → [Elasticsearch]
+[MySQL]
+    ↓
+[Source Connector]
+    ↓
+[Kafka Topic]
+    ↓
+[Sink Connector]
+    ↓
+[Elasticsearch]
 ```
 
 ## Source vs Sink

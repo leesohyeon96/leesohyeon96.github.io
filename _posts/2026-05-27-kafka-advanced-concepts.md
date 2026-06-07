@@ -529,7 +529,15 @@ Kafka Topic → Consumer → 외부 DB write
 외부 시스템(DB, S3, Elasticsearch 등)과 Kafka를 연결하는 **데이터 파이프라인 프레임워크**. 커넥터 플러그인만 설정하면 코드 없이 데이터 이동 가능.
 
 ```
-[MySQL] → Source Connector → [Kafka Topic] → Sink Connector → [Elasticsearch]
+[MySQL]
+    ↓
+[Source Connector]
+    ↓
+[Kafka Topic]
+    ↓
+[Sink Connector]
+    ↓
+[Elasticsearch]
 ```
 
 ## Source vs Sink

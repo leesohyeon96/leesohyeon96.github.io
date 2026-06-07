@@ -142,14 +142,15 @@ Network can drop after a payment goes through but before the response is receive
 
 **Idempotency Key** solves this.
 
+**① Client** — generates UUID per payment attempt → sends in header
 ```
-1. Client generates a UUID per payment attempt → sends in header
-   Idempotency-Key: uuid-abc-123
+Idempotency-Key: uuid-abc-123
+```
 
-2. Server attempts Redis SET NX with this key
-   → Success (first request): process payment
-   → Failure (duplicate): return previous result, no reprocessing
-```
+**② Server** — attempts Redis `SET NX` with this key
+
+- **Success** (first request) → process payment
+- **Failure** (duplicate) → return previous result, no reprocessing
 
 `SET NX` is atomic — "set only if not exists." Even if two requests arrive simultaneously, only one gets through.
 
@@ -164,18 +165,35 @@ This is more efficient than DB unique constraints because it intercepts duplicat
 ```
 [Client]
     ↓
-[CDN] ← static assets
+[CDN]
+  └─ static asset caching
     ↓
-[API Gateway] ← auth, rate limiting
+[API Gateway]
+  └─ auth, rate limiting
     ↓
 [API Servers (horizontal scale)]
-    ├── Product listing → [Redis] → [MySQL Read Replica]
-    ├── Inventory      → [Redis Lua DECR]
-    │                        ↓ success
-    │                  [Kafka order event]
-    │                        ↓
-    │                  [Consumer → Bulk INSERT → MySQL Primary]
-    └── Payment        → [Redis SET NX idempotency check] → [Payment API]
+    │
+    ├─ Product listing
+    │     ↓
+    │  [Redis Cache]
+    │     ↓ miss
+    │  [MySQL Read Replica]
+    │
+    ├─ Inventory
+    │     ↓
+    │  [Redis Lua DECR]
+    │     ↓ success
+    │  [Kafka order event]
+    │     ↓
+    │  [Consumer]
+    │     ↓
+    │  [MySQL Primary — Bulk INSERT]
+    │
+    └─ Payment
+          ↓
+       [Redis SET NX — idempotency check]
+          ↓ pass
+       [External Payment API]
 ```
 
 **Read path:** CDN → API Server → Redis → MySQL Read Replica  

@@ -129,14 +129,15 @@ Kafka를 무조건 쓰는 게 아니다. DAU 100만 기준 쓰기 TPS 260은 MyS
 
 **멱등성 키(Idempotency Key)** 로 해결한다.
 
+**① 클라이언트** — 결제 요청 시 UUID 생성 → 헤더에 포함
 ```
-1. 클라이언트가 결제 요청 시 UUID 생성 → 헤더에 포함
-   Idempotency-Key: uuid-abc-123
+Idempotency-Key: uuid-abc-123
+```
 
-2. 서버가 Redis SET NX로 해당 키 저장 시도
-   → 저장 성공 (처음 요청): 결제 처리 진행
-   → 저장 실패 (중복 요청): 이전 결과 그대로 반환, 재처리 없음
-```
+**② 서버** — Redis `SET NX`로 해당 키 저장 시도
+
+- 저장 **성공** (처음 요청) → 결제 처리 진행
+- 저장 **실패** (중복 요청) → 이전 결과 그대로 반환, 재처리 없음
 
 `SET NX`는 "키가 없을 때만 저장"하는 원자 명령어다. 동시에 두 요청이 들어와도 하나만 통과한다.
 
@@ -151,18 +152,35 @@ DB unique 제약으로도 막을 수 있지만, Redis NX가 더 빠르고 외부
 ```
 [클라이언트]
     ↓
-[CDN] ← 정적 리소스
+[CDN]
+  └─ 정적 리소스 캐싱
     ↓
-[API Gateway] ← 인증, Rate Limiting
+[API Gateway]
+  └─ 인증, Rate Limiting
     ↓
 [API 서버 (수평 확장)]
-    ├── 상품 조회 → [Redis] → [MySQL Read Replica]
-    ├── 재고 차감 → [Redis Lua DECR]
-    │                   ↓ 성공
-    │             [Kafka 주문 이벤트 발행]
-    │                   ↓
-    │             [Consumer → Bulk INSERT → MySQL Primary]
-    └── 결제 → [Redis SET NX 멱등성 키 체크] → [외부 결제사 API]
+    │
+    ├─ 상품 조회
+    │     ↓
+    │  [Redis Cache]
+    │     ↓ miss
+    │  [MySQL Read Replica]
+    │
+    ├─ 재고 차감
+    │     ↓
+    │  [Redis Lua DECR]
+    │     ↓ 성공
+    │  [Kafka 주문 이벤트 발행]
+    │     ↓
+    │  [Consumer]
+    │     ↓
+    │  [MySQL Primary — Bulk INSERT]
+    │
+    └─ 결제
+          ↓
+       [Redis SET NX — 멱등성 키 체크]
+          ↓ 통과
+       [외부 결제사 API]
 ```
 
 읽기는 Redis → Read Replica로 DB 부하를 분산하고, 쓰기는 Redis에서 동시성을 처리한 뒤 Kafka로 DB에 비동기 반영한다.
