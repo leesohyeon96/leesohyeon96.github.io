@@ -129,29 +129,26 @@ ORDER BY ...
 
 ```
 Hash Join
-  (cost=29.42..4,218.76 rows=12 width=312)
-  (actual time=18,543.221..19,200.334 rows=126 loops=1)
+  (actual time=18,543..19,200 rows=126 loops=1)
   Hash Cond: (uml.health_sn = uli.health_sn)
 
-  ->  Seq Scan on user_meal_log uml           ← ① 전체 테이블 스캔
-        (cost=0.00..4,180.14 rows=14,596 width=320)
-        (actual time=0.018..18,542.883 rows=126 loops=1)
+  -- ① 전체 테이블 풀스캔
+  ->  Seq Scan on user_meal_log uml
+        (actual time=0.018..18,542 rows=126 loops=1)
         Filter: (
-          (meal_data->'mealInfo'->>'mealDate')::timestamp
-              AT TIME ZONE 'Asia/Seoul'
-          BETWEEN '2026-05-10 00:00:00+09' AND '2026-05-10 23:59:59+09'
+          (meal_data->'mealInfo'->>'mealDate')
+            ::timestamp AT TIME ZONE 'Asia/Seoul'
+          BETWEEN ... AND ...
         )
-        Rows Removed by Filter: 14,470          ← ② 14,470건 읽고 버림
+        Rows Removed by Filter: 14,470  -- ② 14,470건 버림
 
+  -- ③ user_health_info는 인덱스 스캔 (빠름)
   ->  Hash
-        (cost=29.30..29.30 rows=10 width=16)
-        (actual time=0.203..0.203 rows=10 loops=1)
-        ->  Index Scan on user_health_info uli  ← ③ 인덱스 스캔 (빠름)
+        ->  Index Scan on user_health_info uli
               Index Cond: (user_id = 'user-abc123')
-              Rows Removed by Filter: 792
 
 Planning Time:   0.412 ms
-Execution Time: 19,200.334 ms       ← 19초!
+Execution Time: 19,200 ms  -- 19초!
 ```
 
 ## 실제 실행 순서 해석
@@ -160,12 +157,12 @@ PostgreSQL이 선택한 실행 계획:
 
 ```
 ① user_meal_log 전체 14,596행 풀스캔
-   + 각 행마다 JSONB 파싱 (meal_data->'mealInfo'->>'mealDate')::timestamp
-   → 14,470건은 날짜 조건 불일치로 버림 (17.5초 소요)
+   + 각 행마다 JSONB 파싱
+   → 14,470건 날짜 불일치로 버림 (17.5초)
 
-② user_health_info를 Hash로 읽어 메모리에 올림 (0.2ms)
+② user_health_info Hash 로드 (0.2ms)
 
-③ ①의 결과(126행)와 Hash Join → user_id 필터
+③ ①결과(126행)와 Hash Join → user_id 필터
 
 총 19,200ms
 ```
@@ -234,14 +231,14 @@ WITH 이름 AS MATERIALIZED (  -- ← 이 부분 먼저 실행 보장
 WITH filtered_user AS MATERIALIZED (
     SELECT health_sn
       FROM user_health_info
-     WHERE user_id     = #{userId}       -- ① user_id 필터 가장 먼저
+     WHERE user_id = #{userId}  -- ① user_id 먼저
 )
 SELECT
     uml.health_sn,
     uml.meal_data
 FROM user_meal_log uml
 INNER JOIN filtered_user fu
-    ON uml.health_sn = fu.health_sn   -- ③ 소수 행으로만 JOIN
+    ON uml.health_sn = fu.health_sn  -- ③ 소수 행만 JOIN
 WHERE (uml.meal_data->'mealInfo'->>'mealDate')::timestamp
           AT TIME ZONE 'Asia/Seoul'
       BETWEEN #{startTime} AND #{endTime}
@@ -267,31 +264,22 @@ ORDER BY ...
 
 ```
 Nested Loop
-  (cost=12.43..58.21 rows=8 width=312)
   (actual time=0.312..52.847 rows=126 loops=1)
 
   ->  CTE Scan on filtered_user fu
-        (cost=8.21..8.41 rows=10 width=8)
         (actual time=0.203..0.287 rows=10 loops=1)
-
         CTE filtered_user
           ->  Index Scan on user_health_info
-                (actual time=0.018..0.198 rows=10 loops=1)
                 Index Cond: (user_id = 'user-abc123')
-  
-  ->  Index Scan on user_meal_log uml          ← ② 인덱스 스캔으로 변경!
-        (cost=4.22..4.98 rows=1 width=320)
+
+  -- ② Seq Scan → Index Scan 으로 변경!
+  ->  Index Scan on user_meal_log uml
         (actual time=5.218..5.231 rows=13 loops=10)
         Index Cond: (health_sn = fu.health_sn)
-        Filter: (
-          (meal_data->'mealInfo'->>'mealDate')::timestamp
-              AT TIME ZONE 'Asia/Seoul'
-          BETWEEN ...
-        )
+        Filter: ( ... mealDate BETWEEN ... )
         Rows Removed by Filter: 64
 
-Planning Time:   0.318 ms
-Execution Time: 52.847 ms       ← 53ms!
+Execution Time: 52.847 ms  -- 53ms!
 ```
 
 `Seq Scan`이 `Index Scan`으로 바뀌었고, JSONB 파싱 대상이 전체 테이블(14,596행)에서 해당 사용자의 행(약 130행)으로 줄었다.
@@ -310,10 +298,11 @@ Execution Time: 52.847 ms       ← 53ms!
 
 ```
 ->  Index Scan on user_meal_log
-      Index Cond: (health_sn = fu.health_sn)   ← 인덱스로 행 좁힘
-      Filter: (meal_data->'mealInfo'->>'mealDate')::timestamp ...
-              BETWEEN ...                          ← 행 읽은 후 메모리에서 필터
-      Rows Removed by Filter: 64                  ← 64건 읽고 버림
+      -- 인덱스로 행 좁힘
+      Index Cond: (health_sn = fu.health_sn)
+      -- 행 fetch 이후 메모리에서 필터 (64건 버림)
+      Filter: (...mealDate...)::timestamp BETWEEN ...
+      Rows Removed by Filter: 64
 ```
 
 | | Index Cond | Filter |
@@ -331,13 +320,16 @@ Execution Time: 52.847 ms       ← 53ms!
 ```sql
 -- 기존 함수 인덱스
 CREATE INDEX idx_user_meal_log_mealdate
-    ON user_meal_log (health_sn, fn_meal_mealdate(meal_data));
+    ON user_meal_log
+    (health_sn, fn_meal_mealdate(meal_data));
 
 -- fn_meal_mealdate 함수 정의
 CREATE OR REPLACE FUNCTION fn_meal_mealdate(meal_data jsonb)
 RETURNS date
 LANGUAGE sql IMMUTABLE AS $$
-    SELECT SUBSTRING(meal_data->'mealInfo'->>'mealDate', 1, 10)::date
+    SELECT SUBSTRING(
+      meal_data->'mealInfo'->>'mealDate', 1, 10
+    )::date
 $$;
 ```
 
@@ -365,10 +357,12 @@ AND (uml.meal_data->'mealInfo'->>'mealDate')::timestamp
 ```sql
 -- TO-BE: fn_meal_mealdate() 함수로 통일
 AND fn_meal_mealdate(uml.meal_data)
-    >= (#{startTime}::timestamptz AT TIME ZONE 'Asia/Seoul')::date
+    >= (#{startTime}::timestamptz
+           AT TIME ZONE 'Asia/Seoul')::date
 
 AND fn_meal_mealdate(uml.meal_data)
-    <= (#{endTime}::timestamptz AT TIME ZONE 'Asia/Seoul')::date
+    <= (#{endTime}::timestamptz
+           AT TIME ZONE 'Asia/Seoul')::date
 ```
 
 - 좌변: `fn_meal_mealdate(uml.meal_data)` → 인덱스 표현식과 완전 일치
@@ -387,14 +381,16 @@ Nested Loop
 
   ->  Index Scan on user_meal_log uml
         (actual time=1.012..1.021 rows=13 loops=10)
-        Index Cond: (                              ← Filter → Index Cond 으로 변경!
-          (health_sn = fu.health_sn)
-          AND (fn_meal_mealdate(meal_data) >= '2026-05-10'::date)
-          AND (fn_meal_mealdate(meal_data) <= '2026-05-10'::date)
+        -- Filter → Index Cond 으로 변경!
+        Index Cond: (
+          health_sn = fu.health_sn
+          AND fn_meal_mealdate(meal_data)
+              >= '2026-05-10'::date
+          AND fn_meal_mealdate(meal_data)
+              <= '2026-05-10'::date
         )
 
-Planning Time:   0.284 ms
-Execution Time: 11.342 ms       ← 11ms!
+Execution Time: 11.342 ms  -- 11ms!
 ```
 
 날짜 조건이 `Filter`에서 `Index Cond`로 바뀌었다. 불필요하게 읽던 64건이 인덱스 단계에서 제거된다.
@@ -437,8 +433,8 @@ Execution Time: 11.342 ms       ← 11ms!
 ```sql
 FROM user_meal_log uml                       -- 하위 테이블 먼저
 INNER JOIN user_health_info uli ON ...
-WHERE uli.user_id = #{userId}                -- user_id 필터가 JOIN 이후
-  AND (uml.meal_data->...->>...)::timestamp  -- 전체 테이블에 JSONB 파싱
+WHERE uli.user_id = #{userId}   -- JOIN 이후 필터
+  AND (uml.meal_data->...->>'...')::timestamp
 ```
 
 **✅ 권장 패턴 1 — 상위 테이블 먼저 (단순 조회)**
@@ -446,7 +442,7 @@ WHERE uli.user_id = #{userId}                -- user_id 필터가 JOIN 이후
 ```sql
 FROM user_health_info uli                   -- 상위 테이블 먼저
 INNER JOIN user_meal_log uml ON ...
-WHERE uli.user_id = #{userId}               -- user_id 필터 먼저 적용
+WHERE uli.user_id = #{userId}  -- 먼저 필터
 ```
 
 **✅ 권장 패턴 2 — MATERIALIZED CTE (복잡한 필터 조건이 있을 때)**
@@ -460,7 +456,8 @@ WITH filtered_user AS MATERIALIZED (
 SELECT ...
   FROM user_meal_log uml
  INNER JOIN filtered_user fu ON uml.health_sn = fu.health_sn
- WHERE fn_meal_mealdate(uml.meal_data) BETWEEN ...  -- 인덱스 표현식 그대로 사용
+ WHERE fn_meal_mealdate(uml.meal_data)
+    BETWEEN ...  -- 인덱스 표현식 일치
 ```
 
 **인덱스 표현식 통일 원칙:**  

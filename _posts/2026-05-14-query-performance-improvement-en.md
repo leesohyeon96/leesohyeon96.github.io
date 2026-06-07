@@ -129,29 +129,25 @@ Looks fine on the surface. But `EXPLAIN ANALYZE` reveals the actual execution or
 
 ```
 Hash Join
-  (cost=29.42..4,218.76 rows=12 width=312)
-  (actual time=18,543.221..19,200.334 rows=126 loops=1)
+  (actual time=18,543..19,200 rows=126 loops=1)
   Hash Cond: (uml.health_sn = uli.health_sn)
 
-  ->  Seq Scan on user_meal_log uml           ← ① full table scan
-        (cost=0.00..4,180.14 rows=14,596 width=320)
-        (actual time=0.018..18,542.883 rows=126 loops=1)
+  -- ① full table scan
+  ->  Seq Scan on user_meal_log uml
+        (actual time=0.018..18,542 rows=126 loops=1)
         Filter: (
-          (meal_data->'mealInfo'->>'mealDate')::timestamp
-              AT TIME ZONE 'Asia/Seoul'
-          BETWEEN '2026-05-10 00:00:00+09' AND '2026-05-10 23:59:59+09'
+          (meal_data->'mealInfo'->>'mealDate')
+            ::timestamp AT TIME ZONE 'Asia/Seoul'
+          BETWEEN ... AND ...
         )
-        Rows Removed by Filter: 14,470          ← ② 14,470 rows read and discarded
+        Rows Removed by Filter: 14,470  -- ② discarded
 
+  -- ③ user_health_info: index scan (fast)
   ->  Hash
-        (cost=29.30..29.30 rows=10 width=16)
-        (actual time=0.203..0.203 rows=10 loops=1)
-        ->  Index Scan on user_health_info uli  ← ③ index scan (fast)
+        ->  Index Scan on user_health_info uli
               Index Cond: (user_id = 'user-abc123')
-              Rows Removed by Filter: 792
 
-Planning Time:   0.412 ms
-Execution Time: 19,200.334 ms       ← 19 seconds!
+Execution Time: 19,200 ms  -- 19 seconds!
 ```
 
 ## Breaking Down the Actual Execution Order
@@ -160,12 +156,12 @@ What PostgreSQL actually did:
 
 ```
 ① Full scan of user_meal_log — all 14,596 rows
-   + JSONB parse on every row: (meal_data->'mealInfo'->>'mealDate')::timestamp
-   → 14,470 rows discarded (date mismatch) — 17.5 seconds here
+   + JSONB parse on every row
+   → 14,470 discarded (date mismatch) — 17.5s
 
-② Load user_health_info into a Hash in memory (0.2ms)
+② Load user_health_info into Hash (0.2ms)
 
-③ Hash Join the 126 surviving rows → apply user_id filter
+③ Hash Join 126 rows → user_id filter
 
 Total: 19,200ms
 ```
@@ -230,7 +226,7 @@ WITH name AS MATERIALIZED (  -- ← guaranteed to run first
 ## Modified Query
 
 ```sql
--- TO-BE: force user_health_info to run first via MATERIALIZED CTE
+-- TO-BE: MATERIALIZED CTE forces user_health_info first
 WITH filtered_user AS MATERIALIZED (
     SELECT health_sn
       FROM user_health_info
@@ -241,7 +237,7 @@ SELECT
     uml.meal_data
 FROM user_meal_log uml
 INNER JOIN filtered_user fu
-    ON uml.health_sn = fu.health_sn   -- ② JOIN against a small result set
+    ON uml.health_sn = fu.health_sn  -- ② small result set
 WHERE (uml.meal_data->'mealInfo'->>'mealDate')::timestamp
           AT TIME ZONE 'Asia/Seoul'
       BETWEEN #{startTime} AND #{endTime}
@@ -267,31 +263,22 @@ Total: 53ms
 
 ```
 Nested Loop
-  (cost=12.43..58.21 rows=8 width=312)
   (actual time=0.312..52.847 rows=126 loops=1)
 
   ->  CTE Scan on filtered_user fu
-        (cost=8.21..8.41 rows=10 width=8)
         (actual time=0.203..0.287 rows=10 loops=1)
-
         CTE filtered_user
           ->  Index Scan on user_health_info
-                (actual time=0.018..0.198 rows=10 loops=1)
                 Index Cond: (user_id = 'user-abc123')
 
-  ->  Index Scan on user_meal_log uml          ← ② now an index scan!
-        (cost=4.22..4.98 rows=1 width=320)
+  -- ② Seq Scan → Index Scan!
+  ->  Index Scan on user_meal_log uml
         (actual time=5.218..5.231 rows=13 loops=10)
         Index Cond: (health_sn = fu.health_sn)
-        Filter: (
-          (meal_data->'mealInfo'->>'mealDate')::timestamp
-              AT TIME ZONE 'Asia/Seoul'
-          BETWEEN ...
-        )
+        Filter: ( ...mealDate BETWEEN... )
         Rows Removed by Filter: 64
 
-Planning Time:   0.318 ms
-Execution Time: 52.847 ms       ← 53ms!
+Execution Time: 52.847 ms  -- 53ms!
 ```
 
 `Seq Scan` became `Index Scan`. JSONB parsing now targets only the rows belonging to this user (~130 rows) instead of the entire table (14,596 rows).
@@ -310,10 +297,11 @@ After reaching 53ms, I noticed the date condition was still being evaluated as a
 
 ```
 ->  Index Scan on user_meal_log
-      Index Cond: (health_sn = fu.health_sn)     ← narrows rows via index
-      Filter: (meal_data->'mealInfo'->>'mealDate')::timestamp ...
-              BETWEEN ...                          ← applied in memory after row fetch
-      Rows Removed by Filter: 64                  ← 64 rows read and discarded
+      -- narrows rows via index
+      Index Cond: (health_sn = fu.health_sn)
+      -- applied in memory after row fetch (64 discarded)
+      Filter: (...mealDate...)::timestamp BETWEEN ...
+      Rows Removed by Filter: 64
 ```
 
 | | Index Cond | Filter |
@@ -331,13 +319,16 @@ For the date condition to become an `Index Cond`, an index must exist **and the 
 ```sql
 -- existing functional index
 CREATE INDEX idx_user_meal_log_mealdate
-    ON user_meal_log (health_sn, fn_meal_mealdate(meal_data));
+    ON user_meal_log
+    (health_sn, fn_meal_mealdate(meal_data));
 
 -- fn_meal_mealdate function definition
 CREATE OR REPLACE FUNCTION fn_meal_mealdate(meal_data jsonb)
 RETURNS date
 LANGUAGE sql IMMUTABLE AS $$
-    SELECT SUBSTRING(meal_data->'mealInfo'->>'mealDate', 1, 10)::date
+    SELECT SUBSTRING(
+      meal_data->'mealInfo'->>'mealDate', 1, 10
+    )::date
 $$;
 ```
 
@@ -365,10 +356,12 @@ The parameter type was also a problem. `#{startTime}` arrives as `timestamptz` (
 ```sql
 -- TO-BE: use fn_meal_mealdate() to match the index
 AND fn_meal_mealdate(uml.meal_data)
-    >= (#{startTime}::timestamptz AT TIME ZONE 'Asia/Seoul')::date
+    >= (#{startTime}::timestamptz
+           AT TIME ZONE 'Asia/Seoul')::date
 
 AND fn_meal_mealdate(uml.meal_data)
-    <= (#{endTime}::timestamptz AT TIME ZONE 'Asia/Seoul')::date
+    <= (#{endTime}::timestamptz
+           AT TIME ZONE 'Asia/Seoul')::date
 ```
 
 - Left side: `fn_meal_mealdate(uml.meal_data)` — exactly matches the index expression
@@ -387,14 +380,16 @@ Nested Loop
 
   ->  Index Scan on user_meal_log uml
         (actual time=1.012..1.021 rows=13 loops=10)
-        Index Cond: (                              ← Filter → Index Cond!
-          (health_sn = fu.health_sn)
-          AND (fn_meal_mealdate(meal_data) >= '2026-05-10'::date)
-          AND (fn_meal_mealdate(meal_data) <= '2026-05-10'::date)
+        -- Filter → Index Cond!
+        Index Cond: (
+          health_sn = fu.health_sn
+          AND fn_meal_mealdate(meal_data)
+              >= '2026-05-10'::date
+          AND fn_meal_mealdate(meal_data)
+              <= '2026-05-10'::date
         )
 
-Planning Time:   0.284 ms
-Execution Time: 11.342 ms       ← 11ms!
+Execution Time: 11.342 ms  -- 11ms!
 ```
 
 The date condition moved from `Filter` to `Index Cond`. The 64 rows that were previously fetched and discarded are now excluded at the index level.
@@ -437,8 +432,8 @@ For any query with this parent-child table structure, apply the following:
 ```sql
 FROM user_meal_log uml                       -- child table first
 INNER JOIN user_health_info uli ON ...
-WHERE uli.user_id = #{userId}                -- user_id filter after JOIN
-  AND (uml.meal_data->...->>...)::timestamp  -- full JSONB parse on entire table
+WHERE uli.user_id = #{userId}  -- after JOIN
+  AND (uml.meal_data->...->>'...')::timestamp
 ```
 
 **✅ Pattern 1 — parent table first (simple queries)**
@@ -446,7 +441,7 @@ WHERE uli.user_id = #{userId}                -- user_id filter after JOIN
 ```sql
 FROM user_health_info uli                   -- parent table first
 INNER JOIN user_meal_log uml ON ...
-WHERE uli.user_id = #{userId}               -- user_id filter applied first
+WHERE uli.user_id = #{userId}  -- filter first
 ```
 
 **✅ Pattern 2 — MATERIALIZED CTE (complex filter conditions)**
@@ -460,7 +455,8 @@ WITH filtered_user AS MATERIALIZED (
 SELECT ...
   FROM user_meal_log uml
  INNER JOIN filtered_user fu ON uml.health_sn = fu.health_sn
- WHERE fn_meal_mealdate(uml.meal_data) BETWEEN ...  -- use index expression as-is
+ WHERE fn_meal_mealdate(uml.meal_data)
+    BETWEEN ...  -- matches index expression
 ```
 
 **Index expression consistency rule:**  
