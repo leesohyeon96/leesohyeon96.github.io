@@ -2,7 +2,7 @@
 layout: post
 title: "Meal Query API Timeout — From 19s to 11ms (1,700x Improvement)"
 date: 2026-05-14
-category: dev
+category: error
 author: Sohyeon Lee
 lang: en
 permalink: /en/blog/query-performance-improvement/

@@ -2,7 +2,7 @@
 layout: post
 title: "식사 조회 API 타임아웃 — 19초에서 11ms로 (1,700배 개선)"
 date: 2026-05-14
-category: 개발
+category: 에러
 author: 이소현
 lang: ko
 permalink: /ko/blog/query-performance-improvement/

@@ -2,7 +2,7 @@
 layout: post
 title: "PostgreSQL 대량 INSERT 시 파라미터 제한과 Chunk 처리"
 date: 2026-05-20
-category: 개발
+category: 에러
 author: 이소현
 lang: ko
 permalink: /ko/blog/postgresql-batch-insert-limit/
