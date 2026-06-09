@@ -45,6 +45,5 @@ description3:
     <strong>Toss Payments</strong> — Best-in-class developer documentation and fully equipped test mode. Chosen to learn the real payment flow (request → confirmation → refund) and error handling.<br/><br/>
     <strong>JWT (Access + Refresh Token)</strong> — Current industry standard and a frequent interview topic. Stateless design makes horizontal scaling easy.<br/><br/>
     <strong>PostgreSQL (Neon)</strong> — Payment data requires transactions and consistency → RDB. Neon is free with permanent data retention (Railway built-in DB deletes after 90 days).<br/><br/>
-    <strong>Thymeleaf</strong> — Toss SDK is called from the frontend so a UI is required. React would be overkill; Spring built-in avoids a separate deployment.<br/><br/>
-    <strong>Modular Monolith + DDD</strong> — Single deployment keeps operations simple. Domain-level bounded context separation allows straightforward extraction into microservices later.
+    <strong>Thymeleaf</strong> — Toss SDK is called from the frontend so a UI is required. React would be overkill; Spring built-in avoids a separate deployment.
 ---

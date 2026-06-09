@@ -45,6 +45,5 @@ description3:
     <strong>토스페이먼츠</strong> — 국내 최고 수준의 개발자 문서와 테스트 모드 완비. 실제 결제 플로우(요청 → 승인 → 환불)와 에러 처리를 학습하기 위해 선택.<br/><br/>
     <strong>JWT (Access + Refresh Token)</strong> — 현재 실무 트렌드이자 면접 빈출 주제. Stateless로 수평 확장 용이.<br/><br/>
     <strong>PostgreSQL (Neon)</strong> — 결제 데이터는 트랜잭션/정합성 필수 → RDB. Neon은 무료이면서 데이터 영구 보존 (Railway 내장 DB는 90일 후 삭제).<br/><br/>
-    <strong>Thymeleaf</strong> — 토스 SDK가 프론트에서 호출되므로 UI 필요. React는 오버킬, Spring 내장으로 별도 배포 불필요.<br/><br/>
-    <strong>Modular Monolith + DDD</strong> — 단일 배포로 운영 단순화. 도메인별 bounded context 분리로 나중에 MSA 전환 시 서비스로 그대로 분리 가능.
+    <strong>Thymeleaf</strong> — 토스 SDK가 프론트에서 호출되므로 UI 필요. React는 오버킬, Spring 내장으로 별도 배포 불필요.
 ---
