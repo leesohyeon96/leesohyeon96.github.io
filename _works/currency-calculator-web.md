@@ -32,13 +32,16 @@ description2:
   title: 주요 기능
   text1: >
     실시간 환율 조회 (Redis Cache-Aside로 API 호출 최소화) <br/>
-    AI 여행 조언 (Groq API + Spring AI, Redis 캐싱으로 비용 절감) <br/>
-    5개 언어 지원 (i18next)
+    AI 여행 조언 — 나라·박수·여행 스타일(저예산/보통/고급)별 맞춤 팁 <br/>
+    5개 언어 지원 (KO, EN, JA, ES, ZH)
 
 description3:
-  title: 기술적 선택
+  title: 기술 선택 이유
   text2: >
-    Kotlin 코루틴으로 환율 API·AI API 비동기 호출을 논블로킹으로 처리했다.
-    AI는 Gemini에서 Groq(Llama 3)로 전환 — OpenAI 호환 API라 Spring AI base-url만 변경하면 됐다.
-    Render 무료 티어 슬립 모드로 첫 요청이 느릴 수 있다.
+    <strong>Kotlin + Coroutines</strong> — 환율 API·AI API 호출이 모두 외부 네트워크 요청. 코루틴으로 I/O 대기 중 스레드를 블로킹하지 않고 다른 요청을 처리해 동시 처리량 확보.<br/><br/>
+    <strong>Spring AI</strong> — AI 제공자를 교체해도 코드 변경 최소화. Gemini → Groq 전환 시 base-url 한 줄만 수정하면 됐다.<br/><br/>
+    <strong>Groq API (Llama 3)</strong> — Gemini 프리티어 제한으로 전환. 일일 토큰 제한 없고 상업용 가능. OpenAI 호환 API라 Spring AI와 자연스럽게 연동.<br/><br/>
+    <strong>Redis (Upstash)</strong> — 환율·AI 응답 모두 캐싱. 동일 조건 요청은 AI API를 다시 호출하지 않아 비용 절감.<br/><br/>
+    <strong>Vercel</strong> — GitHub 푸시만으로 자동 배포 + 글로벌 CDN. 프론트 인프라 관리 불필요.<br/><br/>
+    <strong>Render</strong> — 무료 티어로 Spring Boot 배포. 단, 15분 비활성 시 슬립 모드 진입으로 첫 요청이 느릴 수 있다.
 ---
