@@ -150,9 +150,6 @@ navigation:
     - title: "홈"
       url: "/"
       parent: 0
-    - title: "스킬"
-      url: "#skills-section"
-      parent: 0
     - title: "블로그"
       url: "/ko/blog/"
       parent: 0

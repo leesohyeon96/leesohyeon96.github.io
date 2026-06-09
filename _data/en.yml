@@ -140,9 +140,6 @@ navigation:
     - title: "Home"
       url: "/"
       parent: 0
-    - title: "Skills"
-      url: "#skills-section"
-      parent: 0
     - title: "Blog"
       url: "/en/blog/"
       parent: 0
