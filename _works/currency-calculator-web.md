@@ -32,7 +32,6 @@ description2:
     실시간 환율 조회 (Redis Cache-Aside로 API 호출 최소화) <br/>
     AI 여행 조언 (Groq API + Spring AI, Redis 캐싱으로 비용 절감) <br/>
     5개 언어 지원 (i18next) <br/>
-    Redis Rate Limiting
 
 description3:
   title: 기술적 선택

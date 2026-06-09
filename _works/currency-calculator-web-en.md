@@ -32,7 +32,6 @@ description2:
     Real-time exchange rates (Redis Cache-Aside to minimize API calls) <br/>
     AI travel advice (Groq API + Spring AI, Redis-cached to reduce cost) <br/>
     5-language support (i18next) <br/>
-    Redis Rate Limiting
 
 description3:
   title: Technical Decisions
