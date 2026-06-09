@@ -153,17 +153,9 @@ navigation:
     - title: "스킬"
       url: "#skills-section"
       parent: 0
-    - title: "히스토리"
-      url: "#resume-section"
+    - title: "블로그"
+      url: "/ko/blog/"
       parent: 0
     - title: "프로젝트"
-      url: "#works-section"
+      url: "works/"
       parent: 0
-    - title: "페이지"
-      url: ""
-      parent: 1
-      childs:
-        - title: "프로젝트 상세"
-          url: "works/"
-        - title: "블로그"
-          url: "/ko/blog/" 

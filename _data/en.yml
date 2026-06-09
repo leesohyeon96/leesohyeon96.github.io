@@ -143,17 +143,9 @@ navigation:
     - title: "Skills"
       url: "#skills-section"
       parent: 0
-    - title: "History"
-      url: "#resume-section"
+    - title: "Blog"
+      url: "/en/blog/"
       parent: 0
     - title: "Projects"
-      url: "#works-section"
+      url: "works/"
       parent: 0
-    - title: "Pages"
-      url: ""
-      parent: 1
-      childs:
-        - title: "Project Details"
-          url: "works/"
-        - title: "Blog"
-          url: "/en/blog/" 
