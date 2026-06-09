@@ -11,7 +11,7 @@ short_description: Real-time currency calculator with AI travel tips for travele
 full_image: assets/img/works/currency-calculator-web/currency-calculator-thumb.png
 info:
   - label: Period
-    value: 2026.05 ~ 2026.06
+    value: 2025.12 ~ 2026.02
   - label: Frontend
     value: React 19, Vite, Tailwind CSS, i18next, framer-motion
   - label: Backend
