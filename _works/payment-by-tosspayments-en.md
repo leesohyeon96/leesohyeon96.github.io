@@ -11,7 +11,7 @@ short_description: Payment system demo integrating Toss Payments API — order t
 full_image: assets/img/works/payment-by-tosspayments/toss-thumb.png
 info:
   - label: Period
-    value: 2026.06
+    value: 2026.06.07 ~ 2026.06.09
   - label: Language / Framework
     value: Kotlin, Spring Boot 3.3, Spring Data JPA
   - label: Security / Auth
