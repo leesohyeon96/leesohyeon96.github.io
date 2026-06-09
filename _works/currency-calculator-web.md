@@ -37,11 +37,13 @@ description2:
 
 description3:
   title: 기술 선택 이유
+  githubgist_url: https://stats.uptimerobot.com/p5Bl2FRmit
+  text1: 🟢 서비스 모니터링 현황 보기
   text2: >
     <strong>Kotlin + Coroutines</strong> — 환율 API·AI API 호출이 모두 외부 네트워크 요청. 코루틴으로 I/O 대기 중 스레드를 블로킹하지 않고 다른 요청을 처리해 동시 처리량 확보.<br/><br/>
-    <strong>Spring AI</strong> — AI 제공자를 교체해도 코드 변경 최소화. Gemini → Groq 전환 시 base-url 한 줄만 수정하면 됐다.<br/><br/>
+    <strong>Spring AI</strong> — AI 제공자 교체 시 코드 변경 최소화. Gemini → Groq 전환 시 base-url 한 줄만 수정.<br/><br/>
     <strong>Groq API (Llama 3)</strong> — Gemini 프리티어 제한으로 전환. 일일 토큰 제한 없고 상업용 가능. OpenAI 호환 API라 Spring AI와 자연스럽게 연동.<br/><br/>
     <strong>Redis (Upstash)</strong> — 환율·AI 응답 모두 캐싱. 동일 조건 요청은 AI API를 다시 호출하지 않아 비용 절감.<br/><br/>
     <strong>Vercel</strong> — GitHub 푸시만으로 자동 배포 + 글로벌 CDN. 프론트 인프라 관리 불필요.<br/><br/>
-    <strong>Render</strong> — 무료 티어로 Spring Boot 배포. 단, 15분 비활성 시 슬립 모드 진입으로 첫 요청이 느릴 수 있다.
+    <strong>Render (무료 티어)</strong> — 15분 비활성 시 슬립 모드 진입. 첫 요청 시 약 3분의 웜업 타임이 발생하며 환율 조회가 실패할 수 있다. 새로고침하면 정상 동작. 슬립 방지를 위해 UptimeRobot으로 주기적 핑을 설정해두었다.
 ---

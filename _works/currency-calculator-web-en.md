@@ -37,11 +37,13 @@ description2:
 
 description3:
   title: Why These Technologies
+  githubgist_url: https://stats.uptimerobot.com/p5Bl2FRmit
+  text1: 🟢 View Service Uptime Status
   text2: >
     <strong>Kotlin + Coroutines</strong> — Exchange rate and AI API calls are both external network requests. Coroutines suspend during I/O waits without blocking threads, enabling higher concurrency with fewer resources.<br/><br/>
     <strong>Spring AI</strong> — Abstracts AI provider details so switching providers requires minimal code changes. Migrating Gemini → Groq only needed a single base-url update.<br/><br/>
-    <strong>Groq API (Llama 3)</strong> — Switched from Gemini due to free-tier limits. Groq offers no daily token cap and allows commercial use. OpenAI-compatible API integrates naturally with Spring AI.<br/><br/>
+    <strong>Groq API (Llama 3)</strong> — Switched from Gemini due to free-tier limits. No daily token cap, commercial use allowed. OpenAI-compatible API integrates naturally with Spring AI.<br/><br/>
     <strong>Redis (Upstash)</strong> — Caches both exchange rates and AI responses. Identical requests skip the AI API entirely, cutting costs.<br/><br/>
-    <strong>Vercel</strong> — Auto-deploys on every GitHub push with global CDN included. Zero frontend infra management needed.<br/><br/>
-    <strong>Render</strong> — Hosts the Spring Boot API on a free tier. Note: spins down after 15 minutes of inactivity, causing a slow first request.
+    <strong>Vercel</strong> — Auto-deploys on every GitHub push with global CDN. Zero frontend infra management needed.<br/><br/>
+    <strong>Render (free tier)</strong> — Spins down after 15 minutes of inactivity. First request may fail with ~3 minutes of warm-up time. A page refresh will fix it. UptimeRobot is configured to ping the server periodically to prevent sleep.
 ---
