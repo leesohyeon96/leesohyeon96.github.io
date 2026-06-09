@@ -4,6 +4,7 @@ title: "Problems That Appear When You Scale to Multiple Servers"
 date: 2026-06-05
 category: 개발
 author: 이소현
+description: "Core distributed systems concepts: session inconsistency, replica lag, concurrency issues, and distributed locks in multi-server environments"
 lang: en
 permalink: /en/blog/distributed-system-concepts/
 ---

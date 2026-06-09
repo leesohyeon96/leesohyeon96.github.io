@@ -5,6 +5,7 @@ date: 2026-02-01
 category: Development
 #image: assets/img/blog/default.png
 author: Lee Sohyun
+description: "System design walkthrough for building an SRT/KTX train reservation system covering concurrency control, queue design, and database schema"
 lang: en
 permalink: /en/blog/how-to-reserve-srt-or-ktx/
 ---

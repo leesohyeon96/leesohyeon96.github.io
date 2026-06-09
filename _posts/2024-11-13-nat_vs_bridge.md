@@ -5,6 +5,7 @@ date: 2024-11-13
 category: 개념
 image: 
 author: 이소현
+description: "NAT와 Bridge 네트워크 모드의 차이점, 동작 원리, 사용 사례를 정리한 네트워크 개념 정리 글"
 lang: ko
 permalink: /ko/blog/nat_vs_bridge/
 ---

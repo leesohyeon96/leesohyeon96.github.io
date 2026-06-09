@@ -4,6 +4,7 @@ title: "Claude Code Harness Engineering: Building Your Own AI Dev Environment"
 date: 2026-05-22
 category: 개발
 author: 이소현
+description: "How to build a personalized AI dev environment by wiring custom hooks, skills, and memory systems into Claude Code"
 lang: en
 permalink: /en/blog/claude-code-harness-engineering/
 ---

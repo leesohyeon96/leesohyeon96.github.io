@@ -5,6 +5,7 @@ date: 2026-02-01
 category: 개발
 #image: assets/img/blog/default.png
 author: 이소현
+description: "JMeter 부하 테스트를 기반으로 TPS와 응답 시간을 개선하는 백엔드 성능 최적화 가이드. 스레드 풀, 커넥션 풀, 캐싱 전략 포함"
 lang: ko
 permalink: /ko/blog/performance-optimization-guide/
 ---

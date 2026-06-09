@@ -4,6 +4,7 @@ title: "PostgreSQL 대량 INSERT 시 파라미터 제한과 Chunk 처리"
 date: 2026-05-20
 category: 에러
 author: 이소현
+description: "PostgreSQL wire protocol의 Int16 파라미터 제한(32,767)으로 발생하는 PSQLException 원인 분석과 Chunk 단위 배치 처리로 해결한 방법"
 lang: ko
 permalink: /ko/blog/postgresql-batch-insert-limit/
 ---

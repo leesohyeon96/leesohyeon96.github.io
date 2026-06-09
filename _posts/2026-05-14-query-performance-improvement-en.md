@@ -4,6 +4,7 @@ title: "Meal Query API Timeout — From 19s to 11ms (1,700x Improvement)"
 date: 2026-05-14
 category: error
 author: Sohyeon Lee
+description: "A real-world case study of fixing a 19-second meal query API down to 11ms using MATERIALIZED CTE, function indexes, and PostgreSQL planner analysis"
 lang: en
 permalink: /en/blog/query-performance-improvement/
 ---

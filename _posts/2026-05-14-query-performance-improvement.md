@@ -4,6 +4,7 @@ title: "식사 조회 API 타임아웃 — 19초에서 11ms로 (1,700배 개선)
 date: 2026-05-14
 category: 에러
 author: 이소현
+description: "PostgreSQL 쿼리 플래너 오판으로 19초 걸리던 식사 조회 API를 11ms로 개선한 실전 사례. MATERIALIZED CTE, 함수 인덱스, JSONB 파싱 비용 분석"
 lang: ko
 permalink: /ko/blog/query-performance-improvement/
 ---

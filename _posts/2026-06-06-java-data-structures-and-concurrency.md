@@ -4,6 +4,7 @@ title: "Java 자료구조와 동시성에 대해서"
 date: 2026-06-06
 category: 개발
 author: 이소현
+description: "백엔드 면접 단골 주제인 Java 자료구조(ArrayList, HashMap, LinkedList)와 동시성(synchronized, volatile, ConcurrentHashMap) 핵심 개념 정리"
 lang: ko
 permalink: /ko/blog/java-data-structures-and-concurrency/
 ---

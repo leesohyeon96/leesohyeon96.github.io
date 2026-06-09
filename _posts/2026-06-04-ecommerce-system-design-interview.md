@@ -4,6 +4,7 @@ title: "DAU 100만 쇼핑몰, 어떻게 설계할까?"
 date: 2026-06-04
 category: 개발
 author: 이소현
+description: "DAU 100만 쇼핑몰 백엔드 설계 — TPS 추정부터 Redis 재고 처리, Kafka 주문 큐, 멱등성 키까지 단계별 아키텍처 설계"
 lang: ko
 permalink: /ko/blog/ecommerce-system-design-interview/
 ---

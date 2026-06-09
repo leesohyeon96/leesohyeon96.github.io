@@ -4,6 +4,7 @@ title: "PostgreSQL Parameter Limit on Bulk INSERT and Chunk Processing"
 date: 2026-05-20
 category: error
 author: 이소현
+description: "Root cause analysis and fix for PSQLException caused by PostgreSQL's Int16 parameter limit (32,767) when doing bulk INSERT with MyBatis foreach"
 lang: en
 permalink: /en/blog/postgresql-batch-insert-limit/
 ---

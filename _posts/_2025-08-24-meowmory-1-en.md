@@ -5,6 +5,7 @@ date: 2025-08-24
 category: development
 image: 
 author: Sohyeon Lee
+description: "Environment setup and planning phase log for Meowmory, a pet memory preservation service project"
 lang: en
 permalink: /en/blog/meowmory-1/
 ---

@@ -5,6 +5,7 @@ date: 2026-02-01
 category: Development
 #image: assets/img/blog/default.png
 author: Lee Sohyun
+description: "A practical backend performance optimization guide covering thread pools, connection pools, and caching strategies based on JMeter load testing results"
 lang: en
 permalink: /en/blog/performance-optimization-guide/
 ---

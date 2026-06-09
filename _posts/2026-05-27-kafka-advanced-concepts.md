@@ -4,6 +4,7 @@ title: "Kafka 고급 개념 정리: Schema Registry부터 Exactly Once까지"
 date: 2026-05-27
 category: 개발
 author: 이소현
+description: "Kafka Schema Registry, Avro vs Protobuf, Kafka Streams, Exactly Once Semantics, Kafka Connect를 실무 관점에서 정리한 고급 개념 가이드"
 lang: ko
 permalink: /ko/blog/kafka-advanced-concepts/
 ---

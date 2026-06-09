@@ -4,6 +4,7 @@ title: "Java Data Structures & Concurrency: Core Concepts for Backend Interviews
 date: 2026-06-06
 category: 개발
 author: 이소현
+description: "Key Java data structures (ArrayList, HashMap, LinkedList) and concurrency concepts (synchronized, volatile, ConcurrentHashMap) for backend interviews"
 lang: en
 permalink: /en/blog/java-data-structures-and-concurrency/
 ---

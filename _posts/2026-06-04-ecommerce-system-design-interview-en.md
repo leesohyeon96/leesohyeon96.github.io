@@ -4,6 +4,7 @@ title: "Designing an E-Commerce Platform with 1M DAU"
 date: 2026-06-04
 category: 개발
 author: 이소현
+description: "Step-by-step backend architecture design for a 1M DAU e-commerce platform: TPS estimation, Redis inventory, Kafka order queue, and idempotency keys"
 lang: en
 permalink: /en/blog/ecommerce-system-design-interview/
 ---

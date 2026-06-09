@@ -5,6 +5,7 @@ date: 2026-02-01
 category: 자유
 #image: assets/img/blog/default.png
 author: 이소현
+description: "SRT/KTX 예매 시스템 구현 후 JMeter로 부하 테스트한 과정과 결과. 병목 분석과 개선 방법 포함"
 lang: ko
 permalink: /ko/blog/train-reservations-jmeter-test/
 ---

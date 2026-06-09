@@ -5,6 +5,7 @@ date: 2026-02-01
 category: 개발
 #image: assets/img/blog/default.png
 author: 이소현
+description: "SRT/KTX 예매 시스템을 직접 설계한 과정. 동시성 문제, 대기열, DB 설계를 포함한 시스템 설계 글"
 lang: ko
 permalink: /ko/blog/how-to-reserve-srt-or-ktx/
 ---

@@ -5,6 +5,7 @@ date: 2026-02-01
 category: free
 #image: assets/img/blog/default.png
 author: Sohyeon Lee
+description: "Implementation and JMeter load testing of an SRT/KTX reservation system. Includes bottleneck analysis and performance improvement strategies"
 lang: en
 permalink: /en/blog/train-reservations-jmeter-test/
 ---

@@ -4,6 +4,7 @@ title: "JPA 핵심 개념 정리 — 영속성 컨텍스트부터 N+1까지"
 date: 2026-06-06
 category: 개발
 author: 이소현
+description: "JPA 영속성 컨텍스트, 1차 캐시, 변경 감지, 지연 로딩, N+1 문제와 해결법까지 면접 단골 핵심 개념 총정리"
 lang: ko
 permalink: /ko/blog/jpa-core-concepts/
 ---

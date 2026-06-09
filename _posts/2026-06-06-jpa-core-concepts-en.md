@@ -4,6 +4,7 @@ title: "JPA Core Concepts — Persistence Context to N+1"
 date: 2026-06-06
 category: 개발
 author: 이소현
+description: "Complete guide to JPA core concepts: persistence context, first-level cache, dirty checking, lazy loading, and solving the N+1 problem"
 lang: en
 permalink: /en/blog/jpa-core-concepts/
 ---
