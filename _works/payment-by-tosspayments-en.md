@@ -41,7 +41,7 @@ description2:
 description3:
   title: Why These Technologies
   text2: >
-    <strong>Kotlin + Spring Boot</strong> — The most common production stack in Korea. Chosen to experience the real-world stack directly.<br/><br/>
+    <strong>Kotlin + Spring Boot</strong> — In the payment domain, a null handling mistake can mean an outage. Kotlin null safety enforces correctness at compile time, and its concise syntax expresses domain objects clearly.<br/><br/>
     <strong>Toss Payments</strong> — Best-in-class developer documentation and fully equipped test mode. Chosen to learn the real payment flow (request → confirmation → refund) and error handling.<br/><br/>
     <strong>JWT (Access + Refresh Token)</strong> — Current industry standard and a frequent interview topic. Stateless design makes horizontal scaling easy.<br/><br/>
     <strong>PostgreSQL (Neon)</strong> — Payment data requires transactions and consistency → RDB. Neon is free with permanent data retention (Railway built-in DB deletes after 90 days).<br/><br/>
