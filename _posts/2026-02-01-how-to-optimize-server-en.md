@@ -91,7 +91,7 @@ SELECT *
 
 **2. Existence Checks**
 ```sql
--- ✅ Use EXISTS: Terminates immediately upon first match
+-- EXISTS: Terminates immediately upon first match (explicit)
 SELECT * 
   FROM users 
  WHERE EXISTS (
@@ -100,7 +100,7 @@ SELECT *
    WHERE orders.user_id = users.id
 );
 
--- ❌ Using IN: Loads entire subquery result into memory
+-- IN: Compares against subquery result
 SELECT * 
   FROM users 
  WHERE id IN (
@@ -109,7 +109,12 @@ SELECT *
 );
 ```
 
-**⇒ Conclusion: Minimize JOINs, use EXISTS for existence checks, avoid IN when possible**
+**EXISTS vs IN Performance**
+- In older DB versions (MySQL 5.x and below), IN subqueries loaded the entire result into memory, making them slow
+- Modern PostgreSQL/MySQL internally converts IN subqueries to **semi-joins**, executing them nearly identically to EXISTS
+- No meaningful performance difference — verify with EXPLAIN for your specific query
+
+**⇒ Conclusion: Minimize JOINs, both EXISTS and IN are valid for existence checks — check the execution plan**
 
 #### Analyze Execution Plans with EXPLAIN/PROFILE
 - Check how queries are executed

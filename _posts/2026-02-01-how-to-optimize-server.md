@@ -90,7 +90,7 @@ SELECT *
 
 **2. 존재 여부 확인**
 ```sql
--- ✅ EXISTS 사용: 첫 번째 매칭만 찾으면 즉시 종료
+-- EXISTS 사용: 첫 번째 매칭만 찾으면 즉시 종료 (명시적)
 SELECT * 
   FROM users 
  WHERE EXISTS (
@@ -99,7 +99,7 @@ SELECT *
    WHERE orders.user_id = users.id
 );
 
--- ❌ IN 사용: 전체 서브쿼리 결과를 메모리에 로드
+-- IN 사용: 서브쿼리 결과와 비교
 SELECT * 
   FROM users 
  WHERE id IN (
@@ -108,7 +108,12 @@ SELECT *
 );
 ```
 
-**⇒ 결론: JOIN은 최소화하고, 존재 확인은 EXISTS 사용, IN은 가능하면 피하기**
+**EXISTS vs IN 성능 차이**
+- 과거(MySQL 5.x 이하 등 구버전)에는 IN 서브쿼리가 전체 결과를 메모리에 로드해 느렸음
+- 현대 PostgreSQL/MySQL은 IN 서브쿼리를 내부적으로 **semi-join으로 변환**해 EXISTS와 거의 동일하게 실행
+- 실행 계획이 같으므로 성능 차이는 사실상 없음 — EXPLAIN으로 직접 확인하는 것이 정확함
+
+**⇒ 결론: JOIN은 최소화하고, 존재 확인은 EXISTS나 IN 모두 가능 — 실행 계획 확인 후 판단**
 
 #### EXPLAIN/PROFILE로 실행 계획 분석
 - 쿼리가 어떻게 실행되는지 확인
