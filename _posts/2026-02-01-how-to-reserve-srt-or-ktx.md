@@ -172,6 +172,19 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 ### 왜 Redis?
 - DB만 사용하면 row lock 경합으로 데드락 위험 발생
 
+### seat:availability랑 seat:hold, 키가 두 개인 이유?
+역할이 다르다.
+- `seat:availability` = 전체 좌석 상태 **캐시** (조회 최적화용)
+- `seat:hold` = 개별 좌석 **선점 락** (동시성 제어용)
+
+### seat:availability 캐시랑 실제 선점 상태가 불일치하면?
+캐시엔 Available인데 실제로 누군가 hold 중인 경우 → 사용자가 클릭했는데 `SET NX` 실패.
+이 경우 UI에서 "이미 선점된 좌석" 안내.
+최종 정합성은 `seat:hold` NX로 보장, 캐시는 "대략적 상태" 표시용.
+
+### DB의 SELECT FOR UPDATE 쓰면 안 돼?
+가능하다. 단, 명절 트래픽처럼 수천 명이 동시에 같은 좌석을 클릭하면 row lock 대기가 쌓이며 타임아웃이 폭발한다. Redis NX는 락 대기 없이 즉시 성공/실패를 반환하므로 초고트래픽 환경에 적합하다.
+
 <br>
 
 ---

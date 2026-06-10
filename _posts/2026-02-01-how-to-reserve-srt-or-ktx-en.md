@@ -173,6 +173,19 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 ### Why Redis?
 - Using only DB causes deadlock risk due to row lock contention
 
+### Why two separate keys — seat:availability and seat:hold?
+They serve different purposes.
+- `seat:availability` = **cache** of overall seat status (read optimization)
+- `seat:hold` = individual seat **lock** (concurrency control)
+
+### What if seat:availability cache is inconsistent with actual hold state?
+If the cache shows Available but someone is already holding the seat → user clicks but `SET NX` fails.
+In this case, the UI shows "seat already taken."
+Final consistency is guaranteed by `seat:hold` NX; the cache is only for approximate status display.
+
+### Can't we just use SELECT FOR UPDATE on the DB?
+Yes, but during holiday-level traffic where thousands simultaneously click the same seat, row lock queues pile up and timeouts spike. Redis NX returns success/failure immediately with no lock waiting — much more suitable for ultra-high-traffic scenarios.
+
 <br>
 
 ---
