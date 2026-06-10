@@ -50,7 +50,9 @@ GET Meal Query API
 → Response time: 29,200ms
 ```
 
-The API returned HTTP 200 — but only after 29 seconds, with an empty array. The app's HTTP timeout (~15s) fired before the response arrived, so the client received nothing and displayed a blank screen.
+The API returned HTTP 200 — but only after 29 seconds, with an empty array (`[]`). The app's HTTP timeout was 15 seconds.
+
+The server completed the query after 29 seconds, but by then the app had already timed out and closed the connection. The client received nothing and displayed a blank screen. The exact reason `body: []` appeared in the server log was not determined, but the data itself existed normally in the database.
 
 The data existed. It was just **too slow to arrive**.
 
