@@ -122,14 +122,15 @@ SELECT *
 
 #### Batch 처리
 1. INSERT, UPDATE, DELETE 다수 건은 **반드시** Bulk 처리
-```sql
--- ❌ 개별 처리
-INSERT INTO users VALUES (1, 'A');
-INSERT INTO users VALUES (2, 'B');
 
--- ✅ Bulk 처리
-INSERT INTO users VALUES (1, 'A'), (2, 'B'), (3, 'C');
-```
+   ```sql
+   -- ❌ 개별 처리
+   INSERT INTO users VALUES (1, 'A');
+   INSERT INTO users VALUES (2, 'B');
+
+   -- ✅ Bulk 처리
+   INSERT INTO users VALUES (1, 'A'), (2, 'B'), (3, 'C');
+   ```
 
 2. 트랜잭션 묶기로 I/O 횟수 감소
 

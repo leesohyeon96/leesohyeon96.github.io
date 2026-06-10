@@ -123,14 +123,15 @@ SELECT *
 
 #### Batch Processing
 1. **Always** bulk process multiple INSERT, UPDATE, DELETE operations
-```sql
--- ❌ Individual processing
-INSERT INTO users VALUES (1, 'A');
-INSERT INTO users VALUES (2, 'B');
 
--- ✅ Bulk processing
-INSERT INTO users VALUES (1, 'A'), (2, 'B'), (3, 'C');
-```
+   ```sql
+   -- ❌ Individual processing
+   INSERT INTO users VALUES (1, 'A');
+   INSERT INTO users VALUES (2, 'B');
+
+   -- ✅ Bulk processing
+   INSERT INTO users VALUES (1, 'A'), (2, 'B'), (3, 'C');
+   ```
 
 2. Reduce I/O count by grouping transactions
 
