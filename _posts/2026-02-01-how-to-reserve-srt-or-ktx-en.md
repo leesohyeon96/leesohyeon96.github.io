@@ -125,6 +125,15 @@ end
 }
 ```
 
+### What if the Redis server goes down — won't tokens be lost?
+Yes. Since Redis is in-memory, tokens are lost if the server dies.
+
+Options:
+- **Redis Replica + Sentinel**: Automatic failover to Replica on Master failure → data preserved
+- **AOF persistence**: With `appendonly yes`, writes are logged to disk → recoverable after restart
+
+That said, queue access tokens are **ephemeral data** — they don't require the strict durability of payments or inventory. If lost, users simply re-enter the queue. In practice, Replica configuration is sufficient.
+
 <br>
 
 ---
