@@ -55,7 +55,7 @@ public void enterQueue(String userId) {
 
 
 📌 Kafka Event Recording
-At this time, simultaneously with Redis processing, produce an event to Kafka
+After Redis processing, produce an event to Kafka.
 
 ## Purpose of Use
 - Logging / Auditing
@@ -67,7 +67,10 @@ At this time, simultaneously with Redis processing, produce an event to Kafka
     - External system integration
 - Failure Recovery
     - Queue reconstruction based on Kafka logs when Redis fails
-      Example events: USER_ENTER_QUEUE, TOKEN_ISSUED, USER_ADMITTED
+
+Example events: USER_ENTER_QUEUE, TOKEN_ISSUED, USER_ADMITTED
+
+> ⚠️ **If Redis succeeds but Kafka produce fails**: Kafka produce retries via retry policy; if ultimately failed, only the log is lost — the queue itself is correctly registered in Redis, so no service impact. Kafka serves as a **supplementary log/async tool**, not the core flow, so this failure is acceptable.
 
 
 <br>
@@ -82,8 +85,9 @@ ZRANK waiting:queue user1
 
 - Read-only → Fast and safe
 - Time complexity: O(log N)
-- Query interval: 1~3 seconds
-- Alternative: WebSocket / SSE + Redis Pub/Sub
+- Query interval: 1~3 seconds (polling)
+  - With tens of thousands of waiting users, Redis query load increases → Real services should use **WebSocket / SSE + Redis Pub/Sub**
+  - Pub/Sub: Server pushes to client only when position changes → Eliminates unnecessary polling
 
 <br>
 
@@ -169,6 +173,11 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 - Proceed with payment after seat hold
 - Payment involves external PG integration → The slowest section with highest failure probability
 - Process after seat hold to distribute traffic
+
+**Seat handling on payment failure**
+- Payment fails → Immediately delete Redis seat key (`DEL seat:hold:...`) → Seat becomes available for others
+- User abandons mid-payment → Seat automatically released after TTL 180s expires
+- Two safety nets (immediate release + TTL) ensure seat inventory accuracy
 
 <br>
 

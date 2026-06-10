@@ -54,7 +54,7 @@ public void enterQueue(String userId) {
 
 
 📌 Kafka 이벤트 기록
-이때, Redis 처리와 동시에 Kafka로 이벤트를 Produce 한다
+Redis 처리 후 Kafka로 이벤트를 Produce 한다.
 
 ## 사용 목적
 - 로그 / 감사
@@ -63,10 +63,13 @@ public void enterQueue(String userId) {
 - 비동기 처리
   - DB 최종 저장
   - 이메일 / 푸시 알림
-  - 외부 시스템 연동 
+  - 외부 시스템 연동
 - 장애 복구
   - Redis 장애 시 Kafka 로그 기반 대기열 재구성
+
 예시 이벤트: USER_ENTER_QUEUE, TOKEN_ISSUED, USER_ADMITTED
+
+> ⚠️ **Redis 성공 후 Kafka produce 실패 시**: Kafka produce는 retry 정책으로 재시도하고, 최종 실패 시 로그만 유실되는 수준 — 대기열 자체는 Redis에 정상 등록돼 있어 서비스에 영향 없음. Kafka는 핵심 플로우가 아닌 **로그/비동기 보조 용도**이므로 허용 가능한 실패.
 
 
 <br>
@@ -81,8 +84,9 @@ ZRANK waiting:queue user1
 
 - 읽기 전용 → 빠르고 안전
 - 시간 복잡도: O(log N)
-- 조회 주기: 1~3초
-- 대안: WebSocket / SSE + Redis Pub/Sub
+- 조회 주기: 1~3초 (폴링)
+  - 대기자 수만 명 시 Redis 조회 부하 증가 → 실제 서비스는 **WebSocket / SSE + Redis Pub/Sub** 방식이 적합
+  - Pub/Sub: 순번 변경 시에만 서버가 클라이언트에 푸시 → 불필요한 조회 제거
 
 <br>
 
@@ -168,6 +172,11 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 - 좌석 선점 이후 결제 진행
 - 결제는 외부 PG 연동 → 가장 느리고 실패 확률이 높은 구간
 - 좌석 선점 이후 처리하여 트래픽 분산
+
+**결제 실패 시 좌석 처리**
+- 결제 실패 → 즉시 Redis 좌석 키 삭제 (`DEL seat:hold:...`) → 다른 사용자가 선점 가능
+- 사용자가 결제 도중 이탈 → TTL 180초 자동 만료 후 반환
+- 즉시 해제와 TTL 두 가지 안전망으로 좌석 재고 정확성 보장
 
 <br>
 
