@@ -192,14 +192,19 @@ Yes, but during holiday-level traffic where thousands simultaneously click the s
 
 ## 6️⃣ Payment Stage
 
-- Proceed with payment after seat hold
-- Payment involves external PG integration → The slowest section with highest failure probability
-- Process after seat hold to distribute traffic
+Like the real SRT/KTX system, **payment is deferred** — made later, not at the time of reservation.
 
-**Seat handling on payment failure**
-- Payment fails → Immediately delete Redis seat key (`DEL seat:hold:...`) → Seat becomes available for others
-- User abandons mid-payment → Seat automatically released after TTL 180s expires
-- Two safety nets (immediate release + TTL) ensure seat inventory accuracy
+**Flow:**
+1. Seat hold (Redis SET NX EX 180)
+2. User confirms reservation → Save to DB + `DEL seat:hold:...` (release lock)
+3. Payment is made later (deferred)
+
+**Seat handling cases:**
+- User abandons before confirming → TTL 180s auto-expires → Seat automatically returned
+- Reservation confirmed → Redis key deleted immediately → Reservation recorded in DB
+- Payment fails later → Update DB reservation status to cancelled (Redis key is already gone)
+
+Since payment involves external PG integration (slowest, highest failure rate), it is decoupled from seat confirmation.
 
 <br>
 
