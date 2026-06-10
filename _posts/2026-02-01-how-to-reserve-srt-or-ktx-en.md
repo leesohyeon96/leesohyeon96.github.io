@@ -196,16 +196,19 @@ Like the real SRT/KTX system, **payment is deferred** — made later, not at the
 
 **Flow:**
 1. Seat hold (Redis SET NX EX 180)
-2. User confirms reservation → **Save to DB first** → On success, `DEL seat:hold:...`
-3. Payment is made later (deferred)
+2. User confirms reservation → **Save to DB first**
+3. On success → update `seat:availability` cache → mark seat as **Sold**
+4. `DEL seat:hold:...`
+5. Payment is made later (deferred)
 
-> DEL before DB save means if DB fails, the seat is released but no reservation exists. Always DEL after successful DB save.  
-> If DEL itself fails, TTL 180s auto-expires anyway — TTL acts as the safety net.
+> DEL before DB save means if DB fails, the seat is released but no reservation exists. Always process after successful DB save.  
+> If DEL fails, `seat:availability` is already Sold — no other user can select the seat. The Sold update is the real safety net.  
+> TTL only acts as a safety net for **users who abandon before confirming**.
 
 **Seat handling cases:**
-- User abandons before confirming → TTL 180s auto-expires → Seat automatically returned
-- Reservation confirmed → DB save success → Redis key DEL (if DEL fails, TTL handles it)
-- Payment fails later → Update DB reservation status to cancelled (Redis key is already gone)
+- User abandons before confirming → TTL 180s auto-expires → Seat returned (Available)
+- Reservation confirmed → DB save → seat:availability Sold → Redis key DEL
+- Payment fails later → DB reservation status → cancelled → seat:availability restored to Available
 
 Since payment involves external PG integration (slowest, highest failure rate), it is decoupled from seat confirmation.
 

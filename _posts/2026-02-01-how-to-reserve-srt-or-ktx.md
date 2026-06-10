@@ -195,16 +195,19 @@ SET seat:hold:{trainId}:{seatNo} userId NX EX 180
 
 **흐름:**
 1. 좌석 선점 (Redis SET NX EX 180)
-2. 사용자가 예매 확정 → **DB에 예약 저장 먼저** → 성공 시 `DEL seat:hold:...`
-3. 결제는 나중에 (후불)
+2. 사용자가 예매 확정 → **DB에 예약 저장 먼저**
+3. 성공 시 `seat:availability` 캐시 → 해당 좌석 **Sold** 업데이트
+4. `DEL seat:hold:...`
+5. 결제는 나중에 (후불)
 
-> DB 저장 전에 Redis DEL하면 DB 실패 시 좌석은 풀렸는데 예약은 없는 상태가 생김. 반드시 DB 저장 성공 후 DEL.  
-> DEL 자체가 실패해도 TTL 180초 후 자동 만료되므로 큰 문제 없음 — TTL이 안전망 역할.
+> DB 저장 전에 Redis DEL하면 DB 실패 시 좌석은 풀렸는데 예약은 없는 상태가 생김. 반드시 DB 저장 성공 후 처리.  
+> DEL 실패해도 `seat:availability`가 Sold이므로 다른 사용자가 선택 불가 — Sold 업데이트가 진짜 안전망.  
+> TTL은 **예매 확정 전 이탈한 경우**에만 안전망 역할.
 
 **좌석 처리 케이스:**
-- 예매 확정 전 이탈 → TTL 180초 자동 만료 → 좌석 자동 반환
-- 예매 확정 → DB 저장 성공 → Redis 키 DEL (실패 시 TTL에 위임)
-- 나중에 결제 실패 → DB 예약 상태를 취소로 변경 (Redis 키는 이미 없음)
+- 예매 확정 전 이탈 → TTL 180초 자동 만료 → 좌석 자동 반환 (Available)
+- 예매 확정 → DB 저장 → seat:availability Sold → Redis 키 DEL
+- 나중에 결제 실패 → DB 예약 상태 취소 → seat:availability Available로 복구
 
 결제가 외부 PG 연동이라 가장 느리고 실패 확률이 높은 구간이므로, 좌석 확정과 분리해 처리한다.
 
