@@ -71,9 +71,9 @@ This is the Cache-Aside (Lazy Loading) pattern — only populate the cache on a 
 
 **What happens when product data is updated?**
 
-Process: Master DB update → Replica sync → **Cache invalidation (delete the key)**
+Process: **Master DB update → Cache invalidation (delete the key)**
 
-Updating the cache directly risks a window where the cache has new data but the Replica still has old data. Invalidating the cache and letting the next request reload from DB is safer.
+Waiting for Replica sync before invalidating isn't practical — replication is asynchronous and there's no reliable signal from the app layer. Invalidating immediately after the Master write is the standard approach. Note: the first cache miss after invalidation may reload stale data from a Replica that hasn't caught up yet — mitigate with a short TTL.
 
 <br>
 

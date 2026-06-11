@@ -71,17 +71,18 @@ Cache-Aside(Lazy Loading) 전략이다. 요청이 왔을 때 캐시에 없으면
 
 **상품 정보가 수정되면 캐시는 어떻게 처리할까?**
 
-Master DB update → Replica 반영 → **캐시 무효화(삭제)** 순서로 처리한다.
+**Master DB update → 캐시 무효화(삭제)** 순서로 처리한다.
 
-캐시를 직접 갱신하는 방식은 Replica 반영 전에 캐시만 새 데이터가 되는 불일치 문제가 생길 수 있다. 무효화 후 다음 요청에서 DB에서 새로 로드하는 방식이 더 안전하다.
+Replica 반영을 기다렸다가 무효화하는 건 replication이 비동기라 앱에서 완료 시점을 알 수 없다. Master write 직후 캐시를 무효화하는 게 표준. 단, 무효화 직후 첫 miss가 아직 반영 안 된 Replica에서 stale 데이터를 다시 올릴 수 있으므로 짧은 TTL을 병행해 완화한다.
 
 <br>
 
 **캐시가 만료되는 순간 수백 요청이 동시에 DB로 몰린다면?**
 
-Cache Stampede 문제다. 두 가지 방법으로 대응한다.
+Cache Stampede 문제다. 세 가지 방법으로 대응한다.
 
-- TTL을 랜덤하게 설정해 동시 만료를 분산
+- TTL을 랜덤하게 설정해 동시 만료를 분산 (사전 예방)
+- 뮤텍스 락 (Redis `SET NX`): 캐시 miss 시 첫 번째 요청만 DB 조회 허용, 나머지는 대기 → DB 요청 1개만 통과
 - TTL이 다 되어가는 캐시를 미리 갱신 (PER, Probabilistic Early Recomputation)
 
 <br>
