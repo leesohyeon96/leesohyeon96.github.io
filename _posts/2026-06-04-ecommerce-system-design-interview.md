@@ -179,7 +179,7 @@ Idempotency-Key: uuid-abc-123
     │
     └─ 결제
           ↓
-       [Redis SET NX — 멱등성 키 체크]
+       [DB idempotency_key INSERT — 중복 체크]
           ↓ 통과
        [외부 결제사 API]
 ```
@@ -198,7 +198,7 @@ Idempotency-Key: uuid-abc-123
 | 캐시 동시 만료 | TTL 랜덤화 / PER |
 | 재고 동시 차감 | Redis Lua DECR |
 | 주문 DB 반영 | 평상시 직접 INSERT, 피크 시 Kafka |
-| 이중 결제 | 멱등성 키 + Redis SET NX |
+| 이중 결제 | 멱등성 키 + DB unique 제약 |
 
 <br>
 

@@ -191,7 +191,7 @@ Flow:
     │
     └─ Payment
           ↓
-       [Redis SET NX — idempotency check]
+       [DB idempotency_key INSERT — duplicate check]
           ↓ pass
        [External Payment API]
 ```
