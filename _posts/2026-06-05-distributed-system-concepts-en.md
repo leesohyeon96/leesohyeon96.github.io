@@ -142,16 +142,30 @@ Result: charged 1,000 pts total, but balance is 1,500 → 500 pts vanished
 **Redis distributed lock.**
 
 ```
-SET lock:point:user123 "server1" NX EX 30
+SET lock:point:user123 {random-uuid} NX EX 30
 ```
 
 `NX` = set only if key doesn't exist (atomic).  
-`EX 30` = 30-second TTL.
+`EX 30` = 30-second TTL.  
+Use a **random UUID** as the value — needed to verify ownership on release.
 
 ```
 Server 1: SET NX succeeds → acquires lock → processes points → releases lock
 Server 2: SET NX fails    → waits or returns error
 ```
+
+**Lock release must be done atomically with a Lua script.**
+
+```lua
+-- only DEL if the value matches our UUID
+if redis.call("get", KEYS[1]) == ARGV[1] then
+    return redis.call("del", KEYS[1])
+else
+    return 0
+end
+```
+
+A plain `DEL` is unsafe: if the TTL expires and another server acquires the lock, the original server waking up would delete the new owner's lock. UUID comparison prevents this.
 
 <br>
 
