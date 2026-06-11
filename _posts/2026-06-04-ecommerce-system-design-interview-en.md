@@ -148,20 +148,14 @@ Network can drop after a payment goes through but before the response is receive
 Idempotency-Key: uuid-abc-123
 ```
 
-**② Server** — attempts Redis `SET NX` with this key
-
-**② Server** — duplicate prevention
-
-- Redis `SET NX` as a **fast pre-check** (optional — reduces DB load)
-- **DB `idempotency_key` unique constraint + store payment result** ← actual guarantee
+**② Server** — DB `idempotency_key` unique constraint prevents duplicates
 
 Flow:
-- First request → DB INSERT succeeds → process payment
-- Duplicate request → DB INSERT fails (unique violation) → look up stored result → return as-is
-
-Redis is in-memory and can lose data on restart. For payments where durability matters, DB unique constraint is the real safeguard. Redis serves only as a fast pre-filter before the external payment API call.
-
-This is more efficient than DB unique constraints because it intercepts duplicates before making the external payment API call. Holding a lock during an external call (which takes hundreds of milliseconds) is expensive.
+1. First request → DB INSERT (`status=PROGRESS`) succeeds → call external payment API
+2. Payment response → update DB `status=DONE` + store result
+3. Duplicate request → DB INSERT fails (unique violation) → look up existing record
+   - `status=PROGRESS` → return "processing" response
+   - `status=DONE` → return stored result as-is
 
 <br>
 
