@@ -150,10 +150,16 @@ Idempotency-Key: uuid-abc-123
 
 **② Server** — attempts Redis `SET NX` with this key
 
-- **Success** (first request) → process payment → **store result under the same key** (TTL 24h)
-- **Failure** (duplicate) → fetch stored result from Redis → return as-is, no reprocessing
+**② Server** — duplicate prevention
 
-`SET NX` is atomic — "set only if not exists." Even if two requests arrive simultaneously, only one gets through. To return the previous result on retry, the response must also be stored in Redis alongside the key.
+- Redis `SET NX` as a **fast pre-check** (optional — reduces DB load)
+- **DB `idempotency_key` unique constraint + store payment result** ← actual guarantee
+
+Flow:
+- First request → DB INSERT succeeds → process payment
+- Duplicate request → DB INSERT fails (unique violation) → look up stored result → return as-is
+
+Redis is in-memory and can lose data on restart. For payments where durability matters, DB unique constraint is the real safeguard. Redis serves only as a fast pre-filter before the external payment API call.
 
 This is more efficient than DB unique constraints because it intercepts duplicates before making the external payment API call. Holding a lock during an external call (which takes hundreds of milliseconds) is expensive.
 
