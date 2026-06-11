@@ -150,10 +150,10 @@ Idempotency-Key: uuid-abc-123
 
 **② Server** — attempts Redis `SET NX` with this key
 
-- **Success** (first request) → process payment
-- **Failure** (duplicate) → return previous result, no reprocessing
+- **Success** (first request) → process payment → **store result under the same key** (TTL 24h)
+- **Failure** (duplicate) → fetch stored result from Redis → return as-is, no reprocessing
 
-`SET NX` is atomic — "set only if not exists." Even if two requests arrive simultaneously, only one gets through.
+`SET NX` is atomic — "set only if not exists." Even if two requests arrive simultaneously, only one gets through. To return the previous result on retry, the response must also be stored in Redis alongside the key.
 
 This is more efficient than DB unique constraints because it intercepts duplicates before making the external payment API call. Holding a lock during an external call (which takes hundreds of milliseconds) is expensive.
 
@@ -184,11 +184,10 @@ This is more efficient than DB unique constraints because it intercepts duplicat
     │     ↓
     │  [Redis Lua DECR]
     │     ↓ success
-    │  [Kafka order event]
+    │  [MySQL Primary — direct INSERT]  ← normal traffic (~260 TPS)
+    │  [Kafka order event]               ← flash sale (2,600+ TPS)
     │     ↓
-    │  [Consumer]
-    │     ↓
-    │  [MySQL Primary — Bulk INSERT]
+    │  [Consumer → MySQL Primary — Bulk INSERT]
     │
     └─ Payment
           ↓
