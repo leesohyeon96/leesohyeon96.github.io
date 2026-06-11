@@ -64,7 +64,7 @@ Magic Byte(`0x00`)는 Confluent 직렬화 포맷임을 나타내는 식별자. S
 > **"새 컨슈머가 과거 메시지를 읽을 수 있어야 한다"**
 
 **허용되는 변경:**
-- 필드 삭제 (단, default 값 있어야 함)
+- 필드 삭제 (이전 데이터에 해당 필드가 있어도 새 스키마가 무시하면 됨)
 - default 있는 필드 추가
 
 **허용 안 되는 변경:**
@@ -473,7 +473,7 @@ try {
 props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE_V2);
 ```
 
-`EXACTLY_ONCE_V2` (Kafka 2.6+) — 각 스트림 태스크가 자체 트랜잭션 프로듀서를 가짐. 이전 `EXACTLY_ONCE`보다 브로커 부하 감소.
+`EXACTLY_ONCE_V2` (Kafka 3.0+) — 각 스트림 태스크가 자체 트랜잭션 프로듀서를 가짐. 이전 `EXACTLY_ONCE`보다 브로커 부하 감소.
 
 <br>
 

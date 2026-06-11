@@ -78,7 +78,7 @@ Schemas are managed by version. When registering a new schema, the Registry auto
 > **"New consumers must be able to read past messages"**
 
 **Allowed:**
-- Remove a field (only if it has a default)
+- Remove a field (old data has it, but new schema simply ignores it)
 - Add a field with a default value
 
 **Not allowed:**
@@ -485,7 +485,7 @@ try {
 props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE_V2);
 ```
 
-`EXACTLY_ONCE_V2` (Kafka 2.6+) — each stream task gets its own transactional producer. Lower broker overhead than the previous `EXACTLY_ONCE`.
+`EXACTLY_ONCE_V2` (Kafka 3.0+) — each stream task gets its own transactional producer. Lower broker overhead than the previous `EXACTLY_ONCE`.
 
 <br>
 
