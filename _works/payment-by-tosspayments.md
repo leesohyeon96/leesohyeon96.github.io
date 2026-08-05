@@ -17,7 +17,7 @@ info:
   - label: Security / Auth
     value: Spring Security + JWT (Access + Refresh Token)
   - label: DB / 배포
-    value: PostgreSQL (Neon), Railway
+    value: PostgreSQL (Neon), Render
 
 description1:
   show: yes
@@ -25,7 +25,7 @@ description1:
   text1: >
     토스페이먼츠 API를 연동한 결제 시스템 데모. 회원가입/로그인부터 주문 생성, 결제 위젯 연동, 승인/취소, 내역 조회까지 실제 결제 플로우를 경험할 수 있다.
     <br/><br/>
-    <a href="https://payment-by-tosspayments-production-6d2b.up.railway.app" target="_blank">🌐 서비스 바로가기</a>
+    <a href="https://payment-by-tosspayment-3rja.onrender.com" target="_blank">🌐 서비스 바로가기</a>
 
 description2:
   show: yes
@@ -44,6 +44,6 @@ description3:
     <strong>Kotlin + Spring Boot</strong> — 결제 도메인은 null 처리 실수가 곧 장애. Kotlin의 null safety로 컴파일 타임에 강제하고, 도메인 객체를 간결하게 표현할 수 있어 선택.<br/><br/>
     <strong>토스페이먼츠</strong> — 국내 최고 수준의 개발자 문서와 테스트 모드 완비. 실제 결제 플로우(요청 → 승인 → 환불)와 에러 처리를 학습하기 위해 선택.<br/><br/>
     <strong>JWT (Access + Refresh Token)</strong> — Stateless 구조로 서버에 세션을 저장하지 않아 수평 확장 용이. 다중 서버 환경에서 세션 공유 없이 인증 처리 가능.<br/><br/>
-    <strong>PostgreSQL (Neon)</strong> — 결제 데이터는 트랜잭션/정합성 필수 → RDB. Neon은 무료이면서 데이터 영구 보존 (Railway 내장 DB는 90일 후 삭제).<br/><br/>
+    <strong>PostgreSQL (Neon)</strong> — 결제 데이터는 트랜잭션/정합성 필수 → RDB. Neon은 무료이면서 데이터 영구 보존 (배포 플랫폼 내장 무료 DB는 보존 기간 제한이 있음).<br/><br/>
     <strong>Thymeleaf</strong> — 토스 SDK가 프론트에서 호출되므로 UI 필요. React는 오버킬, Spring 내장으로 별도 배포 불필요.
 ---

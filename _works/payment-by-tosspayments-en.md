@@ -17,7 +17,7 @@ info:
   - label: Security / Auth
     value: Spring Security + JWT (Access + Refresh Token)
   - label: DB / Deploy
-    value: PostgreSQL (Neon), Railway
+    value: PostgreSQL (Neon), Render
 
 description1:
   show: yes
@@ -25,7 +25,7 @@ description1:
   text1: >
     A payment system demo integrating the Toss Payments API. Covers the full payment flow: sign up, log in, create an order, integrate the payment widget, confirm/cancel payment, and view payment history.
     <br/><br/>
-    <a href="https://payment-by-tosspayments-production-6d2b.up.railway.app" target="_blank">🌐 Live Demo</a>
+    <a href="https://payment-by-tosspayment-3rja.onrender.com" target="_blank">🌐 Live Demo</a>
 
 description2:
   show: yes
@@ -43,7 +43,7 @@ description3:
   text2: >
     <strong>Kotlin + Spring Boot</strong> — In the payment domain, a null handling mistake can mean an outage. Kotlin null safety enforces correctness at compile time, and its concise syntax expresses domain objects clearly.<br/><br/>
     <strong>Toss Payments</strong> — Best-in-class developer documentation and fully equipped test mode. Chosen to learn the real payment flow (request → confirmation → refund) and error handling.<br/><br/>
-    <strong>JWT (Access + Refresh Token)</strong> — Current industry standard and a frequent interview topic. Stateless design makes horizontal scaling easy.<br/><br/>
-    <strong>PostgreSQL (Neon)</strong> — Payment data requires transactions and consistency → RDB. Neon is free with permanent data retention (Railway built-in DB deletes after 90 days).<br/><br/>
+    <strong>JWT (Access + Refresh Token)</strong> — Stateless design stores no session on the server, making horizontal scaling easy. Authentication works across multiple servers without session sharing.<br/><br/>
+    <strong>PostgreSQL (Neon)</strong> — Payment data requires transactions and consistency → RDB. Neon is free with permanent data retention (platform built-in free DBs have retention limits).<br/><br/>
     <strong>Thymeleaf</strong> — Toss SDK is called from the frontend so a UI is required. React would be overkill; Spring built-in avoids a separate deployment.
 ---
